@@ -21,18 +21,25 @@ public class BaseController : MonoBehaviour
     [SerializeField]
     public StartPosition[] StartPositions;
 
+    public SceneFadeInOut Fader;
+
     // Use this for initialization
-    void Start()
+    private void Start()
     {
         PlayerCharacter = GameObject.FindWithTag("Player");
         if (PlayerCharacter == null)
             return;
+
         PlayerController = PlayerCharacter.GetComponent<PawnController>();
-        PlayerController.SetPosition(GetEnterPosition(PreviousLoadedLevel));
+        var enterData = GetEnterData(PreviousLoadedLevel);
+        PlayerController.SetPosition(enterData.StartPoint);
+        PlayerController.SetNewFacing(enterData.Direction);
+
+        Fader = GetComponentInChildren<SceneFadeInOut>();
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -45,7 +52,6 @@ public class BaseController : MonoBehaviour
     public void ChangeScene(EnumLevel newLevel)
     {
         previousLoadedLevel = Statics.GetFromName(Application.loadedLevelName);
-        Debug.Log(PreviousLoadedLevel);
         Application.LoadLevel(newLevel.GetName());
     }
 
@@ -60,11 +66,42 @@ public class BaseController : MonoBehaviour
         [SerializeField]
         public Vector3 StartPoint;
 
+        [SerializeField]
+        public Facing Direction;
+
+        public static bool operator ==(StartPosition a, StartPosition b)
+        {
+            // Return true if the fields match:
+            return a.LevelName == b.LevelName && a.StartPoint == b.StartPoint && a.Direction == b.Direction;
+        }
+
+        public static bool operator !=(StartPosition a, StartPosition b)
+        {
+            return !(a == b);
+        }
     }
+
 
     public Vector3 GetEnterPosition(EnumLevel level)
     {
-        return StartPositions.Single(e => e.LevelName == level).StartPoint;
-
+        return GetEnterData(level).StartPoint;
     }
+
+    public StartPosition GetEnterData(EnumLevel level)
+    {
+        var result = StartPositions.SingleOrDefault(e => e.LevelName == level);
+        if (result != default(StartPosition)) // it is not default struct value
+            return result;
+
+        if (Debug.isDebugBuild)
+        {
+            Debug.LogError("nenalezen startovací objekt! " + level);
+            return StartPositions.First();
+        }
+        else
+        {
+            return StartPositions.Single(e => e.LevelName == level);
+        }
+    }
+
 }

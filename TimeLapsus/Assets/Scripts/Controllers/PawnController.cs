@@ -12,13 +12,17 @@ public class PawnController : MonoBehaviour
     private ContinueWith currentContinue;
     private Vector3 currentTarget;
     private Vector3 currentDirection;
-    private bool isMoving = false;
-    
+    private bool isMoving;
+    private Facing direction;
+
+    private SpriteRenderer sprite;
+
 
     // Use this for initialization
     void Start()
     {
-       
+        sprite = GetComponentInChildren<SpriteRenderer>();
+        SetNewFacing(direction);
     }
 
     // Update is called once per frame
@@ -50,8 +54,23 @@ public class PawnController : MonoBehaviour
         currentTarget = target;
         currentContinue = nextFn;
         currentDirection = target - gameObject.transform.position;
+
+        // ReSharper disable once CompareOfFloatsByEqualityOperator
+        if (currentDirection.x != 0)
+            SetNewFacing(currentDirection.x < 0 ? Facing.Left : Facing.Right);
+
         currentDirection.Normalize();
         isMoving = true;
+    }
+
+    internal void SetNewFacing(Facing newDirection)
+    {
+        if (direction == newDirection)
+            return;
+
+        direction = newDirection;
+        if (sprite != null)
+            sprite.transform.Rotate(Vector3.up, 180, Space.Self);
     }
 
     internal void SetPosition(Vector3 target)

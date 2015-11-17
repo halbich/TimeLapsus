@@ -6,8 +6,23 @@ public enum EnumLevel
     NULL,
     MainMenu,
     RiverSide,
-    SubUrbs,
-    BankPresent
+    SubUrbPresent,
+    SubUrbFuture,
+    BankPresent,
+    BankFuture
+}
+
+public enum Facing
+{
+    Right,
+    Left
+}
+
+public enum FadeInOutState
+{
+    None,
+    FadeIn,
+    FadeOut
 }
 
 

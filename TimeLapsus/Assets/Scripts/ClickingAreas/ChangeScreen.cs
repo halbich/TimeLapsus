@@ -4,6 +4,10 @@ using System.Collections;
 public class ChangeScreen : ClickableArea
 {
 
+    protected virtual void Change(EnumLevel level)
+    {
+        Controller.ChangeScene(level);
+    }
 
 
     public EnumLevel Level;
@@ -14,9 +18,7 @@ public class ChangeScreen : ClickableArea
         {
             Controller.PlayerController.MoveTo(Controller.GetEnterPosition(Level), () =>
             {
-               Controller.ChangeScene(Level);
-
-
+                Change(Level);
             });
 
         }

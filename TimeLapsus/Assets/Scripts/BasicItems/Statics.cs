@@ -13,12 +13,16 @@ public static class Statics
         {
             case EnumLevel.BankPresent:
                 return "bankPresent";
+            case EnumLevel.BankFuture:
+                return "bankFuture";
             case EnumLevel.MainMenu:
                 return "mainMenu";
             case EnumLevel.RiverSide:
                 return "riverSide";
-            case EnumLevel.SubUrbs:
-                return "suburb";
+            case EnumLevel.SubUrbPresent:
+                return "suburbPresent";
+            case EnumLevel.SubUrbFuture:
+                return "suburbFuture";
             default: throw new Exception();
         }
 
@@ -30,12 +34,16 @@ public static class Statics
         {
             case "bankPresent":
                 return EnumLevel.BankPresent;
+            case "bankFuture":
+                return EnumLevel.BankFuture;
             case "mainMenu":
                 return EnumLevel.MainMenu;
             case "riverSide":
                 return EnumLevel.RiverSide;
-            case "suburb":
-                return EnumLevel.SubUrbs;
+            case "suburbPresent":
+                return EnumLevel.SubUrbPresent;
+            case "suburbFuture":
+                return EnumLevel.SubUrbFuture;
             default: throw new Exception();
         }
 
