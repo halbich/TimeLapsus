@@ -23,6 +23,12 @@ public static class Statics
                 return "suburbPresent";
             case EnumLevel.SubUrbFuture:
                 return "suburbFuture";
+            case EnumLevel.CityPresent:
+                return "cityPresent";
+            case EnumLevel.CityFuture:
+                return "cityFuture";
+            case EnumLevel.Village:
+                return "village";
             default: throw new Exception();
         }
 
@@ -44,6 +50,12 @@ public static class Statics
                 return EnumLevel.SubUrbPresent;
             case "suburbFuture":
                 return EnumLevel.SubUrbFuture;
+            case "cityPresent":
+                return EnumLevel.CityPresent;
+            case "cityFuture":
+                return EnumLevel.CityFuture;
+            case "village":
+                return EnumLevel.Village;
             default: throw new Exception();
         }
 
