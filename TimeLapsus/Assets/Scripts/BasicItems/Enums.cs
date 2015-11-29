@@ -9,7 +9,10 @@ public enum EnumLevel
     SubUrbPresent,
     SubUrbFuture,
     BankPresent,
-    BankFuture
+    BankFuture,
+    CityPresent,
+    CityFuture,
+    Village
 }
 
 public enum Facing
