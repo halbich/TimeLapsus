@@ -7,17 +7,7 @@ public class SceneFadeInOut : MonoBehaviour
 
 
     public FadeInOutState CurrentState;
-    public bool FadeOutAtStart;
 
-
-    void Start()
-    {
-        if (FadeOutAtStart)
-        {
-            GetComponent<GUITexture>().color = Color.black;
-        }
-
-    }
 
     void Awake()
     {
@@ -28,17 +18,13 @@ public class SceneFadeInOut : MonoBehaviour
 
     void Update()
     {
-        switch (CurrentState)
-        {
-            case FadeInOutState.None:
-                return;
-            case FadeInOutState.FadeIn:
-                StartScene();
-                break;
-            default:
-                EndScene();
-                break;
-        }
+        if (CurrentState == FadeInOutState.None)
+            return;
+
+        if (CurrentState == FadeInOutState.FadeIn)
+            StartScene();
+        else
+            EndScene();
     }
 
 
