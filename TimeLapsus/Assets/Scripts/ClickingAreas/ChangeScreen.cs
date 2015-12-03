@@ -4,6 +4,11 @@ using System.Collections;
 public class ChangeScreen : ClickableArea
 {
 
+    public ChangeScreen():base()
+    {
+        cursor = CursorType.GoToLocation;
+    }
+
     protected virtual void Change(EnumLevel level)
     {
         Controller.ChangeScene(level);

@@ -2,6 +2,11 @@
 
 public class WalkableArea : ClickableArea
 {
+    public WalkableArea() : base()
+    {
+        cursor = CursorType.Walk;
+    }
+
     private void OnMouseDown()
     {
         if (IsInBox)
@@ -27,4 +32,6 @@ public class WalkableArea : ClickableArea
     private void Update()
     {
     }
+
+   
 }

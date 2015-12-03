@@ -7,12 +7,15 @@ public enum EnumLevel
     MainMenu,
     RiverSide,
     SubUrbPresent,
-    SubUrbFuture,
+    SubUrbPast,
     BankPresent,
     BankFuture,
     CityPresent,
     CityFuture,
-    Village
+    Village,
+    Mayor,
+    Antiquarian,
+    Pottery
 }
 
 public enum Facing
@@ -26,6 +29,17 @@ public enum FadeInOutState
     None,
     FadeIn,
     FadeOut
+}
+
+public enum CursorType
+{
+    Main,
+    Walk,
+    Door,
+    GoToLocation,
+    Speak,
+    Explore,
+    PickUp,
 }
 
 

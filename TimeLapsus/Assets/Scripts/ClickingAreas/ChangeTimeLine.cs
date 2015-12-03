@@ -3,6 +3,10 @@ using System.Collections;
 
 public class ChangeTimeLine : ChangeScreen
 {
+    public ChangeTimeLine() : base()
+    {
+        cursor = CursorType.GoToLocation;
+    }
     protected override void Change(EnumLevel level)
     {
 

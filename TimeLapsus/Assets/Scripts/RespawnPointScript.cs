@@ -8,9 +8,11 @@ public class RespawnPointScript : MonoBehaviour
 
     public Facing Direction;
 
-    public RespawnPoint GetPoint(GameObject obj)
+    public RespawnPoint GetPoint(GameObject obj, float CharacterZPosition)
     {
-        return new RespawnPoint { LevelName = this.LevelName, Direction = this.Direction, StartPoint = obj.transform.position };
+        var point = obj.transform.position;
+        point.z = CharacterZPosition;
+        return new RespawnPoint { LevelName = this.LevelName, Direction = this.Direction, StartPoint = point };
     }
 
 }
@@ -33,6 +35,16 @@ public struct RespawnPoint
     public static bool operator !=(RespawnPoint a, RespawnPoint b)
     {
         return !(a == b);
+    }
+
+    public override int GetHashCode()
+    {
+        return base.GetHashCode();
+    }
+
+    public override bool Equals(object obj)
+    {
+        return base.Equals(obj);
     }
 }
 

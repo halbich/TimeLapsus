@@ -46,6 +46,7 @@ public class PawnController : MonoBehaviour
             {
                 isMoving = false;
                 animator.SetTrigger("WalkEnd");
+                Debug.Log("WalkEnd");
                 currentContinue();
 
             }
@@ -71,8 +72,12 @@ public class PawnController : MonoBehaviour
             SetNewFacing(currentDirection.x < 0 ? Facing.Left : Facing.Right);
 
         currentDirection.Normalize();
+        if (!isMoving)
+        {
+            animator.SetTrigger("WalkStart");
+            Debug.Log("WalkStart");
+        }
         isMoving = true;
-        animator.SetTrigger("WalkStart");
     }
 
     internal void SetNewFacing(Facing newDirection)
@@ -86,8 +91,6 @@ public class PawnController : MonoBehaviour
 
         if (direction == newDirection)
             return;
-        Debug.Log(string.Format("Facing, {0} -> {1} ", direction, newDirection));
-        Debug.Log(sprite.transform.rotation);
 
         direction = newDirection;
         sprite.transform.Rotate(Vector3.up, 180, Space.Self);
@@ -96,6 +99,6 @@ public class PawnController : MonoBehaviour
     internal void SetInitPosition(Vector3 target)
     {
         target.y += DestinationOffsetY;
-        gameObject.transform.position = target ;
+        gameObject.transform.position = target;
     }
 }

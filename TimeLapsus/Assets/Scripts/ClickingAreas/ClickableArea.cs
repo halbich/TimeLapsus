@@ -1,46 +1,26 @@
 ﻿using UnityEngine;
-using System.Collections;
 
-public class ClickableArea : MonoBehaviour {
-
-    private PolygonCollider2D polCol;
-
-    private BaseController gameController;
-
-    protected BaseController Controller
-    {
-        get
-        {
-            return gameController;
-            
-        }
-    }
+public class ClickableArea : ScriptWithController
+{
+    protected CursorType cursor = CursorType.Main;
 
     protected bool IsInBox = false;
 
-	// Use this for initialization
-	void Start ()
-	{
-	   
-	}
-
-
-    void Awake()
+    // Use this for initialization
+    private void Start()
     {
-        polCol = gameObject.GetComponent<PolygonCollider2D>();
-        var obj = GameObject.FindWithTag("GameController");
-        gameController = obj.GetComponent<BaseController>();
     }
 
-    void OnMouseEnter()
+    private void OnMouseEnter()
     {
-
         IsInBox = true;
+        Controller.CursorManager.SetCursor(cursor);
+        Debug.Log(cursor);
     }
 
-    void OnMouseExit()
+    private void OnMouseExit()
     {
         IsInBox = false;
-
+        Controller.CursorManager.SetCursor();
     }
 }

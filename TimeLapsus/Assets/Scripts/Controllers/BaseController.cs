@@ -11,7 +11,13 @@ public class BaseController : MonoBehaviour
 
     public PawnController PlayerController;
 
+    public CursorManager CursorManager;
+
+    public float CharacterZPosition = -0.1f;
+    
     private static EnumLevel previousLoadedLevel;
+
+
 
     public EnumLevel PreviousLoadedLevel
     {
@@ -28,6 +34,7 @@ public class BaseController : MonoBehaviour
     {
 
         Fader = GetComponentInChildren<SceneFadeInOut>();
+        CursorManager = GetComponent<CursorManager>();
 
 
     }
@@ -42,7 +49,8 @@ public class BaseController : MonoBehaviour
 
         var startObjects = GameObject.FindGameObjectsWithTag("Respawn").ToList();
 
-        startPositions = startObjects.Select(e => e.GetComponent<RespawnPointScript>().GetPoint(e)).ToList();
+        startPositions = startObjects.Select(e => e.GetComponent<RespawnPointScript>().GetPoint(e, CharacterZPosition)).ToList();
+        
         foreach (var startObject in startObjects)
         {
             Destroy(startObject);
@@ -52,6 +60,12 @@ public class BaseController : MonoBehaviour
         PlayerController.SetInitPosition(enterData.StartPoint);
         PlayerController.SetNewFacing(enterData.Direction);
 
+
+        var bckgrnd = GameObject.FindGameObjectWithTag("Background");
+        if(bckgrnd != null)
+        {
+            bckgrnd.GetComponent<SpriteRenderer>().color = Color.white;
+        }
     }
 
     // Update is called once per frame
@@ -78,7 +92,8 @@ public class BaseController : MonoBehaviour
 
     public Vector3 GetEnterPosition(EnumLevel level)
     {
-        return GetEnterData(level).StartPoint;
+        var startPoint = GetEnterData(level).StartPoint;
+        return startPoint;
     }
 
     public RespawnPoint GetEnterData(EnumLevel level)
