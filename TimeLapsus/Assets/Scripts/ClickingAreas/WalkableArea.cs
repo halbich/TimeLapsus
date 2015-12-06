@@ -9,7 +9,7 @@ public class WalkableArea : ClickableArea
 
     private void OnMouseDown()
     {
-        if (IsInBox)
+        if (IsInBox && !Controller.DialogueActive)
         {
             var v = Input.mousePosition;
             var point = Camera.main.ScreenToWorldPoint(v);

@@ -7,17 +7,21 @@ using System.Linq;
 public class BaseController : MonoBehaviour
 {
 
+    internal bool DialogueActive = false;
+
     public GameObject PlayerCharacter;
 
     public PawnController PlayerController;
 
     public CursorManager CursorManager;
 
+    public DialogController DialogController;
+
     public float CharacterZPosition = -0.1f;
     
     private static EnumLevel previousLoadedLevel;
 
-
+    public string DisplayedDescription = "";
 
     public EnumLevel PreviousLoadedLevel
     {
@@ -32,9 +36,9 @@ public class BaseController : MonoBehaviour
     // Use this for initialization
     private void Start()
     {
-
         Fader = GetComponentInChildren<SceneFadeInOut>();
         CursorManager = GetComponent<CursorManager>();
+        DialogController = GetComponent<DialogController>();
 
 
     }

@@ -19,7 +19,7 @@ public class ChangeScreen : ClickableArea
 
     private void OnMouseDown()
     {
-        if (IsInBox)
+        if (IsInBox && !Controller.DialogueActive)
         {
             Controller.PlayerController.MoveTo(Controller.GetEnterPosition(Level), () =>
             {

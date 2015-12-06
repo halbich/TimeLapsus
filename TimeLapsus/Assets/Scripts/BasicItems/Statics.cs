@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Collections.Generic;
+using Assets.Scripts.ItemManagement;
 
 public static class Statics
 {
@@ -30,4 +31,15 @@ public static class Statics
     {
         return mapping.Where(e => e.Second == name).Select(e => e.First).First();
     }
+    public static Dictionary<string, int> GlobalVariables = new Dictionary<string, int>();
+
+    public static List<InventoryItem> Inventory = new List<InventoryItem>();
+
+    public static Dictionary<string, InventoryItem> AllInventoryItems = new Dictionary<string, InventoryItem>
+    {
+        {"rock", new InventoryItem("Rock", "Rock, you are a rock, you are grey, like a rock, which you are.", "rock", "rock")},
+        {"rock2", new InventoryItem("Another Rock", "Even though it looks similar, it is a very different rock.", "rock2", "rock2")}
+    };
+
+
 }
