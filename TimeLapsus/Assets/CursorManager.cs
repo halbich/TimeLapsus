@@ -9,7 +9,10 @@ public class CursorManager : MonoBehaviour
     public Texture2D Main;
     public Texture2D Walk;
     public Texture2D Door;
-    public Texture2D GoToLocation;
+    public Texture2D GoToLocationN;
+    public Texture2D GoToLocationE;
+    public Texture2D GoToLocationS;
+    public Texture2D GoToLocationW;
     public Texture2D Speak;
     public Texture2D Explore;
     public Texture2D PickUp;
@@ -38,8 +41,14 @@ public class CursorManager : MonoBehaviour
                 return Walk;
             case CursorType.Door:
                 return Door;
-            case CursorType.GoToLocation:
-                return GoToLocation;
+            case CursorType.GoToLocationN:
+                return GoToLocationN;
+            case CursorType.GoToLocationE:
+                return GoToLocationE;
+            case CursorType.GoToLocationS:
+                return GoToLocationS;
+            case CursorType.GoToLocationW:
+                return GoToLocationW;
             case CursorType.Speak:
                 return Speak;
             case CursorType.Explore:

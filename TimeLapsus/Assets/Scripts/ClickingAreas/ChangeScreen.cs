@@ -3,10 +3,9 @@ using System.Collections;
 
 public class ChangeScreen : ClickableArea
 {
-
     public ChangeScreen():base()
     {
-        cursor = CursorType.GoToLocation;
+        cursor = CursorType.GoToLocationS;
     }
 
     protected virtual void Change(EnumLevel level)

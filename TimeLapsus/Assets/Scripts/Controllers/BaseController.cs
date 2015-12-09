@@ -14,8 +14,9 @@ public class BaseController : MonoBehaviour
     public CursorManager CursorManager;
 
     public float CharacterZPosition = -0.1f;
-    
+
     private static EnumLevel previousLoadedLevel;
+
 
 
 
@@ -37,6 +38,16 @@ public class BaseController : MonoBehaviour
         CursorManager = GetComponent<CursorManager>();
 
 
+        PlayerController = PlayerCharacter.GetComponent<PawnController>();
+        if (PlayerController == null)
+        {
+            Debug.LogError("No controller");
+            return;
+        }
+
+        var enterData = GetEnterData(PreviousLoadedLevel);
+        PlayerController.SetInitPosition(enterData.StartPoint);
+        PlayerController.SetNewFacing(enterData.Direction);
     }
 
     private void Awake()
@@ -45,24 +56,20 @@ public class BaseController : MonoBehaviour
         if (PlayerCharacter == null)
             return;
 
-        PlayerController = PlayerCharacter.GetComponent<PawnController>();
 
         var startObjects = GameObject.FindGameObjectsWithTag("Respawn").ToList();
 
-        startPositions = startObjects.Select(e => e.GetComponent<RespawnPointScript>().GetPoint(e, CharacterZPosition)).ToList();
-        
+        startPositions = startObjects.Select(e => e.GetComponent<RespawnPointScript>().GetPoint( CharacterZPosition)).ToList();
+
         foreach (var startObject in startObjects)
         {
             Destroy(startObject);
         }
 
-        var enterData = GetEnterData(PreviousLoadedLevel);
-        PlayerController.SetInitPosition(enterData.StartPoint);
-        PlayerController.SetNewFacing(enterData.Direction);
 
 
         var bckgrnd = GameObject.FindGameObjectWithTag("Background");
-        if(bckgrnd != null)
+        if (bckgrnd != null)
         {
             bckgrnd.GetComponent<SpriteRenderer>().color = Color.white;
         }

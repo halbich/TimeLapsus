@@ -1,26 +1,29 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class ClickableArea : ScriptWithController
 {
-    protected CursorType cursor = CursorType.Main;
+    public CursorType cursor = CursorType.Main;
 
     protected bool IsInBox = false;
 
-    // Use this for initialization
-    private void Start()
-    {
-    }
+   
 
     private void OnMouseEnter()
     {
+        //if (!EventSystem.current.IsPointerOverGameObject())
+        //    return;
+
+
         IsInBox = true;
-        Controller.CursorManager.SetCursor(cursor);
-        Debug.Log(cursor);
+        if (Controller && Controller.CursorManager)
+            Controller.CursorManager.SetCursor(cursor);
     }
 
     private void OnMouseExit()
     {
         IsInBox = false;
-        Controller.CursorManager.SetCursor();
+        if (Controller && Controller.CursorManager)
+            Controller.CursorManager.SetCursor();
     }
 }

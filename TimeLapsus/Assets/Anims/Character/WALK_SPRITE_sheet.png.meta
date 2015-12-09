@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 080fa5374799b6742b5e9747d1dfd2f0
-timeCreated: 1448786837
+timeCreated: 1449584736
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -77,8 +77,8 @@ TextureImporter:
         y: 3
         width: 845
         height: 1568
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: WALK_SPRITE_sheet_1
       rect:
@@ -87,28 +87,28 @@ TextureImporter:
         y: 22
         width: 646
         height: 1484
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: WALK_SPRITE_sheet_2
       rect:
         serializedVersion: 2
-        x: 2257
+        x: 2250
         y: 18
         width: 524
         height: 1559
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: WALK_SPRITE_sheet_3
       rect:
         serializedVersion: 2
-        x: 3255
+        x: 3248
         y: 33
         width: 716
         height: 1595
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: WALK_SPRITE_sheet_4
       rect:
@@ -117,8 +117,8 @@ TextureImporter:
         y: 6
         width: 900
         height: 1563
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: WALK_SPRITE_sheet_5
       rect:
@@ -127,8 +127,8 @@ TextureImporter:
         y: 22
         width: 998
         height: 1524
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: WALK_SPRITE_sheet_6
       rect:
@@ -137,8 +137,8 @@ TextureImporter:
         y: 41
         width: 688
         height: 1564
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: WALK_SPRITE_sheet_7
       rect:
@@ -147,8 +147,8 @@ TextureImporter:
         y: 6
         width: 560
         height: 1632
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

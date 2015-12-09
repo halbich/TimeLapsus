@@ -36,10 +36,42 @@ public enum CursorType
     Main,
     Walk,
     Door,
-    GoToLocation,
     Speak,
     Explore,
     PickUp,
+    GoToLocationN,
+    GoToLocationE,
+    GoToLocationS,
+    GoToLocationW,
+}
+
+public enum EnumActorID
+{
+    MainCharacter,
+    Mayor,
+    BankerPresent,
+    BankerFuture,
+    Potter,
+    Lara,
+    Child
+
+
+}
+
+public enum EnumObjectID
+{
+    Bridge,
+    Vase,
+    Chip,
+    Automat,
+    Grave,
+    Shovel,
+    Blueprint1,
+    Blueprint2,
+    BlueprintBridge,
+    Ball,
+    Window
+
 }
 
 

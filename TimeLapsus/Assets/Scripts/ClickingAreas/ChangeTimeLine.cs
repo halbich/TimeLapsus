@@ -5,7 +5,7 @@ public class ChangeTimeLine : ChangeScreen
 {
     public ChangeTimeLine() : base()
     {
-        cursor = CursorType.GoToLocation;
+        cursor = CursorType.GoToLocationS;
     }
     protected override void Change(EnumLevel level)
     {

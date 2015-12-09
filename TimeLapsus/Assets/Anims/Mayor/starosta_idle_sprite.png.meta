@@ -1,0 +1,374 @@
+fileFormatVersion: 2
+guid: 5910bab063bf6684498a59420ce5bdaa
+timeCreated: 1449511018
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: starosta_idle_sprite_0
+    21300002: starosta_idle_sprite_1
+    21300004: starosta_idle_sprite_2
+    21300006: starosta_idle_sprite_3
+    21300008: starosta_idle_sprite_4
+    21300010: starosta_idle_sprite_5
+    21300012: starosta_idle_sprite_6
+    21300014: starosta_idle_sprite_7
+    21300016: starosta_idle_sprite_8
+    21300018: starosta_idle_sprite_9
+    21300020: starosta_idle_sprite_10
+    21300022: starosta_idle_sprite_11
+    21300024: starosta_idle_sprite_12
+    21300026: starosta_idle_sprite_13
+    21300028: starosta_idle_sprite_14
+    21300030: starosta_idle_sprite_15
+    21300032: starosta_idle_sprite_16
+    21300034: starosta_idle_sprite_17
+    21300036: starosta_idle_sprite_18
+    21300038: starosta_idle_sprite_19
+    21300040: starosta_idle_sprite_20
+    21300042: starosta_idle_sprite_21
+    21300044: starosta_idle_sprite_22
+    21300046: starosta_idle_sprite_23
+    21300048: starosta_idle_sprite_24
+    21300050: starosta_idle_sprite_25
+    21300052: starosta_idle_sprite_26
+    21300054: starosta_idle_sprite_27
+    21300056: starosta_idle_sprite_28
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: starosta_idle_sprite_0
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 55
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_idle_sprite_1
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 58
+        width: 580
+        height: 544
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_idle_sprite_2
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 48
+        width: 19
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_idle_sprite_3
+      rect:
+        serializedVersion: 2
+        x: 811
+        y: 55
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_idle_sprite_4
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 58
+        width: 580
+        height: 541
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_idle_sprite_5
+      rect:
+        serializedVersion: 2
+        x: 1546
+        y: 49
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_idle_sprite_6
+      rect:
+        serializedVersion: 2
+        x: 1568
+        y: 52
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_idle_sprite_7
+      rect:
+        serializedVersion: 2
+        x: 1585
+        y: 55
+        width: 580
+        height: 542
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_idle_sprite_8
+      rect:
+        serializedVersion: 2
+        x: 2347
+        y: 55
+        width: 580
+        height: 542
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_idle_sprite_9
+      rect:
+        serializedVersion: 2
+        x: 3093
+        y: 49
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_idle_sprite_10
+      rect:
+        serializedVersion: 2
+        x: 3109
+        y: 52
+        width: 580
+        height: 545
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_idle_sprite_11
+      rect:
+        serializedVersion: 2
+        x: 3871
+        y: 55
+        width: 580
+        height: 544
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_idle_sprite_12
+      rect:
+        serializedVersion: 2
+        x: 4618
+        y: 52
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_idle_sprite_13
+      rect:
+        serializedVersion: 2
+        x: 4633
+        y: 55
+        width: 580
+        height: 547
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_idle_sprite_14
+      rect:
+        serializedVersion: 2
+        x: 5356
+        y: 49
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_idle_sprite_15
+      rect:
+        serializedVersion: 2
+        x: 5378
+        y: 52
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_idle_sprite_16
+      rect:
+        serializedVersion: 2
+        x: 5395
+        y: 55
+        width: 580
+        height: 547
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_idle_sprite_17
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 48
+        width: 31
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_idle_sprite_18
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 52
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_idle_sprite_19
+      rect:
+        serializedVersion: 2
+        x: 2298
+        y: 45
+        width: 19
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_idle_sprite_20
+      rect:
+        serializedVersion: 2
+        x: 2323
+        y: 49
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_idle_sprite_21
+      rect:
+        serializedVersion: 2
+        x: 2330
+        y: 50
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_idle_sprite_22
+      rect:
+        serializedVersion: 2
+        x: 2335
+        y: 52
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_idle_sprite_23
+      rect:
+        serializedVersion: 2
+        x: 3070
+        y: 46
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_idle_sprite_24
+      rect:
+        serializedVersion: 2
+        x: 3822
+        y: 45
+        width: 19
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_idle_sprite_25
+      rect:
+        serializedVersion: 2
+        x: 3847
+        y: 49
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_idle_sprite_26
+      rect:
+        serializedVersion: 2
+        x: 3854
+        y: 50
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_idle_sprite_27
+      rect:
+        serializedVersion: 2
+        x: 3859
+        y: 52
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_idle_sprite_28
+      rect:
+        serializedVersion: 2
+        x: 4584
+        y: 45
+        width: 31
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -46,7 +46,7 @@ public class PawnController : MonoBehaviour
             {
                 isMoving = false;
                 animator.SetTrigger("WalkEnd");
-                Debug.Log("WalkEnd");
+                //Debug.Log("WalkEnd");
                 currentContinue();
 
             }
@@ -75,7 +75,7 @@ public class PawnController : MonoBehaviour
         if (!isMoving)
         {
             animator.SetTrigger("WalkStart");
-            Debug.Log("WalkStart");
+            //Debug.Log("WalkStart");
         }
         isMoving = true;
     }
