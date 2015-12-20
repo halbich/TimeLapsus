@@ -5,13 +5,12 @@
 
     protected override string getDialog()
     {
-        var cQuest = QuestController.Instance.GetCurrent();
 
 
         //pokud jsem nezobrazil popis questu
 
         bool hasAlreadySpeaked;
-        if (cQuest.TryGetValue(HasSpoken, out hasAlreadySpeaked) && hasAlreadySpeaked)
+        if (currentQuest.TryGetValue(HasSpoken, out hasAlreadySpeaked) && hasAlreadySpeaked)
         {
             return null;
         }
@@ -22,7 +21,6 @@
 
     protected override void endDialogAction()
     {
-        var cQuest = QuestController.Instance.GetCurrent();
-        cQuest.SetValue(HasSpoken, true);
+      currentQuest.SetValue(HasSpoken, true);
     }
 }

@@ -1,19 +1,14 @@
 ﻿public class VendingMachineController : InspectObjectController
 {
-    private const string KeyName = "hasShovel";
+    private const string KeyName = "hasMoneyToBuy";
 
     protected override string getDialog()
     {
-        var cQuest = QuestController.Instance.GetCurrent();
-
-
-        //pokud mám čip, mluv
-
-        bool hasShovel;
-        if (cQuest.TryGetValue(KeyName, out hasShovel) && hasShovel)
+        bool hasMoney;
+        if (currentQuest.TryGetValue(KeyName, out hasMoney) && hasMoney)
         {
-            return "hasShovel";
+            return "hasMoneyToBuy";
         }
-        return "inspectShovel";
+        return "needMoneyToBuy";
     }
 }

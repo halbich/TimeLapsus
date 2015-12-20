@@ -5,9 +5,8 @@
 
     protected override string getDialog()
     {
-        var cQuest = QuestController.Instance.GetCurrent();
         bool hasAlreadySpeaked;
-        if (cQuest.TryGetValue(HasSpoken, out hasAlreadySpeaked) && hasAlreadySpeaked)
+        if (currentQuest.TryGetValue(HasSpoken, out hasAlreadySpeaked) && hasAlreadySpeaked)
         {
             return "potterNotDisturb";
         }
@@ -17,8 +16,7 @@
 
     protected override void endDialogAction()
     {
-        var cQuest = QuestController.Instance.GetCurrent();
-        cQuest.SetValue(HasSpoken, true);
+        currentQuest.SetValue(HasSpoken, true);
     }
 
     public override int GetHashCode()

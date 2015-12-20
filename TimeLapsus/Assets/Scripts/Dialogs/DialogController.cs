@@ -140,7 +140,10 @@ public class DialogController : MonoBehaviour
             }
         });
 
-        addSimpleDialogs("mayorNotDisturb", "mayorBlueprints", "questDefinition", "inspectShovel", "hasShovel", "potterNotDisturb");
+
+
+        addSimpleDialogs("mayorNotDisturb", "mayorBlueprints", "questDefinition", "inspectShovel", "hasShovel",
+            "potterNotDisturb", "needMoneyToBuy", "inspectGravePresent", "inspectGravePast");
 
         //Debug.LogFormat("Dialogů: {0}", dialogs.Count);
     }

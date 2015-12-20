@@ -3,6 +3,8 @@
 public abstract class DialogActorController : MonoBehaviour
 {
 
+    protected Quest currentQuest = QuestController.Instance.GetCurrent();
+
     private Sprite avatar;
 
     public void SetAvatar(Sprite Avatar)

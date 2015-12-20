@@ -3,6 +3,8 @@
 public abstract class InspectObjectController : MonoBehaviour
 {
 
+    protected Quest currentQuest =  QuestController.Instance.GetCurrent();
+
     public void Inspect()
     {
         var di = DialogController.Instance;

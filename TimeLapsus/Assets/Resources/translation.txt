@@ -9,3 +9,6 @@ questDefinition=Druhé strana břehu se mi líbí. Potřebuji se tam nějak dost
 inspectShovel=Hele, lopata.
 hasShovel=Jednu už mám.
 potterNotDisturb=Stejně mu nerozumím, nebudu ho otravovat. Ať si tu mutlá hlínu na hromádce
+needMoneyToBuy=Prý mám vložit prachy
+inspectGravePresent=Pěkný hrob...
+inspectGravePast=Jen tam někoho šoupnout.
