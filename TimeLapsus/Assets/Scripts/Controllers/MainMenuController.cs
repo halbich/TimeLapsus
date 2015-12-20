@@ -1,7 +1,4 @@
-﻿using UnityEngine;
-using System.Collections;
-
-public class MainMenuController : BaseController {
+﻿public class MainMenuController : BaseController {
 
 	
 	

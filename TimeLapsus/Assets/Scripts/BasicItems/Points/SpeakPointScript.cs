@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class SpeakPointScript : MonoBehaviour
 {
@@ -26,7 +25,7 @@ public class SpeakPoint : DirectionPoint
   
     public static bool operator ==(SpeakPoint a, SpeakPoint b)
     {
-        if (System.Object.ReferenceEquals(a, b))
+        if (ReferenceEquals(a, b))
         {
             return true;
         }
@@ -50,5 +49,17 @@ public class SpeakPoint : DirectionPoint
     {
         BelongsToActor = belongsToActor;
     }
+
+    public override int GetHashCode()
+    {
+        return base.GetHashCode();
+    }
+
+    public override bool Equals(object obj)
+    {
+        return base.Equals(obj);
+    }
+    
+
 }
 

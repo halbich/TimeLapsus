@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class InspectPointScript : MonoBehaviour
 {
@@ -26,7 +25,7 @@ public class InspectPoint : DirectionPoint
 
     public static bool operator ==(InspectPoint a, InspectPoint b)
     {
-        if (System.Object.ReferenceEquals(a, b))
+        if (ReferenceEquals(a, b))
         {
             return true;
         }
@@ -50,6 +49,16 @@ public class InspectPoint : DirectionPoint
         : base(startPoint, direction)
     {
         BelongsToObject = belongsToObject;
+    }
+
+    public override int GetHashCode()
+    {
+        return base.GetHashCode();
+    }
+
+    public override bool Equals(object obj)
+    {
+        return base.Equals(obj);
     }
 }
 

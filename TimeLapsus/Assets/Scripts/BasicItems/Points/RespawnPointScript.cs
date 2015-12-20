@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class RespawnPointScript : MonoBehaviour
 {
@@ -28,7 +27,7 @@ public class RespawnPoint : DirectionPoint
     }
     public static bool operator ==(RespawnPoint a, RespawnPoint b)
     {
-        if (System.Object.ReferenceEquals(a, b))
+        if (ReferenceEquals(a, b))
         {
             return true;
         }
@@ -46,6 +45,16 @@ public class RespawnPoint : DirectionPoint
     public static bool operator !=(RespawnPoint a, RespawnPoint b)
     {
         return !(a == b);
+    }
+
+    public override int GetHashCode()
+    {
+        return base.GetHashCode();
+    }
+
+    public override bool Equals(object obj)
+    {
+        return base.Equals(obj);
     }
 
 }

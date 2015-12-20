@@ -1,7 +1,4 @@
-﻿using UnityEngine;
-using System.Collections;
-
-public class VillageWindowController : InspectObjectController
+﻿public class VillageWindowController : InspectObjectController
 {
 
 

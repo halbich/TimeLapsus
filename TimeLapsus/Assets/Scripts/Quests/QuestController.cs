@@ -1,20 +1,10 @@
-﻿using UnityEngine;
-using System.Collections;
-
-public class QuestController
+﻿public class QuestController
 {
 
     private static QuestController _inst;
     public static QuestController Instance
     {
-        get
-        {
-            if (_inst == null)
-                _inst = new QuestController();
-
-            return _inst;
-        }
-
+        get { return _inst ?? (_inst = new QuestController()); }
     }
 
     private Quest currentQuest;

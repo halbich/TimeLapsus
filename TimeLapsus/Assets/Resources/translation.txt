@@ -5,3 +5,7 @@ m1=#&@{~ˇ^ˇ^˘°^ˇ#&@#&{
 m2=&#{&@#{}}~ˇ^
 mayorNotDisturb=Stejně mu nerozumím, nebudu ho otravovat
 mayorBlueprints=Hele, tady jsou nějaké plány staveb.
+questDefinition=Druhé strana břehu se mi líbí. Potřebuji se tam nějak dostat.
+inspectShovel=Hele, lopata.
+hasShovel=Jednu už mám.
+potterNotDisturb=Stejně mu nerozumím, nebudu ho otravovat. Ať si tu mutlá hlínu na hromádce

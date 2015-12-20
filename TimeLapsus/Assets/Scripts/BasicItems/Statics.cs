@@ -1,12 +1,11 @@
-﻿using System;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Collections.Generic;
 
 public static class Statics
 {
     public static EnumLevel LastLoadedLevel;
 
-    private static List<Tuple<EnumLevel, string>> mapping = new List<Tuple<EnumLevel, string>> {
+    private static readonly List<Tuple<EnumLevel, string>> mapping = new List<Tuple<EnumLevel, string>> {
          Tuple.New(EnumLevel.BankPresent,"bankPresent" ),
          Tuple.New(EnumLevel.BankFuture, "bankFuture"),
          Tuple.New(EnumLevel.MainMenu, "mainMenu"),

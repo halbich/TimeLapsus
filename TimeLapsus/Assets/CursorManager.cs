@@ -1,7 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
-
-
 
 public class CursorManager : MonoBehaviour
 {
@@ -29,7 +26,7 @@ public class CursorManager : MonoBehaviour
     public void SetCursor(CursorType type = CursorType.Main)
     {
         var texture = getTexture(type);
-        HotSpot = new Vector2(texture.width / 2, texture.height / 2);
+        HotSpot = new Vector2(texture.width / 2f, texture.height / 2f);
         Cursor.SetCursor(texture, HotSpot, CursorMode);
     }
 
@@ -55,7 +52,6 @@ public class CursorManager : MonoBehaviour
                 return Explore;
             case CursorType.PickUp:
                 return PickUp;
-            case CursorType.Main:
             default:
                 return Main;
         }

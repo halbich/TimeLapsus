@@ -1,7 +1,4 @@
-﻿using UnityEngine;
-using System.Collections;
-
-public class MayorBlueprintController : InspectObjectController
+﻿public class MayorBlueprintController : InspectObjectController
 {
 
 

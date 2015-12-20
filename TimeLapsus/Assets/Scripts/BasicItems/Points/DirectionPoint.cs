@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class DirectionPoint
 {
@@ -21,7 +20,7 @@ public class DirectionPoint
 
     public static bool ArePointEqual(DirectionPoint a, DirectionPoint b)
     {
-        if (System.Object.ReferenceEquals(a, b))
+        if (ReferenceEquals(a, b))
         {
             return true;
         }

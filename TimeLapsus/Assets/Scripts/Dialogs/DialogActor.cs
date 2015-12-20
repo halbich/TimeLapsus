@@ -1,20 +1,17 @@
-﻿using UnityEngine;
-using System.Collections;
-using System.Linq;
-using System.Collections.Generic;
+﻿using System.Linq;
+using UnityEngine;
 
-public class DialogActor : ScriptWithController
+public class DialogActor : TalkingActorWithController
 {
 
     public bool ShowSpeakIcon = true;
 
-    public EnumActorID EntityID;
 
-    public Sprite Avatar;
+
+
 
     private SpeakPoint SpeakerPoint;
 
-    private DialogActorController dialogController;
 
     private void OnMouseEnter()
     {
@@ -28,32 +25,12 @@ public class DialogActor : ScriptWithController
 
     private void OnMouseDown()
     {
-        if (SpeakerPoint!= null)
+        if (SpeakerPoint != null)
 
-            Controller.PlayerController.MoveTo(SpeakerPoint.StartPoint, () =>
-            {
-               // QuestController.Instance.Speak(EntityID, Avatar);
-                dialogController.Speak();
-            });
+            Controller.PlayerController.MoveTo(SpeakerPoint.StartPoint, Speak);
         else
-            dialogController.Speak();
-            //QuestController.Instance.Speak(EntityID, Avatar);
+            Speak();
     }
-
-    internal void StartSpeak()
-    {
-        var animator = GetComponent<Animator>();
-        if (animator != null)
-            animator.SetTrigger("SpeakStart");
-    }
-
-    internal void EndSpeak()
-    {
-        var animator = GetComponent<Animator>();
-        if (animator != null)
-            animator.SetTrigger("SpeakEnd");
-    }
-
 
     protected override void Start()
     {
@@ -68,10 +45,5 @@ public class DialogActor : ScriptWithController
             Destroy(comps);
         }
 
-        dialogController = GetComponent<DialogActorController>();
-        if(dialogController == null)
-            Debug.LogErrorFormat("No dialogActorComponent defined for {0}! ", gameObject.name);
-        else 
-            dialogController.SetAvatar(Avatar);
     }
 }

@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class PawnController : MonoBehaviour
 {
@@ -37,20 +36,18 @@ public class PawnController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isMoving)
-        {
+        if (!isMoving)
+            return;
 
-            transform.position += currentDirection * MoveSpeed * Time.deltaTime;
+        transform.position += currentDirection * MoveSpeed * Time.deltaTime;
 
-            if (Vector3.Distance(gameObject.transform.position, currentTarget) <= DestinationDelta)
-            {
-                isMoving = false;
-                animator.SetTrigger("WalkEnd");
-                //Debug.Log("WalkEnd");
-                currentContinue();
+        if (!(Vector3.Distance(gameObject.transform.position, currentTarget) <= DestinationDelta))
+            return;
 
-            }
-        }
+        isMoving = false;
+        animator.SetTrigger("WalkEnd");
+        //Debug.Log("WalkEnd");
+        currentContinue();
     }
 
     public void MoveTo(Vector3 target, ContinueWith nextFn)

@@ -1,7 +1,4 @@
-﻿using UnityEngine;
-using System.Collections;
-
-public class MayorSpeakController : DialogActorController
+﻿public class MayorSpeakController : DialogActorController
 {
 
     private const string HasSpoken = "hasSpokenWithMayor";
@@ -16,13 +13,9 @@ public class MayorSpeakController : DialogActorController
         bool hasAlreadySpeaked;
         if (cQuest.TryGetValue(HasSpoken, out hasAlreadySpeaked) && hasAlreadySpeaked)
         {
-            return "mayorSecond";
+            return "mayorNotDisturb";
         }
-        else
-        {
-            return "mayorFirst";
-        }
-        return null;
+        return "mayorFirst";
     }
 
 
@@ -30,5 +23,15 @@ public class MayorSpeakController : DialogActorController
     {
         var cQuest = QuestController.Instance.GetCurrent();
         cQuest.SetValue(HasSpoken, true);
+    }
+
+    public override int GetHashCode()
+    {
+        return base.GetHashCode();
+    }
+
+    public override bool Equals(object obj)
+    {
+        return base.Equals(obj);
     }
 }

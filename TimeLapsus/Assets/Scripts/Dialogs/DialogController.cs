@@ -27,13 +27,7 @@ public class DialogController : MonoBehaviour
 
     public static DialogController Instance
     {
-        get
-        {
-            if (_inst == null)
-                _inst = FindObjectOfType<DialogController>();
-
-            return _inst;
-        }
+        get { return _inst ?? (_inst = FindObjectOfType<DialogController>()); }
     }
 
     // Use this for initialization
@@ -59,10 +53,22 @@ public class DialogController : MonoBehaviour
 
     private IEnumerator getAllLines(DialogEndAction endAction)
     {
-        var speakActors = GameObject.FindObjectsOfType<DialogActor>().ToDictionary(e => e.EntityID, j => j);
+        var speakActors = FindObjectsOfType<TalkingActor>().ToDictionary(e => e.EntityID, j => j);
+
+        var dialog = currentDialog ?? new Dialog();
+
+        var hasError = false;
+        foreach (var actorID in dialog.DialogLines.Select(e => e.ActorID).Distinct().Where(actorID => !speakActors.ContainsKey(actorID)))
+        {
+            Debug.LogErrorFormat("Scene doesn't contains TalkingActor for {0}", actorID);
+            hasError = true;
+        }
+
+        if (hasError)
+            yield break;
 
         panel.SetActive(true);
-        foreach (var item in currentDialog.DialogLines)
+        foreach (var item in dialog.DialogLines)
         {
             var currentActor = speakActors[item.ActorID];
             currentActor.StartSpeak();
@@ -96,6 +102,11 @@ public class DialogController : MonoBehaviour
 
     internal Dialog GetDialog(string p)
     {
+        if (string.IsNullOrEmpty(p))
+            return null;
+
+        Debug.LogFormat("Get dialog >{0}<", p);
+
         return dialogs[p];
     }
 
@@ -105,21 +116,40 @@ public class DialogController : MonoBehaviour
         // this structure should be filled by some tool
         dialogs = new Dictionary<string, Dialog>();
 
-        dialogs.Add("mayorFirst", new Dialog()
+        dialogs.Add("mayorFirst", new Dialog
         {
             DialogLines = new List<DialogLine>
             {
                 new DialogLine(EnumActorID.MainCharacter, ti.GetText("p1")),
-                 new DialogLine(EnumActorID.Mayor, ti.GetText("m1")),
-                                new DialogLine(EnumActorID.MainCharacter, ti.GetText("p2")),
-                 new DialogLine(EnumActorID.Mayor, ti.GetText("m2")),
-                 new DialogLine(EnumActorID.MainCharacter, ti.GetText("p3")),
+                new DialogLine(EnumActorID.Mayor, ti.GetText("m1")),
+                new DialogLine(EnumActorID.MainCharacter, ti.GetText("p2")),
+                new DialogLine(EnumActorID.Mayor, ti.GetText("m2")),
+                new DialogLine(EnumActorID.MainCharacter, ti.GetText("p3"))
             }
+        });
+
+        dialogs.Add("potterFirst", new Dialog
+        {
+            DialogLines = new List<DialogLine>
+            {
+                new DialogLine(EnumActorID.MainCharacter, ti.GetText("p1")),
+                new DialogLine(EnumActorID.Potter, ti.GetText("m1")),
+                new DialogLine(EnumActorID.MainCharacter, ti.GetText("p2")),
+                new DialogLine(EnumActorID.Potter, ti.GetText("m2")),
+                new DialogLine(EnumActorID.MainCharacter, ti.GetText("p3"))
+            }
+        });
+
+        addSimpleDialogs("mayorNotDisturb", "mayorBlueprints", "questDefinition", "inspectShovel", "hasShovel", "potterNotDisturb");
+
+        //Debug.LogFormat("Dialogů: {0}", dialogs.Count);
+    }
+
+    private void addSimpleDialogs(params string[] dialogNames)
+    {
+        foreach (var dialog in dialogNames)
+        {
+            dialogs.Add(dialog, Dialog.SimpleDialog(dialog));
         }
-            );
-        dialogs.Add("mayorSecond", Dialog.SimpleDialog("mayorNotDisturb")
-           );
-        dialogs.Add("mayorBlueprints", Dialog.SimpleDialog("mayorBlueprints")
-           );
     }
 }

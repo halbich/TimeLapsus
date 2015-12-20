@@ -1,11 +1,15 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System;
 using System.Collections.Generic;
-using System;
+using UnityEngine;
 
 [Serializable]
 public class Dialog
 {
+
+    public Dialog()
+    {
+        DialogLines = new List<DialogLine>();
+    }
 
     [SerializeField]
     public List<DialogLine> DialogLines;

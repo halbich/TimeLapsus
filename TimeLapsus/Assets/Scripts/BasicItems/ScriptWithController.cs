@@ -2,20 +2,12 @@
 
 public class ScriptWithController : MonoBehaviour
 {
-    private BaseController gameController;
-
-    protected BaseController Controller
-    {
-        get
-        {
-            return gameController;
-        }
-    }
+    protected BaseController Controller { get; private set; }
 
     private void Awake()
     {
         var obj = GameObject.FindWithTag("GameController");
-        gameController = obj.GetComponent<BaseController>();
+        Controller = obj.GetComponent<BaseController>();
     }
 
     protected virtual void Start()

@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 public class Quest
 {
     public bool QuestDone { get; private set; }
 
-    private Dictionary<string, object> StoredValues;
+    private readonly Dictionary<string, object> StoredValues;
 
     public Quest()
     {

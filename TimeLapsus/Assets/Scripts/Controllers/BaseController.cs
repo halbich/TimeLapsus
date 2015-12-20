@@ -1,8 +1,6 @@
-﻿using System;
-using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 
 public class BaseController : MonoBehaviour
 {
@@ -109,12 +107,11 @@ public class BaseController : MonoBehaviour
         if (result != default(RespawnPoint)) // it is not default struct value
             return result;
 
-        if (Debug.isDebugBuild)
-        {
-            Debug.LogWarning("nenalezen startovací objekt! " + level);
-            return startPositions.First();
-        }
-        return startPositions.Single(e => e.LevelName == level);
+        if (!Debug.isDebugBuild)
+            return startPositions.Single(e => e.LevelName == level);
+
+        Debug.LogWarning("nenalezen startovací objekt! " + level);
+        return startPositions.First();
     }
 }
 

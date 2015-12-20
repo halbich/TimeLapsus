@@ -1,15 +1,13 @@
 ﻿using System;
-using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using System.Text;
+using UnityEngine;
 
 public class TextController
 {
 
-    private Dictionary<string, string> keys;
-    private bool isLoaded = false;
+    private readonly Dictionary<string, string> keys;
+    private readonly bool isLoaded;
 
     private static TextController _inst;
     public static TextController Instance
@@ -78,10 +76,17 @@ public class TextController
         keys.Add(entries[0], entries[1]);
     }
 
-    public string GetText(string key)
+    public string GetText(string key, bool checkPresence = true)
     {
-        var res = string.Empty;
-        keys.TryGetValue(key, out res);
+        if(!isLoaded)
+            throw new InvalidOperationException("translation wasn't loaded!");
+
+        string res;
+        var present = keys.TryGetValue(key, out res);
+
+        if(checkPresence && !present)
+            Debug.LogErrorFormat("Zadaný klíč >{0}< nebyl v překladech nalezen!", key);
+
         return res;
 
     }

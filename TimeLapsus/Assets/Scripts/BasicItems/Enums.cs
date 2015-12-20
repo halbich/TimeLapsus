@@ -1,7 +1,4 @@
-﻿using UnityEngine;
-using System.Collections;
-
-public enum EnumLevel
+﻿public enum EnumLevel
 {
     NULL,
     MainMenu,
@@ -42,7 +39,7 @@ public enum CursorType
     GoToLocationN,
     GoToLocationE,
     GoToLocationS,
-    GoToLocationW,
+    GoToLocationW
 }
 
 public enum EnumActorID

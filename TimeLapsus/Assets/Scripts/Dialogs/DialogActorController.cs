@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
-using System.Collections;
 
-public abstract class DialogActorController : MonoBehaviour {
+public abstract class DialogActorController : MonoBehaviour
+{
 
     private Sprite avatar;
 
@@ -14,7 +14,9 @@ public abstract class DialogActorController : MonoBehaviour {
     {
         var di = DialogController.Instance;
         var dialog = di.GetDialog(getDialog());
-        di.ShowDialog(dialog, avatar, endDialogAction);
+
+        if (di != null)
+            di.ShowDialog(dialog, avatar, endDialogAction);
 
     }
 

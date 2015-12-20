@@ -1,15 +1,9 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿public class DoorScript : ChangeScreen {
 
-public class DoorScript : ChangeScreen {
-
-    public DoorScript() :base()
+    public DoorScript()
     {
         cursor = CursorType.Door;
     }
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
+   
 }

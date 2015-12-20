@@ -1,11 +1,8 @@
-﻿using UnityEngine;
-using UnityEngine.EventSystems;
-
-public class ClickableArea : ScriptWithController
+﻿public class ClickableArea : ScriptWithController
 {
     public CursorType cursor = CursorType.Main;
 
-    protected bool IsInBox = false;
+    protected bool IsInBox;
 
    
 
