@@ -12,7 +12,9 @@ public class DialogActor : ScriptWithController
 
     public Sprite Avatar;
 
-    private SpeakPoint? SpeakerPoint;
+    private SpeakPoint SpeakerPoint;
+
+    private DialogActorController dialogController;
 
     private void OnMouseEnter()
     {
@@ -26,14 +28,16 @@ public class DialogActor : ScriptWithController
 
     private void OnMouseDown()
     {
-        if (SpeakerPoint.HasValue)
+        if (SpeakerPoint!= null)
 
-            Controller.PlayerController.MoveTo(SpeakerPoint.Value.StartPoint, () =>
+            Controller.PlayerController.MoveTo(SpeakerPoint.StartPoint, () =>
             {
-                QuestController.Instance.Speak(EntityID, Avatar);
+               // QuestController.Instance.Speak(EntityID, Avatar);
+                dialogController.Speak();
             });
         else
-            QuestController.Instance.Speak(EntityID, Avatar);
+            dialogController.Speak();
+            //QuestController.Instance.Speak(EntityID, Avatar);
     }
 
     internal void StartSpeak()
@@ -55,16 +59,19 @@ public class DialogActor : ScriptWithController
     {
         base.Start();
 
-        var aa = GameObject.FindObjectsOfType<SpeakPointScript>();
-
-
-        var comps = GameObject.FindObjectsOfType<SpeakPointScript>().SingleOrDefault(e => e.BelongsToActor == EntityID);
+        var comps = FindObjectsOfType<SpeakPointScript>().SingleOrDefault(e => e.BelongsToActor == EntityID);
         if (comps == null)
-            Debug.LogErrorFormat("No speak point defined for {0}! ", gameObject);
+            Debug.LogErrorFormat("No speak point defined for {0}! ", gameObject.name);
         else
         {
             SpeakerPoint = comps.GetPoint(Controller.CharacterZPosition);
             Destroy(comps);
         }
+
+        dialogController = GetComponent<DialogActorController>();
+        if(dialogController == null)
+            Debug.LogErrorFormat("No dialogActorComponent defined for {0}! ", gameObject.name);
+        else 
+            dialogController.SetAvatar(Avatar);
     }
 }

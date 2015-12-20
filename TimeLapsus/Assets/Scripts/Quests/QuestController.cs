@@ -32,13 +32,9 @@ public class QuestController
         currentQuest.CreateTestQuest();
     }
 
-    public void Speak(EnumActorID actor, Sprite avatar)
+    public Quest GetCurrent()
     {
-        currentQuest.CurrentState.Speak(actor, avatar);
-    }
-
-    public void Inspect(EnumObjectID obj)
-    {
+        return currentQuest;
 
     }
 }

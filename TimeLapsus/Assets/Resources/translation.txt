@@ -1,0 +1,7 @@
+﻿p1=Zdravím, vypadáte jako muž, co by mi mohl pomoci ?!
+p2=Promiňte, asi jsem špatně rozuměl ?
+p3=Aha, spíš jsem nerozuměl vůbec. Kdybych tak měl nějaký univerzální překladač...
+m1=#&@{~ˇ^ˇ^˘°^ˇ#&@#&{
+m2=&#{&@#{}}~ˇ^
+mayorNotDisturb=Stejně mu nerozumím, nebudu ho otravovat
+mayorBlueprints=Hele, tady jsou nějaké plány staveb.

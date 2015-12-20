@@ -64,11 +64,10 @@ public enum EnumObjectID
     Vase,
     Chip,
     Automat,
-    Grave,
+    GravePast,
+    GravePresent,
     Shovel,
-    Blueprint1,
-    Blueprint2,
-    BlueprintBridge,
+    BlueprintMayor,
     Ball,
     Window
 
