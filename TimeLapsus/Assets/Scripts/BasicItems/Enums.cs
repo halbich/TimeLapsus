@@ -70,4 +70,10 @@ public enum EnumObjectID
 
 }
 
+public enum EnumItemID
+{
+    Vase,
+    AncientVase,
+    Chip
+}
 

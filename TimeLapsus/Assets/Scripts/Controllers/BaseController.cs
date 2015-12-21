@@ -1,9 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using Assets.Scripts;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
 public class BaseController : MonoBehaviour
 {
+
+    public GameObject InventoryItemTemplate;
 
     public GameObject PlayerCharacter;
 
@@ -31,7 +34,6 @@ public class BaseController : MonoBehaviour
     // Use this for initialization
     private void Start()
     {
-
         Fader = GetComponentInChildren<SceneFadeInOut>();
         CursorManager = GetComponent<CursorManager>();
 
@@ -112,6 +114,12 @@ public class BaseController : MonoBehaviour
 
         Debug.LogWarning("nenalezen startovací objekt! " + level);
         return startPositions.First();
+    }
+
+    public void AddInventoryItem(EnumItemID toAdd)
+    {
+        Statics.Inventory.Add(Statics.AllInventoryItems[toAdd]);
+        FindObjectOfType<InventoryController>().UpdateInventory();
     }
 }
 

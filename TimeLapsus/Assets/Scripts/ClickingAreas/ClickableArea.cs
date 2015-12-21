@@ -4,23 +4,37 @@
 
     protected bool IsInBox;
 
-   
+    protected bool IsUI;
 
-    private void OnMouseEnter()
+    protected bool IsOverUI()
     {
-        //if (!EventSystem.current.IsPointerOverGameObject())
-        //    return;
-
-
-        IsInBox = true;
-        if (Controller && Controller.CursorManager)
-            Controller.CursorManager.SetCursor(cursor);
+        if (IsUI) return false;
+        return UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject();
     }
 
-    private void OnMouseExit()
+    protected void Update()
+    {
+        if (!(Controller && Controller.CursorManager)) return;
+            if (IsInBox && !IsOverUI())
+        {
+            Controller.CursorManager.SetCursor(cursor);
+        }
+        else
+        {
+               //Controller.CursorManager.SetCursor();
+        }
+    }
+
+    protected void OnMouseEnter()
+    {
+
+        IsInBox = true;
+    }
+
+    protected void OnMouseExit()
     {
         IsInBox = false;
-        if (Controller && Controller.CursorManager)
-            Controller.CursorManager.SetCursor();
+        if (!(Controller && Controller.CursorManager)) return;
+        Controller.CursorManager.SetCursor();
     }
 }

@@ -12,3 +12,4 @@ potterNotDisturb=Stejně mu nerozumím, nebudu ho otravovat. Ať si tu mutlá hl
 needMoneyToBuy=Prý mám vložit prachy
 inspectGravePresent=Pěkný hrob...
 inspectGravePast=Jen tam někoho šoupnout.
+inspectVase=Velmi pěkná váza.

@@ -25,7 +25,7 @@ public class ChangeScreen : ClickableArea
 
     private void OnMouseDown()
     {
-        if (IsInBox)
+        if (IsInBox && !IsOverUI())
         {
             Controller.PlayerController.MoveTo(Controller.GetEnterPosition(Level), () =>
             {

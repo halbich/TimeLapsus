@@ -12,16 +12,19 @@ public class InspectObject : ScriptWithController
 
     private void OnMouseEnter()
     {
+        if (!enabled) return;
         Controller.CursorManager.SetCursor(CursorType.Explore);
     }
 
     private void OnMouseExit()
     {
+        if (!enabled) return;
         Controller.CursorManager.SetCursor();
     }
 
     private void OnMouseDown()
     {
+        if (!enabled) return;
         if (ObjectPoint != null)
 
             Controller.PlayerController.MoveTo(ObjectPoint.StartPoint, () =>

@@ -9,8 +9,7 @@ public class HidingController : MonoBehaviour, IPointerDownHandler, IPointerEnte
     // Use this for initialization
     void Start()
     {
-        //animComponent = GetComponentInParent<Animator>();
-        //animComponent.SetTrigger("HideInventory");
+       animComponent = GetComponentInParent<Animator>();
     }
 
 
@@ -32,9 +31,9 @@ public class HidingController : MonoBehaviour, IPointerDownHandler, IPointerEnte
     public void OnPointerEnter(PointerEventData eventData)
     {
         Debug.Log("enter");
-
         if (eventData == null)
             return;
+       animComponent.SetTrigger("ShowInventory");
 
     }
 
@@ -44,6 +43,7 @@ public class HidingController : MonoBehaviour, IPointerDownHandler, IPointerEnte
 
         if (eventData == null)
             return;
+        animComponent.SetTrigger("HideInventory");
 
     }
 

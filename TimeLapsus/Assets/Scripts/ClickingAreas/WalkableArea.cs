@@ -9,7 +9,7 @@ public class WalkableArea : ClickableArea
 
     private void OnMouseDown()
     {
-        if (!IsInBox)
+        if (!IsInBox || IsOverUI())
             return;
 
         var v = Input.mousePosition;

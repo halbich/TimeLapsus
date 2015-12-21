@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Assets.Scripts;
 
 public static class Statics
 {
@@ -29,4 +30,15 @@ public static class Statics
     {
         return mapping.Where(e => e.Second == name).Select(e => e.First).First();
     }
+
+
+    public static Dictionary<string, int> GlobalVariables = new Dictionary<string, int>();
+
+    public static List<InventoryItem> Inventory = new List<InventoryItem>();
+
+    public static Dictionary<EnumItemID, InventoryItem> AllInventoryItems = new Dictionary<EnumItemID, InventoryItem>
+    {
+        {EnumItemID.Vase, new InventoryItem("Váza", "Velmi pěkná váza.", EnumItemID.Vase, "Vase")},
+        {EnumItemID.Chip, new InventoryItem("Bábelský čip", "Čip díky kterému lze rozumět libovolnému jazyku.", EnumItemID.Chip, "čip")}
+    };
 }

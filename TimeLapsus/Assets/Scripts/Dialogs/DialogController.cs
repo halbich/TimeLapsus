@@ -24,7 +24,7 @@ public class DialogController : MonoBehaviour
     private Text textObject;
     private Image avatarImage;
     private Image avatarCharacterImage;
-
+    private DialogueBlockerController dialogueBlocker;
     public static DialogController Instance
     {
         get { return _inst ?? (_inst = FindObjectOfType<DialogController>()); }
@@ -37,9 +37,10 @@ public class DialogController : MonoBehaviour
         panel = GameObject.FindGameObjectWithTag("DialogPanel");
         avatarImage = GameObject.FindGameObjectWithTag("DialogHead").GetComponent<Image>();
         avatarCharacterImage = GameObject.FindGameObjectWithTag("DialogHeadCharacter").GetComponent<Image>();
+        dialogueBlocker = GameObject.FindObjectOfType<DialogueBlockerController>();
         textObject = GetComponentInChildren<Text>();
         panel.SetActive(false);
-
+        dialogueBlocker.Deactivate();
         createDialogs();
     }
 
@@ -66,7 +67,7 @@ public class DialogController : MonoBehaviour
 
         if (hasError)
             yield break;
-
+        dialogueBlocker.Activate();
         panel.SetActive(true);
         foreach (var item in dialog.DialogLines)
         {
@@ -87,13 +88,13 @@ public class DialogController : MonoBehaviour
                 avatarImage.color = avatarImage.sprite != null ? SpeakingCharacterHeadColor : Transparent;
                 textObject.alignment = TextAnchor.UpperRight;
             }
-
-            yield return new WaitForSeconds(item.Duration);
+            yield return new WaitUntil(() => dialogueBlocker.clicked);
+            //yield return new WaitForSeconds(item.Duration);
             currentActor.EndSpeak();
         }
 
         panel.SetActive(false);
-
+        dialogueBlocker.Deactivate();
         if (endAction != null)
         {
             endAction();
@@ -143,7 +144,7 @@ public class DialogController : MonoBehaviour
 
 
         addSimpleDialogs("mayorNotDisturb", "mayorBlueprints", "questDefinition", "inspectShovel", "hasShovel",
-            "potterNotDisturb", "needMoneyToBuy", "inspectGravePresent", "inspectGravePast");
+            "potterNotDisturb", "needMoneyToBuy", "inspectGravePresent", "inspectGravePast", "inspectVase");
 
         //Debug.LogFormat("Dialogů: {0}", dialogs.Count);
     }
