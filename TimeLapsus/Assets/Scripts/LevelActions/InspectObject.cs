@@ -1,30 +1,24 @@
 ﻿using System.Linq;
 using UnityEngine;
 
-public class InspectObject : ScriptWithController
+public class InspectObject : ClickableArea
 {
+    public InspectObject()
+    {
+        cursor = CursorType.Explore;
+    }
     public EnumObjectID EntityID;
+
 
     private InspectPoint ObjectPoint;
 
     private InspectObjectController inspectController;
 
 
-    private void OnMouseEnter()
-    {
-        if (!enabled) return;
-        Controller.CursorManager.SetCursor(CursorType.Explore);
-    }
-
-    private void OnMouseExit()
-    {
-        if (!enabled) return;
-        Controller.CursorManager.SetCursor();
-    }
 
     private void OnMouseDown()
     {
-        if (!enabled) return;
+        if (!enabled || IsOverUI()) return;
         if (ObjectPoint != null)
 
             Controller.PlayerController.MoveTo(ObjectPoint.StartPoint, () =>

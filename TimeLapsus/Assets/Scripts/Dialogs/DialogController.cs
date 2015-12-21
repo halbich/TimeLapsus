@@ -89,6 +89,7 @@ public class DialogController : MonoBehaviour
                 textObject.alignment = TextAnchor.UpperRight;
             }
             yield return new WaitUntil(() => dialogueBlocker.clicked);
+            dialogueBlocker.clicked = false;
             //yield return new WaitForSeconds(item.Duration);
             currentActor.EndSpeak();
         }
@@ -143,8 +144,8 @@ public class DialogController : MonoBehaviour
 
 
 
-        addSimpleDialogs("mayorNotDisturb", "mayorBlueprints", "questDefinition", "inspectShovel", "hasShovel",
-            "potterNotDisturb", "needMoneyToBuy", "inspectGravePresent", "inspectGravePast", "inspectVase");
+        addSimpleDialogs("mayorNotDisturb", "mayorBlueprints", "questDefinition", "inspectShovel", "hasShovel", "inspectVaseInventory", "vaseBuryingDialog",
+            "potterNotDisturb", "needMoneyToBuy", "inspectGravePresent", "inspectGravePast", "inspectVase", "inspectPresentVaseBuried", "inspectPastVaseBuried");
 
         //Debug.LogFormat("Dialogů: {0}", dialogs.Count);
     }

@@ -22,12 +22,23 @@ public class CursorManager : MonoBehaviour
     {
         SetCursor();
     }
-   
+    bool cursorChangePossible = true;
+    public void FreezeCursorTexture()
+    {
+        cursorChangePossible = false;
+    }
+    public void UnfreezeCursorTexture()
+    {
+        cursorChangePossible = true;
+    }
     public void SetCursor(CursorType type = CursorType.Main)
     {
-        var texture = getTexture(type);
-        HotSpot = new Vector2(texture.width / 2f, texture.height / 2f);
-        Cursor.SetCursor(texture, HotSpot, CursorMode);
+        if (cursorChangePossible)
+        {
+            var texture = getTexture(type);
+            HotSpot = new Vector2(texture.width / 2f, texture.height / 2f);
+            Cursor.SetCursor(texture, HotSpot, CursorMode);
+        }
     }
 
     private Texture2D getTexture(CursorType type)
@@ -52,6 +63,8 @@ public class CursorManager : MonoBehaviour
                 return Explore;
             case CursorType.PickUp:
                 return PickUp;
+            case CursorType.None:
+                return null;
             default:
                 return Main;
         }

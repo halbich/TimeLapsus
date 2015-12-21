@@ -2,8 +2,12 @@
 using System.Collections;
 using System.Linq;
 
-public class PickableItem : ScriptWithController
+public class PickableItem : ClickableArea
 {
+    PickableItem()
+    {
+        cursor = CursorType.PickUp;
+    }
     public EnumObjectID EntityID;
 
     public string pickedUpItemVariable;
@@ -11,23 +15,12 @@ public class PickableItem : ScriptWithController
     public EnumItemID itemId;
     protected Quest currentQuest = QuestController.Instance.GetCurrent();
 
-    private PickablePoint ObjectPoint;
+    private ItemPoint ObjectPoint;
 
-    private void OnMouseEnter()
-    {
-        if (!enabled) return;
-        Controller.CursorManager.SetCursor(CursorType.PickUp);
-    }
-
-    private void OnMouseExit()
-    {
-        if (!enabled) return;
-        Controller.CursorManager.SetCursor();
-    }
 
     private void OnMouseDown()
     {
-        if (!enabled) return;
+        if (!enabled || IsOverUI()) return;
         if (ObjectPoint != null)
 
             Controller.PlayerController.MoveTo(ObjectPoint.StartPoint, () =>
@@ -56,7 +49,7 @@ public class PickableItem : ScriptWithController
             enabled = false;
         }
 
-        var comps = FindObjectsOfType<PickablePointScript>().SingleOrDefault(e => e.BelongsToObject == EntityID);
+        var comps = FindObjectsOfType<ItemPointScript>().SingleOrDefault(e => e.BelongsToObject == itemId);
         if (comps == null)
             Debug.LogErrorFormat("No object pickable point defined for {0}! ", gameObject.name);
         else

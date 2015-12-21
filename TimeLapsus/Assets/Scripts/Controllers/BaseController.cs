@@ -2,15 +2,19 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using System;
 
 public class BaseController : MonoBehaviour
 {
 
     public GameObject InventoryItemTemplate;
 
+
     public GameObject PlayerCharacter;
 
     public PawnController PlayerController;
+
+    public DescriptionController DescriptionController;
 
     public CursorManager CursorManager;
 
@@ -39,6 +43,7 @@ public class BaseController : MonoBehaviour
 
 
         PlayerController = PlayerCharacter.GetComponent<PawnController>();
+        DescriptionController = FindObjectOfType<DescriptionController>();
         if (PlayerController == null)
         {
             Debug.LogError("No controller");
@@ -119,6 +124,11 @@ public class BaseController : MonoBehaviour
     public void AddInventoryItem(EnumItemID toAdd)
     {
         Statics.Inventory.Add(Statics.AllInventoryItems[toAdd]);
+        FindObjectOfType<InventoryController>().UpdateInventory();
+    }
+    internal void RemoveInventoryItem(EnumItemID itemID)
+    {
+        Statics.Inventory.Remove(Statics.AllInventoryItems[itemID]);
         FindObjectOfType<InventoryController>().UpdateInventory();
     }
 }

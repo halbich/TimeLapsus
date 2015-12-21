@@ -6,6 +6,12 @@
     protected override string getDialog()
     {
 
+        bool buried;
+        if (currentQuest.TryGetValue("buriedVase", out buried) && buried)
+        {
+            return "inspectPresentVaseBuried";
+        }
+
 
         bool hasShovel;
         if (currentQuest.TryGetValue(KeyName, out hasShovel) && hasShovel)

@@ -4,6 +4,8 @@
 
     protected bool IsInBox;
 
+    public string Name;
+
     protected bool IsUI;
 
     protected bool IsOverUI()
@@ -15,9 +17,10 @@
     protected void Update()
     {
         if (!(Controller && Controller.CursorManager)) return;
-            if (IsInBox && !IsOverUI())
+            if (IsInBox && !IsOverUI() && enabled)
         {
             Controller.CursorManager.SetCursor(cursor);
+            Controller.DescriptionController.SetDescription(Name, false);
         }
         else
         {
@@ -36,5 +39,6 @@
         IsInBox = false;
         if (!(Controller && Controller.CursorManager)) return;
         Controller.CursorManager.SetCursor();
+        Controller.DescriptionController.SetDescription("", false);
     }
 }

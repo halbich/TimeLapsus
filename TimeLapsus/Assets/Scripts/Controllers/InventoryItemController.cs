@@ -5,9 +5,10 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System;
 
-public class InventoryItemController : ClickableArea, IPointerDownHandler, IPointerEnterHandler, IPointerExitHandler
+public class InventoryItemController : ClickableArea, IPointerDownHandler, IPointerUpHandler, IPointerEnterHandler, IPointerExitHandler, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
-
+    public static InventoryItemController DraggedObject;
+    public ItemUsableArea DraggedOver;
     InventoryItemController()
     {
         this.cursor = CursorType.Explore;
@@ -21,6 +22,13 @@ public class InventoryItemController : ClickableArea, IPointerDownHandler, IPoin
     Sprite sprite;
     InventoryItem itemInfo;
     float oldXOffset = 0;
+    float clickBeginTime;
+    Vector3 oldLocalPosition;
+    Quaternion oldLocalRotation;
+    Vector3 oldLocalScale;
+    Transform transformParent;
+
+
     public void SetPosition(int itemIndex)
     {
         RectTransform rectTransform = GetComponent<RectTransform>();
@@ -36,6 +44,7 @@ public class InventoryItemController : ClickableArea, IPointerDownHandler, IPoin
         {
             GetComponent<Image>().sprite = itemInfo.ItemSprite;
             sprite = itemInfo.ItemSprite;
+            Name = itemInfo.ItemName;
         }
     }
     // Use this for initialization
@@ -47,13 +56,6 @@ public class InventoryItemController : ClickableArea, IPointerDownHandler, IPoin
     protected void Update () {
         base.Update();
 	}
-
-    public void OnPointerDown(PointerEventData eventData)
-    {
-        if (eventData == null)
-            return;
-
-    }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
@@ -69,5 +71,71 @@ public class InventoryItemController : ClickableArea, IPointerDownHandler, IPoin
             return;
 
         base.OnMouseExit();
+    }
+
+    public void OnDrag(PointerEventData eventData)
+    {
+        if (eventData == null)
+            return;
+        transform.position = Input.mousePosition;
+    }
+
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+        DraggedObject = this;
+        if (eventData == null)
+            return;
+        oldLocalPosition = transform.localPosition;
+        oldLocalRotation = transform.localRotation;
+        oldLocalScale = transform.localScale;
+        transformParent = transform.parent;
+        transform.SetParent(GetComponentInParent<Canvas>().transform, true);
+        Controller.CursorManager.SetCursor();
+        Controller.CursorManager.FreezeCursorTexture();
+        Controller.DescriptionController.SetDescription("", false);
+        Controller.DescriptionController.FreezeForItemUse();
+    }
+
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        Controller.CursorManager.UnfreezeCursorTexture();
+        Controller.DescriptionController.UnfreezeForItemUse();
+        Controller.DescriptionController.SetDescription("", false);
+        if (eventData == null)
+            return;
+        transform.parent = transformParent;
+        transform.localPosition = oldLocalPosition;
+        transform.localRotation = oldLocalRotation;
+        transform.localScale = oldLocalScale;
+
+        RaycastHit hit;
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out hit))
+        {
+            hit.collider.GetComponent<ItemUsableArea>().Use(ItemId);
+        }
+        if (DraggedOver != null) DraggedOver.Use(ItemId);
+        DraggedObject = null;
+        DraggedOver = null;
+
+    }
+    public void OnPointerUp(PointerEventData eventData)
+    {
+        if (eventData == null)
+            return;
+        if (Time.time - clickBeginTime < 0.25f)
+        {
+            var di = DialogController.Instance;
+            DialogController.Instance.ShowDialog(di.GetDialog(itemInfo.ItemDescription));
+        }
+        clickBeginTime = 0;
+    }
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        if (eventData == null)
+            return;
+        clickBeginTime = Time.time;
+
     }
 }

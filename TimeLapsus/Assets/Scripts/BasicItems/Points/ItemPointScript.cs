@@ -1,29 +1,29 @@
 ﻿using UnityEngine;
 
-public class PickablePointScript : MonoBehaviour
+public class ItemPointScript : MonoBehaviour
 {
 
-    public EnumObjectID BelongsToObject;
+    public EnumItemID BelongsToObject;
 
     public Facing Direction;
 
-    public PickablePoint GetPoint(float CharacterZPosition)
+    public ItemPoint GetPoint(float CharacterZPosition)
     {
         var point = transform.position;
         point.z = CharacterZPosition;
-        return new PickablePoint(BelongsToObject, point, Direction);
+        return new ItemPoint(BelongsToObject, point, Direction);
     }
 
 
 
 }
 
-public class PickablePoint : DirectionPoint
+public class ItemPoint : DirectionPoint
 {
 
-    public readonly EnumObjectID BelongsToObject;
+    public readonly EnumItemID BelongsToObject;
 
-    public static bool operator ==(PickablePoint a, PickablePoint b)
+    public static bool operator ==(ItemPoint a, ItemPoint b)
     {
         if (ReferenceEquals(a, b))
         {
@@ -40,12 +40,12 @@ public class PickablePoint : DirectionPoint
         return a.BelongsToObject == b.BelongsToObject && ArePointEqual(a, b);
     }
 
-    public static bool operator !=(PickablePoint a, PickablePoint b)
+    public static bool operator !=(ItemPoint a, ItemPoint b)
     {
         return !(a == b);
     }
 
-    public PickablePoint(EnumObjectID belongsToObject, Vector3 startPoint, Facing direction)
+    public ItemPoint(EnumItemID belongsToObject, Vector3 startPoint, Facing direction)
         : base(startPoint, direction)
     {
         BelongsToObject = belongsToObject;

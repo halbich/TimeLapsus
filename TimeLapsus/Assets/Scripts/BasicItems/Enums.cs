@@ -39,7 +39,8 @@ public enum CursorType
     GoToLocationN,
     GoToLocationE,
     GoToLocationS,
-    GoToLocationW
+    GoToLocationW,
+    None
 }
 
 public enum EnumActorID

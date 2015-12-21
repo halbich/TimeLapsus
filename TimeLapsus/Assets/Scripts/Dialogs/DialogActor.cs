@@ -6,25 +6,19 @@ public class DialogActor : TalkingActorWithController
 
     public bool ShowSpeakIcon = true;
 
-
+    DialogActor()
+    {
+        cursor = CursorType.Speak;
+    }
 
 
 
     private SpeakPoint SpeakerPoint;
-
-
-    private void OnMouseEnter()
-    {
-        Controller.CursorManager.SetCursor(CursorType.Speak);
-    }
-
-    private void OnMouseExit()
-    {
-        Controller.CursorManager.SetCursor();
-    }
+    
 
     private void OnMouseDown()
     {
+        if (IsOverUI()) return;
         if (SpeakerPoint != null)
 
             Controller.PlayerController.MoveTo(SpeakerPoint.StartPoint, Speak);

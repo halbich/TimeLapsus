@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class TalkingActor : ScriptWithController
+public class TalkingActor : ClickableArea
 {
     public EnumActorID EntityID;
   
