@@ -1,6 +1,5 @@
 ﻿public class PotterSpeakController : DialogActorController
 {
-
     private const string HasSpoken = "hasSpokenWithPotter";
 
     protected override string getDialog()
@@ -12,7 +11,6 @@
         }
         return "potterFirst";
     }
-
 
     protected override void endDialogAction()
     {

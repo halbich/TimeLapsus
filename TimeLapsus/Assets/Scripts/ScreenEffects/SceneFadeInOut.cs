@@ -4,58 +4,53 @@ public class SceneFadeInOut : MonoBehaviour
 {
     public float fadeSpeed = 1.5f;          // Speed that the screen fades to and from black.
 
-
     public FadeInOutState CurrentState;
     public bool FadeOutAtStart;
 
-
-    void Start()
+    private void Start()
     {
         if (FadeOutAtStart)
         {
             GetComponent<GUITexture>().color = Color.black;
         }
-
     }
 
-    void Awake()
+    private void Awake()
     {
         // Set the texture so that it is the the size of the screen and covers it.
         GetComponent<GUITexture>().pixelInset = new Rect(0f, 0f, Screen.width, Screen.height);
     }
 
-
-    void Update()
+    private void Update()
     {
         switch (CurrentState)
         {
             case FadeInOutState.None:
                 return;
+
             case FadeInOutState.FadeIn:
                 StartScene();
                 break;
+
             default:
                 EndScene();
                 break;
         }
     }
 
-
-    void FadeToClear()
+    private void FadeToClear()
     {
         // Lerp the colour of the texture between itself and transparent.
         GetComponent<GUITexture>().color = Color.Lerp(GetComponent<GUITexture>().color, Color.clear, fadeSpeed * Time.deltaTime);
     }
 
-
-    void FadeToBlack()
+    private void FadeToBlack()
     {
         // Lerp the colour of the texture between itself and black.
         GetComponent<GUITexture>().color = Color.Lerp(GetComponent<GUITexture>().color, Color.black, fadeSpeed * Time.deltaTime);
     }
 
-
-    void StartScene()
+    private void StartScene()
     {
         // Fade the texture to clear.
         FadeToClear();
@@ -70,7 +65,6 @@ public class SceneFadeInOut : MonoBehaviour
 
         CurrentState = FadeInOutState.None;
     }
-
 
     public void EndScene()
     {

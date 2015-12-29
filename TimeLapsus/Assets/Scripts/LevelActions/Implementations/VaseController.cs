@@ -1,16 +1,13 @@
 ﻿public class VaseController : InspectObjectController
 {
-    public VaseController()
-    {
-    }
     private const string KeyName = "inspectedVase";
 
-    void Start()
+    private void Start()
     {
         bool inspectedVase;
         if (currentQuest.TryGetValue(KeyName, out inspectedVase) && inspectedVase)
         {
-            this.enabled = false;
+            enabled = false;
         }
     }
 

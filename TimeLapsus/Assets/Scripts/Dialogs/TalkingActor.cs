@@ -3,8 +3,6 @@
 public class TalkingActor : ClickableArea
 {
     public EnumActorID EntityID;
-  
-
 
     internal void StartSpeak()
     {
@@ -19,6 +17,4 @@ public class TalkingActor : ClickableArea
         if (animator != null)
             animator.SetTrigger("SpeakEnd");
     }
-
-
 }

@@ -1,8 +1,8 @@
 ﻿using System;
 
 [Serializable]
-public class DialogLine  {
-
+public class DialogLine
+{
     public EnumActorID ActorID;
 
     public string Text;

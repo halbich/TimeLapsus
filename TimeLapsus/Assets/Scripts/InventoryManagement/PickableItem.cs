@@ -1,13 +1,13 @@
-﻿using UnityEngine;
-using System.Collections;
-using System.Linq;
+﻿using System.Linq;
+using UnityEngine;
 
 public class PickableItem : ClickableArea
 {
-    PickableItem()
+    private PickableItem()
     {
         cursor = CursorType.PickUp;
     }
+
     public EnumObjectID EntityID;
 
     public string pickedUpItemVariable;
@@ -16,7 +16,6 @@ public class PickableItem : ClickableArea
     protected Quest currentQuest = QuestController.Instance.GetCurrent();
 
     private ItemPoint ObjectPoint;
-
 
     private void OnMouseDown()
     {
@@ -58,6 +57,7 @@ public class PickableItem : ClickableArea
             Destroy(comps);
         }
     }
+
     public void PickUp()
     {
         Controller.AddInventoryItem(itemId);

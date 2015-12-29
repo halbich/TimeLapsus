@@ -3,18 +3,14 @@ using UnityEngine;
 
 public class DialogActor : TalkingActorWithController
 {
-
     public bool ShowSpeakIcon = true;
 
-    DialogActor()
+    private DialogActor()
     {
         cursor = CursorType.Speak;
     }
 
-
-
     private SpeakPoint SpeakerPoint;
-    
 
     private void OnMouseDown()
     {
@@ -38,6 +34,5 @@ public class DialogActor : TalkingActorWithController
             SpeakerPoint = comps.GetPoint(Controller.CharacterZPosition);
             Destroy(comps);
         }
-
     }
 }

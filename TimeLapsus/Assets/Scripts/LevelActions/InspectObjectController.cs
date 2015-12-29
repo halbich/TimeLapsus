@@ -2,8 +2,7 @@
 
 public abstract class InspectObjectController : MonoBehaviour
 {
-
-    protected Quest currentQuest =  QuestController.Instance.GetCurrent();
+    protected Quest currentQuest = QuestController.Instance.GetCurrent();
 
     public void Inspect()
     {
@@ -12,13 +11,11 @@ public abstract class InspectObjectController : MonoBehaviour
 
         if (di != null)
             di.ShowDialog(dialog, null, endDialogAction);
-
     }
 
     protected abstract string getDialog();
 
     protected virtual void endDialogAction()
     {
-
     }
 }

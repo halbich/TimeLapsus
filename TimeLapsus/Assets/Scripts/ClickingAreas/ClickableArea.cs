@@ -1,6 +1,6 @@
 ﻿public class ClickableArea : ScriptWithController
 {
-    public CursorType cursor = CursorType.Main;
+    protected CursorType cursor = CursorType.Main;
 
     protected bool IsInBox;
 
@@ -10,27 +10,21 @@
 
     protected bool IsOverUI()
     {
-        if (IsUI) return false;
-        return UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject();
+        return !IsUI && UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject();
     }
 
     protected void Update()
     {
         if (!(Controller && Controller.CursorManager)) return;
-            if (IsInBox && !IsOverUI() && enabled)
-        {
-            Controller.CursorManager.SetCursor(cursor);
-            Controller.DescriptionController.SetDescription(Name, false);
-        }
-        else
-        {
-               //Controller.CursorManager.SetCursor();
-        }
+        if (!IsInBox || IsOverUI() || !enabled)
+            return;
+
+        Controller.CursorManager.SetCursor(cursor);
+        Controller.DescriptionController.SetDescription(Name, false);
     }
 
     protected void OnMouseEnter()
     {
-
         IsInBox = true;
     }
 

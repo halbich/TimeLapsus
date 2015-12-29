@@ -31,7 +31,6 @@ public static class Statics
         return mapping.Where(e => e.Second == name).Select(e => e.First).First();
     }
 
-
     public static Dictionary<string, int> GlobalVariables = new Dictionary<string, int>();
 
     public static List<InventoryItem> Inventory = new List<InventoryItem>();

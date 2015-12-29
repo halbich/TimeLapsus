@@ -4,7 +4,4 @@
     {
         cursor = CursorType.GoToLocationS;
     }
-
-
-
 }

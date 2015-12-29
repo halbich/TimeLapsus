@@ -2,7 +2,6 @@
 
 public class ItemPointScript : MonoBehaviour
 {
-
     public EnumItemID BelongsToObject;
 
     public Facing Direction;
@@ -13,14 +12,10 @@ public class ItemPointScript : MonoBehaviour
         point.z = CharacterZPosition;
         return new ItemPoint(BelongsToObject, point, Direction);
     }
-
-
-
 }
 
 public class ItemPoint : DirectionPoint
 {
-
     public readonly EnumItemID BelongsToObject;
 
     public static bool operator ==(ItemPoint a, ItemPoint b)
@@ -61,4 +56,3 @@ public class ItemPoint : DirectionPoint
         return base.Equals(obj);
     }
 }
-

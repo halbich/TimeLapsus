@@ -2,7 +2,6 @@
 
 public abstract class DialogActorController : MonoBehaviour
 {
-
     protected Quest currentQuest = QuestController.Instance.GetCurrent();
 
     private Sprite avatar;
@@ -19,13 +18,11 @@ public abstract class DialogActorController : MonoBehaviour
 
         if (di != null)
             di.ShowDialog(dialog, avatar, endDialogAction);
-
     }
 
     protected abstract string getDialog();
 
     protected virtual void endDialogAction()
     {
-
     }
 }

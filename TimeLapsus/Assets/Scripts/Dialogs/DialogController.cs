@@ -25,6 +25,7 @@ public class DialogController : MonoBehaviour
     private Image avatarImage;
     private Image avatarCharacterImage;
     private DialogueBlockerController dialogueBlocker;
+
     public static DialogController Instance
     {
         get { return _inst ?? (_inst = FindObjectOfType<DialogController>()); }
@@ -37,7 +38,7 @@ public class DialogController : MonoBehaviour
         panel = GameObject.FindGameObjectWithTag("DialogPanel");
         avatarImage = GameObject.FindGameObjectWithTag("DialogHead").GetComponent<Image>();
         avatarCharacterImage = GameObject.FindGameObjectWithTag("DialogHeadCharacter").GetComponent<Image>();
-        dialogueBlocker = GameObject.FindObjectOfType<DialogueBlockerController>();
+        dialogueBlocker = FindObjectOfType<DialogueBlockerController>();
         textObject = GetComponentInChildren<Text>();
         panel.SetActive(false);
         dialogueBlocker.Deactivate();
@@ -141,8 +142,6 @@ public class DialogController : MonoBehaviour
                 new DialogLine(EnumActorID.MainCharacter, ti.GetText("p3"))
             }
         });
-
-
 
         addSimpleDialogs("mayorNotDisturb", "mayorBlueprints", "questDefinition", "inspectShovel", "hasShovel", "inspectVaseInventory", "vaseBuryingDialog",
             "potterNotDisturb", "needMoneyToBuy", "inspectGravePresent", "inspectGravePast", "inspectVase", "inspectPresentVaseBuried", "inspectPastVaseBuried");

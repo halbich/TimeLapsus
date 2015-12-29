@@ -17,9 +17,6 @@ public class WalkableArea : ClickableArea
 
         Controller.PlayerController.MoveTo(point, () =>
         {
-
         });
     }
-
-   
 }

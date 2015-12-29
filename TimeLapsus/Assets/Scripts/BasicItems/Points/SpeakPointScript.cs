@@ -2,27 +2,22 @@
 
 public class SpeakPointScript : MonoBehaviour
 {
-
     public EnumActorID BelongsToActor;
 
     public Facing Direction;
 
-    public SpeakPoint GetPoint( float CharacterZPosition)
+    public SpeakPoint GetPoint(float CharacterZPosition)
     {
         var point = transform.position;
         point.z = CharacterZPosition;
         return new SpeakPoint(BelongsToActor, point, Direction);
     }
-
-    
-
 }
 
 public class SpeakPoint : DirectionPoint
 {
-   
     public readonly EnumActorID BelongsToActor;
-  
+
     public static bool operator ==(SpeakPoint a, SpeakPoint b)
     {
         if (ReferenceEquals(a, b))
@@ -45,7 +40,8 @@ public class SpeakPoint : DirectionPoint
         return !(a == b);
     }
 
-    public SpeakPoint(EnumActorID belongsToActor, Vector3 startPoint, Facing direction) : base(startPoint, direction)
+    public SpeakPoint(EnumActorID belongsToActor, Vector3 startPoint, Facing direction)
+        : base(startPoint, direction)
     {
         BelongsToActor = belongsToActor;
     }
@@ -59,7 +55,4 @@ public class SpeakPoint : DirectionPoint
     {
         return base.Equals(obj);
     }
-    
-
 }
-

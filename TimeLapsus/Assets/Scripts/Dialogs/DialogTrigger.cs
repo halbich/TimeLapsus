@@ -7,27 +7,23 @@ public class DialogTrigger : MonoBehaviour
     public float AfterTriggeredWaitPause = 2f;
     private bool dialogTriggered;
 
-    void Start()
+    private void Start()
     {
         dialogController = GetComponent<DialogActorController>();
         if (dialogController == null)
             Debug.LogErrorFormat("No dialogActorComponent defined for {0}! ", gameObject.name);
-
     }
 
-    void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (!dialogTriggered)
             StartCoroutine(trigger());
     }
 
-    IEnumerator trigger()
+    private IEnumerator trigger()
     {
         dialogTriggered = true;
         yield return new WaitForSeconds(AfterTriggeredWaitPause);
         dialogController.Speak();
     }
-
-
-
 }

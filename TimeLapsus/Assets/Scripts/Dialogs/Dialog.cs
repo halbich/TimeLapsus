@@ -5,7 +5,6 @@ using UnityEngine;
 [Serializable]
 public class Dialog
 {
-
     public Dialog()
     {
         DialogLines = new List<DialogLine>();

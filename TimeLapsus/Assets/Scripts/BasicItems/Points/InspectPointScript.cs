@@ -2,7 +2,6 @@
 
 public class InspectPointScript : MonoBehaviour
 {
-
     public EnumObjectID BelongsToObject;
 
     public Facing Direction;
@@ -13,14 +12,10 @@ public class InspectPointScript : MonoBehaviour
         point.z = CharacterZPosition;
         return new InspectPoint(BelongsToObject, point, Direction);
     }
-
-
-
 }
 
 public class InspectPoint : DirectionPoint
 {
-
     public readonly EnumObjectID BelongsToObject;
 
     public static bool operator ==(InspectPoint a, InspectPoint b)
@@ -61,4 +56,3 @@ public class InspectPoint : DirectionPoint
         return base.Equals(obj);
     }
 }
-

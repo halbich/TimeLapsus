@@ -7,14 +7,12 @@ public class InspectObject : ClickableArea
     {
         cursor = CursorType.Explore;
     }
-    public EnumObjectID EntityID;
 
+    public EnumObjectID EntityID;
 
     private InspectPoint ObjectPoint;
 
     private InspectObjectController inspectController;
-
-
 
     private void OnMouseDown()
     {
@@ -34,7 +32,6 @@ public class InspectObject : ClickableArea
     protected override void Start()
     {
         base.Start();
-
 
         var comps = FindObjectsOfType<InspectPointScript>().SingleOrDefault(e => e.BelongsToObject == EntityID);
         if (comps == null)

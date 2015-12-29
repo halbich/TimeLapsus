@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class TextController
 {
-
     private readonly Dictionary<string, string> keys;
     private readonly bool isLoaded;
 
     private static TextController _inst;
+
     public static TextController Instance
     {
         get
@@ -20,7 +20,6 @@ public class TextController
 
             return _inst;
         }
-
     }
 
     private TextController()
@@ -32,8 +31,6 @@ public class TextController
 
         Debug.LogFormat("Načteno: {0}", keys.Count);
     }
-
-
 
     private bool load(string text)
     {
@@ -78,17 +75,15 @@ public class TextController
 
     public string GetText(string key, bool checkPresence = true)
     {
-        if(!isLoaded)
+        if (!isLoaded)
             throw new InvalidOperationException("translation wasn't loaded!");
 
         string res;
         var present = keys.TryGetValue(key, out res);
 
-        if(checkPresence && !present)
+        if (checkPresence && !present)
             Debug.LogErrorFormat("Zadaný klíč >{0}< nebyl v překladech nalezen!", key);
 
         return res;
-
     }
-
 }

@@ -12,7 +12,6 @@ public class DirectionPoint
         Direction = direction;
     }
 
-
     public static bool operator ==(DirectionPoint a, DirectionPoint b)
     {
         return ArePointEqual(a, b);
@@ -30,7 +29,6 @@ public class DirectionPoint
         {
             return false;
         }
-
 
         // Return true if the fields match:
         return a.StartPoint == b.StartPoint && a.Direction == b.Direction;

@@ -4,7 +4,6 @@
 
     protected override string getDialog()
     {
-
         bool buried;
         if (currentQuest.TryGetValue("buriedVase", out buried) && buried)
         {
@@ -21,6 +20,5 @@
 
     protected override void endDialogAction()
     {
-
     }
 }

@@ -31,7 +31,6 @@ public class Quest
             StoredValues.Add(key, value);
     }
 
-
     internal void CreateTestQuest()
     {
         //var firstState = new QuestState();
@@ -57,6 +56,4 @@ public class Quest
         //});
         //QuestStates.Enqueue(firstState);
     }
-
-
 }

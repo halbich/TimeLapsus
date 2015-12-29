@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Assets.Scripts.InventoryManagement
+﻿namespace Assets.Scripts.InventoryManagement
 {
-    class UseVaseOnGravePastscript : ItemUseOnScript
+    internal class UseVaseOnGravePastscript : ItemUseOnScript
     {
         public override void Use()
         {

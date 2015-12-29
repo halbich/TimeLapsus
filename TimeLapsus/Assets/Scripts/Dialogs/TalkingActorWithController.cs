@@ -5,7 +5,6 @@ public class TalkingActorWithController : TalkingActor
     private DialogActorController dialogController;
     public Sprite Avatar;
 
-
     protected override void Start()
     {
         base.Start();
@@ -21,6 +20,4 @@ public class TalkingActorWithController : TalkingActor
     {
         dialogController.Speak();
     }
-
-
 }

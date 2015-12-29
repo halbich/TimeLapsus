@@ -15,11 +15,8 @@ public class ChangeScreen : ClickableArea
             musicController.QuietDown(1.5f);
         }
 
-
         StartCoroutine(ChangeCor(level));
-
     }
-
 
     public EnumLevel Level;
 
@@ -31,12 +28,10 @@ public class ChangeScreen : ClickableArea
             {
                 Change(Level);
             });
-
         }
     }
 
-
-    IEnumerator ChangeCor(EnumLevel level)
+    private IEnumerator ChangeCor(EnumLevel level)
     {
         if (Controller.Fader != null)
         {

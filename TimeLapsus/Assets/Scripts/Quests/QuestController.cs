@@ -1,7 +1,7 @@
 ﻿public class QuestController
 {
-
     private static QuestController _inst;
+
     public static QuestController Instance
     {
         get { return _inst ?? (_inst = new QuestController()); }
@@ -14,8 +14,6 @@
         createQuest();
     }
 
-
-
     private void createQuest()
     {
         currentQuest = new Quest();
@@ -25,6 +23,5 @@
     public Quest GetCurrent()
     {
         return currentQuest;
-
     }
 }

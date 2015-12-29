@@ -1,6 +1,5 @@
 ﻿public class MayorSpeakController : DialogActorController
 {
-
     private const string HasSpoken = "hasSpokenWithMayor";
 
     protected override string getDialog()
@@ -12,7 +11,6 @@
         }
         return "mayorFirst";
     }
-
 
     protected override void endDialogAction()
     {

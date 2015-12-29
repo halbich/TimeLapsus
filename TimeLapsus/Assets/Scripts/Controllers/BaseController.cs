@@ -1,15 +1,11 @@
-﻿using Assets.Scripts;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using System;
 using UnityEngine.SceneManagement;
 
 public class BaseController : MonoBehaviour
 {
-
     public GameObject InventoryItemTemplate;
-
 
     public GameObject PlayerCharacter;
 
@@ -22,9 +18,6 @@ public class BaseController : MonoBehaviour
     public float CharacterZPosition = -0.1f;
 
     private static EnumLevel previousLoadedLevel;
-
-
-
 
     public EnumLevel PreviousLoadedLevel
     {
@@ -41,7 +34,6 @@ public class BaseController : MonoBehaviour
     {
         Fader = GetComponentInChildren<SceneFadeInOut>();
         CursorManager = GetComponent<CursorManager>();
-
 
         PlayerController = PlayerCharacter.GetComponent<PawnController>();
         DescriptionController = FindObjectOfType<DescriptionController>();
@@ -62,17 +54,14 @@ public class BaseController : MonoBehaviour
         if (PlayerCharacter == null)
             return;
 
-
         var startObjects = GameObject.FindGameObjectsWithTag("Respawn").ToList();
 
-        startPositions = startObjects.Select(e => e.GetComponent<RespawnPointScript>().GetPoint( CharacterZPosition)).ToList();
+        startPositions = startObjects.Select(e => e.GetComponent<RespawnPointScript>().GetPoint(CharacterZPosition)).ToList();
 
         foreach (var startObject in startObjects)
         {
             Destroy(startObject);
         }
-
-
 
         var bckgrnd = GameObject.FindGameObjectWithTag("Background");
         if (bckgrnd != null)
@@ -87,9 +76,7 @@ public class BaseController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Application.Quit();
-
         }
-
     }
 
     public void ChangeScene(EnumLevel newLevel)
@@ -97,11 +84,6 @@ public class BaseController : MonoBehaviour
         previousLoadedLevel = Statics.GetFromName(SceneManager.GetActiveScene().name);
         SceneManager.LoadScene(newLevel.GetName());
     }
-
-
-
-
-
 
     public Vector3 GetEnterPosition(EnumLevel level)
     {
@@ -127,11 +109,10 @@ public class BaseController : MonoBehaviour
         Statics.Inventory.Add(Statics.AllInventoryItems[toAdd]);
         FindObjectOfType<InventoryController>().UpdateInventory();
     }
+
     internal void RemoveInventoryItem(EnumItemID itemID)
     {
         Statics.Inventory.Remove(Statics.AllInventoryItems[itemID]);
         FindObjectOfType<InventoryController>().UpdateInventory();
     }
 }
-
-

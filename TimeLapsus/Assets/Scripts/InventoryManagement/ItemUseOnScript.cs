@@ -1,5 +1,5 @@
 ﻿using System.Linq;
-using UnityEngine;
+
 public class ItemUseOnScript : ScriptWithController
 {
     public EnumItemID itemID;
@@ -9,18 +9,18 @@ public class ItemUseOnScript : ScriptWithController
 
     public virtual void Use()
     {
-       if (RemoveOnUse)
+        if (RemoveOnUse)
             Controller.RemoveInventoryItem(itemID);
     }
+
     protected override void Start()
     {
         base.Start();
         var comps = FindObjectsOfType<ItemPointScript>().SingleOrDefault(e => e.BelongsToObject == itemID);
-        if (comps != null)
-        {
-            ObjectPoint = comps.GetPoint(Controller.CharacterZPosition);
-            Destroy(comps);
-        }
-
+        if (comps == null)
+            return;
+        
+        ObjectPoint = comps.GetPoint(Controller.CharacterZPosition);
+        Destroy(comps);
     }
 }

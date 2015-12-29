@@ -52,8 +52,6 @@ public enum EnumActorID
     Potter,
     Lara,
     Child
-
-
 }
 
 public enum EnumObjectID
@@ -68,7 +66,6 @@ public enum EnumObjectID
     BlueprintMayor,
     Ball,
     Window
-
 }
 
 public enum EnumItemID
@@ -77,4 +74,3 @@ public enum EnumItemID
     AncientVase,
     Chip
 }
-

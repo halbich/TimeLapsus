@@ -12,7 +12,5 @@ public class ScriptWithController : MonoBehaviour
 
     protected virtual void Start()
     {
-
-
     }
 }

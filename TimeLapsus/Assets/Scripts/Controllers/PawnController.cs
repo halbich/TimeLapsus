@@ -2,7 +2,6 @@
 
 public class PawnController : MonoBehaviour
 {
-
     public delegate void ContinueWith();
 
     public float DestinationDelta = 0.1f;
@@ -19,9 +18,8 @@ public class PawnController : MonoBehaviour
     private SpriteRenderer sprite;
     private Animator animator;
 
-
     // Use this for initialization
-    void Start()
+    private void Start()
     {
         sprite = GetComponentInChildren<SpriteRenderer>();
         if (afterLoadFacing.HasValue)
@@ -34,7 +32,7 @@ public class PawnController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (!isMoving)
             return;
@@ -84,7 +82,6 @@ public class PawnController : MonoBehaviour
             afterLoadFacing = newDirection;
             return;
         }
-
 
         if (direction == newDirection)
             return;

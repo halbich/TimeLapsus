@@ -4,8 +4,6 @@
 
     protected override string getDialog()
     {
-
-
         bool hasShovel;
         if (currentQuest.TryGetValue(KeyName, out hasShovel) && hasShovel)
         {
@@ -17,6 +15,6 @@
     protected override void endDialogAction()
     {
         currentQuest.SetValue(KeyName, true);
-       Destroy(gameObject);
+        Destroy(gameObject);
     }
 }

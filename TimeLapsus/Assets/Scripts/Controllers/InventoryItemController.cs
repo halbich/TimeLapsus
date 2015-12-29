@@ -1,68 +1,66 @@
-﻿using UnityEngine;
-using System.Collections;
-using Assets.Scripts;
-using UnityEngine.UI;
+﻿using Assets.Scripts;
+using UnityEngine;
 using UnityEngine.EventSystems;
-using System;
+using UnityEngine.UI;
 
 public class InventoryItemController : ClickableArea, IPointerDownHandler, IPointerUpHandler, IPointerEnterHandler, IPointerExitHandler, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
     public static InventoryItemController DraggedObject;
     public ItemUsableArea DraggedOver;
-    InventoryItemController()
+
+    private InventoryItemController()
     {
-        this.cursor = CursorType.Explore;
+        cursor = CursorType.Explore;
         IsUI = true;
     }
+
     public EnumItemID ItemId;
     public const float itemSpace = 10;
     public const float descriptionHeight = 0.5f;
-    float xOffset;
-    float yOffset;
-    Sprite sprite;
-    InventoryItem itemInfo;
-    float oldXOffset = 0;
-    float clickBeginTime;
-    Vector3 oldLocalPosition;
-    Quaternion oldLocalRotation;
-    Vector3 oldLocalScale;
-    Transform transformParent;
-
+    private float xOffset;
+    private float yOffset;
+    private Sprite sprite;
+    private InventoryItem itemInfo;
+    private float oldXOffset;
+    private float clickBeginTime;
+    private Vector3 oldLocalPosition;
+    private Quaternion oldLocalRotation;
+    private Vector3 oldLocalScale;
+    private Transform transformParent;
 
     public void SetPosition(int itemIndex)
     {
-        RectTransform rectTransform = GetComponent<RectTransform>();
+        var rectTransform = GetComponent<RectTransform>();
         xOffset = itemIndex * (itemSpace + rectTransform.rect.width);
         rectTransform.anchoredPosition += new Vector2(oldXOffset, 0);
-        rectTransform.anchoredPosition += new Vector2(xOffset,0);
+        rectTransform.anchoredPosition += new Vector2(xOffset, 0);
         oldXOffset = xOffset;
     }
+
     public void SetItem(EnumItemID itemId)
     {
         ItemId = itemId;
-        if (Statics.AllInventoryItems.TryGetValue(itemId, out itemInfo))
-        {
-            GetComponent<Image>().sprite = itemInfo.ItemSprite;
-            sprite = itemInfo.ItemSprite;
-            Name = itemInfo.ItemName;
-        }
+        if (!Statics.AllInventoryItems.TryGetValue(itemId, out itemInfo))
+            return;
+
+        GetComponent<Image>().sprite = itemInfo.ItemSprite;
+        sprite = itemInfo.ItemSprite;
+        Name = itemInfo.ItemName;
     }
+
     // Use this for initialization
-    protected override void Start () {
+    protected override void Start()
+    {
         base.Start();
         SetItem(ItemId);
-	}
-    // Update is called once per frame
-    protected void Update () {
-        base.Update();
-	}
+    }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
         if (eventData == null)
             return;
 
-        base.OnMouseEnter();
+        OnMouseEnter();
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -70,7 +68,7 @@ public class InventoryItemController : ClickableArea, IPointerDownHandler, IPoin
         if (eventData == null)
             return;
 
-        base.OnMouseExit();
+        OnMouseExit();
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -109,7 +107,7 @@ public class InventoryItemController : ClickableArea, IPointerDownHandler, IPoin
         transform.localScale = oldLocalScale;
 
         RaycastHit hit;
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hit))
         {
             hit.collider.GetComponent<ItemUsableArea>().Use(ItemId);
@@ -117,8 +115,8 @@ public class InventoryItemController : ClickableArea, IPointerDownHandler, IPoin
         if (DraggedOver != null) DraggedOver.Use(ItemId);
         DraggedObject = null;
         DraggedOver = null;
-
     }
+
     public void OnPointerUp(PointerEventData eventData)
     {
         if (eventData == null)
@@ -136,6 +134,5 @@ public class InventoryItemController : ClickableArea, IPointerDownHandler, IPoin
         if (eventData == null)
             return;
         clickBeginTime = Time.time;
-
     }
 }

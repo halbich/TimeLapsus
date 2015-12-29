@@ -2,7 +2,6 @@
 
 public class RespawnPointScript : MonoBehaviour
 {
-
     public EnumLevel LevelName;
 
     public Facing Direction;
@@ -13,7 +12,6 @@ public class RespawnPointScript : MonoBehaviour
         point.z = CharacterZPosition;
         return new RespawnPoint(LevelName, point, Direction);
     }
-
 }
 
 public class RespawnPoint : DirectionPoint
@@ -25,6 +23,7 @@ public class RespawnPoint : DirectionPoint
     {
         LevelName = levelName;
     }
+
     public static bool operator ==(RespawnPoint a, RespawnPoint b)
     {
         if (ReferenceEquals(a, b))
@@ -56,6 +55,4 @@ public class RespawnPoint : DirectionPoint
     {
         return base.Equals(obj);
     }
-
 }
-

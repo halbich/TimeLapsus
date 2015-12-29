@@ -1,12 +1,9 @@
 ﻿public class RiverTriggerController : DialogActorController
 {
-
     private const string HasSpoken = "hasTriggeredRiver";
 
     protected override string getDialog()
     {
-
-
         //pokud jsem nezobrazil popis questu
 
         bool hasAlreadySpeaked;
@@ -18,9 +15,8 @@
         return "questDefinition";
     }
 
-
     protected override void endDialogAction()
     {
-      currentQuest.SetValue(HasSpoken, true);
+        currentQuest.SetValue(HasSpoken, true);
     }
 }
