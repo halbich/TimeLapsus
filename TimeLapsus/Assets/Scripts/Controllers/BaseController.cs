@@ -1,27 +1,30 @@
-﻿using System;
-using UnityEngine;
-using System.Collections;
+﻿using Assets.Scripts;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
+using System;
+using UnityEngine.SceneManagement;
 
 public class BaseController : MonoBehaviour
 {
 
-    internal bool DialogueActive = false;
+    public GameObject InventoryItemTemplate;
+
 
     public GameObject PlayerCharacter;
 
     public PawnController PlayerController;
 
+    public DescriptionController DescriptionController;
+
     public CursorManager CursorManager;
 
-    public DialogController DialogController;
-
     public float CharacterZPosition = -0.1f;
-    
+
     private static EnumLevel previousLoadedLevel;
 
-    public string DisplayedDescription = "";
+
+
 
     public EnumLevel PreviousLoadedLevel
     {
@@ -38,9 +41,19 @@ public class BaseController : MonoBehaviour
     {
         Fader = GetComponentInChildren<SceneFadeInOut>();
         CursorManager = GetComponent<CursorManager>();
-        DialogController = GetComponent<DialogController>();
 
 
+        PlayerController = PlayerCharacter.GetComponent<PawnController>();
+        DescriptionController = FindObjectOfType<DescriptionController>();
+        if (PlayerController == null)
+        {
+            Debug.LogError("No controller");
+            return;
+        }
+
+        var enterData = GetEnterData(PreviousLoadedLevel);
+        PlayerController.SetInitPosition(enterData.StartPoint);
+        PlayerController.SetNewFacing(enterData.Direction);
     }
 
     private void Awake()
@@ -49,24 +62,20 @@ public class BaseController : MonoBehaviour
         if (PlayerCharacter == null)
             return;
 
-        PlayerController = PlayerCharacter.GetComponent<PawnController>();
 
         var startObjects = GameObject.FindGameObjectsWithTag("Respawn").ToList();
 
-        startPositions = startObjects.Select(e => e.GetComponent<RespawnPointScript>().GetPoint(e, CharacterZPosition)).ToList();
-        
+        startPositions = startObjects.Select(e => e.GetComponent<RespawnPointScript>().GetPoint( CharacterZPosition)).ToList();
+
         foreach (var startObject in startObjects)
         {
             Destroy(startObject);
         }
 
-        var enterData = GetEnterData(PreviousLoadedLevel);
-        PlayerController.SetInitPosition(enterData.StartPoint);
-        PlayerController.SetNewFacing(enterData.Direction);
 
 
         var bckgrnd = GameObject.FindGameObjectWithTag("Background");
-        if(bckgrnd != null)
+        if (bckgrnd != null)
         {
             bckgrnd.GetComponent<SpriteRenderer>().color = Color.white;
         }
@@ -85,8 +94,8 @@ public class BaseController : MonoBehaviour
 
     public void ChangeScene(EnumLevel newLevel)
     {
-        previousLoadedLevel = Statics.GetFromName(Application.loadedLevelName);
-        Application.LoadLevel(newLevel.GetName());
+        previousLoadedLevel = Statics.GetFromName(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(newLevel.GetName());
     }
 
 
@@ -106,12 +115,22 @@ public class BaseController : MonoBehaviour
         if (result != default(RespawnPoint)) // it is not default struct value
             return result;
 
-        if (Debug.isDebugBuild)
-        {
-            Debug.LogWarning("nenalezen startovací objekt! " + level);
-            return startPositions.First();
-        }
-        return startPositions.Single(e => e.LevelName == level);
+        if (!Debug.isDebugBuild)
+            return startPositions.Single(e => e.LevelName == level);
+
+        Debug.LogWarning("nenalezen startovací objekt! " + level);
+        return startPositions.First();
+    }
+
+    public void AddInventoryItem(EnumItemID toAdd)
+    {
+        Statics.Inventory.Add(Statics.AllInventoryItems[toAdd]);
+        FindObjectOfType<InventoryController>().UpdateInventory();
+    }
+    internal void RemoveInventoryItem(EnumItemID itemID)
+    {
+        Statics.Inventory.Remove(Statics.AllInventoryItems[itemID]);
+        FindObjectOfType<InventoryController>().UpdateInventory();
     }
 }
 

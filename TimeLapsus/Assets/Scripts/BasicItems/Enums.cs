@@ -1,7 +1,4 @@
-﻿using UnityEngine;
-using System.Collections;
-
-public enum EnumLevel
+﻿public enum EnumLevel
 {
     NULL,
     MainMenu,
@@ -36,10 +33,48 @@ public enum CursorType
     Main,
     Walk,
     Door,
-    GoToLocation,
     Speak,
     Explore,
     PickUp,
+    GoToLocationN,
+    GoToLocationE,
+    GoToLocationS,
+    GoToLocationW,
+    None
 }
 
+public enum EnumActorID
+{
+    MainCharacter,
+    Mayor,
+    BankerPresent,
+    BankerFuture,
+    Potter,
+    Lara,
+    Child
+
+
+}
+
+public enum EnumObjectID
+{
+    Bridge,
+    Vase,
+    Chip,
+    Automat,
+    GravePast,
+    GravePresent,
+    Shovel,
+    BlueprintMayor,
+    Ball,
+    Window
+
+}
+
+public enum EnumItemID
+{
+    Vase,
+    AncientVase,
+    Chip
+}
 

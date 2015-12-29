@@ -1,17 +1,23 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections;
+using UnityEngine;
 
 public class ChangeScreen : ClickableArea
 {
-
-    public ChangeScreen():base()
+    public ChangeScreen()
     {
-        cursor = CursorType.GoToLocation;
+        cursor = CursorType.GoToLocationS;
     }
 
     protected virtual void Change(EnumLevel level)
     {
-        Controller.ChangeScene(level);
+        foreach (var musicController in FindObjectsOfType<AmbientMusicController>())
+        {
+            musicController.QuietDown(1.5f);
+        }
+
+
+        StartCoroutine(ChangeCor(level));
+
     }
 
 
@@ -19,7 +25,7 @@ public class ChangeScreen : ClickableArea
 
     private void OnMouseDown()
     {
-        if (IsInBox && !Controller.DialogueActive)
+        if (IsInBox && !IsOverUI())
         {
             Controller.PlayerController.MoveTo(Controller.GetEnterPosition(Level), () =>
             {
@@ -27,5 +33,17 @@ public class ChangeScreen : ClickableArea
             });
 
         }
+    }
+
+
+    IEnumerator ChangeCor(EnumLevel level)
+    {
+        if (Controller.Fader != null)
+        {
+            Controller.Fader.EndScene();
+            yield return new WaitForSeconds(2);
+        }
+
+        Controller.ChangeScene(level);
     }
 }

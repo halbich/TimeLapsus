@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class SceneFadeInOut : MonoBehaviour
 {
@@ -62,14 +61,14 @@ public class SceneFadeInOut : MonoBehaviour
         FadeToClear();
 
         // If the texture is almost clear...
-        if (GetComponent<GUITexture>().color.a <= 0.05f)
-        {
-            // ... set the colour to clear and disable the GUITexture.
-            GetComponent<GUITexture>().color = Color.clear;
-            GetComponent<GUITexture>().enabled = false;
+        if (!(GetComponent<GUITexture>().color.a <= 0.05f))
+            return;
 
-            CurrentState = FadeInOutState.None;
-        }
+        // ... set the colour to clear and disable the GUITexture.
+        GetComponent<GUITexture>().color = Color.clear;
+        GetComponent<GUITexture>().enabled = false;
+
+        CurrentState = FadeInOutState.None;
     }
 
 

@@ -1,0 +1,814 @@
+fileFormatVersion: 2
+guid: 4a9491149c104844ebb49286d5f079ce
+timeCreated: 1449619012
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: starosta_mluveni2_sheet_0
+    21300002: starosta_mluveni2_sheet_1
+    21300004: starosta_mluveni2_sheet_2
+    21300006: starosta_mluveni2_sheet_3
+    21300008: starosta_mluveni2_sheet_4
+    21300010: starosta_mluveni2_sheet_5
+    21300012: starosta_mluveni2_sheet_6
+    21300014: starosta_mluveni2_sheet_7
+    21300016: starosta_mluveni2_sheet_8
+    21300018: starosta_mluveni2_sheet_9
+    21300020: starosta_mluveni2_sheet_10
+    21300022: starosta_mluveni2_sheet_11
+    21300024: starosta_mluveni2_sheet_12
+    21300026: starosta_mluveni2_sheet_13
+    21300028: starosta_mluveni2_sheet_14
+    21300030: starosta_mluveni2_sheet_15
+    21300032: starosta_mluveni2_sheet_16
+    21300034: starosta_mluveni2_sheet_17
+    21300036: starosta_mluveni2_sheet_18
+    21300038: starosta_mluveni2_sheet_19
+    21300040: starosta_mluveni2_sheet_20
+    21300042: starosta_mluveni2_sheet_21
+    21300044: starosta_mluveni2_sheet_22
+    21300046: starosta_mluveni2_sheet_23
+    21300048: starosta_mluveni2_sheet_24
+    21300050: starosta_mluveni2_sheet_25
+    21300052: starosta_mluveni2_sheet_26
+    21300054: starosta_mluveni2_sheet_27
+    21300056: starosta_mluveni2_sheet_28
+    21300058: starosta_mluveni2_sheet_29
+    21300060: starosta_mluveni2_sheet_30
+    21300062: starosta_mluveni2_sheet_31
+    21300064: starosta_mluveni2_sheet_32
+    21300066: starosta_mluveni2_sheet_33
+    21300068: starosta_mluveni2_sheet_34
+    21300070: starosta_mluveni2_sheet_35
+    21300072: starosta_mluveni2_sheet_36
+    21300074: starosta_mluveni2_sheet_37
+    21300076: starosta_mluveni2_sheet_38
+    21300078: starosta_mluveni2_sheet_39
+    21300080: starosta_mluveni2_sheet_40
+    21300082: starosta_mluveni2_sheet_41
+    21300084: starosta_mluveni2_sheet_42
+    21300086: starosta_mluveni2_sheet_43
+    21300088: starosta_mluveni2_sheet_44
+    21300090: starosta_mluveni2_sheet_45
+    21300092: starosta_mluveni2_sheet_46
+    21300094: starosta_mluveni2_sheet_47
+    21300096: starosta_mluveni2_sheet_48
+    21300098: starosta_mluveni2_sheet_49
+    21300100: starosta_mluveni2_sheet_50
+    21300102: starosta_mluveni2_sheet_51
+    21300104: starosta_mluveni2_sheet_52
+    21300106: starosta_mluveni2_sheet_53
+    21300108: starosta_mluveni2_sheet_54
+    21300110: starosta_mluveni2_sheet_55
+    21300112: starosta_mluveni2_sheet_56
+    21300114: starosta_mluveni2_sheet_57
+    21300116: starosta_mluveni2_sheet_58
+    21300118: starosta_mluveni2_sheet_59
+    21300120: starosta_mluveni2_sheet_60
+    21300122: starosta_mluveni2_sheet_61
+    21300124: starosta_mluveni2_sheet_62
+    21300126: starosta_mluveni2_sheet_63
+    21300128: starosta_mluveni2_sheet_64
+    21300130: starosta_mluveni2_sheet_65
+    21300132: starosta_mluveni2_sheet_66
+    21300134: starosta_mluveni2_sheet_67
+    21300136: starosta_mluveni2_sheet_68
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: starosta_mluveni2_sheet_0
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 60
+        width: 636
+        height: 545
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_1
+      rect:
+        serializedVersion: 2
+        x: 831
+        y: 53
+        width: 636
+        height: 552
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_2
+      rect:
+        serializedVersion: 2
+        x: 1594
+        y: 60
+        width: 636
+        height: 545
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_3
+      rect:
+        serializedVersion: 2
+        x: 2358
+        y: 60
+        width: 636
+        height: 545
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_4
+      rect:
+        serializedVersion: 2
+        x: 3121
+        y: 60
+        width: 636
+        height: 545
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_5
+      rect:
+        serializedVersion: 2
+        x: 3885
+        y: 54
+        width: 629
+        height: 551
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_6
+      rect:
+        serializedVersion: 2
+        x: 4641
+        y: 53
+        width: 636
+        height: 552
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_7
+      rect:
+        serializedVersion: 2
+        x: 5327
+        y: 152
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_8
+      rect:
+        serializedVersion: 2
+        x: 5405
+        y: 60
+        width: 636
+        height: 545
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_9
+      rect:
+        serializedVersion: 2
+        x: 6168
+        y: 60
+        width: 636
+        height: 545
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_10
+      rect:
+        serializedVersion: 2
+        x: 6931
+        y: 60
+        width: 637
+        height: 545
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_11
+      rect:
+        serializedVersion: 2
+        x: 7692
+        y: 53
+        width: 632
+        height: 552
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_12
+      rect:
+        serializedVersion: 2
+        x: 8451
+        y: 60
+        width: 637
+        height: 545
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_13
+      rect:
+        serializedVersion: 2
+        x: 9215
+        y: 60
+        width: 636
+        height: 545
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_14
+      rect:
+        serializedVersion: 2
+        x: 9978
+        y: 60
+        width: 637
+        height: 545
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_15
+      rect:
+        serializedVersion: 2
+        x: 10742
+        y: 60
+        width: 636
+        height: 545
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_16
+      rect:
+        serializedVersion: 2
+        x: 11500
+        y: 53
+        width: 635
+        height: 552
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_17
+      rect:
+        serializedVersion: 2
+        x: 12262
+        y: 60
+        width: 636
+        height: 545
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_18
+      rect:
+        serializedVersion: 2
+        x: 13025
+        y: 60
+        width: 636
+        height: 545
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_19
+      rect:
+        serializedVersion: 2
+        x: 13789
+        y: 60
+        width: 636
+        height: 545
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_20
+      rect:
+        serializedVersion: 2
+        x: 3773
+        y: 111
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_21
+      rect:
+        serializedVersion: 2
+        x: 8345
+        y: 110
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_22
+      rect:
+        serializedVersion: 2
+        x: 12156
+        y: 110
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_23
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 53
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_24
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 53
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_25
+      rect:
+        serializedVersion: 2
+        x: 781
+        y: 46
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_26
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 53
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_27
+      rect:
+        serializedVersion: 2
+        x: 1545
+        y: 46
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_28
+      rect:
+        serializedVersion: 2
+        x: 1573
+        y: 53
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_29
+      rect:
+        serializedVersion: 2
+        x: 2308
+        y: 39
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_30
+      rect:
+        serializedVersion: 2
+        x: 3065
+        y: 46
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_31
+      rect:
+        serializedVersion: 2
+        x: 3828
+        y: 53
+        width: 21
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_32
+      rect:
+        serializedVersion: 2
+        x: 3857
+        y: 53
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_33
+      rect:
+        serializedVersion: 2
+        x: 4592
+        y: 46
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_34
+      rect:
+        serializedVersion: 2
+        x: 4620
+        y: 53
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_35
+      rect:
+        serializedVersion: 2
+        x: 5355
+        y: 46
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_36
+      rect:
+        serializedVersion: 2
+        x: 5384
+        y: 53
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_37
+      rect:
+        serializedVersion: 2
+        x: 6119
+        y: 46
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_38
+      rect:
+        serializedVersion: 2
+        x: 6875
+        y: 46
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_39
+      rect:
+        serializedVersion: 2
+        x: 6907
+        y: 57
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_40
+      rect:
+        serializedVersion: 2
+        x: 7639
+        y: 53
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_41
+      rect:
+        serializedVersion: 2
+        x: 7667
+        y: 53
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_42
+      rect:
+        serializedVersion: 2
+        x: 8402
+        y: 46
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_43
+      rect:
+        serializedVersion: 2
+        x: 8430
+        y: 53
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_44
+      rect:
+        serializedVersion: 2
+        x: 9165
+        y: 46
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_45
+      rect:
+        serializedVersion: 2
+        x: 9196
+        y: 55
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_46
+      rect:
+        serializedVersion: 2
+        x: 9922
+        y: 40
+        width: 27
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_47
+      rect:
+        serializedVersion: 2
+        x: 10686
+        y: 48
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_48
+      rect:
+        serializedVersion: 2
+        x: 10714
+        y: 54
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_49
+      rect:
+        serializedVersion: 2
+        x: 11449
+        y: 46
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_50
+      rect:
+        serializedVersion: 2
+        x: 11477
+        y: 53
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_51
+      rect:
+        serializedVersion: 2
+        x: 12212
+        y: 46
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_52
+      rect:
+        serializedVersion: 2
+        x: 12241
+        y: 53
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_53
+      rect:
+        serializedVersion: 2
+        x: 12976
+        y: 46
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_54
+      rect:
+        serializedVersion: 2
+        x: 13008
+        y: 57
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_55
+      rect:
+        serializedVersion: 2
+        x: 13732
+        y: 40
+        width: 28
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_56
+      rect:
+        serializedVersion: 2
+        x: 6890
+        y: 40
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_57
+      rect:
+        serializedVersion: 2
+        x: 10700
+        y: 40
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_58
+      rect:
+        serializedVersion: 2
+        x: 3090
+        y: 26
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_59
+      rect:
+        serializedVersion: 2
+        x: 6140
+        y: 26
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_60
+      rect:
+        serializedVersion: 2
+        x: 7646
+        y: 18
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_61
+      rect:
+        serializedVersion: 2
+        x: 7660
+        y: 25
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_62
+      rect:
+        serializedVersion: 2
+        x: 9187
+        y: 25
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_63
+      rect:
+        serializedVersion: 2
+        x: 11457
+        y: 19
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_64
+      rect:
+        serializedVersion: 2
+        x: 11470
+        y: 25
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_65
+      rect:
+        serializedVersion: 2
+        x: 12998
+        y: 26
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_66
+      rect:
+        serializedVersion: 2
+        x: 3878
+        y: 11
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_67
+      rect:
+        serializedVersion: 2
+        x: 8452
+        y: 11
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starosta_mluveni2_sheet_68
+      rect:
+        serializedVersion: 2
+        x: 12262
+        y: 11
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

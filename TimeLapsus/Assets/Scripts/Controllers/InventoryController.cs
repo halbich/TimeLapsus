@@ -1,64 +1,37 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using UnityEngine;
+using System.Collections;
+using System;
 using System.Linq;
-using System.Text;
-using UnityEngine;
 
-namespace Assets.Scripts.Controllers
-{
-    class InventoryController : MonoBehaviour
+public class InventoryController : MonoBehaviour {
+
+
+    // Use this for initialization
+    void Start()
     {
-        public GameObject InventoryItemTemplate;
-        private bool clickInitiated = false;
-        private bool inventoryDisplayed;
-        private void Update()
-        {
-            if (!Input.GetMouseButtonDown(1))
-            {
-                clickInitiated = true;
-            }
-            else if (clickInitiated)
-            {
-                clickInitiated = false;
-                RightClick();
-            }
-        }
-        private void RightClick()
-        {
-            if (inventoryDisplayed)
-            {
-                inventoryDisplayed = false;
-                HideInventory();
-            }
-            else if (Statics.Inventory.Count != 0)
-            {
-                inventoryDisplayed = true;
-                ShowInventory();
-            }
-        }
+        UpdateInventory();
+    }
+    public GameObject InventoryItemTemplate;
+    private void Update()
+    {
+    }
 
-        private void ShowInventory()
+    public void UpdateInventory()
+    {
+        GameObject[] items = GameObject.FindGameObjectsWithTag("InventoryItem");
+        foreach (GameObject item in items)
         {
-            for (int i = 0; i < Statics.Inventory.Count; ++i)
-            {
-                var itemInfo = Statics.Inventory[i];
-                var newItem = GameObject.Instantiate(InventoryItemTemplate);
-                newItem.tag = "InventoryItem";
-                InventoryItemController itemController = newItem.GetComponent<InventoryItemController>();
-                if (itemController == null) throw new ArgumentException("InventoryItemTemplate does not contain an InventoryItemController");
-                itemController.SetItem(itemInfo.ItemID);
-                itemController.SetPosition(i, Statics.Inventory.Count);
-            }
+            Destroy(item);
         }
-
-        private void HideInventory()
+        for (int i = 0; i < Statics.Inventory.Count; ++i)
         {
-            GameObject[] items = GameObject.FindGameObjectsWithTag("InventoryItem");
-            foreach (GameObject item in items)
-            {
-                Destroy(item);
-            }
-
+            var itemInfo = Statics.Inventory[i];
+            var newItem = GameObject.Instantiate(InventoryItemTemplate);
+            newItem.transform.SetParent(this.transform, false);
+            InventoryItemController itemController = newItem.GetComponent<InventoryItemController>();
+            if (itemController == null) throw new ArgumentException("InventoryItemTemplate does not contain an InventoryItemController");
+            itemController.SetItem(itemInfo.ItemID);
+            itemController.SetPosition(i);
         }
     }
 }

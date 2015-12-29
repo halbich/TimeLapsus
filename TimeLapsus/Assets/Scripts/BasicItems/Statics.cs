@@ -1,13 +1,12 @@
-﻿using System;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Collections.Generic;
-using Assets.Scripts.ItemManagement;
+using Assets.Scripts;
 
 public static class Statics
 {
     public static EnumLevel LastLoadedLevel;
 
-    private static List<Tuple<EnumLevel, string>> mapping = new List<Tuple<EnumLevel, string>> {
+    private static readonly List<Tuple<EnumLevel, string>> mapping = new List<Tuple<EnumLevel, string>> {
          Tuple.New(EnumLevel.BankPresent,"bankPresent" ),
          Tuple.New(EnumLevel.BankFuture, "bankFuture"),
          Tuple.New(EnumLevel.MainMenu, "mainMenu"),
@@ -31,15 +30,15 @@ public static class Statics
     {
         return mapping.Where(e => e.Second == name).Select(e => e.First).First();
     }
+
+
     public static Dictionary<string, int> GlobalVariables = new Dictionary<string, int>();
 
     public static List<InventoryItem> Inventory = new List<InventoryItem>();
 
-    public static Dictionary<string, InventoryItem> AllInventoryItems = new Dictionary<string, InventoryItem>
+    public static Dictionary<EnumItemID, InventoryItem> AllInventoryItems = new Dictionary<EnumItemID, InventoryItem>
     {
-        {"rock", new InventoryItem("Rock", "Rock, you are a rock, you are grey, like a rock, which you are.", "rock", "rock")},
-        {"rock2", new InventoryItem("Another Rock", "Even though it looks similar, it is a very different rock.", "rock2", "rock2")}
+        {EnumItemID.Vase, new InventoryItem("invItemVaseName", "inspectVaseInventory", EnumItemID.Vase, "Vase")},
+        {EnumItemID.Chip, new InventoryItem("Bábelský čip", "Čip díky kterému lze rozumět libovolnému jazyku.", EnumItemID.Chip, "čip")}
     };
-
-
 }
