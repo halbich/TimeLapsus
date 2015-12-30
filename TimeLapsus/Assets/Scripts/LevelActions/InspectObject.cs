@@ -10,7 +10,7 @@ public class InspectObject : ClickableArea
 
     public EnumObjectID EntityID;
 
-    private InspectPoint ObjectPoint;
+    private DirectionPoint ObjectPoint;
 
     private InspectObjectController inspectController;
 
@@ -23,7 +23,6 @@ public class InspectObject : ClickableArea
             {
                 Controller.PlayerController.SetNewFacing(ObjectPoint.Direction);
                 inspectController.Inspect();
-                //QuestController.Instance.Inspect(EntityID);
             });
         else
             inspectController.Inspect();
@@ -33,9 +32,9 @@ public class InspectObject : ClickableArea
     {
         base.Start();
 
-        var comps = FindObjectsOfType<InspectPointScript>().SingleOrDefault(e => e.BelongsToObject == EntityID);
+        var comps = GetComponentInChildren<ItemPointScript>();
         if (comps == null)
-            Debug.LogErrorFormat("No object inspect point defined for {0}! ", gameObject.name);
+            Debug.LogErrorFormat("No object item point defined for {0}! ", gameObject.name);
         else
         {
             ObjectPoint = comps.GetPoint(Controller.CharacterZPosition);

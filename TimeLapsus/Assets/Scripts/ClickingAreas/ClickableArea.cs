@@ -1,9 +1,12 @@
-﻿public class ClickableArea : ScriptWithController
+﻿using UnityEngine;
+
+public class ClickableArea : ScriptWithController
 {
     protected CursorType cursor = CursorType.Main;
 
     protected bool IsInBox;
 
+    [Tooltip("This name will ber visible as description")]
     public string Name;
 
     protected bool IsUI;

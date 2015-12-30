@@ -4,7 +4,7 @@ public class ItemUseOnScript : ScriptWithController
 {
     public EnumItemID itemID;
     public bool RemoveOnUse;
-    protected ItemPoint ObjectPoint;
+    protected DirectionPoint ObjectPoint;
     public string Name;
 
     public virtual void Use()
@@ -16,7 +16,7 @@ public class ItemUseOnScript : ScriptWithController
     protected override void Start()
     {
         base.Start();
-        var comps = FindObjectsOfType<ItemPointScript>().SingleOrDefault(e => e.BelongsToObject == itemID);
+        var comps = GetComponentInChildren<ItemPointScript>();
         if (comps == null)
             return;
         

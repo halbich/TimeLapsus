@@ -15,11 +15,13 @@ public class PickableItem : ClickableArea
     public EnumItemID itemId;
     protected Quest currentQuest = QuestController.Instance.GetCurrent();
 
-    private ItemPoint ObjectPoint;
+    private DirectionPoint ObjectPoint;
 
     private void OnMouseDown()
     {
-        if (!enabled || IsOverUI()) return;
+        if (!enabled || IsOverUI()) 
+            return;
+
         if (ObjectPoint != null)
 
             Controller.PlayerController.MoveTo(ObjectPoint.StartPoint, () =>
@@ -38,17 +40,19 @@ public class PickableItem : ClickableArea
 
         bool pickedUpItem;
         bool examined;
+        
         if (currentQuest.TryGetValue(pickedUpItemVariable, out pickedUpItem) && pickedUpItem)
         {
             Destroy(gameObject);
             return;
         }
+
         if (!(currentQuest.TryGetValue(examinedItemVariable, out examined)) || !examined)
         {
             enabled = false;
         }
 
-        var comps = FindObjectsOfType<ItemPointScript>().SingleOrDefault(e => e.BelongsToObject == itemId);
+        var comps = GetComponentInChildren<ItemPointScript>();
         if (comps == null)
             Debug.LogErrorFormat("No object pickable point defined for {0}! ", gameObject.name);
         else
@@ -61,7 +65,10 @@ public class PickableItem : ClickableArea
     public void PickUp()
     {
         Controller.AddInventoryItem(itemId);
-        if (pickedUpItemVariable != null) currentQuest.SetValue(pickedUpItemVariable, true);
+
+        if (pickedUpItemVariable != null) 
+            currentQuest.SetValue(pickedUpItemVariable, true);
+
         Destroy(gameObject);
     }
 }
