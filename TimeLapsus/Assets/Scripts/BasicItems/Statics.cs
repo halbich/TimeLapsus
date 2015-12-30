@@ -38,6 +38,6 @@ public static class Statics
     public static Dictionary<EnumItemID, InventoryItem> AllInventoryItems = new Dictionary<EnumItemID, InventoryItem>
     {
         {EnumItemID.Vase, new InventoryItem("invItemVaseName", "inspectVaseInventory", EnumItemID.Vase, "Vase")},
-        {EnumItemID.Chip, new InventoryItem("Bábelský čip", "Čip díky kterému lze rozumět libovolnému jazyku.", EnumItemID.Chip, "čip")}
+        {EnumItemID.Chip, new InventoryItem("Bábelský čip", "Čip díky kterému lze rozumět libovolnému jazyku.", EnumItemID.Chip, "Chip")}
     };
 }

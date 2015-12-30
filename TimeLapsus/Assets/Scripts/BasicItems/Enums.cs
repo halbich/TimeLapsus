@@ -54,23 +54,15 @@ public enum EnumActorID
     Child
 }
 
-public enum EnumObjectID
+public enum EnumItemID
 {
-    Bridge,
     Vase,
+    AncientVase,
     Chip,
+    Bridge,
     Automat,
     GravePast,
     GravePresent,
     Shovel,
     BlueprintMayor,
-    Ball,
-    Window
-}
-
-public enum EnumItemID
-{
-    Vase,
-    AncientVase,
-    Chip
 }

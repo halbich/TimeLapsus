@@ -17,7 +17,6 @@
     private void createQuest()
     {
         currentQuest = new Quest();
-        currentQuest.CreateTestQuest();
     }
 
     public Quest GetCurrent()

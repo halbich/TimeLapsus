@@ -8,11 +8,10 @@ public class PickableItem : ClickableArea
         cursor = CursorType.PickUp;
     }
 
-    public EnumObjectID EntityID;
-
     public string pickedUpItemVariable;
     public string examinedItemVariable;
     public EnumItemID itemId;
+
     protected Quest currentQuest = QuestController.Instance.GetCurrent();
 
     private DirectionPoint ObjectPoint;

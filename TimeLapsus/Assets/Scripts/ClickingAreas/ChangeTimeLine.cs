@@ -1,4 +1,4 @@
-﻿public class ChangeTimeLine : ChangeScreen
+﻿public class ChangeTimeLine : ChangeScreenAbstract
 {
     public ChangeTimeLine()
     {

@@ -8,8 +8,6 @@ public class InspectObject : ClickableArea
         cursor = CursorType.Explore;
     }
 
-    public EnumObjectID EntityID;
-
     private DirectionPoint ObjectPoint;
 
     private InspectObjectController inspectController;

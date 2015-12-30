@@ -1,4 +1,4 @@
-﻿public class DoorScript : ChangeScreen
+﻿public class DoorScript : ChangeScreenAbstract
 {
     public DoorScript()
     {

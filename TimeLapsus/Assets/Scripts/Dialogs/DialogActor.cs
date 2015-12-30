@@ -10,7 +10,7 @@ public class DialogActor : TalkingActorWithController
         cursor = CursorType.Speak;
     }
 
-    private SpeakPoint SpeakerPoint;
+    private DirectionPoint SpeakerPoint;
 
     private void OnMouseDown()
     {
@@ -26,7 +26,7 @@ public class DialogActor : TalkingActorWithController
     {
         base.Start();
 
-        var comps = FindObjectsOfType<SpeakPointScript>().SingleOrDefault(e => e.BelongsToActor == EntityID);
+        var comps = GetComponentInChildren<SpeakPointScript>();
         if (comps == null)
             Debug.LogErrorFormat("No speak point defined for {0}! ", gameObject.name);
         else
