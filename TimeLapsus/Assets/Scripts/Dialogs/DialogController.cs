@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class DialogController : MonoBehaviour
@@ -89,6 +90,8 @@ public class DialogController : MonoBehaviour
                 avatarImage.color = avatarImage.sprite != null ? SpeakingCharacterHeadColor : Transparent;
                 textObject.alignment = TextAnchor.UpperRight;
             }
+          
+            dialogueBlocker.WaitForClick(Input.GetMouseButtonDown(0));
             yield return new WaitUntil(() => dialogueBlocker.clicked);
             dialogueBlocker.clicked = false;
             //yield return new WaitForSeconds(item.Duration);
@@ -144,7 +147,8 @@ public class DialogController : MonoBehaviour
         });
 
         addSimpleDialogs("mayorNotDisturb", "mayorBlueprints", "questDefinition", "inspectShovel", "hasShovel", "inspectVaseInventory", "vaseBuryingDialog",
-            "potterNotDisturb", "needMoneyToBuy", "inspectGravePresent", "inspectGravePast", "inspectVase", "inspectPresentVaseBuried", "inspectPastVaseBuried");
+            "potterNotDisturb", "needMoneyToBuy", "inspectGravePresent", "inspectGravePast", "inspectVase", "inspectPresentVaseBuried", "inspectPastVaseBuried",
+            "inspTeleport");
 
         //Debug.LogFormat("Dialogů: {0}", dialogs.Count);
     }

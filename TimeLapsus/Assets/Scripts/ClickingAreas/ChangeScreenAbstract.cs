@@ -22,7 +22,10 @@ public abstract class ChangeScreenAbstract : ClickableArea
 
     private void OnMouseDown()
     {
-        if (IsInBox && !IsOverUI())
+        // we dont want to have clicks on disabled scripts
+        // http://answers.unity3d.com/questions/19671/disabled-script-still-does-onmousedown.html
+
+        if (enabled && IsInBox && !IsOverUI())
         {
             Controller.PlayerController.MoveTo(Controller.GetEnterPosition(Level), () =>
             {

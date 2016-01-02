@@ -23,3 +23,4 @@ screenChangeGoToVillage=Jít do vesnice
 objectGraveName=Hrob
 actionUseVaseOnGrave=Dát vázu do hrobu
 invItemVaseName=Váza
+inspTeleport=Je to možný? Straka s barevnejma očima… Jestlipak by šly vyloupnout?

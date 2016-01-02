@@ -8,23 +8,28 @@ public class InspectObject : ClickableArea
         cursor = CursorType.Explore;
     }
 
-    private DirectionPoint ObjectPoint;
+    protected DirectionPoint ObjectPoint;
 
-    private InspectObjectController inspectController;
+    protected InspectObjectController InspectController;
 
-    private void OnMouseDown()
+
+
+    protected virtual void OnMouseDown()
     {
-        if (!enabled || IsOverUI()) return;
+        if (!enabled || IsOverUI()) 
+            return;
+
         if (ObjectPoint != null)
 
             Controller.PlayerController.MoveTo(ObjectPoint.StartPoint, () =>
             {
                 Controller.PlayerController.SetNewFacing(ObjectPoint.Direction);
-                inspectController.Inspect();
+                InspectController.Inspect();
             });
         else
-            inspectController.Inspect();
+            InspectController.Inspect();
     }
+
 
     protected override void Start()
     {
@@ -39,8 +44,8 @@ public class InspectObject : ClickableArea
             Destroy(comps);
         }
 
-        inspectController = GetComponent<InspectObjectController>();
-        if (inspectController == null)
+        InspectController = GetComponent<InspectObjectController>();
+        if (InspectController == null)
             Debug.LogErrorFormat("No InspectObjectController defined for {0}! ", gameObject.name);
     }
 }

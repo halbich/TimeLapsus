@@ -1,24 +1,27 @@
-﻿using System.Linq;
+﻿using System.ComponentModel;
+using System.Linq;
 using UnityEngine;
 
-public class PickableItem : ClickableArea
+public class PickableItem : InspectObject
 {
-    private PickableItem()
-    {
-        cursor = CursorType.PickUp;
-    }
 
     public string pickedUpItemVariable;
-    public string examinedItemVariable;
     public EnumItemID itemId;
 
     protected Quest currentQuest = QuestController.Instance.GetCurrent();
 
-    private DirectionPoint ObjectPoint;
 
-    private void OnMouseDown()
+
+
+    protected override void OnMouseDown()
     {
-        if (!enabled || IsOverUI()) 
+        if (!InspectController.IsInspected())
+        {
+            base.OnMouseDown();
+            return;
+        }
+
+        if (!enabled || IsOverUI())
             return;
 
         if (ObjectPoint != null)
@@ -38,36 +41,32 @@ public class PickableItem : ClickableArea
         base.Start();
 
         bool pickedUpItem;
-        bool examined;
-        
+      
         if (currentQuest.TryGetValue(pickedUpItemVariable, out pickedUpItem) && pickedUpItem)
         {
             Destroy(gameObject);
             return;
         }
 
-        if (!(currentQuest.TryGetValue(examinedItemVariable, out examined)) || !examined)
+        if (InspectController.IsInspected())
         {
-            enabled = false;
+           IsInspected();
         }
 
-        var comps = GetComponentInChildren<ItemPointScript>();
-        if (comps == null)
-            Debug.LogErrorFormat("No object pickable point defined for {0}! ", gameObject.name);
-        else
-        {
-            ObjectPoint = comps.GetPoint(Controller.CharacterZPosition);
-            Destroy(comps);
-        }
     }
 
     public void PickUp()
     {
         Controller.AddInventoryItem(itemId);
 
-        if (pickedUpItemVariable != null) 
+        if (pickedUpItemVariable != null)
             currentQuest.SetValue(pickedUpItemVariable, true);
 
         Destroy(gameObject);
+    }
+
+    internal void IsInspected()
+    {
+        cursor = CursorType.PickUp;
     }
 }

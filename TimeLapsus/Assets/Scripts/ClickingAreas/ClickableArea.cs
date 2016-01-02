@@ -28,11 +28,17 @@ public class ClickableArea : ScriptWithController
 
     protected void OnMouseEnter()
     {
+        if(!enabled)
+            return;
+
         IsInBox = true;
     }
 
     protected void OnMouseExit()
     {
+        if (!enabled)
+            return;
+
         IsInBox = false;
         if (!(Controller && Controller.CursorManager)) return;
         Controller.CursorManager.SetCursor();

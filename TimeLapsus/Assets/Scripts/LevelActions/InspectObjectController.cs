@@ -2,6 +2,10 @@
 
 public abstract class InspectObjectController : MonoBehaviour
 {
+
+    public string InspectedItemVariable;
+    public string InspectedItemDialog;
+
     protected Quest currentQuest = QuestController.Instance.GetCurrent();
 
     public void Inspect()
@@ -11,11 +15,26 @@ public abstract class InspectObjectController : MonoBehaviour
 
         if (di != null)
             di.ShowDialog(dialog, null, endDialogAction);
+
+        var pickable = GetComponent<PickableItem>();
+        if (pickable != null)
+            pickable.IsInspected();
     }
 
-    protected abstract string getDialog();
+    protected virtual string getDialog()
+    {
+        return InspectedItemDialog;
+    }
 
     protected virtual void endDialogAction()
     {
+        Debug.LogFormat("Set true to variable {0}", InspectedItemVariable);
+        currentQuest.SetValue(InspectedItemVariable, true);
+    }
+
+    public bool IsInspected()
+    {
+        bool inspected;
+        return currentQuest.TryGetValue(InspectedItemVariable, out inspected) && inspected;
     }
 }
