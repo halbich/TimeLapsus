@@ -15,7 +15,11 @@ public class BaseController : MonoBehaviour
 
     public CursorManager CursorManager;
 
-    public float CharacterZPosition = -0.1f;
+    public GameObject UI;
+
+    private const float CHAR_Z_POSITION = -5f;
+
+    public float CharacterZPosition { get { return CHAR_Z_POSITION; } }
 
     private static EnumLevel previousLoadedLevel;
 
@@ -50,9 +54,16 @@ public class BaseController : MonoBehaviour
 
     private void Awake()
     {
+        if (UI != null)
+            UI.SetActive(true);
+
         PlayerCharacter = GameObject.FindWithTag("Player");
         if (PlayerCharacter == null)
             return;
+
+        var origPosition = PlayerCharacter.transform.position;
+        origPosition.z = CharacterZPosition;
+        PlayerCharacter.transform.position = origPosition;
 
         var startObjects = GameObject.FindGameObjectsWithTag("Respawn").ToList();
 

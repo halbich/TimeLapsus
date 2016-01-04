@@ -24,7 +24,9 @@ public class DescriptionController : MonoBehaviour
 
     public void SetDescription(string description, bool isItemUse)
     {
-        if (descriptionFrozen && !isItemUse) return;
-        GetComponent<Text>().text = string.IsNullOrEmpty(description) ? "" : TextController.Instance.GetText(description);
+        if (descriptionFrozen && !isItemUse)
+            return;
+        var text = string.IsNullOrEmpty(description) ? "" : TextController.Instance.GetText(description);
+        GetComponent<Text>().text = text;
     }
 }

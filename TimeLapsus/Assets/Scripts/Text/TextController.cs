@@ -29,7 +29,6 @@ public class TextController
 
         isLoaded = load(r.text);
 
-        Debug.LogFormat("Načteno: {0}", keys.Count);
     }
 
     private bool load(string text)
@@ -44,10 +43,10 @@ public class TextController
                 {
                     line = theReader.ReadLine();
 
-                    if (line == null)
+                    if (string.IsNullOrEmpty(line) || string.IsNullOrEmpty(line.Trim()) || line.StartsWith("#"))
                         continue;
 
-                    var entries = line.Split('=');
+                    var entries = line.Trim().Split(new[]{'='},2);
                     if (entries.Length == 2)
                         addKeyValue(entries);
                     else
@@ -58,7 +57,6 @@ public class TextController
                 while (line != null);
 
                 theReader.Close();
-                return true;
             }
         }
         catch (Exception e)
@@ -66,6 +64,7 @@ public class TextController
             Debug.LogException(e);
             return false;
         }
+        return true;
     }
 
     private void addKeyValue(string[] entries)

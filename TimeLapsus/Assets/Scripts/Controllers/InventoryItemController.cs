@@ -110,7 +110,9 @@ public class InventoryItemController : ClickableArea, IPointerDownHandler, IPoin
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hit))
         {
-            hit.collider.GetComponent<ItemUsableArea>().Use(ItemId);
+            var usable = hit.collider.GetComponent<ItemUsableArea>();
+            if (usable)
+                usable.Use(ItemId);
         }
         if (DraggedOver != null) DraggedOver.Use(ItemId);
         DraggedObject = null;

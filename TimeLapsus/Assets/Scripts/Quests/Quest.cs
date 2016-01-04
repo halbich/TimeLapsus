@@ -31,4 +31,10 @@ public class Quest
             StoredValues.Add(key, value);
     }
 
+    public bool GetBoolean(string key)
+    {
+        bool res;
+        return TryGetValue(key, out res) && res;
+    }
+
 }

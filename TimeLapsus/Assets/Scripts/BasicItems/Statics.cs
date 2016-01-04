@@ -18,7 +18,8 @@ public static class Statics
          Tuple.New(EnumLevel.Village, "village"),
          Tuple.New(EnumLevel.Mayor, "mayor"),
          Tuple.New(EnumLevel.Antiquarian, "antiquarian"),
-         Tuple.New(EnumLevel.Pottery, "pottery")
+         Tuple.New(EnumLevel.Pottery, "pottery"),
+         Tuple.New(EnumLevel.GameEnd, "GameEnd")
     };
 
     public static string GetName(this EnumLevel level)
@@ -37,7 +38,20 @@ public static class Statics
 
     public static Dictionary<EnumItemID, InventoryItem> AllInventoryItems = new Dictionary<EnumItemID, InventoryItem>
     {
-        {EnumItemID.Vase, new InventoryItem("invItemVaseName", "inspectVaseInventory", EnumItemID.Vase, "Vase")},
+        {EnumItemID.Vase, new InventoryItem("invItemVaseName", "invItemVaseName", EnumItemID.Vase, "Vase")},
         {EnumItemID.Chip, new InventoryItem("Bábelský čip", "Čip díky kterému lze rozumět libovolnému jazyku.", EnumItemID.Chip, "Chip")}
+    };
+
+    public static Dictionary<string, EnumActorID> ActorMappings = new Dictionary<string, EnumActorID>
+    {
+        {"[pc]",EnumActorID.MainCharacter},
+        {"[an]",EnumActorID.Lara},
+        {"[bp]",EnumActorID.BankerPresent},
+        {"[bf]",EnumActorID.BankerFuture},
+        {"[au]",EnumActorID.VendingMachine},
+        {"[rs]",EnumActorID.RobotStorage},
+        {"[de]",EnumActorID.Death},
+        {"[po]",EnumActorID.Potter},
+        {"[ma]",EnumActorID.Mayor},
     };
 }

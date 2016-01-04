@@ -12,7 +12,8 @@
     Village,
     Mayor,
     Antiquarian,
-    Pottery
+    Pottery,
+    GameEnd
 }
 
 public enum Facing
@@ -51,7 +52,11 @@ public enum EnumActorID
     BankerFuture,
     Potter,
     Lara,
-    Child
+    VendingMachine,
+    RobotStorage,
+    Death
+
+    
 }
 
 public enum EnumItemID

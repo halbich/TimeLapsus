@@ -5,7 +5,7 @@ public class DialogueBlockerController : MonoBehaviour
 {
     private Button btn;
 
-    void Start()
+    void Awake()
     {
         btn = GetComponent<Button>();
         btn.enabled = false;
@@ -22,7 +22,6 @@ public class DialogueBlockerController : MonoBehaviour
 
     public void WaitForClick(bool pGetMouseButtonDown)
     {
-        Debug.Log("btn wait " + pGetMouseButtonDown);
         skipOne = pGetMouseButtonDown;
         btn.enabled = true;
     }
@@ -42,7 +41,6 @@ public class DialogueBlockerController : MonoBehaviour
         }
         
 
-        Debug.Log("blocker clicked");
         clicked = true;
     }
 }

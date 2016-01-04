@@ -7,12 +7,10 @@ public class DialogLine
 
     public string Text;
 
-    public float Duration;
 
-    public DialogLine(EnumActorID actorID, string text, float duration = 5f)
+    public DialogLine(EnumActorID actorID, string text)
     {
         ActorID = actorID;
         Text = text;
-        Duration = duration;
     }
 }
