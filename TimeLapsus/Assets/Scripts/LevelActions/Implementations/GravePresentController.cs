@@ -20,8 +20,9 @@ public class GravePresentController : InspectObjectController
     public string GraveShoveledInfoDialog;
     public string GraveShoveledTitle;
 
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         ActionOccured();
     }
 

@@ -9,8 +9,10 @@ public class TeleportController : InspectObjectController
     public string SimilarSeenDialogName;
     public string HasSeenTeleportKeyName;
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
+   
         var hasSpoken = "hasTriggeredAfterTeleportDialog";
 
         if (currentQuest.GetBoolean(hasSpoken))

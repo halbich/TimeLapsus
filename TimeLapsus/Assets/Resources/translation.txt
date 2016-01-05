@@ -90,6 +90,7 @@ potter7=Krásná váza velikosti urny… nebo liliputánské famílie.
 potter8=*(&$%^#$*() !!!
 potter9=Aha. Co je v domě, není pro mě. Zatím…
 potterVaseTake=Snad se bude k něčemu hodit.
+potterAfterDead=To je síla. Takovej úklid jsem jaktěživ neviděl.
 
 vaseIntoGrave=Šup tam s ní
 shovelGravePast=Jen to pěkně zakopat
@@ -158,7 +159,8 @@ dealomatTitle=Dealomat
 
 actionUseVaseOnGrave=Vložit do hrobu
 actionUseDigVaseIntoGrave=Zakopat
-
+actionUseMoneyToBanker=Dát peníze
+actionUseRobotToPotter=Uklidit
 
 
 

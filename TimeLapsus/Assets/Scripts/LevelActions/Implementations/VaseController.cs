@@ -3,11 +3,16 @@ using System.Collections;
 
 public class VaseController : InspectObjectController
 {
-
+    public VaseController()
+    {
+        canLoadHeadImage = true;
+    }
 
     public string VaseFirstSeenDialog;
     public string StillCantTakeItemDialog;
     public string PotterDeadVarKey;
+
+    public DialogActor PotterDialogActor;
 
     private const string firstLineSeen = "vaseFirstLineSeen";
 
@@ -38,5 +43,8 @@ public class VaseController : InspectObjectController
             currentQuest.SetBoolean(firstLineSeen);
     }
 
-
+    protected override Sprite GetHeadSprite()
+    {
+        return PotterDialogActor != null ? PotterDialogActor.Avatar : null;
+    }
 }

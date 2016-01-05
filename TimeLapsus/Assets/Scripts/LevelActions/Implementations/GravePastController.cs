@@ -25,16 +25,17 @@ public class GravePastController : InspectObjectController
         canLoadHeadImage = true;
     }
 
-    void Start()
+    protected override void Start()
     {
-        if (DeathObject == null)
+        base.Start();
+
+         if (DeathObject == null)
             return;
 
         headSprite = DeathObject.GetComponent<DialogActor>().Avatar;
 
 
         ActionOccured();
-
     }
 
     protected override string getDialog()

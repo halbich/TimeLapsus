@@ -26,13 +26,12 @@ public class DialogActor : TalkingActorWithController
     {
         base.Start();
 
-        var comps = GetComponentInChildren<SpeakPointScript>();
+        var comps = GetComponentInChildren<ItemPointScript>();
         if (comps == null)
             Debug.LogErrorFormat("No speak point defined for {0}! ", gameObject.name);
         else
         {
             SpeakerPoint = comps.GetPoint(Controller.CharacterZPosition);
-            Destroy(comps);
         }
     }
 }

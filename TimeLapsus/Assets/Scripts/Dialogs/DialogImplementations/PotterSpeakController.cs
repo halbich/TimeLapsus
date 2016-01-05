@@ -2,27 +2,28 @@
 {
     private const string HasSpoken = "hasSpokenWithPotter";
 
+    public string NoChipPotterFirst;
+    public string NoChipPotterNoDisturb;
+
+    public UseRobotOnPotter ActionObject;
+
+    protected override void Start()
+    {
+        base.Start();
+        if(currentQuest.GetBoolean(ActionObject.PotterIsDeadVarName))
+            Destroy(gameObject);
+    }
+
     protected override string getDialog()
     {
-        if (currentQuest.GetBoolean(HasSpoken))
-        {
-            return "potterNotDisturb";
-        }
-        return "potterFirst";
+        return currentQuest.GetBoolean(HasSpoken) ? NoChipPotterNoDisturb : NoChipPotterFirst;
     }
 
     protected override void endDialogAction()
     {
-        currentQuest.SetBoolean(HasSpoken);
+        if (!currentQuest.GetBoolean(HasSpoken))
+            currentQuest.SetBoolean(HasSpoken);
     }
 
-    public override int GetHashCode()
-    {
-        return base.GetHashCode();
-    }
-
-    public override bool Equals(object obj)
-    {
-        return base.Equals(obj);
-    }
+   
 }

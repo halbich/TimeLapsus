@@ -15,7 +15,7 @@ public abstract class InspectObjectController : ScriptWithController
         var dialog = di.GetDialog(getDialog());
 
         if (di != null)
-            di.ShowDialog(dialog, canLoadHeadImage ? null : GetHeadSprite(), endDialogAction);
+            di.ShowDialog(dialog, canLoadHeadImage ? GetHeadSprite() : null , endDialogAction);
 
         var pickable = GetComponent<PickableItem>();
         if (pickable != null)

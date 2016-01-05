@@ -14,8 +14,11 @@ public class Quest
 
     public bool TryGetValue<T>(string key, out T resultObject)
     {
+        var k = key ?? string.Empty;
+        k = k.Trim();
+
         object result;
-        if (StoredValues.TryGetValue(key, out result))
+        if (StoredValues.TryGetValue(k, out result))
         {
             resultObject = (T)result;
             return true;
@@ -28,6 +31,8 @@ public class Quest
     {
         if(string.IsNullOrEmpty(key))
             return;
+
+        key = key.Trim();
 
         Debug.LogFormat("Set {1} to variable {0}", key, value);
 

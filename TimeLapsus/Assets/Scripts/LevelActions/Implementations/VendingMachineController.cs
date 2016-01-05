@@ -8,9 +8,11 @@ public class VendingMachineController : InspectObjectController
     public string HasChipDialog;
     public GameObject ChipObject;
 
+   
 
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         if(IsInspected())
             GetComponent<InspectObject>().Name = KnownAutomatName;
 

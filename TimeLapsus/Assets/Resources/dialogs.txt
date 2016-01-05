@@ -51,6 +51,7 @@ D:potterNoDic2=[pc]potter6
 D:potterVase=[pc]potter7;[po]potter8;[pc]potter9
 D:potterVase1=[po]potter8;[pc]potter9
 S:potterVaseTake=[pc]
+S:potterAfterDead=[pc]
 
 S:vaseIntoGrave=[pc]
 S:shovelGravePast=[pc]

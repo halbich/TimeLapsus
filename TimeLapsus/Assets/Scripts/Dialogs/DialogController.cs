@@ -21,7 +21,7 @@ public class DialogController : MonoBehaviour
 
     private readonly Color Transparent = new Color(0, 0, 0, 0);
     private Dictionary<string, Dialog> dialogs;
-    private List<Dialog> randomDialogs; 
+    private List<Dialog> randomDialogs;
 
     private static DialogController _inst;
     private GameObject panel;
@@ -112,23 +112,23 @@ public class DialogController : MonoBehaviour
 
     internal Dialog GetDialog(string p)
     {
-        if(!isLoaded)
+        if (!isLoaded)
             throw new InvalidOperationException("Dialogs are not correctly loaded!");
 
 
         if (string.IsNullOrEmpty(p))
             return null;
 
+        p = p.Trim();
+
         Debug.LogFormat("Get dialog >{0}<", p);
 
         Dialog ret;
-        if (!dialogs.TryGetValue(p, out ret))
-        {
-            Debug.LogErrorFormat("Zadaný dialog nebyl nalezen: >{0}<", p);
-            return null;
-        }
-        return ret;
-
+        if (dialogs.TryGetValue(p, out ret))
+            return ret;
+        
+        Debug.LogErrorFormat("Zadaný dialog nebyl nalezen: >{0}<", p);
+        return null;
     }
 
     private bool createDialogs()
@@ -267,8 +267,8 @@ public class DialogController : MonoBehaviour
 
     internal void ShowRandomDialog()
     {
-       var index = Random.Range(0, randomDialogs.Count);
-      //  Debug.Log(index);
+        var index = Random.Range(0, randomDialogs.Count);
+        //  Debug.Log(index);
         ShowDialog(randomDialogs[index]);
     }
 }
