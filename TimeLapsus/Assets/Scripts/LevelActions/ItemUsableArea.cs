@@ -7,11 +7,16 @@ public class ItemUsableArea : ScriptWithController
 
     internal void Use(EnumItemID itemId)
     {
+        var used = false;
         foreach (var action in UseActions.Where(action => action.itemID == itemId))
         {
             action.Use();
+            used = true;
             break;
         }
+
+        if (!used)
+            DialogController.Instance.ShowRandomDialog();
     }
 
     protected void OnMouseEnter()

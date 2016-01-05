@@ -1,6 +1,7 @@
 ﻿public class GravePastController : InspectObjectController
 {
     private const string KeyName = "hasSeenGravePast";
+    public string BuriedVaseKeyName;
 
     protected override string getDialog()
     {

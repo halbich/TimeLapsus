@@ -29,12 +29,11 @@ public abstract class InspectObjectController : MonoBehaviour
     protected virtual void endDialogAction()
     {
         Debug.LogFormat("Set true to variable {0}", InspectedItemVariable);
-        currentQuest.SetValue(InspectedItemVariable, true);
+        currentQuest.SetBoolean(InspectedItemVariable);
     }
 
     public bool IsInspected()
     {
-        bool inspected;
-        return currentQuest.TryGetValue(InspectedItemVariable, out inspected) && inspected;
+        return currentQuest.GetBoolean(InspectedItemVariable);
     }
 }

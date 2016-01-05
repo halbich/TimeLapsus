@@ -17,6 +17,7 @@ public class PawnController : MonoBehaviour
 
     private SpriteRenderer sprite;
     private Animator animator;
+    private float currentRemainingDistance;
 
     // Use this for initialization
     private void Start()
@@ -39,9 +40,16 @@ public class PawnController : MonoBehaviour
 
         transform.position += currentDirection * MoveSpeed * Time.deltaTime;
 
-        if (!(Vector3.Distance(gameObject.transform.position, currentTarget) <= DestinationDelta))
-            return;
+        var newRemainingDistance = Vector3.Distance(gameObject.transform.position, currentTarget);
 
+        if (newRemainingDistance > DestinationDelta &&
+            (newRemainingDistance - currentRemainingDistance) < 0) // we are getting closer to destination
+        {
+            currentRemainingDistance = newRemainingDistance;
+            return;
+        }
+
+        
         isMoving = false;
         animator.SetTrigger("WalkEnd");
         //Debug.Log("WalkEnd");
@@ -52,7 +60,12 @@ public class PawnController : MonoBehaviour
     {
         target.z = gameObject.transform.position.z;
         target.y += DestinationOffsetY;
-        if (Vector3.Distance(gameObject.transform.position, target) <= DestinationDelta)
+
+
+        currentRemainingDistance = Vector3.Distance(gameObject.transform.position, target);
+
+
+        if (currentRemainingDistance <= DestinationDelta)
         {
             nextFn();
             return;
@@ -73,6 +86,12 @@ public class PawnController : MonoBehaviour
             //Debug.Log("WalkStart");
         }
         isMoving = true;
+
+
+        if (Debug.isDebugBuild)
+        {
+            gameObject.transform.position = target;
+        }
     }
 
     internal void SetNewFacing(Facing newDirection)

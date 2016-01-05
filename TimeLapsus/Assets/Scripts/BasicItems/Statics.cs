@@ -38,8 +38,13 @@ public static class Statics
 
     public static Dictionary<EnumItemID, InventoryItem> AllInventoryItems = new Dictionary<EnumItemID, InventoryItem>
     {
-        {EnumItemID.Vase, new InventoryItem("invItemVaseName", "invItemVaseName", EnumItemID.Vase, "Vase")},
-        {EnumItemID.Chip, new InventoryItem("Bábelský čip", "Čip díky kterému lze rozumět libovolnému jazyku.", EnumItemID.Chip, "Chip")}
+        {EnumItemID.Vase, new InventoryItem("invItemVaseName", "invItemVaseDesc", EnumItemID.Vase, "Vase")},
+        {EnumItemID.AncientVase, new InventoryItem("invItemAncientVaseName", "invItemAncientVaseDesc", EnumItemID.AncientVase, "AncientVase")},
+        {EnumItemID.Chip, new InventoryItem("invItemBabelChipName", "invItemBabelChipDesc", EnumItemID.Chip, "Chip")},
+        {EnumItemID.Shovel, new InventoryItem("invItemShovelName", "invItemShovelDesc", EnumItemID.Shovel, "Shovel")},
+        {EnumItemID.Coins, new InventoryItem("invItemCoinsName", "invItemCoinsDesc", EnumItemID.Coins, "Coins")},
+        {EnumItemID.Gold, new InventoryItem("invItemGoldName", "invItemGoldDesc", EnumItemID.Gold, "Gold")},
+        {EnumItemID.Robot, new InventoryItem("invItemRobotName", "invItemRobotDesc", EnumItemID.Robot, "Robot")},
     };
 
     public static Dictionary<string, EnumActorID> ActorMappings = new Dictionary<string, EnumActorID>

@@ -35,7 +35,7 @@ public class VaseController : InspectObjectController
             base.endDialogAction();
 
         if (!currentQuest.GetBoolean(firstLineSeen))
-            currentQuest.SetValue(firstLineSeen, true);
+            currentQuest.SetBoolean(firstLineSeen);
     }
 
 

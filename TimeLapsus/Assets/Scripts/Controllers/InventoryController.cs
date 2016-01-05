@@ -23,8 +23,11 @@ public class InventoryController : MonoBehaviour
             var itemInfo = Statics.Inventory[i];
             var newItem = Instantiate(InventoryItemTemplate);
             newItem.transform.SetParent(transform, false);
+            
             var itemController = newItem.GetComponent<InventoryItemController>();
-            if (itemController == null) throw new ArgumentException("InventoryItemTemplate does not contain an InventoryItemController");
+            if (itemController == null)
+                throw new ArgumentException("InventoryItemTemplate does not contain an InventoryItemController");
+            
             itemController.SetItem(itemInfo.ItemID);
             itemController.SetPosition(i);
         }

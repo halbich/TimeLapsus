@@ -9,7 +9,7 @@
                 Controller.PlayerController.MoveTo(ObjectPoint.StartPoint, () =>
                 {
                     Controller.PlayerController.SetNewFacing(ObjectPoint.Direction);
-                    QuestController.Instance.GetCurrent().SetValue("buriedVase", true);
+                    QuestController.Instance.GetCurrent().SetBoolean("buriedVase");
                     var dialogController = DialogController.Instance;
                     dialogController.ShowDialog(dialogController.GetDialog("vaseBuryingDialog"));
                     base.Use();

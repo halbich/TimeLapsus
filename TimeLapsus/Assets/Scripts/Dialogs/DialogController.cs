@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class DialogController : MonoBehaviour
 {
@@ -21,6 +21,7 @@ public class DialogController : MonoBehaviour
 
     private readonly Color Transparent = new Color(0, 0, 0, 0);
     private Dictionary<string, Dialog> dialogs;
+    private List<Dialog> randomDialogs; 
 
     private static DialogController _inst;
     private GameObject panel;
@@ -122,56 +123,11 @@ public class DialogController : MonoBehaviour
     private bool createDialogs()
     {
         dialogs = new Dictionary<string, Dialog>();
+        randomDialogs = new List<Dialog>();
         var dialogRes = Resources.Load("dialogs") as TextAsset;
 
         return fillDialogs(dialogRes.text);
-
-
-
-
-
-        //// this structure should be filled by some tool
-
-
-        //dialogs.Add("mayorFirst", new Dialog
-        //{
-        //    DialogLines = new List<DialogLine>
-        //    {
-        //        new DialogLine(EnumActorID.MainCharacter, ti.GetText("p1")),
-        //        new DialogLine(EnumActorID.Mayor, ti.GetText("m1")),
-        //        new DialogLine(EnumActorID.MainCharacter, ti.GetText("p2")),
-        //        new DialogLine(EnumActorID.Mayor, ti.GetText("m2")),
-        //        new DialogLine(EnumActorID.MainCharacter, ti.GetText("p3"))
-        //    }
-        //});
-
-        //dialogs.Add("potterFirst", new Dialog
-        //{
-        //    DialogLines = new List<DialogLine>
-        //    {
-        //        new DialogLine(EnumActorID.MainCharacter, ti.GetText("p1")),
-        //        new DialogLine(EnumActorID.Potter, ti.GetText("m1")),
-        //        new DialogLine(EnumActorID.MainCharacter, ti.GetText("p2")),
-        //        new DialogLine(EnumActorID.Potter, ti.GetText("m2")),
-        //        new DialogLine(EnumActorID.MainCharacter, ti.GetText("p3"))
-        //    }
-        //});
-
-        //addSimpleDialogs("mayorNotDisturb", "mayorBlueprints", "questDefinition", "inspectShovel", "hasShovel", "inspectVaseInventory", "vaseBuryingDialog",
-        //    "potterNotDisturb", "needMoneyToBuy", "inspectGravePresent", "inspectGravePast", "inspectVase", "inspectPresentVaseBuried", "inspectPastVaseBuried",
-        //    "inspTeleport");
-
-        //Debug.LogFormat("Dialogů: {0}", dialogs.Count);
     }
-
-    private void addSimpleDialogs(params string[] dialogNames)
-    {
-        foreach (var dialog in dialogNames)
-        {
-            dialogs.Add(dialog, Dialog.SimpleDialog(dialog));
-        }
-    }
-
 
     private bool fillDialogs(string data)
     {
@@ -203,7 +159,7 @@ public class DialogController : MonoBehaviour
                             addDialog(res, ti);
                             break;
                         case 'r':
-                            addRandomDialog(res);
+                            addRandomDialog(res, ti);
                             break;
                         default:
                             Debug.LogErrorFormat("Neplatný dialog: {0}", line);
@@ -225,10 +181,30 @@ public class DialogController : MonoBehaviour
         return true;
     }
 
-    private void addRandomDialog(string res)
+    private void addRandomDialog(string res, TextController ti)
     {
-        Debug.Log(res);
-        //throw new NotImplementedException();
+        var entries = res.Split(new[] { '=' }, 2);
+        if (entries.Length != 2)
+        {
+            Debug.LogErrorFormat("Neplatná řádka: {0}", res);
+            return;
+        }
+
+        var lines = entries[1].Split(new[] { ";" }, StringSplitOptions.RemoveEmptyEntries);
+        randomDialogs.AddRange(
+            from line in lines
+            let actor = line.Substring(0, 4)
+            let ln = line.Substring(4)
+            select new Dialog
+            {
+                DialogLines = new List<DialogLine>
+                {
+                    new DialogLine(Statics.ActorMappings[actor], ti.GetText(ln))
+
+                }
+            });
+
+
     }
 
     private void addDialog(string res, TextController ti)
@@ -276,5 +252,12 @@ public class DialogController : MonoBehaviour
         {
             DialogLines = dialogLines
         });
+    }
+
+    internal void ShowRandomDialog()
+    {
+       var index = Random.Range(0, randomDialogs.Count);
+        Debug.Log(index);
+        ShowDialog(randomDialogs[index]);
     }
 }

@@ -9,8 +9,7 @@ public class AfterTeleportTrigger : DialogActorController
     {
         //pokud jsem nezobrazil popis questu
 
-        bool hasAlreadySpeaked;
-        if (currentQuest.TryGetValue(HasSpoken, out hasAlreadySpeaked) && hasAlreadySpeaked)
+        if(currentQuest.GetBoolean(HasSpoken))
         {
             return null;
         }
@@ -20,6 +19,6 @@ public class AfterTeleportTrigger : DialogActorController
 
     protected override void endDialogAction()
     {
-        currentQuest.SetValue(HasSpoken, true);
+        currentQuest.SetBoolean(HasSpoken);
     }
 }

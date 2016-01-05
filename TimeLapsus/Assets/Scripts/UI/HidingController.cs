@@ -1,8 +1,10 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class HidingController : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, IPointerExitHandler
 {
+    public float AfterExitTime = 4;
     private Animator animComponent;
 
     // Use this for initialization
@@ -26,18 +28,28 @@ public class HidingController : MonoBehaviour, IPointerDownHandler, IPointerEnte
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-       // Debug.Log("enter");
+        Debug.Log("enter");
         if (eventData == null)
             return;
+
+        StopCoroutine(hide());
+        
         animComponent.SetTrigger("ShowInventory");
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-       // Debug.Log("exit");
+        Debug.Log("exit");
 
         if (eventData == null)
             return;
+
+        StartCoroutine(hide());
+    }
+
+    IEnumerator hide()
+    {
+        yield return new WaitForSeconds(AfterExitTime);
         animComponent.SetTrigger("HideInventory");
     }
 }

@@ -8,30 +8,32 @@ public class TestScript : ScriptWithController
     public EnumItemID[] InventoryToInit;
 
     // Use this for initialization
-    void Start()
+    protected override void Start()
     {
         if (!Debug.isDebugBuild)
+        {
+            Destroy(gameObject);
             return;
+        }
         
 
-        foreach (var s in BooleanKeysAddedInBeginning)
+        foreach (var s in BooleanKeysAddedInBeginning ?? new string[0])
         {
             var currentQuest = QuestController.Instance.GetCurrent();
             if (string.IsNullOrEmpty(s))
                 continue;
 
-            currentQuest.SetValue(s, true);
+            currentQuest.SetBoolean(s);
         }
 
-        foreach (var i in InventoryToInit)
+        foreach (var i in InventoryToInit ?? new EnumItemID[0])
         {
            Controller.AddInventoryItem(i);
         }
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
 
     }
+
+
+  
 }

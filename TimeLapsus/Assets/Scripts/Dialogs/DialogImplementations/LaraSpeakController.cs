@@ -9,6 +9,6 @@
 
     protected override void endDialogAction()
     {
-        currentQuest.SetValue(HasSpoken, true);
+        currentQuest.SetBoolean(HasSpoken);
     }
 }

@@ -40,9 +40,7 @@ public class PickableItem : InspectObject
     {
         base.Start();
 
-        bool pickedUpItem;
-      
-        if (currentQuest.TryGetValue(pickedUpItemVariable, out pickedUpItem) && pickedUpItem)
+        if (currentQuest.GetBoolean(pickedUpItemVariable))
         {
             Destroy(gameObject);
             return;
@@ -60,7 +58,7 @@ public class PickableItem : InspectObject
         Controller.AddInventoryItem(itemId);
 
         if (pickedUpItemVariable != null)
-            currentQuest.SetValue(pickedUpItemVariable, true);
+            currentQuest.SetBoolean(pickedUpItemVariable);
 
         Destroy(gameObject);
     }

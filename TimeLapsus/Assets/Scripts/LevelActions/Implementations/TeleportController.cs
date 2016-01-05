@@ -4,23 +4,58 @@ using System.Collections;
 public class TeleportController : InspectObjectController
 {
     public string KnownTeleportName;
+
+    public string FirstSeenDialogName;
+    public string SimilarSeenDialogName;
+    public string HasSeenTeleportKeyName;
+
     private void Start()
     {
-        if (!IsInspected())
-            GetComponent<ChangeTimeLine>().enabled = false;
-
         var hasSpoken = "hasTriggeredAfterTeleportDialog";
 
-        bool hasAlreadySpeaked;
-        if (currentQuest.TryGetValue(hasSpoken, out hasAlreadySpeaked) && hasAlreadySpeaked)
+        if (currentQuest.GetBoolean(hasSpoken))
         {
             GetComponent<ChangeTimeLine>().Name = KnownTeleportName;
+            GetComponent<InspectObject>().enabled = false;
+            return;
         }
+
+
+        if (!IsInspected())
+            GetComponent<ChangeTimeLine>().enabled = false;
+        else
+        {
+            if (currentQuest.GetBoolean(FirstSeenDialogName))
+            {
+                GetComponent<InspectObject>().enabled = false;
+            }
+            else
+            {
+                GetComponent<ChangeTimeLine>().enabled = false;
+            }
+        }
+
+       
+
+    }
+
+    protected override string getDialog()
+    {
+        if (!currentQuest.GetBoolean(HasSeenTeleportKeyName))
+            return FirstSeenDialogName;
+
+        return SimilarSeenDialogName;
 
     }
 
     protected override void endDialogAction()
     {
+        if (!currentQuest.GetBoolean(HasSeenTeleportKeyName))
+        {
+            currentQuest.SetBoolean(HasSeenTeleportKeyName);
+            currentQuest.SetBoolean(FirstSeenDialogName);
+        }
+
         base.endDialogAction();
         GetComponent<ChangeTimeLine>().enabled = true;
         GetComponent<InspectObject>().enabled = false;

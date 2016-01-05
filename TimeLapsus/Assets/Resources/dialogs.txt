@@ -2,8 +2,12 @@ S:questDefinition=[pc]
 S:vaseOldGraveOut=[pc]
 S:shovelInfo=[pc]
 S:graveInfo=[pc]
-S:teleportPreInfo=[pc]
+
+S:teleportToFuturePreInfo=[pc]
+S:teleportToPastPreInfo=[pc]
+S:teleportSeenInfo=[pc]
 S:teleportPostInfo=[pc]
+
 S:antiquarianNo=[an]
 S:antiquarianVaseNew=[an]
 S:antiquarianVaseOld=[an]
@@ -42,7 +46,8 @@ D:mayorNo=[ma]mayorNo1;[pc]mayorNo2
 
 D:mayorNoDic1=[pc]mayor1;[ma]mayor2;[pc]mayor3
 D:mayorNoDic2=[pc]mayor4
-D:mayorDic=[pc]mayor5;[ma]mayor6;[pc]mayor7;[pc]mayor8;[pc]mayor9;[ma]mayor10;[ma]mayor11;[ma]mayor12;[ma]mayor13
+D:mayorDicAfterNoDic=[pc]mayor5;[ma]mayor6;[pc]mayor7;[pc]mayor8;[pc]mayor9;[ma]mayor10;[ma]mayor11;[ma]mayor12;[ma]mayor13
+D:mayorDic=[pc]mayor14;[ma]mayor15;[pc]mayor7;[pc]mayor8;[pc]mayor9;[ma]mayor10;[ma]mayor11;[ma]mayor12;[ma]mayor13
 
 S:blueprintsInfo=[pc]
 
@@ -50,7 +55,13 @@ R:random=[pc]random1;[pc]random2;[pc]random3;[pc]random4;[pc]random5;[pc]random6
 
 
 #inventáø
-S:invItemVaseName=[pc]
+S:invItemVaseDesc=[pc]
+S:invItemAncientVaseDesc=[pc]
+S:invItemBabelChipDesc=[pc]
+S:invItemShovelDesc=[pc]
+S:invItemCoinsDesc=[pc]
+S:invItemGoldDesc=[pc]
+S:invItemRobotDesc=[pc]
 
 
 

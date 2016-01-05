@@ -14,7 +14,7 @@
 
     protected override void endDialogAction()
     {
-        currentQuest.SetValue(KeyName, true);
+        currentQuest.SetBoolean(KeyName);
         Destroy(gameObject);
     }
 }

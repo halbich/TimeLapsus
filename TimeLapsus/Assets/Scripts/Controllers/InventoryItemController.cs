@@ -75,7 +75,9 @@ public class InventoryItemController : ClickableArea, IPointerDownHandler, IPoin
     {
         if (eventData == null)
             return;
-        transform.position = Input.mousePosition;
+        var newPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        newPos.z = -10;
+        transform.position = newPos;
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -83,6 +85,7 @@ public class InventoryItemController : ClickableArea, IPointerDownHandler, IPoin
         DraggedObject = this;
         if (eventData == null)
             return;
+
         oldLocalPosition = transform.localPosition;
         oldLocalRotation = transform.localRotation;
         oldLocalScale = transform.localScale;
@@ -101,20 +104,27 @@ public class InventoryItemController : ClickableArea, IPointerDownHandler, IPoin
         Controller.DescriptionController.SetDescription("", false);
         if (eventData == null)
             return;
+
         transform.parent = transformParent;
         transform.localPosition = oldLocalPosition;
         transform.localRotation = oldLocalRotation;
         transform.localScale = oldLocalScale;
 
-        RaycastHit hit;
-        var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out hit))
+
+        RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+
+        if (hit.collider != null)
         {
             var usable = hit.collider.GetComponent<ItemUsableArea>();
             if (usable)
-                usable.Use(ItemId);
+            {
+            //    usable.Use(ItemId);
+            }
         }
-        if (DraggedOver != null) DraggedOver.Use(ItemId);
+
+        if (DraggedOver != null)
+            DraggedOver.Use(ItemId);
+        
         DraggedObject = null;
         DraggedOver = null;
     }

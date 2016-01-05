@@ -70,4 +70,7 @@ public enum EnumItemID
     GravePresent,
     Shovel,
     BlueprintMayor,
+    Coins,
+    Gold,
+    Robot
 }
