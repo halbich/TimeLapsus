@@ -28,7 +28,7 @@ public class HidingController : MonoBehaviour, IPointerDownHandler, IPointerEnte
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        Debug.Log("enter");
+      //  Debug.Log("enter");
         if (eventData == null)
             return;
 
@@ -39,7 +39,7 @@ public class HidingController : MonoBehaviour, IPointerDownHandler, IPointerEnte
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        Debug.Log("exit");
+        //Debug.Log("exit");
 
         if (eventData == null)
             return;

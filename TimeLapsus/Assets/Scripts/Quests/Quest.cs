@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class Quest
 {
@@ -25,6 +26,11 @@ public class Quest
 
     public void SetValue(string key, object value)
     {
+        if(string.IsNullOrEmpty(key))
+            return;
+
+        Debug.LogFormat("Set {1} to variable {0}", key, value);
+
         if (StoredValues.ContainsKey(key))
             StoredValues[key] = value;
         else

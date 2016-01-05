@@ -75,7 +75,7 @@ public class TextController
     public string GetText(string key, bool checkPresence = true)
     {
         if (!isLoaded)
-            throw new InvalidOperationException("translation wasn't loaded!");
+            throw new InvalidOperationException("translation wasn't correctly loaded!");
 
         string res;
         var present = keys.TryGetValue(key, out res);

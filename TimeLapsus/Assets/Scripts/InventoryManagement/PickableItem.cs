@@ -30,7 +30,6 @@ public class PickableItem : InspectObject
             {
                 Controller.PlayerController.SetNewFacing(ObjectPoint.Direction);
                 PickUp();
-                //QuestController.Instance.Inspect(EntityID);
             });
         else
             PickUp();
@@ -63,7 +62,7 @@ public class PickableItem : InspectObject
         Destroy(gameObject);
     }
 
-    internal void IsInspected()
+    internal virtual void IsInspected()
     {
         cursor = CursorType.PickUp;
     }

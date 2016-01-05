@@ -121,9 +121,15 @@ public class BaseController : MonoBehaviour
         FindObjectOfType<InventoryController>().UpdateInventory();
     }
 
+    public bool HasInventoryItem(EnumItemID itemID)
+    {
+        return Statics.Inventory.Any(e => e.ItemID == itemID);
+    }
+
     internal void RemoveInventoryItem(EnumItemID itemID)
     {
-        Statics.Inventory.Remove(Statics.AllInventoryItems[itemID]);
+        var item = Statics.AllInventoryItems[itemID];
+        Statics.Inventory.Remove(item);
         FindObjectOfType<InventoryController>().UpdateInventory();
     }
 }

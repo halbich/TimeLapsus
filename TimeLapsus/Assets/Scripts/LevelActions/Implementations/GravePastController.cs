@@ -1,25 +1,83 @@
-﻿public class GravePastController : InspectObjectController
+﻿using Assets.Scripts.InventoryManagement;
+using UnityEngine;
+
+public class GravePastController : InspectObjectController
 {
-    private const string KeyName = "hasSeenGravePast";
-    public string BuriedVaseKeyName;
+
+    public string AfterInsertedInfoDialog;
+    public string AfterInsertedTitle;
+    public UseVaseOnGravePastscript InsertScript;
+    public GameObject VaseInGrave;
+
+    public string AfterBuriedInfoDialog;
+    public string AfterBuriedTitle;
+    public DigVaseIntoGrave BuryScript;
+    public GameObject PileOfDirt;
+
+
+
+    public GameObject DeathObject;
+
+    private Sprite headSprite;
+
+    public GravePastController()
+    {
+        canLoadHeadImage = true;
+    }
+
+    void Start()
+    {
+        if (DeathObject == null)
+            return;
+
+        headSprite = DeathObject.GetComponent<DialogActor>().Avatar;
+
+
+        ActionOccured();
+
+    }
 
     protected override string getDialog()
     {
-        bool buried;
-        if (currentQuest.TryGetValue("buriedVase", out buried) && buried)
+        if (currentQuest.GetBoolean(BuryScript.BuriedVaseVarName))
         {
-            return "inspectPastVaseBuried";
+            return AfterBuriedInfoDialog;
         }
 
-        bool hasShovel;
-        if (currentQuest.TryGetValue(KeyName, out hasShovel) && hasShovel)
-        {
-            return null;
-        }
-        return "inspectGravePast";
+        return base.getDialog();
     }
 
-    protected override void endDialogAction()
+
+    protected override Sprite GetHeadSprite()
     {
+        return headSprite;
+    }
+
+    internal void ActionOccured()
+    {
+
+        var hasInserted = currentQuest.GetBoolean(InsertScript.InsertedVaseVarName);
+
+        InsertScript.enabled = !hasInserted;
+        VaseInGrave.SetActive(hasInserted);
+
+        if (hasInserted)
+        {
+            InspectedItemDialog = AfterInsertedInfoDialog;
+            GetComponent<InspectObject>().Name = AfterInsertedTitle;
+        }
+
+        var hasBuried = currentQuest.GetBoolean(BuryScript.BuriedVaseVarName);
+
+        BuryScript.enabled = hasInserted && !hasBuried;
+        PileOfDirt.SetActive(hasBuried);
+
+        if (hasBuried)
+        {
+            InspectedItemDialog = AfterBuriedInfoDialog;
+            GetComponent<InspectObject>().Name = AfterBuriedTitle;
+        }
+
+
     }
 }

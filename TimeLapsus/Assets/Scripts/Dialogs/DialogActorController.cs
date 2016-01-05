@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public abstract class DialogActorController : MonoBehaviour
+public abstract class DialogActorController : ScriptWithController
 {
     protected Quest currentQuest = QuestController.Instance.GetCurrent();
 

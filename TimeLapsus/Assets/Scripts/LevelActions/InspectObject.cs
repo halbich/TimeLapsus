@@ -41,7 +41,8 @@ public class InspectObject : ClickableArea
         else
         {
             ObjectPoint = comps.GetPoint(Controller.CharacterZPosition);
-            Destroy(comps);
+            // we can  have multiple object trying to init using this point
+            //Destroy(comps);
         }
 
         InspectController = GetComponent<InspectObjectController>();

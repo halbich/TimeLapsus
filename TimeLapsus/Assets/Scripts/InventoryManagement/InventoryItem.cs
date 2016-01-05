@@ -2,7 +2,7 @@
 
 namespace Assets.Scripts
 {
-    public class InventoryItem : Object
+    public class InventoryItem 
     {
         public InventoryItem()
         {

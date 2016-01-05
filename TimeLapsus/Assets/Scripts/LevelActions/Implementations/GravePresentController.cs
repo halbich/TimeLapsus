@@ -1,24 +1,71 @@
-﻿public class GravePresentController : InspectObjectController
+﻿using UnityEngine;
+
+public class GravePresentController : InspectObjectController
 {
-    private const string KeyName = "hasDiggedVase";
 
-    protected override string getDialog()
+    public string AfterInsertedInfoDialog;
+    public string AfterInsertedTitle;
+    public string InsertedVaseVarName;
+    // public UseVaseOnGravePastscript InsertScript;
+    public GameObject VaseInGrave;
+
+    public string AfterBuriedInfoDialog;
+    public string AfterBuriedTitle;
+    public string BuriedVaseVarName;
+    //public DigVaseIntoGrave BuryScript;
+    public GameObject PileOfDirtWithFlowers;
+
+    public ShovelOutGrave ShovelOutGrave;
+
+    public string GraveShoveledInfoDialog;
+    public string GraveShoveledTitle;
+
+    void Start()
     {
-        bool buried;
-        if (currentQuest.TryGetValue("buriedVase", out buried) && buried)
+        ActionOccured();
+    }
+
+    internal void ActionOccured()
+    {
+
+        var hasInserted = currentQuest.GetBoolean(InsertedVaseVarName);
+
+        if (hasInserted)
         {
-            return "inspectPresentVaseBuried";
+            InspectedItemDialog = AfterInsertedInfoDialog;
+            GetComponent<InspectObject>().Name = AfterInsertedTitle;
         }
 
-        bool hasShovel;
-        if (currentQuest.TryGetValue(KeyName, out hasShovel) && hasShovel)
+        var hasBuried = currentQuest.GetBoolean(BuriedVaseVarName);
+
+        PileOfDirtWithFlowers.SetActive(hasInserted && hasBuried);
+        VaseInGrave.SetActive(hasInserted && hasBuried);
+        ShovelOutGrave.enabled = hasInserted && hasBuried;
+
+        if (hasBuried)
         {
-            return null;
+            InspectedItemDialog = AfterBuriedInfoDialog;
+            GetComponent<InspectObject>().Name = AfterBuriedTitle;
         }
-        return "inspectGravePresent";
+
+        var Shoveled = currentQuest.GetBoolean(ShovelOutGrave.ShoveledGraveKeyName);
+        if (Shoveled)
+        {
+            Destroy(PileOfDirtWithFlowers);
+            InspectedItemDialog = GraveShoveledInfoDialog;
+            GetComponent<InspectObject>().Name = GraveShoveledTitle;
+        }
+
+
     }
 
     protected override void endDialogAction()
     {
+
+        var Shoveled = currentQuest.GetBoolean(ShovelOutGrave.ShoveledGraveKeyName);
+        if (Shoveled)
+        {
+            base.endDialogAction();
+        }
     }
 }

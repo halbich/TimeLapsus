@@ -112,12 +112,23 @@ public class DialogController : MonoBehaviour
 
     internal Dialog GetDialog(string p)
     {
+        if(!isLoaded)
+            throw new InvalidOperationException("Dialogs are not correctly loaded!");
+
+
         if (string.IsNullOrEmpty(p))
             return null;
 
         Debug.LogFormat("Get dialog >{0}<", p);
 
-        return dialogs[p];
+        Dialog ret;
+        if (!dialogs.TryGetValue(p, out ret))
+        {
+            Debug.LogErrorFormat("Zadaný dialog nebyl nalezen: >{0}<", p);
+            return null;
+        }
+        return ret;
+
     }
 
     private bool createDialogs()
@@ -257,7 +268,7 @@ public class DialogController : MonoBehaviour
     internal void ShowRandomDialog()
     {
        var index = Random.Range(0, randomDialogs.Count);
-        Debug.Log(index);
+      //  Debug.Log(index);
         ShowDialog(randomDialogs[index]);
     }
 }

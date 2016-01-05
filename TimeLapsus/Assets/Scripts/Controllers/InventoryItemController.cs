@@ -19,7 +19,7 @@ public class InventoryItemController : ClickableArea, IPointerDownHandler, IPoin
     public const float descriptionHeight = 0.5f;
     private float xOffset;
     private float yOffset;
-    private Sprite sprite;
+   // private Sprite sprite;
     private InventoryItem itemInfo;
     private float oldXOffset;
     private float clickBeginTime;
@@ -44,7 +44,6 @@ public class InventoryItemController : ClickableArea, IPointerDownHandler, IPoin
             return;
 
         GetComponent<Image>().sprite = itemInfo.ItemSprite;
-        sprite = itemInfo.ItemSprite;
         Name = itemInfo.ItemName;
     }
 
@@ -105,7 +104,7 @@ public class InventoryItemController : ClickableArea, IPointerDownHandler, IPoin
         if (eventData == null)
             return;
 
-        transform.parent = transformParent;
+        transform.SetParent( transformParent, true);
         transform.localPosition = oldLocalPosition;
         transform.localRotation = oldLocalRotation;
         transform.localScale = oldLocalScale;

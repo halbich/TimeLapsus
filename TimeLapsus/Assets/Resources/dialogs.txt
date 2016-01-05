@@ -23,7 +23,11 @@ D:bankerPresentNoMoney2=[pc]bankerPresent6
 D:bankerPresentMoney1=[pc]bankerPresent7;[bp]bankerPresent8;[bp]bankerPresent9
 D:bankerPresentMoney2=[bp]bankerPresent10
 
-S:automatInfo=[au]
+S:automatInfo=[pc]
+S:automatEmptyInfo=[pc]
+S:chipInfo=[pc]
+
+
 S:bankerFutureNo=[bf]
 D:bankerFutureNoAccount1=[bf]bankerFutureNoAccount1;[pc]bankerFutureNoAccount2
 D:bankerFutureNoAccount2=[bf]bankerFutureNoAccount1
@@ -33,8 +37,13 @@ S:robotsInfo=[rs]
 D:robotsNoAccount=[rs]robotsNoAccount1;[rs]robotsNoAccount2
 D:obtainRobot=[rs]robotsAccountEmpty;[pc]robotsTake
 S:robotsTaken=[rs]
+
 S:gravePastInfo=[pc]
 S:gravePastVase=[de]
+S:gravePresentEmpty=[pc]
+S:graveWithVasePresent=[pc]
+S:graveShoveled=[pc]
+
 D:potterNo=[po]potterNo1;[pc]potterNo2
 D:potterNoDic1=[pc]potter1;[po]potter2;[pc]potter3;[po]potter4;[pc]potter5
 D:potterNoDic2=[pc]potter6
@@ -42,12 +51,18 @@ D:potterVase=[pc]potter7;[po]potter8;[pc]potter9
 D:potterVase1=[po]potter8;[pc]potter9
 S:potterVaseTake=[pc]
 
+S:vaseIntoGrave=[pc]
+S:shovelGravePast=[pc]
+s:vaseBuried=[pc]
+
 D:mayorNo=[ma]mayorNo1;[pc]mayorNo2
 
 D:mayorNoDic1=[pc]mayor1;[ma]mayor2;[pc]mayor3
 D:mayorNoDic2=[pc]mayor4
 D:mayorDicAfterNoDic=[pc]mayor5;[ma]mayor6;[pc]mayor7;[pc]mayor8;[pc]mayor9;[ma]mayor10;[ma]mayor11;[ma]mayor12;[ma]mayor13
 D:mayorDic=[pc]mayor14;[ma]mayor15;[pc]mayor7;[pc]mayor8;[pc]mayor9;[ma]mayor10;[ma]mayor11;[ma]mayor12;[ma]mayor13
+
+S:mayorBridgeBuilt=[pc]
 
 S:blueprintsInfo=[pc]
 

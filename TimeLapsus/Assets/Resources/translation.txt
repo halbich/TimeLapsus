@@ -49,6 +49,8 @@ bankerPresent10=Přeje si pán další termíňáček na 1000 let???
 
 
 automatInfo="Vložte 20 megakreditů"?! Koukám, že setsakra podražilo…
+automatEmptyInfo=Automat hlásí, že je prázdný. Z něj už nic nedostanu.
+chipInfo=Krásnej čipešek
 
  
 bankerFutureNo=ERR404:!UNKNOWN_RUNTIME_ERROR!
@@ -68,7 +70,9 @@ robotsTaken=ERR03:!vas stav_uctu je: nulova_hodnota_vkladu! /&/ !bonus [UKLIDOVY
 
 gravePastInfo=Tsche… díra jak pro liliputánskou famílii. Nebo že by na urnu? 
 gravePastVase=MÁM TO SNAD ZAKOPAT JÁ? KOSOU?!
-
+gravePresentEmpty=To je divné, vždyť tam ta váza byla?
+graveWithVasePresent=Hezké kvítí.
+graveShoveled=Teď konečně vypadá staře
 
 potterNo1=*(&^(*&^)(*)!!!!
 potterNo2=Teda, o takovejch nadávkách se mi ani nesnilo. Radši toho nechám.
@@ -85,6 +89,11 @@ potter7=Krásná váza velikosti urny… nebo liliputánské famílie.
 potter8=*(&$%^#$*() !!!
 potter9=Aha. Co je v domě, není pro mě. Zatím…
 potterVaseTake=Snad se bude k něčemu hodit.
+
+vaseIntoGrave=Šup tam s ní
+shovelGravePast=Jen to pěkně zakopat
+vaseBuried=Budiž jí země lehká.
+
 
 mayorNo1=*(&^(*&^)(*)!!!!
 mayorNo2=No, tak radši nic.
@@ -106,6 +115,7 @@ mayor12=do města pro cement a trochu těch opracovaných masivních kamenných 
 mayor13=Nevěděl jsem pořádně co s tím budeme dělat a díky vám mám jasno! Přijďte tak za 42 let, to budeme tak končit... zhruba.
 mayor14=Dobrý den, pane.
 mayor15=Dobrý den i vám.
+mayorBridgeBuilt=Už ho nebudu více otravovat. Jen ať hezky vymýšlí most.
 
 
 
@@ -126,7 +136,13 @@ doorPotter=K hrnčíři
 doorBank=Do banky
 doorAntiq=Antik
 shovelTitle=Lopata
+
 graveEmptyTitle=Prázdný hrob
+graveWithVaseTitle=Hrob s vázou
+graveWithDirt=Zakopaný hrob
+graveWithVase=Hrob s květinami
+graveShoveledTitle=Vykopaný hrob
+
 blueprintsTitle=Plány
 mayorTitle=Starosta
 potterTitle=Hrnčíř
@@ -136,6 +152,10 @@ vaseNewTitle=Nová váza
 vendingMachineUnknownTitle=Nějaký automat
 vendingMachineKnownTitle=Komunikační automat
 unknownObject=Cosi na podstavci
+chipTitle=Čip
+
+actionUseVaseOnGrave=Vložit do hrobu
+actionUseDigVaseIntoGrave=Zakopat
 
 
 #inventář

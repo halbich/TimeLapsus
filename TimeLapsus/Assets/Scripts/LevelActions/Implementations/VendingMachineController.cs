@@ -1,14 +1,35 @@
-﻿public class VendingMachineController : InspectObjectController
+﻿using UnityEngine;
+
+public class VendingMachineController : InspectObjectController
 {
-    private const string KeyName = "hasMoneyToBuy";
+
+    public string KnownAutomatName;
+    public string HasChipVarName;
+    public string HasChipDialog;
+    public GameObject ChipObject;
+
+
+    void Start()
+    {
+        if(IsInspected())
+            GetComponent<InspectObject>().Name = KnownAutomatName;
+
+         if (!currentQuest.GetBoolean(HasChipVarName) && ChipObject != null)
+             ChipObject.SetActive(false);
+
+    }
 
     protected override string getDialog()
     {
-        bool hasMoney;
-        if (currentQuest.TryGetValue(KeyName, out hasMoney) && hasMoney)
-        {
-            return "hasMoneyToBuy";
-        }
-        return "needMoneyToBuy";
+        if (currentQuest.GetBoolean(HasChipVarName))
+            return HasChipDialog;
+
+        return base.getDialog();
+    }
+
+    protected override void endDialogAction()
+    {
+        base.endDialogAction();
+        GetComponent<InspectObject>().Name = KnownAutomatName;
     }
 }

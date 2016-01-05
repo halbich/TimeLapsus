@@ -8,7 +8,10 @@ public class ItemUsableArea : ScriptWithController
     internal void Use(EnumItemID itemId)
     {
         var used = false;
-        foreach (var action in UseActions.Where(action => action.itemID == itemId))
+        foreach (var action in UseActions.Where(action => 
+            action != null &&
+            action.isActiveAndEnabled &&
+            action.itemID == itemId))
         {
             action.Use();
             used = true;

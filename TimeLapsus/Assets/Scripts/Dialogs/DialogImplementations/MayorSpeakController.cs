@@ -1,28 +1,39 @@
 ﻿public class MayorSpeakController : DialogActorController
 {
+    public string HasChipFirstDialog;
+    public string NoChipFirstDialog;
+    public string NoChipNoDisturb;
+    public string HasChipNowDialog;
+    public string CreateBridgeVarName;
+    public string BridgeCreatedDialog;
+
     private const string HasSpoken = "hasSpokenWithMayor";
 
     protected override string getDialog()
     {
-        if (currentQuest.GetBoolean(HasSpoken))
+        if (currentQuest.GetBoolean(CreateBridgeVarName))
+            return BridgeCreatedDialog;
+
+        if (Controller.HasInventoryItem(EnumItemID.Chip))
         {
-            return "mayorNotDisturb";
+            return currentQuest.GetBoolean(HasSpoken) ? HasChipNowDialog : HasChipFirstDialog;
         }
-        return "mayorFirst";
+
+        return currentQuest.GetBoolean(HasSpoken) ? NoChipNoDisturb : NoChipFirstDialog;
     }
 
     protected override void endDialogAction()
     {
+        if (Controller.HasInventoryItem(EnumItemID.Chip))
+        {
+            currentQuest.SetBoolean(CreateBridgeVarName);
+            return;
+            
+        }
+
         currentQuest.SetBoolean(HasSpoken);
+
+        base.endDialogAction();
     }
 
-    public override int GetHashCode()
-    {
-        return base.GetHashCode();
-    }
-
-    public override bool Equals(object obj)
-    {
-        return base.Equals(obj);
-    }
 }

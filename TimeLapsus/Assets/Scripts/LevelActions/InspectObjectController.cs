@@ -5,6 +5,7 @@ public abstract class InspectObjectController : MonoBehaviour
 
     public string InspectedItemVariable;
     public string InspectedItemDialog;
+    protected bool canLoadHeadImage;
 
     protected Quest currentQuest = QuestController.Instance.GetCurrent();
 
@@ -14,7 +15,7 @@ public abstract class InspectObjectController : MonoBehaviour
         var dialog = di.GetDialog(getDialog());
 
         if (di != null)
-            di.ShowDialog(dialog, null, endDialogAction);
+            di.ShowDialog(dialog, canLoadHeadImage ? null : GetHeadSprite(), endDialogAction);
 
         var pickable = GetComponent<PickableItem>();
         if (pickable != null)
@@ -28,12 +29,16 @@ public abstract class InspectObjectController : MonoBehaviour
 
     protected virtual void endDialogAction()
     {
-        Debug.LogFormat("Set true to variable {0}", InspectedItemVariable);
         currentQuest.SetBoolean(InspectedItemVariable);
     }
 
     public bool IsInspected()
     {
         return currentQuest.GetBoolean(InspectedItemVariable);
+    }
+
+    protected virtual Sprite GetHeadSprite()
+    {
+        return null;
     }
 }
