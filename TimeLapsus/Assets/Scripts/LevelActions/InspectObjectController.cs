@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public abstract class InspectObjectController : MonoBehaviour
+public abstract class InspectObjectController : ScriptWithController
 {
 
     public string InspectedItemVariable;

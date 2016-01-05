@@ -66,6 +66,7 @@ robotsNoAccount2=Takže buď nejsem člověk… nebo majitel účtu.
 robotsAccountEmpty=STAT01:!vas stav_uctu je: nulova_hodnota_vkladu! /&/ *bonus [UKLIDOVY_ROBOT]=volne_k_dispozici*
 robotsTake=Robot? Ale jo, lepší než konektorem do oka.
 robotsTaken=ERR03:!vas stav_uctu je: nulova_hodnota_vkladu! /&/ !bonus [UKLIDOVY_ROBOT]=jiz_odebran!
+r2d2Info=Hezkej robůtek. Jsem zvědav, co všechno umí.
 
 
 gravePastInfo=Tsche… díra jak pro liliputánskou famílii. Nebo že by na urnu? 
@@ -153,9 +154,12 @@ vendingMachineUnknownTitle=Nějaký automat
 vendingMachineKnownTitle=Komunikační automat
 unknownObject=Cosi na podstavci
 chipTitle=Čip
+dealomatTitle=Dealomat
 
 actionUseVaseOnGrave=Vložit do hrobu
 actionUseDigVaseIntoGrave=Zakopat
+
+
 
 
 #inventář

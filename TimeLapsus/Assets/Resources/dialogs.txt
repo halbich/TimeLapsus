@@ -30,13 +30,14 @@ S:chipInfo=[pc]
 
 S:bankerFutureNo=[bf]
 D:bankerFutureNoAccount1=[bf]bankerFutureNoAccount1;[pc]bankerFutureNoAccount2
-D:bankerFutureNoAccount2=[bf]bankerFutureNoAccount1
+D:bankerFutureNoAccount2=[pc]bankerFutureNoAccount2
 D:bankerFutureAccount=[bf]bankerFutureAccount1;[pc]bankerFutureAccount2
 S:bankerFutureAccountEmpty=[bf]
 S:robotsInfo=[rs]
-D:robotsNoAccount=[rs]robotsNoAccount1;[rs]robotsNoAccount2
+D:robotsNoAccount=[rs]robotsNoAccount1;[pc]robotsNoAccount2
 D:obtainRobot=[rs]robotsAccountEmpty;[pc]robotsTake
 S:robotsTaken=[rs]
+S:r2d2Info=[pc]
 
 S:gravePastInfo=[pc]
 S:gravePastVase=[de]
