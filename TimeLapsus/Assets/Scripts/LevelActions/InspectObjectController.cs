@@ -28,7 +28,8 @@ public abstract class InspectObjectController : ScriptWithController
 
     protected virtual void endDialogAction()
     {
-        currentQuest.SetBoolean(InspectedItemVariable);
+        if (!currentQuest.GetBoolean(InspectedItemVariable))
+            currentQuest.SetBoolean(InspectedItemVariable);
     }
 
     public bool IsInspected()

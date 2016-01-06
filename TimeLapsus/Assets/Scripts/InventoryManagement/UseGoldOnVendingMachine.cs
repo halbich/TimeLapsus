@@ -15,8 +15,15 @@
         //        base.Use();
         //    });
 
-        if (controller != null && controller.ChipObject != null)
-            controller.ChipObject.SetActive(true);
+        if (controller.ChipObject == null)
+            return;
+
+        controller.ChipObject.SetActive(true);
+
+        var quest = QuestController.Instance.GetCurrent();
+        quest.SetBoolean(controller.ChipWasGivenVarName);
+        quest.SetBoolean(controller.ChipObject.GetComponent<InspectObjectController>().InspectedItemVariable);
+        controller.ChipObject.GetComponent<PickableItem>().SetInspected();
 
         base.Use();
     }

@@ -30,7 +30,7 @@ public class DealomatController : InspectObjectController
         if (!IsInspected())
             return base.getDialog();
 
-        if (Controller.HasInventoryItem(EnumItemID.Robot))
+        if (Controller.HasInventoryItem(EnumItemID.Robot) || currentQuest.GetBoolean(banker.InitialMoneyKeyName))
             return AlreadyHasRobotDialog;
 
         if (!currentQuest.GetBoolean(banker.HasAccountKeyName))
