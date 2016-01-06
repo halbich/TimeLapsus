@@ -51,7 +51,12 @@ public class GravePastController : InspectObjectController
 
     protected override Sprite GetHeadSprite()
     {
-        return headSprite;
+
+        var hasInserted = currentQuest.GetBoolean(InsertScript.InsertedVaseVarName);
+
+        var hasBuried = currentQuest.GetBoolean(BuryScript.BuriedVaseVarName);
+
+        return hasInserted && !hasBuried ? headSprite : null;
     }
 
     internal void ActionOccured()
