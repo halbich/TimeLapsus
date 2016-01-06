@@ -84,10 +84,10 @@ public class PawnController : MonoBehaviour
         }
         isMoving = true;
 
-        if (Debug.isDebugBuild)
-        {
-            gameObject.transform.position = target;
-        }
+        //if (Debug.isDebugBuild)
+        //{
+        //    gameObject.transform.position = target;
+        //}
     }
 
     internal void SetNewFacing(Facing newDirection)
