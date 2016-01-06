@@ -2,23 +2,19 @@
 
 public class VendingMachineController : InspectObjectController
 {
-
     public string KnownAutomatName;
     public string HasChipVarName;
     public string HasChipDialog;
     public GameObject ChipObject;
 
-   
-
     protected override void Start()
     {
         base.Start();
-        if(IsInspected())
+        if (IsInspected())
             GetComponent<InspectObject>().Name = KnownAutomatName;
 
-         if (!currentQuest.GetBoolean(HasChipVarName) && ChipObject != null)
-             ChipObject.SetActive(false);
-
+        if (!currentQuest.GetBoolean(HasChipVarName) && ChipObject != null)
+            ChipObject.SetActive(false);
     }
 
     protected override string getDialog()

@@ -10,7 +10,6 @@ public class ScriptWithController : MonoBehaviour
         Controller = obj.GetComponent<BaseController>();
     }
 
-
     protected virtual void Start()
     {
     }

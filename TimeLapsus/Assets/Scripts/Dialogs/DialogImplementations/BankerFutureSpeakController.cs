@@ -4,9 +4,7 @@
     public string BankerNoAccountDialog;
     public string BankerNoAccountDialog2;
 
-
     private string hasSpokenWithBanker = "hasSpokenWithBankerFuture";
-
 
     protected override string getDialog()
     {

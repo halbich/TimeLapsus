@@ -55,8 +55,6 @@ public enum EnumActorID
     VendingMachine,
     RobotStorage,
     Death
-
-    
 }
 
 public enum EnumItemID

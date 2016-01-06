@@ -9,7 +9,6 @@
 
     public UseMoneyOnBanker MoneyScript;
 
-
     private string hasSpokenWithBanker = "hasSpokenWithBankerFuture";
 
     protected override string getDialog()
@@ -17,8 +16,7 @@
         if (currentQuest.GetBoolean(MoneyScript.SetAccountHasMoneyVarName))
             return HasMoneyRepeat;
 
-
-        return currentQuest.GetBoolean(hasSpokenWithBanker) ? NoMoneyRepeatDialog: BankerIntroDialog;
+        return currentQuest.GetBoolean(hasSpokenWithBanker) ? NoMoneyRepeatDialog : BankerIntroDialog;
     }
 
     protected override void endDialogAction()
@@ -28,6 +26,5 @@
 
         if (!currentQuest.GetBoolean(HasAccountKeyName))
             currentQuest.SetBoolean(HasAccountKeyName);
-    
     }
 }

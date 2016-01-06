@@ -1,13 +1,10 @@
-﻿using UnityEngine;
-using System.Collections;
-
-public class GravePickVase : PickableItem {
-
+﻿public class GravePickVase : PickableItem
+{
     public ShovelOutGrave ShovelScript;
 
-    internal override void IsInspected()
+    internal override void SetInspected()
     {
         if (currentQuest.GetBoolean(ShovelScript.ShoveledGraveKeyName))
-            base.IsInspected();
+            base.SetInspected();
     }
 }

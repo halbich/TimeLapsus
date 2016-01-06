@@ -10,7 +10,7 @@
     protected override void Start()
     {
         base.Start();
-        if(currentQuest.GetBoolean(ActionObject.PotterIsDeadVarName))
+        if (currentQuest.GetBoolean(ActionObject.PotterIsDeadVarName))
             Destroy(gameObject);
     }
 
@@ -24,6 +24,4 @@
         if (!currentQuest.GetBoolean(HasSpoken))
             currentQuest.SetBoolean(HasSpoken);
     }
-
-   
 }

@@ -19,8 +19,10 @@ public class InventoryItemController : ClickableArea, IPointerDownHandler, IPoin
     public const float descriptionHeight = 0.5f;
     private float xOffset;
     private float yOffset;
-   // private Sprite sprite;
+
+    // private Sprite sprite;
     private InventoryItem itemInfo;
+
     private float oldXOffset;
     private float clickBeginTime;
     private Vector3 oldLocalPosition;
@@ -104,11 +106,10 @@ public class InventoryItemController : ClickableArea, IPointerDownHandler, IPoin
         if (eventData == null)
             return;
 
-        transform.SetParent( transformParent, true);
+        transform.SetParent(transformParent, true);
         transform.localPosition = oldLocalPosition;
         transform.localRotation = oldLocalRotation;
         transform.localScale = oldLocalScale;
-
 
         RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
 
@@ -117,13 +118,13 @@ public class InventoryItemController : ClickableArea, IPointerDownHandler, IPoin
             var usable = hit.collider.GetComponent<ItemUsableArea>();
             if (usable)
             {
-            //    usable.Use(ItemId);
+                //    usable.Use(ItemId);
             }
         }
 
         if (DraggedOver != null)
             DraggedOver.Use(ItemId);
-        
+
         DraggedObject = null;
         DraggedOver = null;
     }

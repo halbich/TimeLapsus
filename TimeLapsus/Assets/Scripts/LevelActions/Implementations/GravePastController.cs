@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class GravePastController : InspectObjectController
 {
-
     public string AfterInsertedInfoDialog;
     public string AfterInsertedTitle;
     public UseVaseOnGravePastscript InsertScript;
@@ -13,8 +12,6 @@ public class GravePastController : InspectObjectController
     public string AfterBuriedTitle;
     public DigVaseIntoGrave BuryScript;
     public GameObject PileOfDirt;
-
-
 
     public GameObject DeathObject;
 
@@ -29,11 +26,10 @@ public class GravePastController : InspectObjectController
     {
         base.Start();
 
-         if (DeathObject == null)
+        if (DeathObject == null)
             return;
 
         headSprite = DeathObject.GetComponent<DialogActor>().Avatar;
-
 
         ActionOccured();
     }
@@ -48,10 +44,8 @@ public class GravePastController : InspectObjectController
         return base.getDialog();
     }
 
-
     protected override Sprite GetHeadSprite()
     {
-
         var hasInserted = currentQuest.GetBoolean(InsertScript.InsertedVaseVarName);
 
         var hasBuried = currentQuest.GetBoolean(BuryScript.BuriedVaseVarName);
@@ -61,7 +55,6 @@ public class GravePastController : InspectObjectController
 
     internal void ActionOccured()
     {
-
         var hasInserted = currentQuest.GetBoolean(InsertScript.InsertedVaseVarName);
 
         InsertScript.enabled = !hasInserted;
@@ -83,7 +76,5 @@ public class GravePastController : InspectObjectController
             InspectedItemDialog = AfterBuriedInfoDialog;
             GetComponent<InspectObject>().Name = AfterBuriedTitle;
         }
-
-
     }
 }

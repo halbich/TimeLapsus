@@ -2,7 +2,6 @@
 
 public class ItemPointScript : MonoBehaviour
 {
-
     public Facing Direction;
 
     public DirectionPoint GetPoint(float CharacterZPosition)
@@ -12,4 +11,3 @@ public class ItemPointScript : MonoBehaviour
         return new DirectionPoint(point, Direction);
     }
 }
-

@@ -29,7 +29,7 @@ public class Quest
 
     public void SetValue(string key, object value)
     {
-        if(string.IsNullOrEmpty(key))
+        if (string.IsNullOrEmpty(key))
             return;
 
         key = key.Trim();
@@ -42,8 +42,6 @@ public class Quest
             StoredValues.Add(key, value);
     }
 
-
-
     public bool GetBoolean(string key)
     {
         bool res;
@@ -54,5 +52,4 @@ public class Quest
     {
         SetValue(key, value);
     }
-
 }

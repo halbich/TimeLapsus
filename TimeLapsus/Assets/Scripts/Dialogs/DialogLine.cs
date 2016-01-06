@@ -7,7 +7,6 @@ public class DialogLine
 
     public string Text;
 
-
     public DialogLine(EnumActorID actorID, string text)
     {
         ActorID = actorID;

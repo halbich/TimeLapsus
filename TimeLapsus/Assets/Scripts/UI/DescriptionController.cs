@@ -21,7 +21,6 @@ public class DescriptionController : MonoBehaviour
         descriptionFrozen = false;
     }
 
-
     public void SetDescription(string description, bool isItemUse)
     {
         if (descriptionFrozen && !isItemUse)

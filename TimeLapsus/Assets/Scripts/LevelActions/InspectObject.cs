@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class InspectObject : ClickableArea
 {
@@ -12,11 +11,9 @@ public class InspectObject : ClickableArea
 
     protected InspectObjectController InspectController;
 
-
-
     protected virtual void OnMouseDown()
     {
-        if (!enabled || IsOverUI()) 
+        if (!enabled || IsOverUI())
             return;
 
         if (ObjectPoint != null)
@@ -29,7 +26,6 @@ public class InspectObject : ClickableArea
         else
             InspectController.Inspect();
     }
-
 
     protected override void Start()
     {

@@ -5,7 +5,7 @@ public class DialogueBlockerController : MonoBehaviour
 {
     private Button btn;
 
-    void Awake()
+    private void Awake()
     {
         btn = GetComponent<Button>();
         btn.enabled = false;
@@ -17,7 +17,6 @@ public class DialogueBlockerController : MonoBehaviour
     public void Activate()
     {
         gameObject.SetActive(true);
-        
     }
 
     public void WaitForClick(bool pGetMouseButtonDown)
@@ -39,7 +38,6 @@ public class DialogueBlockerController : MonoBehaviour
             skipOne = false;
             return;
         }
-        
 
         clicked = true;
     }

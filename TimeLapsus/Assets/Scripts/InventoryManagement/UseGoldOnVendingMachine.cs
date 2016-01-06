@@ -1,7 +1,4 @@
-﻿using UnityEngine;
-using System.Collections;
-
-public class UseGoldOnVendingMachine : ItemUseOnScript
+﻿public class UseGoldOnVendingMachine : ItemUseOnScript
 {
     public VendingMachineController controller;
 
@@ -18,7 +15,7 @@ public class UseGoldOnVendingMachine : ItemUseOnScript
         //        base.Use();
         //    });
 
-        if(controller != null && controller.ChipObject != null)
+        if (controller != null && controller.ChipObject != null)
             controller.ChipObject.SetActive(true);
 
         base.Use();

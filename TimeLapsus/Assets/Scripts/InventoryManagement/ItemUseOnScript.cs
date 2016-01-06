@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Linq;
 
 public class ItemUseOnScript : ScriptWithController
 {
@@ -27,6 +26,5 @@ public class ItemUseOnScript : ScriptWithController
 
         //we can have multiple itemUseOnScripts, so Destroy is definitelly not a good idea
         //  Destroy(comps);
-
     }
 }

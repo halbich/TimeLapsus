@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class VaseController : InspectObjectController
 {
@@ -16,10 +15,8 @@ public class VaseController : InspectObjectController
 
     private const string firstLineSeen = "vaseFirstLineSeen";
 
-
     protected override string getDialog()
     {
-
         // is potter dead?
         if (currentQuest.GetBoolean(PotterDeadVarKey))
             return base.getDialog();
@@ -30,8 +27,6 @@ public class VaseController : InspectObjectController
 
         //zobraz ne
         return StillCantTakeItemDialog;
-
-
     }
 
     protected override void endDialogAction()

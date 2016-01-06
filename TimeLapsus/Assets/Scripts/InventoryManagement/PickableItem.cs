@@ -1,17 +1,9 @@
-﻿using System.ComponentModel;
-using System.Linq;
-using UnityEngine;
-
-public class PickableItem : InspectObject
+﻿public class PickableItem : InspectObject
 {
-
     public string pickedUpItemVariable;
     public EnumItemID itemId;
 
     protected Quest currentQuest = QuestController.Instance.GetCurrent();
-
-
-
 
     protected override void OnMouseDown()
     {
@@ -47,9 +39,8 @@ public class PickableItem : InspectObject
 
         if (InspectController.IsInspected())
         {
-           IsInspected();
+            SetInspected();
         }
-
     }
 
     public void PickUp()
@@ -62,7 +53,7 @@ public class PickableItem : InspectObject
         Destroy(gameObject);
     }
 
-    internal virtual void IsInspected()
+    internal virtual void SetInspected()
     {
         cursor = CursorType.PickUp;
     }

@@ -28,12 +28,10 @@
         {
             currentQuest.SetBoolean(CreateBridgeVarName);
             return;
-            
         }
 
         currentQuest.SetBoolean(HasSpoken);
 
         base.endDialogAction();
     }
-
 }

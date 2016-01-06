@@ -1,11 +1,8 @@
-﻿using System;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
 
 public class TestScript : ScriptWithController
 {
-
     private List<string> alwaysList = new List<string>
     {
         "hasTriggeredAfterTeleportDialog"
@@ -40,10 +37,6 @@ public class TestScript : ScriptWithController
             if (!currentQuest.GetBoolean(s))
                 currentQuest.SetBoolean(s);
         }
-
-      
-
-
     }
 
     protected override void Start()

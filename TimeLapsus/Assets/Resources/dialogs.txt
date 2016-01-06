@@ -14,7 +14,9 @@ S:antiquarianVaseOld=[an]
 D:antiquarianNoVase1=[pc]antiquarian1;[an]antiquarian2;[an]antiquarian3
 D:antiquarianNoVase2=[an]antiquarian4
 S:antiquarianAfterVase=[an]
-S:antiquarianVasesInfo=[an]
+S:antiquarianVasesInfo=[pc]
+S:antiquarianVasesWithAntiqInfo=[pc]
+
 S:bankerPresentNo=[bp]
 
 D:bankerPresentNoMoney1=[pc]bankerPresent1;[bp]bankerPresent2;[bp]bankerPresent3;[pc]bankerPresent4;[bp]bankerPresent5

@@ -15,7 +15,6 @@ public class DealomatController : InspectObjectController
 
     private bool beforeTakenTriggered;
 
-
     protected override void Start()
     {
         base.Start();
@@ -23,9 +22,7 @@ public class DealomatController : InspectObjectController
         if (R2D2 == null)
             return;
 
-
         R2D2.SetActive(currentQuest.GetBoolean(RobotReadyToTakeVarName));
-
     }
 
     protected override string getDialog()
@@ -51,7 +48,7 @@ public class DealomatController : InspectObjectController
         {
             beforeTakenTriggered = false;
             currentQuest.SetBoolean(RobotReadyToTakeVarName);
-            if(R2D2 != null)
+            if (R2D2 != null)
                 R2D2.SetActive(true);
         }
     }

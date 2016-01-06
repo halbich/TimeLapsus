@@ -1,7 +1,4 @@
-﻿using UnityEngine;
-using System.Collections;
-
-public class TeleportController : InspectObjectController
+﻿public class TeleportController : InspectObjectController
 {
     public string KnownTeleportName;
 
@@ -12,7 +9,7 @@ public class TeleportController : InspectObjectController
     protected override void Start()
     {
         base.Start();
-   
+
         var hasSpoken = "hasTriggeredAfterTeleportDialog";
 
         if (currentQuest.GetBoolean(hasSpoken))
@@ -21,7 +18,6 @@ public class TeleportController : InspectObjectController
             GetComponent<InspectObject>().enabled = false;
             return;
         }
-
 
         if (!IsInspected())
             GetComponent<ChangeTimeLine>().enabled = false;
@@ -36,9 +32,6 @@ public class TeleportController : InspectObjectController
                 GetComponent<ChangeTimeLine>().enabled = false;
             }
         }
-
-       
-
     }
 
     protected override string getDialog()
@@ -47,7 +40,6 @@ public class TeleportController : InspectObjectController
             return FirstSeenDialogName;
 
         return SimilarSeenDialogName;
-
     }
 
     protected override void endDialogAction()

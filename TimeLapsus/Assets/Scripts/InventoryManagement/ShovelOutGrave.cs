@@ -1,9 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
-
-public class ShovelOutGrave : ItemUseOnScript
+﻿public class ShovelOutGrave : ItemUseOnScript
 {
-
     public string ShoveledGraveKeyName;
 
     public override void Use()

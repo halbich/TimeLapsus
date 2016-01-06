@@ -1,7 +1,3 @@
-﻿using UnityEngine;
-using System.Collections;
-
-public class InspectObjectControllerSimple : InspectObjectController {
-
-   
+﻿public class InspectObjectControllerSimple : InspectObjectController
+{
 }

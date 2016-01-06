@@ -2,7 +2,6 @@
 
 public abstract class InspectObjectController : ScriptWithController
 {
-
     public string InspectedItemVariable;
     public string InspectedItemDialog;
     protected bool canLoadHeadImage;
@@ -15,11 +14,11 @@ public abstract class InspectObjectController : ScriptWithController
         var dialog = di.GetDialog(getDialog());
 
         if (di != null)
-            di.ShowDialog(dialog, canLoadHeadImage ? GetHeadSprite() : null , endDialogAction);
+            di.ShowDialog(dialog, canLoadHeadImage ? GetHeadSprite() : null, endDialogAction);
 
         var pickable = GetComponent<PickableItem>();
         if (pickable != null)
-            pickable.IsInspected();
+            pickable.SetInspected();
     }
 
     protected virtual string getDialog()

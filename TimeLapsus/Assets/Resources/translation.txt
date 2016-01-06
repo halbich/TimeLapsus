@@ -34,6 +34,7 @@ antiquarian3=Právě sháníme chybějící vázu do sbírky za mnou...
 antiquarian4=Sháníme vázu do sbírky, takže když o nějakou přesně stejnou zakopnete….
 antiquarianAfterVase=Teď zakládáme sbírku prstenů moci, zatím máme jeden, ale prý vládne všem.
 antiquarianVasesInfo=Evidentně chybí jeden kus, vypadá to jako hlinolam. Myslim zatracenej hliněnej hlavolam.
+antiquarianVasesWithAntiqInfo=Pěkně se tu vyjímá. A přitom jsem ji poprvé našel před hodinou. Jak jen ten čas letí...
 
 bankerPresentNo=Nedělejte problémy, jinak vás vyprovodí zaměstnanci nebezpečností služby.
 bankerPresent1=Zdravím. Nějaký drobáky by se nenašly...?
@@ -149,6 +150,8 @@ blueprintsTitle=Plány
 mayorTitle=Starosta
 potterTitle=Hrnčíř
 antiquarianTitle=Anktikvariátník
+antiqExpo=Výstavka váz
+
 bankerTitle=Bankéř
 vaseNewTitle=Nová váza
 vendingMachineUnknownTitle=Nějaký automat

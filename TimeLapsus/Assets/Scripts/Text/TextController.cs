@@ -28,7 +28,6 @@ public class TextController
         var r = Resources.Load("translation") as TextAsset;
 
         isLoaded = load(r.text);
-
     }
 
     private bool load(string text)
@@ -46,7 +45,7 @@ public class TextController
                     if (string.IsNullOrEmpty(line) || string.IsNullOrEmpty(line.Trim()) || line.StartsWith("#"))
                         continue;
 
-                    var entries = line.Trim().Split(new[]{'='},2);
+                    var entries = line.Trim().Split(new[] { '=' }, 2);
                     if (entries.Length == 2)
                         addKeyValue(entries);
                     else

@@ -49,7 +49,6 @@ public class PawnController : MonoBehaviour
             return;
         }
 
-        
         isMoving = false;
         animator.SetTrigger("WalkEnd");
         //Debug.Log("WalkEnd");
@@ -61,9 +60,7 @@ public class PawnController : MonoBehaviour
         target.z = gameObject.transform.position.z;
         target.y += DestinationOffsetY;
 
-
         currentRemainingDistance = Vector3.Distance(gameObject.transform.position, target);
-
 
         if (currentRemainingDistance <= DestinationDelta)
         {
@@ -86,7 +83,6 @@ public class PawnController : MonoBehaviour
             //Debug.Log("WalkStart");
         }
         isMoving = true;
-
 
         if (Debug.isDebugBuild)
         {

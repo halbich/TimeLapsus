@@ -1,9 +1,6 @@
-﻿using UnityEngine;
-using System.Collections;
-
-public class ChangeScreen : ChangeScreenAbstract {
-
-	public CursorType Cursor = CursorType.GoToLocationN;
+﻿public class ChangeScreen : ChangeScreenAbstract
+{
+    public CursorType Cursor = CursorType.GoToLocationN;
 
     protected override void Start()
     {

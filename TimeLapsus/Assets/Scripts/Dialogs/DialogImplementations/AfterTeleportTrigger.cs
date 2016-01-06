@@ -1,7 +1,4 @@
-﻿using UnityEngine;
-using System.Collections;
-
-public class AfterTeleportTrigger : DialogActorController
+﻿public class AfterTeleportTrigger : DialogActorController
 {
     private const string HasSpoken = "hasTriggeredAfterTeleportDialog";
 

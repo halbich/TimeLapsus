@@ -115,7 +115,6 @@ public class DialogController : MonoBehaviour
         if (!isLoaded)
             throw new InvalidOperationException("Dialogs are not correctly loaded!");
 
-
         if (string.IsNullOrEmpty(p))
             return null;
 
@@ -126,7 +125,7 @@ public class DialogController : MonoBehaviour
         Dialog ret;
         if (dialogs.TryGetValue(p, out ret))
             return ret;
-        
+
         Debug.LogErrorFormat("Zadaný dialog nebyl nalezen: >{0}<", p);
         return null;
     }
@@ -166,16 +165,18 @@ public class DialogController : MonoBehaviour
                         case 's':
                             addSimpleDialog(res, ti);
                             break;
+
                         case 'd':
                             addDialog(res, ti);
                             break;
+
                         case 'r':
                             addRandomDialog(res, ti);
                             break;
+
                         default:
                             Debug.LogErrorFormat("Neplatný dialog: {0}", line);
                             break;
-
                     }
                 }
                 while (line != null);
@@ -211,11 +212,8 @@ public class DialogController : MonoBehaviour
                 DialogLines = new List<DialogLine>
                 {
                     new DialogLine(Statics.ActorMappings[actor], ti.GetText(ln))
-
                 }
             });
-
-
     }
 
     private void addDialog(string res, TextController ti)
@@ -239,8 +237,6 @@ public class DialogController : MonoBehaviour
         {
             DialogLines = dialogLines
         });
-
-
     }
 
     private void addSimpleDialog(string res, TextController ti)

@@ -2,16 +2,17 @@
 
 public class GravePresentController : InspectObjectController
 {
-
     public string AfterInsertedInfoDialog;
     public string AfterInsertedTitle;
     public string InsertedVaseVarName;
+
     // public UseVaseOnGravePastscript InsertScript;
     public GameObject VaseInGrave;
 
     public string AfterBuriedInfoDialog;
     public string AfterBuriedTitle;
     public string BuriedVaseVarName;
+
     //public DigVaseIntoGrave BuryScript;
     public GameObject PileOfDirtWithFlowers;
 
@@ -28,7 +29,6 @@ public class GravePresentController : InspectObjectController
 
     internal void ActionOccured()
     {
-
         var hasInserted = currentQuest.GetBoolean(InsertedVaseVarName);
 
         if (hasInserted)
@@ -56,13 +56,10 @@ public class GravePresentController : InspectObjectController
             InspectedItemDialog = GraveShoveledInfoDialog;
             GetComponent<InspectObject>().Name = GraveShoveledTitle;
         }
-
-
     }
 
     protected override void endDialogAction()
     {
-
         var Shoveled = currentQuest.GetBoolean(ShovelOutGrave.ShoveledGraveKeyName);
         if (Shoveled)
         {

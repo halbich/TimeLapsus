@@ -28,7 +28,7 @@ public class ClickableArea : ScriptWithController
 
     protected void OnMouseEnter()
     {
-        if(!enabled)
+        if (!enabled)
             return;
 
         IsInBox = true;
