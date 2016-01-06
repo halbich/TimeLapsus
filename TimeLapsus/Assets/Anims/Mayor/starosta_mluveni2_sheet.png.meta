@@ -86,7 +86,7 @@ TextureImporter:
   bumpmap:
     convertToNormalMap: 0
     externalNormalMap: 0
-    heightScale: .25
+    heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
   grayScaleToAlpha: 0
@@ -95,7 +95,7 @@ TextureImporter:
   cubemapConvolutionSteps: 8
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
-  textureFormat: -1
+  textureFormat: -3
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
@@ -106,11 +106,12 @@ TextureImporter:
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
+  allowsAlphaSplitting: 0
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
-  spritePivot: {x: .5, y: .5}
+  spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
@@ -128,6 +129,14 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20.046032, y: 39.47619}
+        - {x: -45.046032, y: 2.4761887}
+        - {x: -45.046032, y: -38.52381}
+        - {x: 23.953968, y: -38.52381}
+        - {x: 45.953968, y: -37.52381}
+        - {x: 45.953968, y: -13.523811}
+        - {x: 20.953968, y: 39.47619}
     - name: starosta_mluveni2_sheet_1
       rect:
         serializedVersion: 2
@@ -138,6 +147,15 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.104759, y: 39.9873}
+        - {x: -15.104759, y: 38.9873}
+        - {x: -45.10476, y: -23.0127}
+        - {x: -45.10476, y: -39.0127}
+        - {x: -2.1047592, y: -39.0127}
+        - {x: 45.89524, y: -37.0127}
+        - {x: 45.89524, y: -18.0127}
+        - {x: 22.89524, y: 39.9873}
     - name: starosta_mluveni2_sheet_2
       rect:
         serializedVersion: 2
@@ -148,6 +166,15 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 14.684143, y: 39.47619}
+        - {x: -14.315857, y: 39.47619}
+        - {x: -45.315857, y: -15.523811}
+        - {x: -45.315857, y: -38.52381}
+        - {x: 37.684143, y: -38.52381}
+        - {x: 45.684143, y: -36.52381}
+        - {x: 45.684143, y: -23.523811}
+        - {x: 38.684143, y: -4.5238113}
     - name: starosta_mluveni2_sheet_3
       rect:
         serializedVersion: 2
@@ -158,6 +185,15 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -44.88571, y: -18.523811}
+        - {x: -44.88571, y: -38.52381}
+        - {x: 45.11429, y: -38.52381}
+        - {x: 45.11429, y: -10.523811}
+        - {x: 43.11429, y: -2.5238113}
+        - {x: 20.114288, y: 39.47619}
+        - {x: -11.885712, y: 39.47619}
+        - {x: -24.885712, y: 34.47619}
     - name: starosta_mluveni2_sheet_4
       rect:
         serializedVersion: 2
@@ -168,6 +204,13 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19.596802, y: 39.47619}
+        - {x: -44.5968, y: -14.523811}
+        - {x: -44.5968, y: -38.52381}
+        - {x: 46.4032, y: -38.52381}
+        - {x: 46.4032, y: 8.476189}
+        - {x: 20.403198, y: 39.47619}
     - name: starosta_mluveni2_sheet_5
       rect:
         serializedVersion: 2
@@ -178,6 +221,13 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24.166626, y: 40.12857}
+        - {x: -44.166626, y: -4.8714294}
+        - {x: -44.166626, y: -38.87143}
+        - {x: 45.833374, y: -38.87143}
+        - {x: 45.833374, y: 3.1285706}
+        - {x: 16.833374, y: 40.12857}
     - name: starosta_mluveni2_sheet_6
       rect:
         serializedVersion: 2
@@ -188,6 +238,17 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10.133362, y: 39.9873}
+        - {x: -13.866638, y: 39.9873}
+        - {x: -28.866638, y: 14.987301}
+        - {x: -41.86664, y: -21.0127}
+        - {x: -44.86664, y: -32.0127}
+        - {x: -44.86664, y: -39.0127}
+        - {x: -11.866638, y: -39.0127}
+        - {x: 46.13336, y: -36.0127}
+        - {x: 46.13336, y: -20.0127}
+        - {x: 32.13336, y: 10.987301}
     - name: starosta_mluveni2_sheet_7
       rect:
         serializedVersion: 2
@@ -198,6 +259,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_mluveni2_sheet_8
       rect:
         serializedVersion: 2
@@ -208,6 +270,16 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 12.063538, y: 39.47619}
+        - {x: -14.936462, y: 39.47619}
+        - {x: -32.936462, y: 13.476189}
+        - {x: -44.936462, y: -28.523811}
+        - {x: -44.936462, y: -38.52381}
+        - {x: 26.063538, y: -38.52381}
+        - {x: 46.063538, y: -37.52381}
+        - {x: 46.063538, y: -29.523811}
+        - {x: 39.063538, y: -4.5238113}
     - name: starosta_mluveni2_sheet_9
       rect:
         serializedVersion: 2
@@ -218,6 +290,14 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 17.852417, y: 39.47619}
+        - {x: -22.147583, y: 39.47619}
+        - {x: -45.147583, y: -5.5238113}
+        - {x: -45.147583, y: -38.52381}
+        - {x: 45.852417, y: -38.52381}
+        - {x: 45.852417, y: -8.523811}
+        - {x: 23.852417, y: 37.47619}
     - name: starosta_mluveni2_sheet_10
       rect:
         serializedVersion: 2
@@ -228,6 +308,14 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -45.358704, y: -22.523811}
+        - {x: -45.358704, y: -38.52381}
+        - {x: 45.641296, y: -38.52381}
+        - {x: 45.641296, y: -27.523811}
+        - {x: 39.641296, y: -5.5238113}
+        - {x: 13.641296, y: 39.47619}
+        - {x: -14.358704, y: 39.47619}
     - name: starosta_mluveni2_sheet_11
       rect:
         serializedVersion: 2
@@ -238,6 +326,13 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20.352295, y: 39.9873}
+        - {x: -44.352295, y: -4.012699}
+        - {x: -44.352295, y: -39.0127}
+        - {x: 45.647705, y: -39.0127}
+        - {x: 45.647705, y: -1.0126991}
+        - {x: 17.647705, y: 39.9873}
     - name: starosta_mluveni2_sheet_12
       rect:
         serializedVersion: 2
@@ -248,6 +343,14 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20.62854, y: 39.47619}
+        - {x: -44.62854, y: -5.5238113}
+        - {x: -44.62854, y: -38.52381}
+        - {x: 46.37146, y: -38.52381}
+        - {x: 46.37146, y: -11.523811}
+        - {x: 45.37146, y: -2.5238113}
+        - {x: 14.37146, y: 39.47619}
     - name: starosta_mluveni2_sheet_13
       rect:
         serializedVersion: 2
@@ -258,6 +361,15 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 28.301636, y: 39.47619}
+        - {x: -15.698364, y: 39.47619}
+        - {x: -37.698364, y: -8.523811}
+        - {x: -44.698364, y: -30.523811}
+        - {x: -44.698364, y: -38.52381}
+        - {x: 30.301636, y: -38.52381}
+        - {x: 46.301636, y: -36.52381}
+        - {x: 46.301636, y: -2.5238113}
     - name: starosta_mluveni2_sheet_14
       rect:
         serializedVersion: 2
@@ -268,6 +380,16 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.909424, y: 39.47619}
+        - {x: -15.909424, y: 30.476189}
+        - {x: -19.909424, y: 16.476189}
+        - {x: -43.909424, y: -26.523811}
+        - {x: -43.909424, y: -38.52381}
+        - {x: 29.090576, y: -38.52381}
+        - {x: 46.090576, y: -37.52381}
+        - {x: 46.090576, y: -14.523811}
+        - {x: 23.090576, y: 39.47619}
     - name: starosta_mluveni2_sheet_15
       rect:
         serializedVersion: 2
@@ -278,6 +400,15 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.979248, y: 39.47619}
+        - {x: -12.979248, y: 38.47619}
+        - {x: -43.979248, y: -22.523811}
+        - {x: -43.979248, y: -38.52381}
+        - {x: 10.020752, y: -38.52381}
+        - {x: 46.020752, y: -36.52381}
+        - {x: 46.020752, y: -11.523811}
+        - {x: 17.020752, y: 39.47619}
     - name: starosta_mluveni2_sheet_16
       rect:
         serializedVersion: 2
@@ -288,6 +419,14 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7.8967285, y: 39.9873}
+        - {x: -14.8967285, y: 37.9873}
+        - {x: -44.89673, y: -33.0127}
+        - {x: -44.89673, y: -39.0127}
+        - {x: 46.10327, y: -39.0127}
+        - {x: 46.10327, y: -1.0126991}
+        - {x: 14.1032715, y: 39.9873}
     - name: starosta_mluveni2_sheet_17
       rect:
         serializedVersion: 2
@@ -298,6 +437,17 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 14.7508545, y: 39.47619}
+        - {x: -13.2491455, y: 39.47619}
+        - {x: -24.249146, y: 31.476189}
+        - {x: -45.249146, y: -13.523811}
+        - {x: -45.249146, y: -38.52381}
+        - {x: -1.2491455, y: -38.52381}
+        - {x: 29.750854, y: -37.52381}
+        - {x: 45.750854, y: -36.52381}
+        - {x: 45.750854, y: -28.523811}
+        - {x: 40.750854, y: -4.5238113}
     - name: starosta_mluveni2_sheet_18
       rect:
         serializedVersion: 2
@@ -308,6 +458,13 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -44.960205, y: -38.52381}
+        - {x: 45.039795, y: -38.52381}
+        - {x: 45.039795, y: -2.5238113}
+        - {x: 34.039795, y: 39.47619}
+        - {x: -22.960205, y: 39.47619}
+        - {x: -44.960205, y: -8.523811}
     - name: starosta_mluveni2_sheet_19
       rect:
         serializedVersion: 2
@@ -318,6 +475,15 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 18.46997, y: 39.47619}
+        - {x: -19.53003, y: 39.47619}
+        - {x: -42.53003, y: -24.523811}
+        - {x: -42.53003, y: -38.52381}
+        - {x: 3.4699707, y: -38.52381}
+        - {x: 46.46997, y: -36.52381}
+        - {x: 46.46997, y: -0.52381134}
+        - {x: 40.46997, y: 32.47619}
     - name: starosta_mluveni2_sheet_20
       rect:
         serializedVersion: 2
@@ -328,6 +494,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_mluveni2_sheet_21
       rect:
         serializedVersion: 2
@@ -338,6 +505,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_mluveni2_sheet_22
       rect:
         serializedVersion: 2
@@ -348,6 +516,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_mluveni2_sheet_23
       rect:
         serializedVersion: 2
@@ -358,6 +527,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_mluveni2_sheet_24
       rect:
         serializedVersion: 2
@@ -368,6 +538,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_mluveni2_sheet_25
       rect:
         serializedVersion: 2
@@ -378,6 +549,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_mluveni2_sheet_26
       rect:
         serializedVersion: 2
@@ -388,6 +560,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_mluveni2_sheet_27
       rect:
         serializedVersion: 2
@@ -398,6 +571,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_mluveni2_sheet_28
       rect:
         serializedVersion: 2
@@ -408,6 +582,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_mluveni2_sheet_29
       rect:
         serializedVersion: 2
@@ -418,6 +593,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_mluveni2_sheet_30
       rect:
         serializedVersion: 2
@@ -428,6 +604,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_mluveni2_sheet_31
       rect:
         serializedVersion: 2
@@ -438,6 +615,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_mluveni2_sheet_32
       rect:
         serializedVersion: 2
@@ -448,6 +626,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_mluveni2_sheet_33
       rect:
         serializedVersion: 2
@@ -458,6 +637,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_mluveni2_sheet_34
       rect:
         serializedVersion: 2
@@ -468,6 +648,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_mluveni2_sheet_35
       rect:
         serializedVersion: 2
@@ -478,6 +659,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_mluveni2_sheet_36
       rect:
         serializedVersion: 2
@@ -488,6 +670,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_mluveni2_sheet_37
       rect:
         serializedVersion: 2
@@ -498,6 +681,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_mluveni2_sheet_38
       rect:
         serializedVersion: 2
@@ -508,6 +692,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_mluveni2_sheet_39
       rect:
         serializedVersion: 2
@@ -518,6 +703,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_mluveni2_sheet_40
       rect:
         serializedVersion: 2
@@ -528,6 +714,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_mluveni2_sheet_41
       rect:
         serializedVersion: 2
@@ -538,6 +725,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_mluveni2_sheet_42
       rect:
         serializedVersion: 2
@@ -548,6 +736,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_mluveni2_sheet_43
       rect:
         serializedVersion: 2
@@ -558,6 +747,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_mluveni2_sheet_44
       rect:
         serializedVersion: 2
@@ -568,6 +758,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_mluveni2_sheet_45
       rect:
         serializedVersion: 2
@@ -578,6 +769,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_mluveni2_sheet_46
       rect:
         serializedVersion: 2
@@ -588,6 +780,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_mluveni2_sheet_47
       rect:
         serializedVersion: 2
@@ -598,6 +791,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_mluveni2_sheet_48
       rect:
         serializedVersion: 2
@@ -608,6 +802,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_mluveni2_sheet_49
       rect:
         serializedVersion: 2
@@ -618,6 +813,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_mluveni2_sheet_50
       rect:
         serializedVersion: 2
@@ -628,6 +824,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_mluveni2_sheet_51
       rect:
         serializedVersion: 2
@@ -638,6 +835,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_mluveni2_sheet_52
       rect:
         serializedVersion: 2
@@ -648,6 +846,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_mluveni2_sheet_53
       rect:
         serializedVersion: 2
@@ -658,6 +857,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_mluveni2_sheet_54
       rect:
         serializedVersion: 2
@@ -668,6 +868,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_mluveni2_sheet_55
       rect:
         serializedVersion: 2
@@ -678,6 +879,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_mluveni2_sheet_56
       rect:
         serializedVersion: 2
@@ -688,6 +890,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_mluveni2_sheet_57
       rect:
         serializedVersion: 2
@@ -698,6 +901,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_mluveni2_sheet_58
       rect:
         serializedVersion: 2
@@ -708,6 +912,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_mluveni2_sheet_59
       rect:
         serializedVersion: 2
@@ -718,6 +923,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_mluveni2_sheet_60
       rect:
         serializedVersion: 2
@@ -728,6 +934,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_mluveni2_sheet_61
       rect:
         serializedVersion: 2
@@ -738,6 +945,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_mluveni2_sheet_62
       rect:
         serializedVersion: 2
@@ -748,6 +956,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_mluveni2_sheet_63
       rect:
         serializedVersion: 2
@@ -758,6 +967,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_mluveni2_sheet_64
       rect:
         serializedVersion: 2
@@ -768,6 +978,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_mluveni2_sheet_65
       rect:
         serializedVersion: 2
@@ -778,6 +989,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_mluveni2_sheet_66
       rect:
         serializedVersion: 2
@@ -788,6 +1000,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_mluveni2_sheet_67
       rect:
         serializedVersion: 2
@@ -798,6 +1011,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_mluveni2_sheet_68
       rect:
         serializedVersion: 2
@@ -808,6 +1022,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    outline: []
   spritePackingTag: 
   userData: 
   assetBundleName: 

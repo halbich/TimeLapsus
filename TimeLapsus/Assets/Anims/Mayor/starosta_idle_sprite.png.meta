@@ -46,7 +46,7 @@ TextureImporter:
   bumpmap:
     convertToNormalMap: 0
     externalNormalMap: 0
-    heightScale: .25
+    heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
   grayScaleToAlpha: 0
@@ -55,7 +55,7 @@ TextureImporter:
   cubemapConvolutionSteps: 8
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
-  textureFormat: -1
+  textureFormat: -3
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
@@ -66,11 +66,12 @@ TextureImporter:
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
+  allowsAlphaSplitting: 0
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
-  spritePivot: {x: .5, y: .5}
+  spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
@@ -88,6 +89,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_idle_sprite_1
       rect:
         serializedVersion: 2
@@ -98,6 +100,16 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 49.49344, y: 92.485565}
+        - {x: -17.506561, y: 92.485565}
+        - {x: -68.50656, y: -3.5144348}
+        - {x: -97.50656, y: -71.514435}
+        - {x: -97.50656, y: -91.514435}
+        - {x: 86.49344, y: -91.514435}
+        - {x: 98.49344, y: -62.514435}
+        - {x: 98.49344, y: 23.485565}
+        - {x: 75.49344, y: 56.485565}
     - name: starosta_idle_sprite_2
       rect:
         serializedVersion: 2
@@ -108,6 +120,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_idle_sprite_3
       rect:
         serializedVersion: 2
@@ -118,6 +131,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_idle_sprite_4
       rect:
         serializedVersion: 2
@@ -128,6 +142,18 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 53.49344, y: 91.985565}
+        - {x: -18.506561, y: 91.985565}
+        - {x: -37.50656, y: 85.985565}
+        - {x: -42.50656, y: 37.985565}
+        - {x: -97.50656, y: -73.014435}
+        - {x: -97.50656, y: -91.014435}
+        - {x: -8.506561, y: -91.014435}
+        - {x: 77.49344, y: -86.014435}
+        - {x: 91.49344, y: -84.014435}
+        - {x: 98.49344, y: -45.014435}
+        - {x: 98.49344, y: 0.9855652}
     - name: starosta_idle_sprite_5
       rect:
         serializedVersion: 2
@@ -138,6 +164,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_idle_sprite_6
       rect:
         serializedVersion: 2
@@ -148,6 +175,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_idle_sprite_7
       rect:
         serializedVersion: 2
@@ -158,6 +186,16 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.506592, y: 91.97769}
+        - {x: -41.50659, y: 45.97769}
+        - {x: -97.50659, y: -79.02231}
+        - {x: -97.50659, y: -91.02231}
+        - {x: 20.493408, y: -91.02231}
+        - {x: 95.49341, y: -85.02231}
+        - {x: 98.49341, y: -57.02231}
+        - {x: 98.49341, y: -4.0223083}
+        - {x: 50.49341, y: 91.97769}
     - name: starosta_idle_sprite_8
       rect:
         serializedVersion: 2
@@ -168,6 +206,16 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 73.49341, y: 91.97769}
+        - {x: -12.506592, y: 91.97769}
+        - {x: -49.50659, y: 49.97769}
+        - {x: -97.50659, y: -52.02231}
+        - {x: -97.50659, y: -91.02231}
+        - {x: 60.49341, y: -91.02231}
+        - {x: 93.49341, y: -86.02231}
+        - {x: 98.49341, y: -77.02231}
+        - {x: 98.49341, y: 45.97769}
     - name: starosta_idle_sprite_9
       rect:
         serializedVersion: 2
@@ -178,6 +226,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_idle_sprite_10
       rect:
         serializedVersion: 2
@@ -188,6 +237,16 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.506592, y: 92.46982}
+        - {x: -26.506592, y: 72.46982}
+        - {x: -97.50659, y: -67.53018}
+        - {x: -97.50659, y: -91.53018}
+        - {x: -1.5065918, y: -91.53018}
+        - {x: 97.49341, y: -86.53018}
+        - {x: 98.49341, y: -83.53018}
+        - {x: 98.49341, y: 33.46982}
+        - {x: 52.49341, y: 92.46982}
     - name: starosta_idle_sprite_11
       rect:
         serializedVersion: 2
@@ -198,6 +257,14 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 50.49341, y: 92.47769}
+        - {x: -30.506592, y: 92.47769}
+        - {x: -97.50659, y: -42.52231}
+        - {x: -97.50659, y: -91.52231}
+        - {x: 87.49341, y: -91.52231}
+        - {x: 98.49341, y: -68.52231}
+        - {x: 98.49341, y: 13.477692}
     - name: starosta_idle_sprite_12
       rect:
         serializedVersion: 2
@@ -208,6 +275,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_idle_sprite_13
       rect:
         serializedVersion: 2
@@ -218,6 +286,14 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 59.49341, y: 92.97769}
+        - {x: -23.506592, y: 92.97769}
+        - {x: -97.50659, y: -42.02231}
+        - {x: -97.50659, y: -92.02231}
+        - {x: 83.49341, y: -92.02231}
+        - {x: 98.49341, y: -69.02231}
+        - {x: 98.49341, y: 49.97769}
     - name: starosta_idle_sprite_14
       rect:
         serializedVersion: 2
@@ -228,6 +304,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_idle_sprite_15
       rect:
         serializedVersion: 2
@@ -238,6 +315,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_idle_sprite_16
       rect:
         serializedVersion: 2
@@ -248,6 +326,16 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.506592, y: 92.97769}
+        - {x: -41.50659, y: 51.97769}
+        - {x: -97.50659, y: -79.02231}
+        - {x: -97.50659, y: -92.02231}
+        - {x: -12.506592, y: -92.02231}
+        - {x: 95.49341, y: -86.02231}
+        - {x: 98.49341, y: -74.02231}
+        - {x: 98.49341, y: 12.977692}
+        - {x: 50.49341, y: 92.97769}
     - name: starosta_idle_sprite_17
       rect:
         serializedVersion: 2
@@ -258,6 +346,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_idle_sprite_18
       rect:
         serializedVersion: 2
@@ -268,6 +357,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_idle_sprite_19
       rect:
         serializedVersion: 2
@@ -278,6 +368,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_idle_sprite_20
       rect:
         serializedVersion: 2
@@ -288,6 +379,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_idle_sprite_21
       rect:
         serializedVersion: 2
@@ -298,6 +390,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_idle_sprite_22
       rect:
         serializedVersion: 2
@@ -308,6 +401,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_idle_sprite_23
       rect:
         serializedVersion: 2
@@ -318,6 +412,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_idle_sprite_24
       rect:
         serializedVersion: 2
@@ -328,6 +423,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_idle_sprite_25
       rect:
         serializedVersion: 2
@@ -338,6 +434,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_idle_sprite_26
       rect:
         serializedVersion: 2
@@ -348,6 +445,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_idle_sprite_27
       rect:
         serializedVersion: 2
@@ -358,6 +456,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     - name: starosta_idle_sprite_28
       rect:
         serializedVersion: 2
@@ -368,6 +467,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    outline: []
   spritePackingTag: 
   userData: 
   assetBundleName: 

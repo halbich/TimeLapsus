@@ -2,6 +2,12 @@
 
 public class DealomatController : InspectObjectController
 {
+
+    public DealomatController()
+    {
+        canLoadHeadImage = true;
+    }
+
     public BankerFutureSpeakController banker;
 
     public string NoAccountDialog;
@@ -51,5 +57,10 @@ public class DealomatController : InspectObjectController
             if (R2D2 != null)
                 R2D2.SetActive(true);
         }
+    }
+
+    protected override Sprite GetHeadSprite()
+    {
+        return IsInspected() ? banker.GetComponent<DialogActor>().Avatar : null;
     }
 }
