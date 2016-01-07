@@ -3,6 +3,9 @@ using UnityEngine;
 
 public abstract class ChangeScreenAbstract : ClickableArea
 {
+
+    protected bool setTimeLineChangedValue;
+
     public ChangeScreenAbstract()
     {
         cursor = CursorType.GoToLocationN;
@@ -14,6 +17,9 @@ public abstract class ChangeScreenAbstract : ClickableArea
         {
             musicController.QuietDown(1.5f);
         }
+
+        Statics.TimelineChanged = setTimeLineChangedValue;
+
 
         StartCoroutine(ChangeCor(level));
     }
@@ -36,10 +42,22 @@ public abstract class ChangeScreenAbstract : ClickableArea
 
     private IEnumerator ChangeCor(EnumLevel level)
     {
-        if (Controller.Fader != null)
+        if (Statics.TimelineChanged)
         {
-            Controller.Fader.EndScene();
-            yield return new WaitForSeconds(2);
+            var screenChanger = FindObjectOfType<ScreenChanger>();
+            screenChanger.Activate();
+            yield return new WaitUntil(() => screenChanger.CanContinueWithLoad);
+        }
+        else
+        {
+
+
+            if (Controller.Fader != null)
+            {
+                Controller.Fader.EndScene();
+                yield return new WaitForSeconds(1);
+                yield return new WaitUntil(() => Controller.Fader.CurrentState != FadeInOutState.None);
+            }
         }
 
         Controller.ChangeScene(level);

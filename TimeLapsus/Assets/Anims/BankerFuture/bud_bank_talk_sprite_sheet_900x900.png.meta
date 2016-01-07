@@ -1,0 +1,294 @@
+fileFormatVersion: 2
+guid: 97b1f79e9e2d880468a644d6239d23e3
+timeCreated: 1452191686
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: bud_bank_talk_sprite_sheet_900x900_0
+    21300002: bud_bank_talk_sprite_sheet_900x900_1
+    21300004: bud_bank_talk_sprite_sheet_900x900_2
+    21300006: bud_bank_talk_sprite_sheet_900x900_3
+    21300008: bud_bank_talk_sprite_sheet_900x900_4
+    21300010: bud_bank_talk_sprite_sheet_900x900_5
+    21300012: bud_bank_talk_sprite_sheet_900x900_6
+    21300014: bud_bank_talk_sprite_sheet_900x900_7
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: bud_bank_talk_sprite_sheet_900x900_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 900
+        width: 900
+        height: 900
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 115, y: 268.25}
+        - {x: 115, y: 275.25}
+        - {x: 100, y: 342.25}
+        - {x: 53, y: 360.25}
+        - {x: -4, y: 360.25}
+        - {x: -32, y: 350.25}
+        - {x: -44, y: 340.25}
+        - {x: -74, y: 307.25}
+        - {x: -98, y: 255.25}
+        - {x: -98, y: 227.25}
+        - {x: -40, y: 212.25}
+        - {x: -41, y: 58.25}
+        - {x: -24, y: 41.25}
+        - {x: 42, y: 16.25}
+        - {x: 87, y: 16.25}
+        - {x: 115, y: 30.25}
+        - {x: 115, y: 64.25}
+        - {x: 103, y: 77.25}
+    - name: bud_bank_talk_sprite_sheet_900x900_1
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 900
+        width: 900
+        height: 900
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 111.5, y: 278.25}
+        - {x: 93.5, y: 337.25}
+        - {x: 82.5, y: 360.25}
+        - {x: -56.5, y: 360.25}
+        - {x: -90.5, y: 273.25}
+        - {x: -90.5, y: 208.25}
+        - {x: -18.5, y: 195.25}
+        - {x: 4.5, y: 201.25}
+        - {x: 1.5, y: 108.25}
+        - {x: -33.5, y: 51.25}
+        - {x: -17.5, y: 35.25}
+        - {x: 36.5, y: 16.25}
+        - {x: 87.5, y: 16.25}
+        - {x: 115.5, y: 35.25}
+        - {x: 115.5, y: 106.25}
+        - {x: 101.5, y: 197.25}
+    - name: bud_bank_talk_sprite_sheet_900x900_2
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 900
+        width: 900
+        height: 900
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 104, y: 75.25}
+        - {x: 71, y: 296.25}
+        - {x: 66, y: 352.25}
+        - {x: -111, y: 352.25}
+        - {x: -127, y: 350.25}
+        - {x: -129, y: 333.25}
+        - {x: -129, y: 208.25}
+        - {x: -127, y: 205.25}
+        - {x: -66, y: 190.25}
+        - {x: -13, y: 195.25}
+        - {x: -35, y: 36.25}
+        - {x: 16, y: 16.25}
+        - {x: 76, y: 16.25}
+        - {x: 78, y: 17.25}
+        - {x: 112, y: 46.25}
+        - {x: 112, y: 68.25}
+        - {x: 110, y: 73.25}
+    - name: bud_bank_talk_sprite_sheet_900x900_3
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 900
+        width: 900
+        height: 900
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -118.5, y: 222.25}
+        - {x: -118.5, y: 195.25}
+        - {x: -112.5, y: 181.25}
+        - {x: -48.5, y: 191.25}
+        - {x: -28.5, y: 218.25}
+        - {x: 2.5, y: 244.25}
+        - {x: 8.5, y: 249.25}
+        - {x: -1.5, y: 240.25}
+        - {x: -8.5, y: 234.25}
+        - {x: -29.5, y: 57.25}
+        - {x: -31.5, y: 34.25}
+        - {x: 11.5, y: 16.25}
+        - {x: 83.5, y: 16.25}
+        - {x: 113.5, y: 34.25}
+        - {x: 113.5, y: 144.25}
+        - {x: 63.5, y: 349.25}
+        - {x: 42.5, y: 352.25}
+        - {x: -52.5, y: 352.25}
+        - {x: -97.5, y: 327.25}
+    - name: bud_bank_talk_sprite_sheet_900x900_4
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 900
+        width: 900
+        height: 900
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 65, y: 214.25}
+        - {x: 88, y: 217.25}
+        - {x: 96, y: 224.25}
+        - {x: 110, y: 237.25}
+        - {x: 68, y: 354.25}
+        - {x: -48, y: 354.25}
+        - {x: -100, y: 337.25}
+        - {x: -123, y: 241.25}
+        - {x: -123, y: 223.25}
+        - {x: -121, y: 213.25}
+        - {x: -63, y: 202.25}
+        - {x: -58, y: 201.25}
+        - {x: -35, y: 39.25}
+        - {x: 33, y: 16.25}
+        - {x: 83, y: 16.25}
+        - {x: 113, y: 41.25}
+        - {x: 113, y: 84.25}
+        - {x: 69, y: 214.25}
+    - name: bud_bank_talk_sprite_sheet_900x900_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 900
+        height: 900
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 104, y: 264.75}
+        - {x: 58, y: 344.75}
+        - {x: 56, y: 355.75}
+        - {x: -56, y: 355.75}
+        - {x: -95, y: 349.75}
+        - {x: -95, y: 287.75}
+        - {x: -109, y: 234.75}
+        - {x: -109, y: 169.75}
+        - {x: -13, y: 186.75}
+        - {x: -31, y: 45.75}
+        - {x: -20, y: 31.75}
+        - {x: 31, y: 15.75}
+        - {x: 86, y: 15.75}
+        - {x: 113, y: 32.75}
+        - {x: 113, y: 118.75}
+        - {x: 89, y: 213.75}
+    - name: bud_bank_talk_sprite_sheet_900x900_6
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 0
+        width: 900
+        height: 900
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23.5, y: 357.75}
+        - {x: -71.5, y: 338.75}
+        - {x: -110.5, y: 266.75}
+        - {x: -110.5, y: 215.75}
+        - {x: -45.5, y: 203.75}
+        - {x: -3.5, y: 227.75}
+        - {x: 23.5, y: 247.75}
+        - {x: 31.5, y: 253.75}
+        - {x: 20.5, y: 243.75}
+        - {x: -9.5, y: 214.75}
+        - {x: -9.5, y: 206.75}
+        - {x: 0.5, y: 201.75}
+        - {x: -41.5, y: 17.75}
+        - {x: -32.5, y: 15.75}
+        - {x: 77.5, y: 15.75}
+        - {x: 115.5, y: 32.75}
+        - {x: 115.5, y: 141.75}
+        - {x: 102.5, y: 264.75}
+        - {x: 75.5, y: 347.75}
+        - {x: 40.5, y: 357.75}
+    - name: bud_bank_talk_sprite_sheet_900x900_7
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 0
+        width: 900
+        height: 900
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 107, y: 286.75}
+        - {x: 97, y: 340.75}
+        - {x: 52, y: 358.75}
+        - {x: -22, y: 358.75}
+        - {x: -55, y: 338.75}
+        - {x: -90, y: 304.75}
+        - {x: -98, y: 255.75}
+        - {x: -98, y: 195.75}
+        - {x: 13, y: 200.75}
+        - {x: -6, y: 93.75}
+        - {x: -49, y: 43.75}
+        - {x: -3, y: 27.75}
+        - {x: 43, y: 14.75}
+        - {x: 89, y: 14.75}
+        - {x: 110, y: 22.75}
+        - {x: 115, y: 39.75}
+        - {x: 115, y: 170.75}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
