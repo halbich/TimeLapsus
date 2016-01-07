@@ -7,6 +7,7 @@ public class SceneFadeInOut : MonoBehaviour
     public FadeInOutState CurrentState;
     public bool FadeOutAtStart;
 
+
     private void Start()
     {
         if (FadeOutAtStart)
@@ -19,6 +20,12 @@ public class SceneFadeInOut : MonoBehaviour
     {
         // Set the texture so that it is the the size of the screen and covers it.
         GetComponent<GUITexture>().pixelInset = new Rect(0f, 0f, Screen.width, Screen.height);
+
+        if (Statics.TimelineChanged)
+        {
+            FadeOutAtStart = false;
+        }
+
     }
 
     private void Update()

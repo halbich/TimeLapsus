@@ -6,6 +6,8 @@ public static class Statics
 {
     public static EnumLevel LastLoadedLevel;
 
+    public static bool TimelineChanged;
+
     private static readonly List<Tuple<EnumLevel, string>> mapping = new List<Tuple<EnumLevel, string>> {
          Tuple.New(EnumLevel.BankPresent,"bankPresent" ),
          Tuple.New(EnumLevel.BankFuture, "bankFuture"),
