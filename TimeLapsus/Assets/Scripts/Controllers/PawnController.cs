@@ -10,10 +10,11 @@ public class PawnController : MonoBehaviour
 
     public float MoveSpeedMultiplicator = 1;
 
+    public Pathfinder pathfinder;
     private ContinueWith currentContinue;
     private Vector3 currentTarget;
     private Vector3 currentDirection;
-    private bool isMoving;
+   public bool isMoving;
     private Facing direction;
     private Facing? afterLoadFacing;
 
@@ -21,12 +22,14 @@ public class PawnController : MonoBehaviour
     private Animator animator;
     private float currentRemainingDistance;
 
-    public bool IsMovimg { get { return isMoving; } }
+    private Vector2[] currentPathToWalk;
+    int currentPathToWalkIndex;
 
     // Use this for initialization
     private void Start()
     {
         sprite = GetComponentInChildren<SpriteRenderer>();
+        pathfinder = GetComponent<Pathfinder>();
         if (afterLoadFacing.HasValue)
         {
             SetNewFacing(afterLoadFacing.Value);
@@ -54,30 +57,54 @@ public class PawnController : MonoBehaviour
             return;
         }
 
-        isMoving = false;
-        animator.SetTrigger("WalkEnd");
         //Debug.Log("WalkEnd");
-        if (currentContinue != null)
-            currentContinue();
+        currentContinue();
     }
+
+
 
     public void MoveTo(Vector3 target, ContinueWith nextFn)
     {
-        target.z = gameObject.transform.position.z;
+        currentPathToWalk = pathfinder.GetPath(new Vector2(gameObject.transform.position.x, gameObject.transform.position.y), new Vector2(target.x, target.y));
+        currentPathToWalkIndex = 0;
+        MoveToInternal(currentPathToWalk[0], () =>
+        {
+            InternalMoveContinueWith(nextFn);
+        });
+    }
+
+    private void InternalMoveContinueWith(ContinueWith realContinueWith)
+    {
+        ++currentPathToWalkIndex;
+        if (currentPathToWalk.Length <= currentPathToWalkIndex)
+        {
+            isMoving = false;
+            animator.SetTrigger("WalkEnd");
+            realContinueWith();
+            return;
+        }
+        MoveToInternal(currentPathToWalk[currentPathToWalkIndex], () =>
+        {
+            InternalMoveContinueWith(realContinueWith);
+        });
+    }
+
+    private void MoveToInternal(Vector2 target2D, ContinueWith nextFn)
+    {
+        Vector3 target = new Vector3(target2D.x, target2D.y, gameObject.transform.position.z);
         target.y += DestinationOffsetY;
 
         currentRemainingDistance = Vector3.Distance(gameObject.transform.position, target);
 
         if (currentRemainingDistance <= DestinationDelta)
         {
-            if (nextFn != null)
-                nextFn();
+            nextFn();
             return;
         }
 
         currentTarget = target;
         currentContinue = nextFn;
-        currentDirection = target - gameObject.transform.position;
+        currentDirection = new Vector3(target.x, target.y, gameObject.transform.position.z) - gameObject.transform.position;
 
         // ReSharper disable once CompareOfFloatsByEqualityOperator
         if (currentDirection.x != 0)
@@ -91,10 +118,10 @@ public class PawnController : MonoBehaviour
         }
         isMoving = true;
 
-        //if (Debug.isDebugBuild)
-        //{
-        //    gameObject.transform.position = target;
-        //}
+        if (Debug.isDebugBuild)
+        {
+            //gameObject.transform.position = target;
+        }
     }
 
     internal void SetNewFacing(Facing newDirection)

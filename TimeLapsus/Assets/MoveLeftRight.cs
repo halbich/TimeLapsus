@@ -30,7 +30,7 @@ public class MoveLeftRight : MonoBehaviour
             index %= 2;
             Pawn.MoveTo(points[index], null);
             yield return new WaitForSeconds(1);
-            yield return new WaitUntil(() => !Pawn.IsMovimg);
+            yield return new WaitUntil(() => !Pawn.isMoving);
             index++;
         }
     }
