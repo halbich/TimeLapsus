@@ -78,8 +78,11 @@ public class PawnController : MonoBehaviour
         ++currentPathToWalkIndex;
         if (currentPathToWalk.Length <= currentPathToWalkIndex)
         {
-            isMoving = false;
-            animator.SetTrigger("WalkEnd");
+            if (isMoving)
+            {
+                isMoving = false;
+                animator.SetTrigger("WalkEnd");
+            }
             realContinueWith();
             return;
         }
