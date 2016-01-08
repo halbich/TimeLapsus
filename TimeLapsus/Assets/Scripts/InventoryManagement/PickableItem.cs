@@ -50,6 +50,7 @@
         if (pickedUpItemVariable != null)
             currentQuest.SetBoolean(pickedUpItemVariable);
 
+        Controller.CursorManager.SetCursor();
         Destroy(gameObject);
     }
 

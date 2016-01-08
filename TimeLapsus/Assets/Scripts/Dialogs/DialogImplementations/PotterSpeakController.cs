@@ -11,7 +11,13 @@
     {
         base.Start();
         if (currentQuest.GetBoolean(ActionObject.PotterIsDeadVarName))
+        {
+            Destroy(ActionObject.R2D2);
+            Destroy(ActionObject.Hider);
             Destroy(gameObject);
+            
+
+        }
     }
 
     protected override string getDialog()

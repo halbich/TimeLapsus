@@ -1,11 +1,22 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameEndController : MonoBehaviour
 {
+
+    public float OutroEnd = 28;
     // Use this for initialization
     private void Start()
     {
+
+        Cursor.visible = false;
+        if(BaseController.PreviousLoadedLevel == EnumLevel.RiverSide)
+            GetComponent<AudioSource>().Play();
+
+        StartCoroutine(end());
+
+        
     }
 
     // Update is called once per frame
@@ -13,9 +24,19 @@ public class GameEndController : MonoBehaviour
     {
         if (Input.anyKey)
         {
-            Statics.ClearAllData();
-            SceneManager.LoadScene(EnumLevel.MainMenu.GetName());
+            clearAndGO();
         }
+    }
 
+    IEnumerator end()
+    {
+        yield return new WaitForSeconds(OutroEnd);
+        clearAndGO();
+    }
+
+    private static void clearAndGO()
+    {
+        Statics.ClearAllData();
+        SceneManager.LoadScene(EnumLevel.MainMenu.GetName());
     }
 }

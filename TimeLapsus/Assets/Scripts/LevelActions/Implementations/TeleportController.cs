@@ -53,6 +53,7 @@
         base.endDialogAction();
         var timeline = GetComponent<ChangeTimeLine>();
         timeline.enabled = true;
+        timeline.SetIsInBox(true);
         GetComponent<InspectObject>().enabled = false;
         Controller.CursorManager.SetCursor(timeline.GetCurrentCursor());
     }
