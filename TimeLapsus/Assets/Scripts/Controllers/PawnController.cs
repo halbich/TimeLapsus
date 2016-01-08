@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class PawnController : MonoBehaviour
 {
@@ -26,6 +27,9 @@ public class PawnController : MonoBehaviour
 
     private Vector2[] currentPathToWalk;
     int currentPathToWalkIndex;
+
+    private StepSoundRegion currentStepSoundRegion;
+    public float StepsWaitTime = 0.4f;
 
     // Use this for initialization
     private void Start()
@@ -120,9 +124,10 @@ public class PawnController : MonoBehaviour
         if (!isMoving)
         {
             animator.SetTrigger("WalkStart");
+            isMoving = true;
+            StartCoroutine(playSteps());
             //Debug.Log("WalkStart");
         }
-        isMoving = true;
 
         if (Debug.isDebugBuild)
         {
@@ -149,5 +154,27 @@ public class PawnController : MonoBehaviour
     {
         target.y += DestinationOffsetY;
         gameObject.transform.position = target;
+    }
+
+    internal void RegisterStepSoundRegion(StepSoundRegion stepSoundRegion)
+    {
+        currentStepSoundRegion = stepSoundRegion;
+        Debug.LogFormat(" Registered: {0}", currentStepSoundRegion.name);
+    }
+
+    IEnumerator playSteps()
+    {
+        if (currentStepSoundRegion == null)
+        {
+            Debug.LogError("SoundRegion is null, waiting for it");
+            yield return new WaitWhile(() => currentStepSoundRegion == null);
+        }
+
+
+        while (isMoving && currentStepSoundRegion != null)
+        {
+            currentStepSoundRegion.PlaySound();
+            yield return new WaitForSeconds(StepsWaitTime);
+        }
     }
 }
