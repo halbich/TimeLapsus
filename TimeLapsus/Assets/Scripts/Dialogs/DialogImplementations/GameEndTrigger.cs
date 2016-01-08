@@ -4,6 +4,6 @@ public class GameEndTrigger : ScriptWithController
 {
     private void OnTriggerEnter(Collider other)
     {
-        Controller.ChangeScene(EnumLevel.GameEnd);
+        Controller.ChangeScene(EnumLevel.About);
     }
 }

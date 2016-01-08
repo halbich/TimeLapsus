@@ -35,10 +35,10 @@ public class ScreenChanger : MonoBehaviour
                 otherLevelTexture = subScreen;
         }
 
-        levelTexture.pixelInset = new Rect(0f, 0f, Screen.width, Screen.height);
+        levelTexture.pixelInset = new Rect(Screen.width / 2f, Screen.height / 2f, 0,0);
         levelTexture.color = invisible;
 
-        otherLevelTexture.pixelInset = new Rect(0f, 0f, Screen.width, Screen.height);
+        otherLevelTexture.pixelInset = new Rect(levelTexture.pixelInset);
         otherLevelTexture.color = invisible;
 
         Debug.LogFormat("ScrCh: {0}", Statics.TimelineChanged);

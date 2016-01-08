@@ -16,7 +16,11 @@ public class DialogActor : TalkingActorWithController
         if (IsOverUI()) return;
         if (SpeakerPoint != null)
 
-            Controller.PlayerController.MoveTo(SpeakerPoint.StartPoint, Speak);
+            Controller.PlayerController.MoveTo(SpeakerPoint.StartPoint, () =>
+            {
+                Controller.PlayerController.SetNewFacing(SpeakerPoint.Direction);
+                Speak();
+            });
         else
             Speak();
     }

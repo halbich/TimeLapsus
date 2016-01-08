@@ -51,7 +51,9 @@
         }
 
         base.endDialogAction();
-        GetComponent<ChangeTimeLine>().enabled = true;
+        var timeline = GetComponent<ChangeTimeLine>();
+        timeline.enabled = true;
         GetComponent<InspectObject>().enabled = false;
+        Controller.CursorManager.SetCursor(timeline.GetCurrentCursor());
     }
 }

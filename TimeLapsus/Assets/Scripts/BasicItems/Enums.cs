@@ -13,7 +13,7 @@
     Mayor,
     Antiquarian,
     Pottery,
-    GameEnd
+    About
 }
 
 public enum Facing

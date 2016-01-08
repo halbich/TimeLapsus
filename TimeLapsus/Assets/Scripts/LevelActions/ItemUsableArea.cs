@@ -1,9 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 
 public class ItemUsableArea : ScriptWithController
 {
     public List<ItemUseOnScript> UseActions;
+
+    public string DialogNo = string.Empty;
 
     internal void Use(EnumItemID itemId)
     {
@@ -19,7 +23,12 @@ public class ItemUsableArea : ScriptWithController
         }
 
         if (!used)
-            DialogController.Instance.ShowRandomDialog();
+        {
+            if (string.IsNullOrEmpty(DialogNo))
+                DialogController.Instance.ShowRandomDialog();
+            else
+                DialogController.Instance.ShowDialog(DialogController.Instance.GetDialog(DialogNo), GetComponent<DialogActor>().Avatar);
+        }
     }
 
     protected void OnMouseEnter()

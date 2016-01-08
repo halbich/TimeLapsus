@@ -21,7 +21,7 @@ public static class Statics
          Tuple.New(EnumLevel.Mayor, "mayor"),
          Tuple.New(EnumLevel.Antiquarian, "antiquarian"),
          Tuple.New(EnumLevel.Pottery, "pottery"),
-         Tuple.New(EnumLevel.GameEnd, "GameEnd")
+         Tuple.New(EnumLevel.About, "about")
     };
 
     public static string GetName(this EnumLevel level)
@@ -33,8 +33,6 @@ public static class Statics
     {
         return mapping.Where(e => e.Second == name).Select(e => e.First).First();
     }
-
-    public static Dictionary<string, int> GlobalVariables = new Dictionary<string, int>();
 
     public static List<InventoryItem> Inventory = new List<InventoryItem>();
 
@@ -56,9 +54,16 @@ public static class Statics
         {"[bp]",EnumActorID.BankerPresent},
         {"[bf]",EnumActorID.BankerFuture},
         {"[au]",EnumActorID.VendingMachine},
-        {"[rs]",EnumActorID.RobotStorage},
         {"[de]",EnumActorID.Death},
         {"[po]",EnumActorID.Potter},
         {"[ma]",EnumActorID.Mayor},
     };
+
+    internal static void ClearAllData()
+    {
+       LastLoadedLevel = EnumLevel.NULL;
+        TimelineChanged = false;
+        Inventory.Clear();
+        QuestController.Instance.ResetQuest();
+    }
 }

@@ -44,4 +44,9 @@ public class ClickableArea : ScriptWithController
         Controller.CursorManager.SetCursor();
         Controller.DescriptionController.SetDescription("", false);
     }
+
+    public CursorType GetCurrentCursor()
+    {
+        return cursor;
+    }
 }
