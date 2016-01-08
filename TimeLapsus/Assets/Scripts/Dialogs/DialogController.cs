@@ -7,7 +7,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
-public class DialogController : MonoBehaviour
+public class DialogController : ScriptWithController
 {
     public delegate void DialogEndAction();
 
@@ -37,7 +37,7 @@ public class DialogController : MonoBehaviour
     }
 
     // Use this for initialization
-    private void Start()
+    protected override void Start()
     {
         _inst = null;
         panel = GameObject.FindGameObjectWithTag("DialogPanel");
@@ -73,6 +73,8 @@ public class DialogController : MonoBehaviour
 
         if (hasError)
             yield break;
+
+        Controller.CursorManager.SetCursor();
         dialogueBlocker.Activate();
         panel.SetActive(true);
         foreach (var item in dialog.DialogLines)

@@ -19,7 +19,7 @@ public class LaraSpeakController : DialogActorController
     protected override void Start()
     {
         base.Start();
-      UpdateItems();
+        UpdateItems();
     }
 
     protected override string getDialog()
@@ -32,8 +32,8 @@ public class LaraSpeakController : DialogActorController
 
     protected override void endDialogAction()
     {
-        if(!currentQuest.GetBoolean(HasSpoken))
-        currentQuest.SetBoolean(HasSpoken);
+        if (!currentQuest.GetBoolean(HasSpoken))
+            currentQuest.SetBoolean(HasSpoken);
     }
 
 
@@ -41,6 +41,10 @@ public class LaraSpeakController : DialogActorController
     internal void UpdateItems()
     {
         VaseOnTable.SetActive(currentQuest.GetBoolean(LaraHasVaseOnTableVarName));
-        MoneyOnTable.SetActive(currentQuest.GetBoolean(LaraHasMoneyOnTable));
+
+        var hasMoney = currentQuest.GetBoolean(LaraHasMoneyOnTable);
+        MoneyOnTable.SetActive(hasMoney);
+        if (hasMoney)
+            MoneyOnTable.GetComponent<AudioSource>().Play();
     }
 }

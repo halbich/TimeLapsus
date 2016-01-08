@@ -5,8 +5,16 @@ using UnityEngine.UI;
 
 public class MainMenuController : MonoBehaviour
 {
+    public Texture2D cursor;
+
     void Start()
     {
+        Cursor.visible = true;
+        var hotSpot = new Vector2(cursor.width / 2f, cursor.height / 2f);
+        Cursor.SetCursor(cursor, hotSpot, CursorMode.Auto);
+
+
+
         if (AudioListener.volume == 0f)
             FindObjectOfType<Toggle>().isOn = true;
     }
@@ -41,8 +49,10 @@ public class MainMenuController : MonoBehaviour
 
     public void MuteAudio(bool toggleOn)
     {
-
+        if (toggleOn)
+            GetComponent<AudioSource>().Play();
         AudioListener.volume = toggleOn ? 0 : 1;
-
+        if (!toggleOn)
+            GetComponent<AudioSource>().Play();
     }
 }

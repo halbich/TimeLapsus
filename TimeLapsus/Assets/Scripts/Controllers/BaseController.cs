@@ -23,7 +23,7 @@ public class BaseController : MonoBehaviour
 
     private static EnumLevel previousLoadedLevel;
 
-    public EnumLevel PreviousLoadedLevel
+    public static EnumLevel PreviousLoadedLevel
     {
         get { return previousLoadedLevel; }
     }

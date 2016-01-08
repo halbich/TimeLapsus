@@ -8,4 +8,9 @@ public class ChangeTimeLine : ChangeScreenAbstract
         cursor = CursorType.GoToLocationS;
         setTimeLineChangedValue = true;
     }
+
+    internal void SetIsInBox(bool value)
+    {
+        IsInBox = value;
+    }
 }
