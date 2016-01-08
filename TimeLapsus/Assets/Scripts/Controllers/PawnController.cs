@@ -5,6 +5,8 @@ public class PawnController : MonoBehaviour
     public delegate void ContinueWith();
 
     public float DestinationDelta = 0.1f;
+
+    [HideInInspector]
     public float MoveSpeed = 2;
     public float DestinationOffsetY = 1.2f;
 
@@ -14,7 +16,7 @@ public class PawnController : MonoBehaviour
     private ContinueWith currentContinue;
     private Vector3 currentTarget;
     private Vector3 currentDirection;
-   public bool isMoving;
+    public bool isMoving;
     private Facing direction;
     private Facing? afterLoadFacing;
 
@@ -78,9 +80,13 @@ public class PawnController : MonoBehaviour
         ++currentPathToWalkIndex;
         if (currentPathToWalk.Length <= currentPathToWalkIndex)
         {
-            isMoving = false;
-            animator.SetTrigger("WalkEnd");
-            realContinueWith();
+            if (isMoving)
+            {
+                isMoving = false;
+                animator.SetTrigger("WalkEnd");
+            }
+            if (realContinueWith != null)
+                realContinueWith();
             return;
         }
         MoveToInternal(currentPathToWalk[currentPathToWalkIndex], () =>
