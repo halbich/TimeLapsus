@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameEndController : MonoBehaviour
 {
@@ -11,6 +12,10 @@ public class GameEndController : MonoBehaviour
     private void Update()
     {
         if (Input.anyKey)
-            Application.Quit();
+        {
+            Statics.ClearAllData();
+            SceneManager.LoadScene(EnumLevel.MainMenu.GetName());
+        }
+
     }
 }

@@ -14,7 +14,7 @@ public class TestScript : ScriptWithController
     // Use this for initialization
     protected override void Awake()
     {
-        if (true || !Debug.isDebugBuild)
+        if ( !Debug.isDebugBuild)
         {
             Destroy(gameObject);
             return;

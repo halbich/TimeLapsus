@@ -36,9 +36,9 @@ D:bankerFutureNoAccount2=[pc]bankerFutureNoAccount2
 D:bankerFutureAccount=[bf]bankerFutureAccount1;[pc]bankerFutureAccount2
 S:bankerFutureAccountEmpty=[bf]
 S:robotsInfo=[pc]
-D:robotsNoAccount=[rs]robotsNoAccount1;[pc]robotsNoAccount2
-D:obtainRobot=[rs]robotsAccountEmpty;[pc]robotsTake
-S:robotsTaken=[rs]
+D:robotsNoAccount=[bf]robotsNoAccount1;[pc]robotsNoAccount2
+D:obtainRobot=[bf]robotsAccountEmpty;[pc]robotsTake
+S:robotsTaken=[bf]
 S:r2d2Info=[pc]
 
 S:gravePastInfo=[pc]

@@ -23,4 +23,9 @@
     {
         return currentQuest;
     }
+
+    internal void ResetQuest()
+    {
+        createQuest();
+    }
 }
