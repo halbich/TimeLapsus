@@ -36,13 +36,14 @@ public class HidingController : MonoBehaviour
 
     void HideInventory()
     {
+        if (animComponent.GetBool("ShowInventory") || animComponent.GetBool("HideInventory")) return;
         animComponent.SetTrigger("HideInventory");
         inventoryVisible = false;
     }
 
     void ShowInventory()
     {
-
+        if (animComponent.GetBool("ShowInventory") || animComponent.GetBool("HideInventory")) return;
         animComponent.SetTrigger("ShowInventory");
         inventoryVisible = true;
     }
