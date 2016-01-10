@@ -9,7 +9,7 @@
 
     public UseMoneyOnBanker MoneyScript;
 
-    private string hasSpokenWithBanker = "hasSpokenWithBankerFuture";
+    private string hasSpokenWithBanker = "hasSpokenWithBankerPresent";
 
     protected override string getDialog()
     {

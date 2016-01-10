@@ -5,22 +5,23 @@ random1=Ať sem trajcén, tohle nejde.
 random2=Jsem zásadně proti - víra mi to nedovolí.
 random3=Smysl. Tahle akce neměla vůbec žádný.
 random4=Jak se říká, dětma nezatopíš. A tohle taky nepůjde.
-random5=Kdepa. Takhle jsem experimentoval v mládí…
+random5=Kdepa. Takhle jsem experimentoval v mládí...
 random6=To by jistě šlo. Nebudeme-li brát v úvahu termodynamické zákony.
 random7=Takhle jsem to onehdá taky zkoušel. A víš co? Vono ne.
 
 
 
-questDefinition=Ha - tajemství smyslu života, vesmíru a vůbec všeho je na dosah. Tedy… až na jednu maličkost… jak se tam k sakru dostat?!
+questDefinition=Ha - tajemství smyslu života, vesmíru a vůbec všeho je na dosah. Tedy... až na jednu maličkost... jak se tam k sakru dostat?!
 
-vaseOldGraveOut=Hmmmm… slušná patinka - voní správně zatuchle. Tahle by už mohla hodit pořádnej balík.
+vaseOldGraveOut=Hmmmm... slušná patinka - voní správně zatuchle. Tahle by už mohla hodit pořádnej balík.
 
-shovelInfo=Poctivá lopata pro poctivej kus poctivý práce…!
+shovelInfo=Poctivá lopata pro poctivej kus poctivý práce...!
 graveInfo=Hmm, komfortní a útulné místečko k odpočinku.
-teleportToFuturePreInfo=Je to možný? Straka s barevnejma očima… Jestlipak by šly vyloupnout?
+teleportToFuturePreInfo=Je to možný? Straka s barevnejma očima... Jestlipak by šly vyloupnout?
 teleportToPastPreInfo=Hele, vejce, co to asi dělá?
 teleportSeenInfo=Tož, něco podobnýho jsem už viděl
-teleportPostInfo=Buďto mam flashback, nebo jsem vážně v minulosti… Ty brejle mají asi víc schopností.
+teleportPostInfo=Buďto mam flashback, nebo jsem vážně v minulosti... Ty brejle mají asi víc schopností.
+teleportPostInfoFut=Jak jsem se to sem dostal? Vypadá to tu nějak hypermoderně... Ty brejle mají asi víc schopností.
 
 antiquarianNo=Vůbec to tu nezkoušej, nebo promluví mé kolty olověnou řečí.
 antiquarianVaseNew=Co to je za čínskou napodobeninu? Já sbírám starožitnosti, mladíku!
@@ -31,7 +32,7 @@ antiquarianVaseOld=No to je ale parádní kus! ... Přesně do mé sbírky pará
 antiquarian1=Dobrej. O co tu jako jde?
 antiquarian2=Dobrý den, jak už to tak vypadá, vykupujeme starožitnosti - staré i prastaré.
 antiquarian3=Právě sháníme chybějící vázu do sbírky za mnou... 
-antiquarian4=Sháníme vázu do sbírky, takže když o nějakou přesně stejnou zakopnete….
+antiquarian4=Sháníme vázu do sbírky, takže když o nějakou přesně stejnou zakopnete....
 antiquarianAfterVase=Teď zakládáme sbírku prstenů moci, zatím máme jeden, ale prý vládne všem.
 antiquarianVasesInfo=Evidentně chybí jeden kus, vypadá to jako hlinolam. Myslim zatracenej hliněnej hlavolam.
 antiquarianVasesWithAntiqInfo=Pěkně se tu vyjímá. A přitom jsem ji poprvé našel před hodinou. Jak jen ten čas letí...
@@ -49,7 +50,7 @@ bankerPresent9=Pardon - chtěl jsem říci, že částka byla úspěšně přips
 bankerPresent10=Přeje si pán další termíňáček na 1000 let???
 
 
-automatInfo="Vložte 20 megakreditů"?! Koukám, že setsakra podražilo…
+automatInfo="Vložte 20 megakreditů"?! Koukám, že setsakra podražilo...
 automatEmptyInfo=Automat hlásí, že je prázdný. Z něj už nic nedostanu.
 chipInfo=Krásnej čipešek
 
@@ -63,14 +64,14 @@ bankerFutureAccount2=Jak se tady říká: *JA=[VE_VATE]*
 bankerFutureAccountEmpty=ERR04:!vas stav_uctu je: nulova_hodnota_vkladu!
 robotsInfo=PRO VŠECHNY LIDSKÉ MAJITELE ÚČTŮ ÚKLIDOVÝ ROBOT ZDARMA. ČISTÍ VŠECHNO (A VŠECHNY).
 robotsNoAccount1=ERR01:!bonusy jsou urceny pouze pro lidske_majitele_uctu!
-robotsNoAccount2=Takže buď nejsem člověk… nebo majitel účtu.
+robotsNoAccount2=Takže buď nejsem člověk... nebo majitel účtu.
 robotsAccountEmpty=STAT01:!vas stav_uctu je: nulova_hodnota_vkladu! /&/ *bonus [UKLIDOVY_ROBOT]=volne_k_dispozici*
 robotsTake=Robot? Ale jo, lepší než konektorem do oka.
 robotsTaken=ERR03:!vas stav_uctu je: nulova_hodnota_vkladu! /&/ !bonus [UKLIDOVY_ROBOT]=jiz_odebran!
 r2d2Info=Hezkej robůtek. Jsem zvědav, co všechno umí.
 
 
-gravePastInfo=Tsche… díra jak pro liliputánskou famílii. Nebo že by na urnu? 
+gravePastInfo=Tsche... díra jak pro liliputánskou famílii. Nebo že by na urnu? 
 gravePastVase=MÁM TO SNAD ZAKOPAT JÁ? KOSOU?!
 gravePresentEmpty=To je divné, vždyť tam ta váza byla?
 graveWithVasePresent=Hezké kvítí.
@@ -85,11 +86,11 @@ potter1=Brej den.
 potter2=*(&^(*&^)(*)
 potter3=Cože? Nerozuměl jsem ani slovo.
 potter4=*(&$%^#$*()
-potter5=Hodil by se nějakej slovník… nebo překladač.
+potter5=Hodil by se nějakej slovník... nebo překladač.
 potter6=Bez slovníku ani vykřičník. Tečka.
-potter7=Krásná váza velikosti urny… nebo liliputánské famílie.
+potter7=Krásná váza velikosti urny... nebo liliputánské famílie.
 potter8=*(&$%^#$*() !!!
-potter9=Aha. Co je v domě, není pro mě. Zatím…
+potter9=Aha. Co je v domě, není pro mě. Zatím...
 potterVaseTake=Snad se bude k něčemu hodit.
 potterAfterDead=To je síla. Takovej úklid jsem jaktěživ neviděl.
 
@@ -107,7 +108,7 @@ mayor1=Zdravíčko!
 mayor2=*(&^(*&^)(*)
 mayor3=Paráda. Tak tady se nedomluvím. Bez slovníku ani vykřičník. Tečka.
 mayor4=Bez slovníku ani vykřičník. Tečka.
-mayor5=Zkouška… 1, 2, 3? Dobrý den?
+mayor5=Zkouška... 1, 2, 3? Dobrý den?
 mayor6=4, 5 ,6 dobrý den i vám.
 mayor7=Tak jsem si říkal...
 mayor8=Jestli se podle těch plánů na zdi nechystáte na nějakej most nad tou průrvou?

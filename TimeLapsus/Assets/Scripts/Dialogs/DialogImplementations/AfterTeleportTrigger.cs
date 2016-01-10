@@ -2,6 +2,8 @@
 {
     private const string HasSpoken = "hasTriggeredAfterTeleportDialog";
 
+    public string TeleportPostInfo;
+
     protected override string getDialog()
     {
         //pokud jsem nezobrazil popis questu
@@ -11,7 +13,7 @@
             return null;
         }
 
-        return "teleportPostInfo";
+        return TeleportPostInfo;
     }
 
     protected override void endDialogAction()
