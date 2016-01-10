@@ -2,9 +2,11 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class HidingController : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, IPointerExitHandler
+public class HidingController : MonoBehaviour
 {
-    public float AfterExitTime = 4;
+    bool inventoryVisible = false;
+    bool RightClickInitiated = false;
+    public float AfterExitTime = 0;
     private Animator animComponent;
 
     // Use this for initialization
@@ -13,12 +15,18 @@ public class HidingController : MonoBehaviour, IPointerDownHandler, IPointerEnte
         animComponent = GetComponentInParent<Animator>();
     }
 
-    public void OnPointerDown(PointerEventData eventData)
+    private void Update()
     {
-        if (eventData == null)
-            return;
-
-        Debug.Log("click");
+        if (Input.GetMouseButtonDown(1))
+        {
+            RightClickInitiated = true;
+        }
+        else if (Input.GetMouseButtonUp(1) && RightClickInitiated)
+        {
+            RightClickInitiated = false;
+            if (inventoryVisible) HideInventory();
+            else ShowInventory();
+        }
     }
 
     public void DebugInfo()
@@ -26,30 +34,16 @@ public class HidingController : MonoBehaviour, IPointerDownHandler, IPointerEnte
         Debug.Log("inFOOOOOOO");
     }
 
-    public void OnPointerEnter(PointerEventData eventData)
+    void HideInventory()
     {
-        //  Debug.Log("enter");
-        if (eventData == null)
-            return;
+        animComponent.SetTrigger("HideInventory");
+        inventoryVisible = false;
+    }
 
-        StopCoroutine(hide());
+    void ShowInventory()
+    {
 
         animComponent.SetTrigger("ShowInventory");
-    }
-
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        //Debug.Log("exit");
-
-        if (eventData == null)
-            return;
-
-        StartCoroutine(hide());
-    }
-
-    private IEnumerator hide()
-    {
-        yield return new WaitForSeconds(AfterExitTime);
-        animComponent.SetTrigger("HideInventory");
+        inventoryVisible = true;
     }
 }
