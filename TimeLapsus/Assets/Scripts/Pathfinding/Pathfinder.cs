@@ -22,6 +22,18 @@ public class Pathfinder : ScriptWithController
         public ColliderGraphNode CurrentColliderNode;
         public SearchNode PreviousNode;
     }
+    class IntersectionSearchNode
+    {
+        public IntersectionSearchNode()
+        {
+        }
+        public IntersectionSearchNode(Vector2 RepresentedPosition)
+        {
+            this.Coordinates = RepresentedPosition;
+        }
+        public Vector2 Coordinates;
+        public Tuple<List<Vector2>, float> BestResultToTarget;
+    }
     ColliderGraphNode[] colliderGraph;
     protected override void Start()
     {
@@ -168,30 +180,31 @@ public class Pathfinder : ScriptWithController
         if (result == null) throw new ArgumentException("Source and Target colliders are not connected in any way");
         Vector2 lastPosition = new Vector2(originPoint.x, originPoint.y);
         currentNode = result;
-        List<List<Vector2>> intersectionGraph = new List<List<Vector2>>();
+        List<List<IntersectionSearchNode>> intersectionGraph = new List<List<IntersectionSearchNode>>();
+        intersectionGraph.Add(new List<IntersectionSearchNode>() { new IntersectionSearchNode(originPoint) });
         while (currentNode.PreviousNode != null)
         {
-            intersectionGraph.Add(new List<Vector2>());
+            intersectionGraph.Add(new List<IntersectionSearchNode>());
             var currentIntersectionList = intersectionGraph.Last();
             var intersections = currentNode.CurrentColliderNode.Neighbours.Where((p) => p.NeighbourNode == currentNode.PreviousNode.CurrentColliderNode).First().Intersections;
             foreach (var intersection in intersections)
             {
                 if (intersection.Length == 1)
                 {
-                    currentIntersectionList.Add(intersection[0]);
+                    currentIntersectionList.Add(new IntersectionSearchNode(intersection[0]));
                 }
                 else if (intersection.Length == 2)
                 {
                     var intersectionWithStraightLine = GetIntersection(new Tuple<Vector2, Vector2>(lastPosition, targetPoint), new Tuple<Vector2, Vector2>(intersection[0], intersection[1]));
                     if (intersectionWithStraightLine != null)
                     {
-                       currentIntersectionList.Add(intersectionWithStraightLine[0]);
+                       currentIntersectionList.Add(new IntersectionSearchNode(intersectionWithStraightLine[0]));
                     }
                     var delta = (intersection[1] - intersection[0]) / 16;
                     var currentIntersection = intersection[0];
                     for (int i = 0; i < 17; ++i)
                     {
-                        currentIntersectionList.Add(currentIntersection);
+                        currentIntersectionList.Add(new IntersectionSearchNode(currentIntersection));
                         currentIntersection += delta;
                     }
                 }
@@ -202,51 +215,53 @@ public class Pathfinder : ScriptWithController
             }
             currentNode = currentNode.PreviousNode;
         }
-        intersectionGraph.Add(new List<Vector2>() { targetPoint });
+        intersectionGraph.Add(new List<IntersectionSearchNode>() { new IntersectionSearchNode(targetPoint) });
         return GetBestPath(intersectionGraph, originPoint).ToArray();
     }
-    List<Vector2> GetBestPath(List<List<Vector2>> intersectionGraph, Vector2 startPoint)
-    {
-        float currentBestDistance = float.MaxValue;
-        List<Vector2> currentBestResult = null;
-        int graphIndex = 0;
-        foreach (var intersection in intersectionGraph[graphIndex])
-        {
-            var currentResult = GetBestPathRecursive(intersectionGraph, graphIndex + 1);
-            float distance = currentResult.First == null ? currentResult.Second : currentResult.Second + Vector2.Distance(intersection, currentResult.First.Last());
-            distance += Vector2.Distance(startPoint, intersection);
-            if (distance < currentBestDistance)
-            {
-                currentBestDistance = distance;
-                currentBestResult = currentResult.First == null ? new List<Vector2>() : currentResult.First;
-                currentBestResult.Add(intersection);
-            }
-        }
-        currentBestResult.Reverse();
-        return currentBestResult;
+    List<Vector2> GetBestPath(List<List<IntersectionSearchNode>> intersectionGraph, Vector2 startPoint)
+    { 
+        GetBestPathRecursive(intersectionGraph, 0);
+        intersectionGraph[0][0].BestResultToTarget.First.Reverse();
+        return intersectionGraph[0][0].BestResultToTarget.First;
     }
-    Tuple<List<Vector2>,float> GetBestPathRecursive(List<List<Vector2>> intersectionGraph, int graphIndex)
+    void GetBestPathRecursive(List<List<IntersectionSearchNode>> intersectionGraph, int graphIndex)
     {
         if (graphIndex >= intersectionGraph.Count)
         {
-            return new Tuple<List<Vector2>, float>(null, 0);
+            return;
         }
         else
         {
-            float currentBestDistance = float.MaxValue;
-            List<Vector2> currentBestResult = null;
+            GetBestPathRecursive(intersectionGraph, graphIndex + 1);
             foreach (var intersection in intersectionGraph[graphIndex])
             {
-                var currentResult = GetBestPathRecursive(intersectionGraph, graphIndex + 1);
-                float distance = currentResult.First == null ? currentResult.Second :  currentResult.Second + Vector2.Distance(intersection, currentResult.First.Last());
-                if (distance < currentBestDistance)
+                float currentBestDistance = float.MaxValue;
+                List<Vector2> currentBestResult = new List<Vector2>();
+                if (graphIndex < intersectionGraph.Count - 1)
                 {
-                    currentBestDistance = distance;
-                    currentBestResult = currentResult.First == null ? new List<Vector2>() : currentResult.First;
-                    currentBestResult.Add(intersection);
+                    foreach (var nextIntersection in intersectionGraph[graphIndex + 1])
+                    {
+                        var currentResult = nextIntersection.BestResultToTarget;
+                        float distance = currentResult.Second + Vector2.Distance(intersection.Coordinates, nextIntersection.Coordinates);
+                        if (distance < currentBestDistance)
+                        {
+                            currentBestDistance = distance;
+                            if (currentResult.First == null)
+                            {
+                                currentBestResult.Clear();
+                            }
+                            else currentBestResult = new List<Vector2>(currentResult.First);
+                            currentBestResult.Add(intersection.Coordinates);
+                        }
+                    }
                 }
-            }
-            return new Tuple<List<Vector2>, float>(currentBestResult, currentBestDistance);
+                else
+                {
+                    currentBestResult = new List<Vector2>() { intersection.Coordinates };
+                    currentBestDistance = 0f;
+                }
+                intersection.BestResultToTarget = new Tuple<List<Vector2>, float>(currentBestResult, currentBestDistance);
+            } 
         }
     }
 }
