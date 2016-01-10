@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class vrtule : MonoBehaviour
+public class WindPowerPlant : MonoBehaviour
 {
 
     public float Rate;
