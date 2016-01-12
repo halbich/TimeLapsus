@@ -13,7 +13,8 @@
     Mayor,
     Antiquarian,
     Pottery,
-    About
+    About,
+    Intro
 }
 
 public enum Facing

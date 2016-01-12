@@ -21,7 +21,8 @@ public static class Statics
          Tuple.New(EnumLevel.Mayor, "mayor"),
          Tuple.New(EnumLevel.Antiquarian, "antiquarian"),
          Tuple.New(EnumLevel.Pottery, "pottery"),
-         Tuple.New(EnumLevel.About, "about")
+         Tuple.New(EnumLevel.About, "about"),
+         Tuple.New(EnumLevel.Intro, "intro")
     };
 
     public static string GetName(this EnumLevel level)
