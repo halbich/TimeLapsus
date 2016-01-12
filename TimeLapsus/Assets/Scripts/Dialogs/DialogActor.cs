@@ -2,6 +2,8 @@
 
 public class DialogActor : TalkingActorWithController
 {
+    private bool fistFlag;
+
     public bool ShowSpeakIcon = true;
 
     private DialogActor()
@@ -36,5 +38,33 @@ public class DialogActor : TalkingActorWithController
         {
             SpeakerPoint = comps.GetPoint(Controller.CharacterZPosition);
         }
+    }
+
+    internal void SetFistFlag()
+    {
+        fistFlag = true;
+    }
+
+    internal override void StartSpeak()
+    {
+        if (!fistFlag)
+            base.StartSpeak();
+
+        var animator = GetComponent<Animator>();
+        if (animator != null)
+            animator.SetTrigger("FistStart");
+
+    }
+
+    internal override void EndSpeak()
+    {
+        if (!fistFlag)
+            base.EndSpeak();
+
+        var animator = GetComponent<Animator>();
+        if (animator != null)
+            animator.SetTrigger("FistEnd");
+
+        fistFlag = false;
     }
 }

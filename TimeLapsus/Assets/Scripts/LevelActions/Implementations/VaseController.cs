@@ -21,6 +21,8 @@ public class VaseController : InspectObjectController
         if (currentQuest.GetBoolean(PotterDeadVarKey))
             return base.getDialog();
 
+        PotterDialogActor.SetFistFlag();
+
         //zobrazil jsem první linku?
         if (!currentQuest.GetBoolean(firstLineSeen))
             return VaseFirstSeenDialog;
