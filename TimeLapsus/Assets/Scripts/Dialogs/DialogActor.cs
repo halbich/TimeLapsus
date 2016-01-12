@@ -37,4 +37,8 @@ public class DialogActor : TalkingActorWithController
             SpeakerPoint = comps.GetPoint(Controller.CharacterZPosition);
         }
     }
+
+    
+
+   
 }
