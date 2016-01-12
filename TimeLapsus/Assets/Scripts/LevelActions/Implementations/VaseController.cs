@@ -11,7 +11,7 @@ public class VaseController : InspectObjectController
     public string StillCantTakeItemDialog;
     public string PotterDeadVarKey;
 
-    public DialogActor PotterDialogActor;
+    public PotterDialogActor PotterDialogActor;
 
     private const string firstLineSeen = "vaseFirstLineSeen";
 

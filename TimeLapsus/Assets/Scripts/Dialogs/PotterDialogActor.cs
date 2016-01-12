@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 
-public class DialogActor : TalkingActorWithController
+public class PotterDialogActor : TalkingActorWithController
 {
+    private bool fistFlag;
+
     public bool ShowSpeakIcon = true;
 
-    private DialogActor()
+    private PotterDialogActor()
     {
         cursor = CursorType.Speak;
     }
@@ -38,7 +40,37 @@ public class DialogActor : TalkingActorWithController
         }
     }
 
-    
+    internal void SetFistFlag()
+    {
+        fistFlag = true;
+    }
 
-   
+    internal override void StartSpeak()
+    {
+        if (!fistFlag)
+        {
+            base.StartSpeak();
+            return;
+        }
+
+        var animator = GetComponent<Animator>();
+        if (animator != null)
+            animator.SetTrigger("FistStart");
+
+    }
+
+    internal override void EndSpeak()
+    {
+        if (!fistFlag)
+        {
+            base.EndSpeak();
+            return;
+        }
+
+        var animator = GetComponent<Animator>();
+        if (animator != null)
+            animator.SetTrigger("FistEnd");
+
+        fistFlag = false;
+    }
 }
