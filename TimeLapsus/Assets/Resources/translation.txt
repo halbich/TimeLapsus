@@ -158,8 +158,8 @@ vaseNewTitle=Nová váza
 vendingMachineUnknownTitle=Nějaký automat
 vendingMachineKnownTitle=Komunikační automat
 unknownObject=Cosi na podstavci
-chipTitle=Čip
-dealomatTitle=Dealomat
+chipTitle=Babylonský čip
+dealomatTitle=Čistomat
 
 actionUseVaseOnGrave=Vložit do hrobu
 actionUseDigVaseIntoGrave=Zakopat
@@ -171,7 +171,7 @@ actionUseRobotToPotter=Uklidit
 #inventář
 invItemVaseName=Váza
 invItemAncientVaseName=Stará váza
-invItemBabelChipName=Bábelský čip
+invItemBabelChipName=Babylonský čip
 invItemShovelName=Lopata
 invItemCoinsName=Mince
 invItemGoldName=Zlato
