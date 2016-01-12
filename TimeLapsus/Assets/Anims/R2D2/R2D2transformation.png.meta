@@ -1,0 +1,1054 @@
+fileFormatVersion: 2
+guid: fec6161e4d8b55d4a8d1a2299ece51e7
+timeCreated: 1452615934
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: R2D2transformation_0
+    21300002: R2D2transformation_1
+    21300004: R2D2transformation_2
+    21300006: R2D2transformation_3
+    21300008: R2D2transformation_4
+    21300010: R2D2transformation_5
+    21300012: R2D2transformation_6
+    21300014: R2D2transformation_7
+    21300016: R2D2transformation_8
+    21300018: R2D2transformation_9
+    21300020: R2D2transformation_10
+    21300022: R2D2transformation_11
+    21300024: R2D2transformation_12
+    21300026: R2D2transformation_13
+    21300028: R2D2transformation_14
+    21300030: R2D2transformation_15
+    21300032: R2D2transformation_16
+    21300034: R2D2transformation_17
+    21300036: R2D2transformation_18
+    21300038: R2D2transformation_19
+    21300040: R2D2transformation_20
+    21300042: R2D2transformation_21
+    21300044: R2D2transformation_22
+    21300046: R2D2transformation_23
+    21300048: R2D2transformation_24
+    21300050: R2D2transformation_25
+    21300052: R2D2transformation_26
+    21300054: R2D2transformation_27
+    21300056: R2D2transformation_28
+    21300058: R2D2transformation_29
+    21300060: R2D2transformation_30
+    21300062: R2D2transformation_31
+    21300064: R2D2transformation_32
+    21300066: R2D2transformation_33
+    21300068: R2D2transformation_34
+    21300070: R2D2transformation_35
+    21300072: R2D2transformation_36
+    21300074: R2D2transformation_37
+    21300076: R2D2transformation_38
+    21300078: R2D2transformation_39
+    21300080: R2D2transformation_40
+    21300082: R2D2transformation_41
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: R2D2transformation_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5995
+        width: 1199
+        height: 1199
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 37.5, y: 161.25}
+        - {x: -55.5, y: 161.25}
+        - {x: -75.5, y: 150.25}
+        - {x: -75.5, y: 69.25}
+        - {x: -56.5, y: 29.25}
+        - {x: 20.5, y: 29.25}
+        - {x: 44.5, y: 53.25}
+        - {x: 54.5, y: 71.25}
+        - {x: 54.5, y: 134.25}
+    - name: R2D2transformation_1
+      rect:
+        serializedVersion: 2
+        x: 1199
+        y: 5995
+        width: 1199
+        height: 1199
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11, y: 161.25}
+        - {x: -47, y: 161.25}
+        - {x: -70, y: 142.25}
+        - {x: -74, y: 124.25}
+        - {x: -74, y: 61.25}
+        - {x: -50, y: 33.25}
+        - {x: 35, y: 33.25}
+        - {x: 56, y: 73.25}
+        - {x: 56, y: 133.25}
+        - {x: 41, y: 152.25}
+    - name: R2D2transformation_2
+      rect:
+        serializedVersion: 2
+        x: 2398
+        y: 5995
+        width: 1199
+        height: 1199
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -45.5, y: 161.25}
+        - {x: -74.5, y: 131.25}
+        - {x: -74.5, y: 68.25}
+        - {x: -55.5, y: 33.25}
+        - {x: 33.5, y: 33.25}
+        - {x: 55.5, y: 47.25}
+        - {x: 55.5, y: 132.25}
+        - {x: 45.5, y: 161.25}
+    - name: R2D2transformation_3
+      rect:
+        serializedVersion: 2
+        x: 3597
+        y: 5995
+        width: 1199
+        height: 1199
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -36, y: 161.25}
+        - {x: -53, y: 158.25}
+        - {x: -73, y: 136.25}
+        - {x: -73, y: 64.25}
+        - {x: -54, y: 33.25}
+        - {x: 32, y: 33.25}
+        - {x: 57, y: 75.25}
+        - {x: 57, y: 129.25}
+        - {x: 28, y: 161.25}
+    - name: R2D2transformation_4
+      rect:
+        serializedVersion: 2
+        x: 4796
+        y: 5995
+        width: 1199
+        height: 1199
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -61.5, y: 161.25}
+        - {x: -74.5, y: 128.25}
+        - {x: -74.5, y: 72.25}
+        - {x: -50.5, y: 33.25}
+        - {x: 31.5, y: 33.25}
+        - {x: 56.5, y: 69.25}
+        - {x: 56.5, y: 136.25}
+        - {x: 32.5, y: 161.25}
+    - name: R2D2transformation_5
+      rect:
+        serializedVersion: 2
+        x: 5995
+        y: 5995
+        width: 1199
+        height: 1199
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -73, y: 116.25}
+        - {x: -73, y: 53.25}
+        - {x: -39, y: 29.25}
+        - {x: 25, y: 29.25}
+        - {x: 58, y: 67.25}
+        - {x: 58, y: 123.25}
+        - {x: 43, y: 144.25}
+        - {x: 20, y: 161.25}
+        - {x: -34, y: 161.25}
+        - {x: -58, y: 156.25}
+    - name: R2D2transformation_6
+      rect:
+        serializedVersion: 2
+        x: 7194
+        y: 5995
+        width: 1199
+        height: 1199
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -70.5, y: 161.25}
+        - {x: -75.5, y: 154.25}
+        - {x: -75.5, y: 63.25}
+        - {x: -65.5, y: 33.25}
+        - {x: 25.5, y: 33.25}
+        - {x: 55.5, y: 73.25}
+        - {x: 55.5, y: 161.25}
+    - name: R2D2transformation_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4796
+        width: 1199
+        height: 1199
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -66.5, y: 159.75}
+        - {x: -75.5, y: 128.75}
+        - {x: -75.5, y: 52.75}
+        - {x: -51.5, y: 31.75}
+        - {x: 27.5, y: 31.75}
+        - {x: 54.5, y: 61.75}
+        - {x: 54.5, y: 126.75}
+        - {x: 32.5, y: 159.75}
+    - name: R2D2transformation_8
+      rect:
+        serializedVersion: 2
+        x: 1199
+        y: 4796
+        width: 1199
+        height: 1199
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 13, y: 159.75}
+        - {x: -61, y: 159.75}
+        - {x: -74, y: 154.75}
+        - {x: -74, y: 44.75}
+        - {x: -54, y: 31.75}
+        - {x: 37, y: 31.75}
+        - {x: 56, y: 72.75}
+        - {x: 56, y: 127.75}
+        - {x: 43, y: 152.75}
+    - name: R2D2transformation_9
+      rect:
+        serializedVersion: 2
+        x: 2398
+        y: 4796
+        width: 1199
+        height: 1199
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 42.5, y: 141.75}
+        - {x: 22.5, y: 159.75}
+        - {x: -39.5, y: 159.75}
+        - {x: -74.5, y: 145.75}
+        - {x: -74.5, y: 57.75}
+        - {x: -59.5, y: 31.75}
+        - {x: 14.5, y: 31.75}
+        - {x: 45.5, y: 50.75}
+        - {x: 55.5, y: 88.75}
+        - {x: 55.5, y: 105.75}
+    - name: R2D2transformation_10
+      rect:
+        serializedVersion: 2
+        x: 3597
+        y: 4796
+        width: 1199
+        height: 1199
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 22, y: 159.75}
+        - {x: -33, y: 159.75}
+        - {x: -62, y: 151.75}
+        - {x: -73, y: 124.75}
+        - {x: -73, y: 67.75}
+        - {x: -53, y: 32.75}
+        - {x: -47, y: 31.75}
+        - {x: 28, y: 31.75}
+        - {x: 57, y: 74.75}
+        - {x: 57, y: 116.75}
+        - {x: 48, y: 135.75}
+    - name: R2D2transformation_11
+      rect:
+        serializedVersion: 2
+        x: 4796
+        y: 4796
+        width: 1199
+        height: 1199
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 27.5, y: 159.75}
+        - {x: -45.5, y: 159.75}
+        - {x: -74.5, y: 133.75}
+        - {x: -74.5, y: 51.75}
+        - {x: -39.5, y: 31.75}
+        - {x: 25.5, y: 31.75}
+        - {x: 56.5, y: 74.75}
+        - {x: 56.5, y: 115.75}
+        - {x: 37.5, y: 153.75}
+      - - {x: 56.5, y: 62.75}
+        - {x: 59.5, y: 63.75}
+        - {x: 59.5, y: 66.75}
+        - {x: 56.5, y: 67.75}
+        - {x: 54.5, y: 65.75}
+    - name: R2D2transformation_12
+      rect:
+        serializedVersion: 2
+        x: 5995
+        y: 4796
+        width: 1199
+        height: 1199
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -73, y: 159.75}
+        - {x: -73, y: 63.75}
+        - {x: -53, y: 31.75}
+        - {x: 25, y: 31.75}
+        - {x: 58, y: 76.75}
+        - {x: 58, y: 159.75}
+    - name: R2D2transformation_13
+      rect:
+        serializedVersion: 2
+        x: 7194
+        y: 4796
+        width: 1199
+        height: 1199
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -47.5, y: 159.75}
+        - {x: -57.5, y: 155.75}
+        - {x: -75.5, y: 133.75}
+        - {x: -75.5, y: 66.75}
+        - {x: -62.5, y: 31.75}
+        - {x: 31.5, y: 31.75}
+        - {x: 55.5, y: 60.75}
+        - {x: 55.5, y: 122.75}
+        - {x: 27.5, y: 159.75}
+      - - {x: 55.5, y: 62.75}
+        - {x: 58.5, y: 63.75}
+        - {x: 58.5, y: 66.75}
+        - {x: 55.5, y: 67.75}
+        - {x: 53.5, y: 65.75}
+    - name: R2D2transformation_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3597
+        width: 1199
+        height: 1199
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 13.5, y: 174.25}
+        - {x: -53.5, y: 174.25}
+        - {x: -75.5, y: 157.25}
+        - {x: -75.5, y: 48.25}
+        - {x: -64.5, y: 33.25}
+        - {x: 20.5, y: 33.25}
+        - {x: 55.5, y: 44.25}
+        - {x: 55.5, y: 139.25}
+        - {x: 47.5, y: 163.25}
+    - name: R2D2transformation_15
+      rect:
+        serializedVersion: 2
+        x: 1199
+        y: 3597
+        width: 1199
+        height: 1199
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -36, y: 188.25}
+        - {x: -74, y: 170.25}
+        - {x: -74, y: 68.25}
+        - {x: -48, y: 33.25}
+        - {x: 38, y: 33.25}
+        - {x: 57, y: 70.25}
+        - {x: 57, y: 163.25}
+        - {x: 23, y: 188.25}
+    - name: R2D2transformation_16
+      rect:
+        serializedVersion: 2
+        x: 2398
+        y: 3597
+        width: 1199
+        height: 1199
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 23.5, y: 202.25}
+        - {x: -68.5, y: 202.25}
+        - {x: -73.5, y: 182.25}
+        - {x: -73.5, y: 49.25}
+        - {x: -58.5, y: 33.25}
+        - {x: 24.5, y: 33.25}
+        - {x: 52.5, y: 57.25}
+        - {x: 56.5, y: 70.25}
+        - {x: 56.5, y: 174.25}
+    - name: R2D2transformation_17
+      rect:
+        serializedVersion: 2
+        x: 3597
+        y: 3597
+        width: 1199
+        height: 1199
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -50, y: 215.25}
+        - {x: -72, y: 194.25}
+        - {x: -72, y: 38.25}
+        - {x: -58, y: 33.25}
+        - {x: 43, y: 33.25}
+        - {x: 58, y: 67.25}
+        - {x: 58, y: 188.25}
+        - {x: 31, y: 215.25}
+    - name: R2D2transformation_18
+      rect:
+        serializedVersion: 2
+        x: 4796
+        y: 3597
+        width: 1199
+        height: 1199
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -66.5, y: 229.25}
+        - {x: -72.5, y: 209.25}
+        - {x: -72.5, y: 49.25}
+        - {x: -62.5, y: 33.25}
+        - {x: 28.5, y: 33.25}
+        - {x: 57.5, y: 74.25}
+        - {x: 57.5, y: 211.25}
+        - {x: 25.5, y: 229.25}
+      - - {x: 61.5, y: 138.25}
+        - {x: 64.5, y: 139.25}
+        - {x: 64.5, y: 142.25}
+        - {x: 61.5, y: 143.25}
+        - {x: 59.5, y: 141.25}
+    - name: R2D2transformation_19
+      rect:
+        serializedVersion: 2
+        x: 5995
+        y: 3597
+        width: 1199
+        height: 1199
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 34, y: 243.25}
+        - {x: -37, y: 243.25}
+        - {x: -48, y: 242.25}
+        - {x: -73, y: 214.25}
+        - {x: -73, y: 62.25}
+        - {x: -52, y: 33.25}
+        - {x: 25, y: 33.25}
+        - {x: 47, y: 47.25}
+        - {x: 57, y: 91.25}
+        - {x: 57, y: 217.25}
+    - name: R2D2transformation_20
+      rect:
+        serializedVersion: 2
+        x: 7194
+        y: 3597
+        width: 1199
+        height: 1199
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -55.5, y: 243.25}
+        - {x: -73.5, y: 228.25}
+        - {x: -73.5, y: 61.25}
+        - {x: -45.5, y: 34.25}
+        - {x: -30.5, y: 33.25}
+        - {x: 22.5, y: 33.25}
+        - {x: 56.5, y: 77.25}
+        - {x: 56.5, y: 202.25}
+        - {x: 36.5, y: 243.25}
+      - - {x: 60.5, y: 138.25}
+        - {x: 63.5, y: 139.25}
+        - {x: 63.5, y: 142.25}
+        - {x: 60.5, y: 143.25}
+        - {x: 58.5, y: 141.25}
+    - name: R2D2transformation_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2398
+        width: 1199
+        height: 1199
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 7.5, y: 241.75}
+        - {x: -39.5, y: 241.75}
+        - {x: -73.5, y: 220.75}
+        - {x: -73.5, y: 63.75}
+        - {x: -52.5, y: 31.75}
+        - {x: 24.5, y: 31.75}
+        - {x: 56.5, y: 76.75}
+        - {x: 56.5, y: 197.75}
+        - {x: 46.5, y: 227.75}
+      - - {x: 60.5, y: 136.75}
+        - {x: 63.5, y: 137.75}
+        - {x: 63.5, y: 140.75}
+        - {x: 60.5, y: 141.75}
+        - {x: 58.5, y: 139.75}
+    - name: R2D2transformation_22
+      rect:
+        serializedVersion: 2
+        x: 1199
+        y: 2398
+        width: 1199
+        height: 1199
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 16, y: 241.75}
+        - {x: -49, y: 241.75}
+        - {x: -73, y: 218.75}
+        - {x: -73, y: 56.75}
+        - {x: -51, y: 31.75}
+        - {x: 29, y: 31.75}
+        - {x: 58, y: 77.75}
+        - {x: 58, y: 192.75}
+        - {x: 47, y: 229.75}
+    - name: R2D2transformation_23
+      rect:
+        serializedVersion: 2
+        x: 2398
+        y: 2398
+        width: 1199
+        height: 1199
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -41.5, y: 241.75}
+        - {x: -73.5, y: 204.75}
+        - {x: -73.5, y: 66.75}
+        - {x: -47.5, y: 28.75}
+        - {x: 30.5, y: 28.75}
+        - {x: 57.5, y: 82.75}
+        - {x: 57.5, y: 211.75}
+        - {x: 25.5, y: 241.75}
+    - name: R2D2transformation_24
+      rect:
+        serializedVersion: 2
+        x: 3597
+        y: 2398
+        width: 1199
+        height: 1199
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -51, y: 241.75}
+        - {x: -70, y: 217.75}
+        - {x: -72, y: 207.75}
+        - {x: -72, y: 59.75}
+        - {x: -54, y: 25.75}
+        - {x: -37, y: 23.75}
+        - {x: 14, y: 23.75}
+        - {x: 21, y: 24.75}
+        - {x: 59, y: 78.75}
+        - {x: 59, y: 230.75}
+        - {x: 24, y: 241.75}
+      - - {x: 62, y: 136.75}
+        - {x: 65, y: 137.75}
+        - {x: 65, y: 140.75}
+        - {x: 62, y: 141.75}
+        - {x: 60, y: 139.75}
+    - name: R2D2transformation_25
+      rect:
+        serializedVersion: 2
+        x: 4796
+        y: 2398
+        width: 1199
+        height: 1199
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 28.5, y: 241.75}
+        - {x: -54.5, y: 241.75}
+        - {x: -72.5, y: 208.75}
+        - {x: -72.5, y: 56.75}
+        - {x: -25.5, y: 19.75}
+        - {x: 16.5, y: 19.75}
+        - {x: 25.5, y: 22.75}
+        - {x: 57.5, y: 64.75}
+        - {x: 57.5, y: 195.75}
+        - {x: 52.5, y: 227.75}
+      - - {x: 61.5, y: 136.75}
+        - {x: 64.5, y: 137.75}
+        - {x: 64.5, y: 140.75}
+        - {x: 61.5, y: 141.75}
+        - {x: 59.5, y: 139.75}
+    - name: R2D2transformation_26
+      rect:
+        serializedVersion: 2
+        x: 5995
+        y: 2398
+        width: 1199
+        height: 1199
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 16, y: 241.75}
+        - {x: -24, y: 241.75}
+        - {x: -48, y: 235.75}
+        - {x: -72, y: 216.75}
+        - {x: -73, y: 210.75}
+        - {x: -73, y: 50.75}
+        - {x: -43, y: 19.75}
+        - {x: 13, y: 19.75}
+        - {x: 58, y: 68.75}
+        - {x: 58, y: 204.75}
+        - {x: 42, y: 221.75}
+      - - {x: 61, y: 136.75}
+        - {x: 64, y: 137.75}
+        - {x: 64, y: 140.75}
+        - {x: 61, y: 141.75}
+        - {x: 59, y: 139.75}
+    - name: R2D2transformation_27
+      rect:
+        serializedVersion: 2
+        x: 7194
+        y: 2398
+        width: 1199
+        height: 1199
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -50.5, y: 241.75}
+        - {x: -73.5, y: 199.75}
+        - {x: -73.5, y: 54.75}
+        - {x: -31.5, y: 19.75}
+        - {x: 15.5, y: 19.75}
+        - {x: 17.5, y: 20.75}
+        - {x: 56.5, y: 77.75}
+        - {x: 56.5, y: 196.75}
+        - {x: 34.5, y: 241.75}
+      - - {x: 60.5, y: 136.75}
+        - {x: 63.5, y: 137.75}
+        - {x: 63.5, y: 140.75}
+        - {x: 60.5, y: 141.75}
+        - {x: 58.5, y: 139.75}
+    - name: R2D2transformation_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1199
+        width: 1199
+        height: 1199
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -42.5, y: 242.25}
+        - {x: -81.5, y: 219.25}
+        - {x: -81.5, y: 91.25}
+        - {x: -73.5, y: 64.25}
+        - {x: -57.5, y: 26.25}
+        - {x: -31.5, y: 20.25}
+        - {x: 33.5, y: 20.25}
+        - {x: 59.5, y: 41.25}
+        - {x: 59.5, y: 209.25}
+        - {x: 27.5, y: 242.25}
+      - - {x: 64.5, y: 137.25}
+        - {x: 67.5, y: 138.25}
+        - {x: 67.5, y: 141.25}
+        - {x: 64.5, y: 142.25}
+        - {x: 62.5, y: 140.25}
+    - name: R2D2transformation_29
+      rect:
+        serializedVersion: 2
+        x: 1199
+        y: 1199
+        width: 1199
+        height: 1199
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 15, y: 242.25}
+        - {x: -36, y: 242.25}
+        - {x: -69, y: 222.25}
+        - {x: -91, y: 132.25}
+        - {x: -91, y: 93.25}
+        - {x: -51, y: 33.25}
+        - {x: -36, y: 20.25}
+        - {x: 13, y: 20.25}
+        - {x: 54, y: 51.25}
+        - {x: 68, y: 99.25}
+        - {x: 68, y: 152.25}
+        - {x: 46, y: 227.25}
+    - name: R2D2transformation_30
+      rect:
+        serializedVersion: 2
+        x: 2398
+        y: 1199
+        width: 1199
+        height: 1199
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8.5, y: 242.25}
+        - {x: -26.5, y: 242.25}
+        - {x: -41.5, y: 236.25}
+        - {x: -62.5, y: 222.25}
+        - {x: -102.5, y: 131.25}
+        - {x: -102.5, y: 84.25}
+        - {x: -27.5, y: 20.25}
+        - {x: 64.5, y: 20.25}
+        - {x: 74.5, y: 56.25}
+        - {x: 74.5, y: 228.25}
+        - {x: 35.5, y: 235.25}
+    - name: R2D2transformation_31
+      rect:
+        serializedVersion: 2
+        x: 3597
+        y: 1199
+        width: 1199
+        height: 1199
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 23, y: 242.25}
+        - {x: -46, y: 242.25}
+        - {x: -56, y: 238.25}
+        - {x: -93, y: 153.25}
+        - {x: -102, y: 118.25}
+        - {x: -102, y: 101.25}
+        - {x: -72, y: 56.25}
+        - {x: -27, y: 20.25}
+        - {x: 37, y: 20.25}
+        - {x: 76, y: 97.25}
+        - {x: 76, y: 178.25}
+        - {x: 68, y: 204.25}
+    - name: R2D2transformation_32
+      rect:
+        serializedVersion: 2
+        x: 4796
+        y: 1199
+        width: 1199
+        height: 1199
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 15.5, y: 241.25}
+        - {x: -41.5, y: 241.25}
+        - {x: -82.5, y: 202.25}
+        - {x: -102.5, y: 139.25}
+        - {x: -102.5, y: 89.25}
+        - {x: -49.5, y: 33.25}
+        - {x: -17.5, y: 20.25}
+        - {x: 11.5, y: 20.25}
+        - {x: 75.5, y: 82.25}
+        - {x: 75.5, y: 167.25}
+        - {x: 41.5, y: 225.25}
+      - - {x: 74.5, y: 137.25}
+        - {x: 77.5, y: 138.25}
+        - {x: 77.5, y: 141.25}
+        - {x: 74.5, y: 142.25}
+        - {x: 72.5, y: 140.25}
+    - name: R2D2transformation_33
+      rect:
+        serializedVersion: 2
+        x: 5995
+        y: 1199
+        width: 1199
+        height: 1199
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 31, y: 241.25}
+        - {x: -46, y: 241.25}
+        - {x: -81, y: 186.25}
+        - {x: -101, y: 129.25}
+        - {x: -101, y: 88.25}
+        - {x: -76, y: 58.25}
+        - {x: -20, y: 20.25}
+        - {x: 20, y: 20.25}
+        - {x: 77, y: 86.25}
+        - {x: 77, y: 160.25}
+        - {x: 73, y: 191.25}
+      - - {x: 76, y: 137.25}
+        - {x: 79, y: 138.25}
+        - {x: 79, y: 141.25}
+        - {x: 76, y: 142.25}
+        - {x: 74, y: 140.25}
+    - name: R2D2transformation_34
+      rect:
+        serializedVersion: 2
+        x: 7194
+        y: 1199
+        width: 1199
+        height: 1199
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 12.5, y: 241.25}
+        - {x: -33.5, y: 241.25}
+        - {x: -46.5, y: 234.25}
+        - {x: -66.5, y: 214.25}
+        - {x: -103.5, y: 114.25}
+        - {x: -103.5, y: 76.25}
+        - {x: -26.5, y: 20.25}
+        - {x: 6.5, y: 20.25}
+        - {x: 10.5, y: 22.25}
+        - {x: 74.5, y: 72.25}
+        - {x: 74.5, y: 161.25}
+        - {x: 41.5, y: 232.25}
+      - - {x: 73.5, y: 137.25}
+        - {x: 76.5, y: 138.25}
+        - {x: 76.5, y: 141.25}
+        - {x: 73.5, y: 142.25}
+        - {x: 71.5, y: 140.25}
+    - name: R2D2transformation_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1199
+        height: 1199
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 65.5, y: 199.75}
+        - {x: 25.5, y: 241.75}
+        - {x: -43.5, y: 241.75}
+        - {x: -66.5, y: 227.75}
+        - {x: -103.5, y: 110.75}
+        - {x: -103.5, y: 59.75}
+        - {x: -37.5, y: 20.75}
+        - {x: 11.5, y: 20.75}
+        - {x: 19.5, y: 22.75}
+        - {x: 73.5, y: 67.75}
+        - {x: 74.5, y: 70.75}
+        - {x: 74.5, y: 133.75}
+      - - {x: 73.5, y: 137.75}
+        - {x: 76.5, y: 138.75}
+        - {x: 76.5, y: 141.75}
+        - {x: 73.5, y: 142.75}
+        - {x: 71.5, y: 140.75}
+    - name: R2D2transformation_36
+      rect:
+        serializedVersion: 2
+        x: 1199
+        y: 0
+        width: 1199
+        height: 1199
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 21, y: 241.75}
+        - {x: -40, y: 241.75}
+        - {x: -75, y: 199.75}
+        - {x: -89, y: 132.75}
+        - {x: -102, y: 86.75}
+        - {x: -102, y: 46.75}
+        - {x: -36, y: 20.75}
+        - {x: 10, y: 20.75}
+        - {x: 74, y: 45.75}
+        - {x: 75, y: 49.75}
+        - {x: 75, y: 122.75}
+        - {x: 56, y: 217.75}
+      - - {x: 75, y: 137.75}
+        - {x: 78, y: 138.75}
+        - {x: 78, y: 141.75}
+        - {x: 75, y: 142.75}
+        - {x: 73, y: 140.75}
+    - name: R2D2transformation_37
+      rect:
+        serializedVersion: 2
+        x: 2398
+        y: 0
+        width: 1199
+        height: 1199
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -35.5, y: 241.75}
+        - {x: -73.5, y: 214.75}
+        - {x: -89.5, y: 142.75}
+        - {x: -102.5, y: 81.75}
+        - {x: -102.5, y: 29.75}
+        - {x: -22.5, y: 18.75}
+        - {x: 44.5, y: 18.75}
+        - {x: 74.5, y: 35.75}
+        - {x: 74.5, y: 166.75}
+        - {x: 28.5, y: 241.75}
+    - name: R2D2transformation_38
+      rect:
+        serializedVersion: 2
+        x: 3597
+        y: 0
+        width: 1199
+        height: 1199
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 19, y: 239.75}
+        - {x: 15, y: 240.75}
+        - {x: -33, y: 240.75}
+        - {x: -65, y: 217.75}
+        - {x: -88, y: 153.75}
+        - {x: -97, y: 66.75}
+        - {x: -102, y: 52.75}
+        - {x: -102, y: 34.75}
+        - {x: -41, y: 17.75}
+        - {x: 43, y: 17.75}
+        - {x: 76, y: 22.75}
+        - {x: 76, y: 107.75}
+        - {x: 61, y: 199.75}
+    - name: R2D2transformation_39
+      rect:
+        serializedVersion: 2
+        x: 4796
+        y: 0
+        width: 1199
+        height: 1199
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 75.5, y: 155.75}
+        - {x: 51.5, y: 231.75}
+        - {x: 26.5, y: 240.75}
+        - {x: -54.5, y: 240.75}
+        - {x: -102.5, y: 159.75}
+        - {x: -102.5, y: 23.75}
+        - {x: -51.5, y: 17.75}
+        - {x: 56.5, y: 17.75}
+        - {x: 75.5, y: 32.75}
+    - name: R2D2transformation_40
+      rect:
+        serializedVersion: 2
+        x: 5995
+        y: 0
+        width: 1199
+        height: 1199
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 47, y: 224.75}
+        - {x: 12, y: 240.75}
+        - {x: -47, y: 240.75}
+        - {x: -54, y: 238.75}
+        - {x: -93, y: 144.75}
+        - {x: -91, y: 76.75}
+        - {x: -101, y: 56.75}
+        - {x: -101, y: 29.75}
+        - {x: -78, y: 22.75}
+        - {x: -53, y: 17.75}
+        - {x: 64, y: 17.75}
+        - {x: 77, y: 33.75}
+        - {x: 77, y: 138.75}
+        - {x: 67, y: 182.75}
+    - name: R2D2transformation_41
+      rect:
+        serializedVersion: 2
+        x: 7194
+        y: 0
+        width: 1199
+        height: 1199
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 30.5, y: 241.75}
+        - {x: -45.5, y: 241.75}
+        - {x: -53.5, y: 240.75}
+        - {x: -75.5, y: 198.75}
+        - {x: -89.5, y: 134.75}
+        - {x: -103.5, y: 75.75}
+        - {x: -103.5, y: 32.75}
+        - {x: -68.5, y: 26.75}
+        - {x: -46.5, y: 18.75}
+        - {x: 41.5, y: 18.75}
+        - {x: 74.5, y: 25.75}
+        - {x: 74.5, y: 143.75}
+        - {x: 45.5, y: 234.75}
+      - - {x: 73.5, y: 137.75}
+        - {x: 76.5, y: 138.75}
+        - {x: 76.5, y: 141.75}
+        - {x: 73.5, y: 142.75}
+        - {x: 71.5, y: 140.75}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
