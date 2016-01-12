@@ -16,6 +16,8 @@
 
         if (Controller.HasInventoryItem(EnumItemID.Chip))
         {
+            GetComponent<MayorDialogActor>().SetFlag();
+
             return currentQuest.GetBoolean(HasSpoken) ? HasChipNowDialog : HasChipFirstDialog;
         }
 
@@ -26,6 +28,7 @@
     {
         if (Controller.HasInventoryItem(EnumItemID.Chip))
         {
+          
             currentQuest.SetBoolean(CreateBridgeVarName);
             return;
         }

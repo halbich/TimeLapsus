@@ -4,7 +4,7 @@ public class DialogActor : TalkingActorWithController
 {
     public bool ShowSpeakIcon = true;
 
-    private DialogActor()
+    protected DialogActor()
     {
         cursor = CursorType.Speak;
     }

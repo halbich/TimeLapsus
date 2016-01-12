@@ -1,17 +1,17 @@
 ﻿using UnityEngine;
 
-public class PotterDialogActor : DialogActor
+public class MayorDialogActor : DialogActor
 {
-    private bool fistFlag;
+    private bool flag;
 
-    internal void SetFistFlag()
+    internal void SetFlag()
     {
-        fistFlag = true;
+        flag = true;
     }
 
     internal override void StartSpeak()
     {
-        if (!fistFlag)
+        if (!flag)
         {
             base.StartSpeak();
             return;
@@ -19,13 +19,13 @@ public class PotterDialogActor : DialogActor
 
         var animator = GetComponent<Animator>();
         if (animator != null)
-            animator.SetTrigger("FistStart");
+            animator.SetTrigger("HappySpeakStart");
 
     }
 
     internal override void EndSpeak()
     {
-        if (!fistFlag)
+        if (!flag)
         {
             base.EndSpeak();
             return;
@@ -33,8 +33,8 @@ public class PotterDialogActor : DialogActor
 
         var animator = GetComponent<Animator>();
         if (animator != null)
-            animator.SetTrigger("FistEnd");
+            animator.SetTrigger("HappySpeakEnd");
 
-        fistFlag = false;
+        flag = false;
     }
 }

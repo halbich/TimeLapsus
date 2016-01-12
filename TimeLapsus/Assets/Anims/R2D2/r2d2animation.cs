@@ -37,4 +37,9 @@ public class r2d2animation : MonoBehaviour
         RobotOnPotter.ShowFinalDialog();
 
     }
+
+    public void StartR2Sound()
+    {
+        GetComponent<AudioSource>().Play();
+    }
 }
