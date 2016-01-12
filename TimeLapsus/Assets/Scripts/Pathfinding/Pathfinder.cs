@@ -154,7 +154,7 @@ public class Pathfinder : ScriptWithController
             }
         }
         if (sourceColliderNode == null) throw new ArgumentException("Origin point not in a walkable area");
-        if (endColliderNode == null) throw new ArgumentException("Target point not in a walkable area");
+        if (endColliderNode == null) throw new ArgumentException(string.Format("Target point {0} not in a walkable area", targetPoint));
         if (sourceColliderNode == endColliderNode) return new Vector2[] { targetPoint };
         Queue<SearchNode> bfsQueue = new Queue<SearchNode>();
         bfsQueue.Enqueue(new SearchNode() { CurrentColliderNode = endColliderNode, PreviousNode = null });

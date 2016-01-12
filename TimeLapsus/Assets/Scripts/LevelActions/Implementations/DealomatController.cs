@@ -17,18 +17,22 @@ public class DealomatController : InspectObjectController
     public string RobotReadyToTakeVarName;
 
     public string HasRobotVarName;
-    public GameObject R2D2;
+
 
     private bool beforeTakenTriggered;
+
+    private Animator anim;
 
     protected override void Start()
     {
         base.Start();
 
-        if (R2D2 == null)
-            return;
+        anim = GetComponent<Animator>();
 
-        R2D2.SetActive(currentQuest.GetBoolean(RobotReadyToTakeVarName));
+        if (currentQuest.GetBoolean(RobotReadyToTakeVarName))
+        {
+            anim.SetFloat("Speed", 1000000);
+        }
     }
 
     protected override string getDialog()
@@ -36,7 +40,7 @@ public class DealomatController : InspectObjectController
         if (!IsInspected())
             return base.getDialog();
 
-        if (Controller.HasInventoryItem(EnumItemID.Robot) || currentQuest.GetBoolean(banker.InitialMoneyKeyName))
+        if (Controller.HasInventoryItem(EnumItemID.Robot) || currentQuest.GetBoolean(RobotReadyToTakeVarName) || currentQuest.GetBoolean(banker.InitialMoneyKeyName))
             return AlreadyHasRobotDialog;
 
         if (!currentQuest.GetBoolean(banker.HasAccountKeyName))
@@ -54,8 +58,8 @@ public class DealomatController : InspectObjectController
         {
             beforeTakenTriggered = false;
             currentQuest.SetBoolean(RobotReadyToTakeVarName);
-            if (R2D2 != null)
-                R2D2.SetActive(true);
+
+            anim.SetFloat("Speed", 1);
         }
     }
 
