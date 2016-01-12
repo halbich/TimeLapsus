@@ -10,7 +10,6 @@ public class UseRobotOnPotter : ItemUseOnScript
     public GameObject R2D2;
 
     public ItemPointScript AnimStartPoint;
-    public ItemPointScript AnimEndPoint;
     public GameObject Hider;
 
     public float WaitForRobot = 0.5f;
@@ -30,13 +29,7 @@ public class UseRobotOnPotter : ItemUseOnScript
             return;
         }
 
-        if (AnimEndPoint == null)
-        {
-            Debug.LogError("No AnimEndPoint point defined!");
-            return;
-        }
-
-        var point = AnimStartPoint.GetPoint(Controller.CharacterZPosition);
+               var point = AnimStartPoint.GetPoint(Controller.CharacterZPosition);
 
         Controller.PlayerController.MoveTo(point.StartPoint, () =>
         {
