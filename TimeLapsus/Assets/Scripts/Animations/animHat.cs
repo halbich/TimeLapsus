@@ -3,6 +3,12 @@ using System.Collections;
 
 public class animHat : MonoBehaviour
 {
+    [Tooltip("Minimální doba čekání před startem animace")]
+    public float PreStartMinWait;
+
+    [Tooltip("Maximální doba čekání před startem animace")]
+    public float PreStartMaxWait;
+
 
     [Tooltip("Minimální doba čekání - dole")]
     public float MinWait;
@@ -42,6 +48,8 @@ public class animHat : MonoBehaviour
 
     IEnumerator animation()
     {
+        yield return new WaitForSeconds(Random.Range(PreStartMinWait, PreStartMaxWait));
+
         while (true)
         {
             yield return new WaitForSeconds(Random.Range(MinWait, MaxWait));
