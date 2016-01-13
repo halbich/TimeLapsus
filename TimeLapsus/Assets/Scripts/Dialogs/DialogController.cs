@@ -76,6 +76,7 @@ public class DialogController : ScriptWithController
 
         Controller.CursorManager.SetCursor();
         dialogueBlocker.Activate();
+        dialogueBlocker.clicked = false;
         panel.SetActive(true);
         foreach (var item in dialog.DialogLines)
         {

@@ -42,7 +42,7 @@ public class UseRobotOnPotter : ItemUseOnScript
     IEnumerator animate()
     {
         base.Use();
-
+        Controller.DisableInput();
         Controller.PlayerCharacter.GetComponent<Animator>().SetTrigger("Throw");
         R2D2.SetActive(true);
         var animator = R2D2.GetComponent<Animator>();
@@ -60,6 +60,7 @@ public class UseRobotOnPotter : ItemUseOnScript
 
     internal void ShowFinalDialog()
     {
+        Controller.EnableInput();
         var dialogController = DialogController.Instance;
         dialogController.ShowDialog(dialogController.GetDialog(AfterPotterDeadDialog));
 

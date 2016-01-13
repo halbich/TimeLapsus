@@ -15,7 +15,6 @@ public class CursorManager : MonoBehaviour
 
     public Vector2 HotSpot = Vector2.zero;
     public CursorMode CursorMode = CursorMode.Auto;
-
     // Use this for initialization
     private void Awake()
     {
@@ -39,8 +38,11 @@ public class CursorManager : MonoBehaviour
         if (!cursorChangePossible)
             return;
         var texture = getTexture(type);
+        if (texture)
+        { 
         HotSpot = new Vector2(texture.width / 2f, texture.height / 2f);
         Cursor.SetCursor(texture, HotSpot, CursorMode);
+        }
     }
 
     private Texture2D getTexture(CursorType type)

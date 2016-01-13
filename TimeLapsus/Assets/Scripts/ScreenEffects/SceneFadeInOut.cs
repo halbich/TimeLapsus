@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class SceneFadeInOut : MonoBehaviour
+public class SceneFadeInOut : ScriptWithController
 {
     public float fadeSpeed = 1.5f;          // Speed that the screen fades to and from black.
 
@@ -8,16 +8,18 @@ public class SceneFadeInOut : MonoBehaviour
     public bool FadeOutAtStart;
 
 
-    private void Start()
+    protected override void Start()
     {
+        base.Awake();
         if (FadeOutAtStart)
         {
             GetComponent<GUITexture>().color = Color.black;
         }
     }
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         // Set the texture so that it is the the size of the screen and covers it.
         GetComponent<GUITexture>().pixelInset = new Rect(0f, 0f, Screen.width, Screen.height);
 
@@ -59,6 +61,7 @@ public class SceneFadeInOut : MonoBehaviour
 
     private void StartScene()
     {
+        if (Controller != null)Controller.DisableInput();
         // Fade the texture to clear.
         FadeToClear();
 
@@ -71,10 +74,12 @@ public class SceneFadeInOut : MonoBehaviour
         GetComponent<GUITexture>().enabled = false;
 
         CurrentState = FadeInOutState.None;
+        if (Controller != null)Controller.EnableInput();
     }
 
     public void EndScene()
     {
+        Controller.DisableInput();
         // Make sure the texture is enabled.
         GetComponent<GUITexture>().enabled = true;
 
@@ -85,6 +90,9 @@ public class SceneFadeInOut : MonoBehaviour
 
         // If the screen is almost black...
         if (GetComponent<GUITexture>().color.a >= 0.95f)
+        {
             CurrentState = FadeInOutState.None;
+            Controller.EnableInput();
+        }
     }
 }

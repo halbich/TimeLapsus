@@ -74,7 +74,7 @@ public class InventoryItemController : ClickableArea, IPointerDownHandler, IPoin
 
     public void OnDrag(PointerEventData eventData)
     {
-        if (eventData == null)
+        if (eventData == null || eventData.button != PointerEventData.InputButton.Left)
             return;
         var newPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         newPos.z = -10;
@@ -84,7 +84,7 @@ public class InventoryItemController : ClickableArea, IPointerDownHandler, IPoin
     public void OnBeginDrag(PointerEventData eventData)
     {
         DraggedObject = this;
-        if (eventData == null)
+        if (eventData == null || eventData.button != PointerEventData.InputButton.Left)
             return;
 
         oldLocalPosition = transform.localPosition;
@@ -100,11 +100,11 @@ public class InventoryItemController : ClickableArea, IPointerDownHandler, IPoin
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        if (eventData == null || eventData.button != PointerEventData.InputButton.Left)
+            return;
         Controller.CursorManager.UnfreezeCursorTexture();
         Controller.DescriptionController.UnfreezeForItemUse();
         Controller.DescriptionController.SetDescription("", false);
-        if (eventData == null)
-            return;
 
         transform.SetParent(transformParent, true);
         transform.localPosition = oldLocalPosition;

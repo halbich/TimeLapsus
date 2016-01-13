@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ScreenChanger : MonoBehaviour
+public class ScreenChanger : ScriptWithController
 {
 
 
@@ -20,8 +20,9 @@ public class ScreenChanger : MonoBehaviour
 
 
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         // Set the texture so that it is the the size of the screen and covers it.
         //GetComponent<GUITexture>().pixelInset = new Rect(0f, 0f, Screen.width, Screen.height);
         var subScreens = GetComponentsInChildren<GUITexture>();
@@ -48,8 +49,9 @@ public class ScreenChanger : MonoBehaviour
     }
 
     // Use this for initialization
-    void Start()
+    protected override void  Start()
     {
+        base.Start();
         if (Statics.TimelineChanged)
             StartCoroutine(continueWithChange());
     }
@@ -58,13 +60,13 @@ public class ScreenChanger : MonoBehaviour
     {
         levelTexture.color = halfVisible;
         otherLevelTexture.color = visible;
-     
 
         var totalTime = ChangeTime / 2f;
 
         float elapsed = 0;
         while (elapsed < totalTime)
         {
+        if (Controller) Controller.DisableInput();
 
             levelTexture.color = Color.Lerp(halfVisible, visible, elapsed / totalTime);
             elapsed += Time.deltaTime;
@@ -83,7 +85,7 @@ public class ScreenChanger : MonoBehaviour
 
         }
 
-
+        if (Controller)Controller.EnableInput();
         SetActive(false);
     }
 
@@ -101,6 +103,7 @@ public class ScreenChanger : MonoBehaviour
         while (startElapsed < StartTime)
         {
 
+            if (Controller) Controller.DisableInput();
             levelTexture.color = Color.Lerp(invisible, visible, startElapsed / StartTime);
             startElapsed += Time.deltaTime;
             yield return null;
@@ -113,6 +116,7 @@ public class ScreenChanger : MonoBehaviour
         float elapsed = 0;
         while (elapsed < totalTime)
         {
+            if (Controller) Controller.DisableInput();
 
             levelTexture.color = Color.Lerp(visible, halfVisible, elapsed / totalTime);
             elapsed += Time.deltaTime;
@@ -120,6 +124,7 @@ public class ScreenChanger : MonoBehaviour
 
         }
 
+        if (Controller) Controller.EnableInput();
 
         CanContinueWithLoad = true;
     }

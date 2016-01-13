@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class BaseController : MonoBehaviour
 {
+    private DialogueBlockerController dialogueBlocker;
+
     public GameObject InventoryItemTemplate;
 
     public GameObject PlayerCharacter;
@@ -16,6 +18,8 @@ public class BaseController : MonoBehaviour
     public CursorManager CursorManager;
 
     public GameObject UI;
+
+    public CursorType oldCursor = CursorType.None;
 
     private const float CHAR_Z_POSITION = -5f;
 
@@ -41,6 +45,7 @@ public class BaseController : MonoBehaviour
 
         PlayerController = PlayerCharacter.GetComponent<PawnController>();
         DescriptionController = FindObjectOfType<DescriptionController>();
+        dialogueBlocker = FindObjectOfType<DialogueBlockerController>();
         if (PlayerController == null)
         {
             Debug.LogError("No controller");
@@ -131,5 +136,17 @@ public class BaseController : MonoBehaviour
         var item = Statics.AllInventoryItems[itemID];
         Statics.Inventory.Remove(item);
         FindObjectOfType<InventoryController>().UpdateInventory();
+    }
+    public void DisableInput()
+    {
+        if (DescriptionController) DescriptionController.Freeze();
+        if (CursorManager) CursorManager.FreezeCursorTexture();
+        if (dialogueBlocker) dialogueBlocker.Activate();
+    }
+    public void EnableInput()
+    {
+        if (DescriptionController) DescriptionController.Unfreeze();
+        if (CursorManager) CursorManager.UnfreezeCursorTexture();
+        if (dialogueBlocker) dialogueBlocker.Deactivate();
     }
 }
