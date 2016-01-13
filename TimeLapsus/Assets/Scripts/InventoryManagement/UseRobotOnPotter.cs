@@ -29,7 +29,7 @@ public class UseRobotOnPotter : ItemUseOnScript
             return;
         }
 
-               var point = AnimStartPoint.GetPoint(Controller.CharacterZPosition);
+        var point = AnimStartPoint.GetPoint(Controller.CharacterZPosition);
 
         Controller.PlayerController.MoveTo(point.StartPoint, () =>
         {
@@ -41,7 +41,7 @@ public class UseRobotOnPotter : ItemUseOnScript
 
     IEnumerator animate()
     {
-        //base.Use();
+        base.Use();
 
         Controller.PlayerCharacter.GetComponent<Animator>().SetTrigger("Throw");
         R2D2.SetActive(true);
