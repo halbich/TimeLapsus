@@ -78,7 +78,7 @@ public class ScreenChanger : ScriptWithController
         float startElapsed = 0;
         while (startElapsed < StartTime)
         {
-
+            if (Controller) Controller.DisableInput();
             levelTexture.color = Color.Lerp(visible, invisible, startElapsed / StartTime);
             startElapsed += Time.deltaTime;
             yield return null;
