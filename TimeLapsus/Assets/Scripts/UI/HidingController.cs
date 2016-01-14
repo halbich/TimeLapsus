@@ -4,6 +4,7 @@ using UnityEngine.EventSystems;
 
 public class HidingController : MonoBehaviour
 {
+    bool inputDisabled = false;
     bool inventoryVisible = false;
     bool RightClickInitiated = false;
     public float AfterExitTime = 0;
@@ -24,8 +25,11 @@ public class HidingController : MonoBehaviour
         else if (Input.GetMouseButtonUp(1) && RightClickInitiated)
         {
             RightClickInitiated = false;
-            if (inventoryVisible) HideInventory();
-            else ShowInventory();
+            if (!inputDisabled)
+            {
+                if (inventoryVisible) HideInventory();
+                else ShowInventory();
+            }
         }
     }
 
@@ -46,5 +50,17 @@ public class HidingController : MonoBehaviour
         if (animComponent.GetBool("ShowInventory") || animComponent.GetBool("HideInventory")) return;
         animComponent.SetTrigger("ShowInventory");
         inventoryVisible = true;
+    }
+    public void DisableInput()
+    {
+        inputDisabled = true;
+        if (inventoryVisible)
+        {
+            HideInventory();
+        }
+    }
+    public void EnableInput()
+    {
+        inputDisabled = false;
     }
 }

@@ -17,6 +17,8 @@ public class BaseController : MonoBehaviour
 
     public CursorManager CursorManager;
 
+    public HidingController HidingController;
+
     public GameObject UI;
 
     public CursorType oldCursor = CursorType.None;
@@ -46,6 +48,7 @@ public class BaseController : MonoBehaviour
         PlayerController = PlayerCharacter.GetComponent<PawnController>();
         DescriptionController = FindObjectOfType<DescriptionController>();
         dialogueBlocker = FindObjectOfType<DialogueBlockerController>();
+        HidingController = FindObjectOfType<HidingController>();
         if (PlayerController == null)
         {
             Debug.LogError("No controller");
@@ -148,6 +151,9 @@ public class BaseController : MonoBehaviour
 
         if (dialogueBlocker)
             dialogueBlocker.Activate();
+
+        if (HidingController)
+            HidingController.DisableInput();
     }
 
     public void EnableInput()
@@ -160,6 +166,9 @@ public class BaseController : MonoBehaviour
         
         if (dialogueBlocker) 
             dialogueBlocker.Deactivate();
+
+        if (HidingController)
+            HidingController.EnableInput();
     }
 
     internal static void ClearAll()
