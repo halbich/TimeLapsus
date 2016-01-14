@@ -174,7 +174,7 @@ invItemAncientVaseName=Stará váza
 invItemBabelChipName=Babylonský čip
 invItemShovelName=Lopata
 invItemCoinsName=Mince
-invItemGoldName=Zlato
+invItemGoldName=20 Megakreditů
 invItemRobotName=Úklidový robot
 
 invItemVaseDesc=Nová hezká váza
@@ -182,5 +182,5 @@ invItemAncientVaseDesc=Pěkně stará váza
 invItemBabelChipDesc=S touhle hračkou porozumím všemu
 invItemShovelDesc=Hurá, můžu si hrát na písečku
 invItemCoinsDesc=S tím nikoho neuplatím
-invItemGoldDesc=Uf, to je těžké
+invItemGoldDesc=To je peněz
 invItemRobotDesc=Alespoň mě holky nebudou mít za bordeláře
