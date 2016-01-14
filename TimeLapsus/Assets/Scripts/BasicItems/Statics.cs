@@ -4,8 +4,6 @@ using Assets.Scripts;
 
 public static class Statics
 {
-    public static EnumLevel LastLoadedLevel;
-
     public static bool TimelineChanged;
 
     private static readonly List<Tuple<EnumLevel, string>> mapping = new List<Tuple<EnumLevel, string>> {
@@ -62,9 +60,9 @@ public static class Statics
 
     internal static void ClearAllData()
     {
-       LastLoadedLevel = EnumLevel.NULL;
         TimelineChanged = false;
         Inventory.Clear();
         QuestController.Instance.ResetQuest();
+        BaseController.ClearAll();
     }
 }

@@ -267,7 +267,6 @@ public class DialogController : ScriptWithController
     internal void ShowRandomDialog()
     {
         var index = Random.Range(0, randomDialogs.Count);
-        //  Debug.Log(index);
         ShowDialog(randomDialogs[index]);
     }
 }

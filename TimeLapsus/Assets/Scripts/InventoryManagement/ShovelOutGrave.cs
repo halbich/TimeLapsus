@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class ShovelOutGrave : ItemUseOnScript
 {
@@ -18,10 +19,20 @@ public class ShovelOutGrave : ItemUseOnScript
             Controller.PlayerController.SetNewFacing(ObjectPoint.Direction);
             base.Use();
             QuestController.Instance.GetCurrent().SetBoolean(ShoveledGraveKeyName);
-            var c = GetComponent<GravePresentController>();
-            c.ActionOccured();
+            StartCoroutine(useEnumerator());
         });
 
        
+    }
+
+    IEnumerator useEnumerator()
+    {
+        base.Use();
+        var c = GetComponent<GravePresentController>();
+        var asource = GetComponent<AudioSource>();
+        Controller.PlayerCharacter.GetComponent<Animator>().SetTrigger("Dig");
+        asource.Play();
+        yield return new WaitForSeconds(2.5f);
+        c.ActionOccured();
     }
 }

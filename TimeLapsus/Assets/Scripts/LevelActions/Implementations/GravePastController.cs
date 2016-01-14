@@ -71,10 +71,11 @@ public class GravePastController : InspectObjectController
         BuryScript.enabled = hasInserted && !hasBuried;
         PileOfDirt.SetActive(hasBuried);
 
-        if (hasBuried)
-        {
-            InspectedItemDialog = AfterBuriedInfoDialog;
-            GetComponent<InspectObject>().Name = AfterBuriedTitle;
-        }
+        if (!hasBuried)
+            return;
+
+        InspectedItemDialog = AfterBuriedInfoDialog;
+        GetComponent<InspectObject>().Name = AfterBuriedTitle;
+       
     }
 }

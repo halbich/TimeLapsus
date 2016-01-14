@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class DigVaseIntoGrave : ItemUseOnScript
 {
@@ -18,9 +19,20 @@ public class DigVaseIntoGrave : ItemUseOnScript
             Controller.PlayerController.SetNewFacing(ObjectPoint.Direction);
             QuestController.Instance.GetCurrent().SetBoolean(BuriedVaseVarName);
             var dialogController = DialogController.Instance;
-            dialogController.ShowDialog(dialogController.GetDialog(VaseBuryDialog));
-            GetComponent<GravePastController>().ActionOccured();
-            base.Use();
+            dialogController.ShowDialog(dialogController.GetDialog(VaseBuryDialog), null, () =>
+            {
+                StartCoroutine(useEnumerator());
+            });
         });
+    }
+
+    IEnumerator useEnumerator()
+    {
+        base.Use();
+        var c = GetComponent<GravePastController>(); var asource = GetComponent<AudioSource>();
+        Controller.PlayerCharacter.GetComponent<Animator>().SetTrigger("Dig");
+        asource.Play();
+        yield return new WaitForSeconds(2.5f);
+        c.ActionOccured();
     }
 }

@@ -137,16 +137,33 @@ public class BaseController : MonoBehaviour
         Statics.Inventory.Remove(item);
         FindObjectOfType<InventoryController>().UpdateInventory();
     }
+
     public void DisableInput()
     {
-        if (DescriptionController) DescriptionController.Freeze();
-        if (CursorManager) CursorManager.FreezeCursorTexture();
-        if (dialogueBlocker) dialogueBlocker.Activate();
+        if (DescriptionController) 
+            DescriptionController.Freeze();
+
+        if (CursorManager) 
+            CursorManager.FreezeCursorTexture();
+
+        if (dialogueBlocker)
+            dialogueBlocker.Activate();
     }
+
     public void EnableInput()
     {
-        if (DescriptionController) DescriptionController.Unfreeze();
-        if (CursorManager) CursorManager.UnfreezeCursorTexture();
-        if (dialogueBlocker) dialogueBlocker.Deactivate();
+        if (DescriptionController) 
+            DescriptionController.Unfreeze();
+        
+        if (CursorManager)
+            CursorManager.UnfreezeCursorTexture();
+        
+        if (dialogueBlocker) 
+            dialogueBlocker.Deactivate();
+    }
+
+    internal static void ClearAll()
+    {
+        previousLoadedLevel = EnumLevel.NULL;
     }
 }

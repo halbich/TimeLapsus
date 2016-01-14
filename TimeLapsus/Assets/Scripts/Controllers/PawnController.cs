@@ -63,7 +63,6 @@ public class PawnController : MonoBehaviour
             return;
         }
 
-        //Debug.Log("WalkEnd");
         currentContinue();
     }
 
@@ -126,13 +125,8 @@ public class PawnController : MonoBehaviour
             animator.SetTrigger("WalkStart");
             isMoving = true;
             StartCoroutine(playSteps());
-            //Debug.Log("WalkStart");
         }
 
-        if (Debug.isDebugBuild)
-        {
-            //gameObject.transform.position = target;
-        }
     }
 
     internal void SetNewFacing(Facing newDirection)
@@ -159,7 +153,6 @@ public class PawnController : MonoBehaviour
     internal void RegisterStepSoundRegion(StepSoundRegion stepSoundRegion)
     {
         currentStepSoundRegion = stepSoundRegion;
-        Debug.LogFormat(" Registered: {0}", currentStepSoundRegion.name);
     }
 
     IEnumerator playSteps()
