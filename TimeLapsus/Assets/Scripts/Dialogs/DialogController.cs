@@ -75,6 +75,7 @@ public class DialogController : ScriptWithController
             yield break;
 
         Controller.CursorManager.SetCursor();
+        Controller.HidingController.DisableInput();
         dialogueBlocker.Activate();
         dialogueBlocker.clicked = false;
         panel.SetActive(true);
@@ -107,6 +108,7 @@ public class DialogController : ScriptWithController
 
         panel.SetActive(false);
         dialogueBlocker.Deactivate();
+        Controller.HidingController.EnableInput();
         if (endAction != null)
         {
             endAction();
