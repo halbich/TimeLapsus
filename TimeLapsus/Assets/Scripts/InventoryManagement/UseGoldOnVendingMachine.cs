@@ -1,4 +1,7 @@
-﻿public class UseGoldOnVendingMachine : ItemUseOnScript
+﻿using System.Collections;
+using UnityEngine;
+
+public class UseGoldOnVendingMachine : ItemUseOnScript
 {
     public VendingMachineController controller;
 
@@ -13,20 +16,30 @@
             {
                 Controller.PlayerController.SetNewFacing(ObjectPoint.Direction);
 
+                StartCoroutine(getChip());
 
-                controller.ChipObject.SetActive(true);
-
-                var quest = QuestController.Instance.GetCurrent();
-                quest.SetBoolean(controller.ChipWasGivenVarName);
-                quest.SetBoolean(controller.ChipObject.GetComponent<InspectObjectController>().InspectedItemVariable);
-                controller.ChipObject.GetComponent<PickableItem>().SetInspected();
-
-                base.Use();
 
             });
 
-       
 
-      
+
+
+    }
+
+    IEnumerator getChip()
+    {
+        base.Use();
+        Controller.DisableInput();
+        GetComponent<AudioSource>().Play();
+        yield return new WaitForSeconds(2.8f);
+
+        controller.ChipObject.SetActive(true);
+
+        var quest = QuestController.Instance.GetCurrent();
+        quest.SetBoolean(controller.ChipWasGivenVarName);
+        quest.SetBoolean(controller.ChipObject.GetComponent<InspectObjectController>().InspectedItemVariable);
+        controller.ChipObject.GetComponent<PickableItem>().SetInspected();
+
+        Controller.EnableInput();
     }
 }

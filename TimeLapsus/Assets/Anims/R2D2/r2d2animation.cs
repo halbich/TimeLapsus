@@ -12,7 +12,7 @@ public class r2d2animation : MonoBehaviour
 
     void Start()
     {
-        PotterTable.SetActive(false);
+        PotterTable.SetActive(QuestController.Instance.GetCurrent().GetBoolean(RobotOnPotter.PotterIsDeadVarName));
     }
 
     public void ShowClouds()

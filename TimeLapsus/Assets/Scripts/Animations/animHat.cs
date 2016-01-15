@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class animHat : MonoBehaviour
+public class AnimHat : MonoBehaviour
 {
     [Tooltip("Minimální doba čekání před startem animace")]
     public float PreStartMinWait;
