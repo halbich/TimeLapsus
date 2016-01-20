@@ -17,4 +17,14 @@ public class VideoScript : MonoBehaviour {
         yield return new WaitForSeconds(movieLength);
         SceneManager.LoadScene(EnumLevel.RiverSide.GetName());
     }
+
+
+    private void Update()
+    {
+        if (!Input.anyKey)
+            return;
+
+    //    StopAllCoroutines();
+        SceneManager.LoadScene(EnumLevel.RiverSide.GetName());
+    }
 }
