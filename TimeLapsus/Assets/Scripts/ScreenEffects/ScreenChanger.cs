@@ -1,12 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class ScreenChanger : ScriptWithController
 {
 
-
-    private GUITexture levelTexture;
-    private GUITexture otherLevelTexture;
 
     private readonly Color invisible = new Color(0.5f, 0.5f, 0.5f, 0f);
     private readonly Color visible = new Color(0.5f, 0.5f, 0.5f, 0.5f);
@@ -15,8 +13,10 @@ public class ScreenChanger : ScriptWithController
     [HideInInspector]
     public bool CanContinueWithLoad;
 
-    public float ChangeTime = 3;
+    public float ChangeTime = 8;
     public float StartTime = 1;
+
+    public List<GUITexture> SubObjects;
 
 
 
@@ -25,65 +25,53 @@ public class ScreenChanger : ScriptWithController
         base.Awake();
         // Set the texture so that it is the the size of the screen and covers it.
         //GetComponent<GUITexture>().pixelInset = new Rect(0f, 0f, Screen.width, Screen.height);
-        var subScreens = GetComponentsInChildren<GUITexture>();
 
-        foreach (var subScreen in subScreens)
+        foreach (var texture in SubObjects)
         {
-            if (subScreen.name == "Level")
-                levelTexture = subScreen;
-
-            if (subScreen.name == "Other")
-                otherLevelTexture = subScreen;
+            texture.pixelInset = new Rect(Screen.width / 2f, Screen.height / 2f, 0, 0);
+            texture.color = invisible;
         }
-
-        levelTexture.pixelInset = new Rect(Screen.width / 2f, Screen.height / 2f, 0,0);
-        levelTexture.color = invisible;
-
-        otherLevelTexture.pixelInset = new Rect(levelTexture.pixelInset);
-        otherLevelTexture.color = invisible;
-
-        Debug.LogFormat("ScrCh: {0}", Statics.TimelineChanged);
 
         SetActive(Statics.TimelineChanged);
 
     }
 
     // Use this for initialization
-    protected override void  Start()
+    protected override void Start()
     {
         base.Start();
         if (Statics.TimelineChanged)
             StartCoroutine(continueWithChange());
+
     }
 
     IEnumerator continueWithChange()
     {
-        levelTexture.color = halfVisible;
-        otherLevelTexture.color = visible;
+        if (Controller)
+            Controller.DisableInput();
 
-        var totalTime = ChangeTime / 2f;
-
-        float elapsed = 0;
-        while (elapsed < totalTime)
+        foreach (var texture in SubObjects)
         {
-        if (Controller) Controller.DisableInput();
-
-            levelTexture.color = Color.Lerp(halfVisible, visible, elapsed / totalTime);
-            elapsed += Time.deltaTime;
-            yield return null;
-
+            texture.color = visible;
         }
 
-        otherLevelTexture.color = invisible;
-        float startElapsed = 0;
-        while (startElapsed < StartTime)
+        
+        var max = SubObjects.Count - 1;
+        SubObjects[max].color = halfVisible;
+        for (var i = max; i >= 0; i--)
         {
-            if (Controller) 
-                Controller.DisableInput();
-            levelTexture.color = Color.Lerp(visible, invisible, startElapsed / StartTime);
-            startElapsed += Time.deltaTime;
-            yield return null;
+            var texture = SubObjects[i];
+            float startElapsed = 0;
+            var startTime = i == max ? StartTime / 2f : StartTime;
+            var startColor = i == max ? halfVisible : visible;
 
+            Debug.LogFormat("{0}, {1}", startTime, startColor);
+            while (startElapsed < startTime)
+            {
+                texture.color = Color.Lerp(startColor, invisible, startElapsed / startTime);
+                startElapsed += Time.deltaTime;
+                yield return null;
+            }
         }
 
         if (Controller)
@@ -100,40 +88,54 @@ public class ScreenChanger : ScriptWithController
 
     IEnumerator ChangeScreens()
     {
-        otherLevelTexture.color = invisible;
-        float startElapsed = 0;
-        while (startElapsed < StartTime)
+        if (Controller)
+            Controller.DisableInput();
+
+        for (var i = 0; i < SubObjects.Count; i++)
         {
+            var texture = SubObjects[i];
+            float startElapsed = 0;
+            var startTime = i == SubObjects.Count-1 ? StartTime/2f : StartTime;
+            var finalColor = i == SubObjects.Count-1 ? halfVisible : visible;
 
-            if (Controller) Controller.DisableInput();
-            levelTexture.color = Color.Lerp(invisible, visible, startElapsed / StartTime);
-            startElapsed += Time.deltaTime;
-            yield return null;
+            Debug.LogFormat("{0}, {1}", startTime, finalColor);
 
+            while (startElapsed < startTime)
+            {
+                texture.color = Color.Lerp(invisible, finalColor, startElapsed / startTime);
+                startElapsed += Time.deltaTime;
+                yield return null;
+            }
         }
 
-        otherLevelTexture.color = visible;
+        //otherLevelTexture.color = invisible;
 
-        var totalTime = ChangeTime / 2f;
-        float elapsed = 0;
-        while (elapsed < totalTime)
-        {
-            if (Controller) Controller.DisableInput();
+        //otherLevelTexture.color = visible;
 
-            levelTexture.color = Color.Lerp(visible, halfVisible, elapsed / totalTime);
-            elapsed += Time.deltaTime;
-            yield return null;
+        //var totalTime = ChangeTime / 2f;
+        //float elapsed = 0;
+        //while (elapsed < totalTime)
+        //{
+        //    if (Controller)
+        //        Controller.DisableInput();
 
-        }
+        //    levelTexture.color = Color.Lerp(visible, halfVisible, elapsed / totalTime);
+        //    elapsed += Time.deltaTime;
+        //    yield return null;
 
-        if (Controller) Controller.EnableInput();
+        //}
+
+        //if (Controller)
+        //    Controller.EnableInput();
 
         CanContinueWithLoad = true;
     }
 
     internal void SetActive(bool active)
     {
-        levelTexture.gameObject.SetActive(active);
-        otherLevelTexture.gameObject.SetActive(active);
+        foreach (var subObject in SubObjects)
+        {
+            subObject.gameObject.SetActive(active);
+        }
     }
 }
