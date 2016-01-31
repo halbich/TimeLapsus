@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameEndController : MonoBehaviour
 {
@@ -11,8 +12,11 @@ public class GameEndController : MonoBehaviour
     {
 
         Cursor.visible = false;
-        if(BaseController.PreviousLoadedLevel == EnumLevel.RiverSide)
+        if (BaseController.PreviousLoadedLevel == EnumLevel.RiverSide)
+        {
+            FindObjectOfType<Image>().color = Color.white;
             GetComponent<AudioSource>().Play();
+        }
 
         StartCoroutine(end());
 
