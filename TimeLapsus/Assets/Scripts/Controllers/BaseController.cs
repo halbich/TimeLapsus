@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class BaseController : MonoBehaviour
 {
+    private int maxInputLockPriority = 0;
+
     private DialogueBlockerController dialogueBlocker;
 
     public GameObject InventoryItemTemplate;
@@ -141,8 +143,9 @@ public class BaseController : MonoBehaviour
         FindObjectOfType<InventoryController>().UpdateInventory();
     }
 
-    public void DisableInput()
+    public void DisableInput(int priority = 0)
     {
+        if (maxInputLockPriority < priority) maxInputLockPriority = priority;
         if (DescriptionController) 
             DescriptionController.Freeze();
 
@@ -156,8 +159,10 @@ public class BaseController : MonoBehaviour
             HidingController.DisableInput();
     }
 
-    public void EnableInput()
+    public void EnableInput(int priority = 0)
     {
+        if (priority < maxInputLockPriority) return;
+        maxInputLockPriority = 0;
         if (DescriptionController) 
             DescriptionController.Unfreeze();
         

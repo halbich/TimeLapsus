@@ -41,14 +41,18 @@ public class ScreenChanger : ScriptWithController
     {
         base.Start();
         if (Statics.TimelineChanged)
+        {
+            if (Controller)
+                Controller.DisableInput(5);
             StartCoroutine(continueWithChange());
+        }
 
     }
 
     IEnumerator continueWithChange()
     {
         if (Controller)
-            Controller.DisableInput();
+            Controller.DisableInput(5);
 
         foreach (var texture in SubObjects)
         {
@@ -68,6 +72,8 @@ public class ScreenChanger : ScriptWithController
             Debug.LogFormat("{0}, {1}", startTime, startColor);
             while (startElapsed < startTime)
             {
+                if (Controller)
+                    Controller.DisableInput(5);
                 texture.color = Color.Lerp(startColor, invisible, startElapsed / startTime);
                 startElapsed += Time.deltaTime;
                 yield return null;
@@ -75,7 +81,7 @@ public class ScreenChanger : ScriptWithController
         }
 
         if (Controller)
-            Controller.EnableInput();
+            Controller.EnableInput(5);
         SetActive(false);
     }
 
@@ -89,7 +95,7 @@ public class ScreenChanger : ScriptWithController
     IEnumerator ChangeScreens()
     {
         if (Controller)
-            Controller.DisableInput();
+            Controller.DisableInput(1000);
 
         for (var i = 0; i < SubObjects.Count; i++)
         {
@@ -102,6 +108,8 @@ public class ScreenChanger : ScriptWithController
 
             while (startElapsed < startTime)
             {
+                if (Controller)
+                    Controller.DisableInput(1000);
                 texture.color = Color.Lerp(invisible, finalColor, startElapsed / startTime);
                 startElapsed += Time.deltaTime;
                 yield return null;
