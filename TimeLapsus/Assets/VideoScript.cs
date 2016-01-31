@@ -4,12 +4,13 @@ using UnityEngine.SceneManagement;
 
 public class VideoScript : MonoBehaviour {
     public MovieTexture Movie;
+    public AudioSource SoundSource;
 	// Use this for initialization
 	void Start () {
         GetComponent<Renderer>().material.mainTexture = Movie;
         Movie.Play();
         GetComponent<AudioSource>().Play();
-        StartCoroutine(WaitForMovieEnd(Movie.duration));
+        StartCoroutine(WaitForMovieEnd(SoundSource.clip.length));
 	}
 
     IEnumerator WaitForMovieEnd(float movieLength)
@@ -24,7 +25,10 @@ public class VideoScript : MonoBehaviour {
         if (!Input.anyKey)
             return;
 
-    //    StopAllCoroutines();
+        GetComponent<AudioSource>().Stop();
+        Movie.Stop();
+
+        //    StopAllCoroutines();
         SceneManager.LoadScene(EnumLevel.RiverSide.GetName());
     }
 }
