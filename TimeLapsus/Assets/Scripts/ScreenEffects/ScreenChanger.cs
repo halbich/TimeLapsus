@@ -83,6 +83,7 @@ public class ScreenChanger : ScriptWithController
         if (Controller)
             Controller.EnableInput(5);
         SetActive(false);
+        Controller.SignalLoadComplete();
     }
 
 

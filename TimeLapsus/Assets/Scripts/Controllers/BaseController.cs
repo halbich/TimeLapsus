@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class BaseController : MonoBehaviour
 {
+    public event System.EventHandler LoadAnimationsComplete;
+
     private int maxInputLockPriority = 0;
 
     private DialogueBlockerController dialogueBlocker;
@@ -179,5 +181,12 @@ public class BaseController : MonoBehaviour
     internal static void ClearAll()
     {
         previousLoadedLevel = EnumLevel.NULL;
+    }
+    public void SignalLoadComplete()
+    {
+        if (LoadAnimationsComplete != null)
+        {
+            LoadAnimationsComplete(this, new System.EventArgs());
+        }
     }
 }
