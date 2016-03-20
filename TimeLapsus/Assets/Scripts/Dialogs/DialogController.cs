@@ -30,6 +30,7 @@ public class DialogController : ScriptWithController
     private Image avatarCharacterImage;
     private DialogueBlockerController dialogueBlocker;
     private bool isLoaded;
+    private AudioSource dabingAudioSource;
 
     public static DialogController Instance
     {
@@ -43,6 +44,7 @@ public class DialogController : ScriptWithController
         panel = GameObject.FindGameObjectWithTag("DialogPanel");
         avatarImage = GameObject.FindGameObjectWithTag("DialogHead").GetComponent<Image>();
         avatarCharacterImage = GameObject.FindGameObjectWithTag("DialogHeadCharacter").GetComponent<Image>();
+        dabingAudioSource = GameObject.FindGameObjectWithTag("DialogPanel").GetComponent<AudioSource>();
         dialogueBlocker = FindObjectOfType<DialogueBlockerController>();
         textObject = GetComponentInChildren<Text>();
         panel.SetActive(false);
@@ -98,9 +100,15 @@ public class DialogController : ScriptWithController
                 avatarImage.color = avatarImage.sprite != null ? SpeakingCharacterHeadColor : Transparent;
                 textObject.alignment = TextAnchor.UpperRight;
             }
-
+            bool dabingAudioFound = false;
+            if (item.AudioFile != null && dabingAudioSource != null)
+            {
+                dabingAudioSource.clip = item.AudioFile;
+                dabingAudioSource.Play();
+                dabingAudioFound = true;
+            }
             dialogueBlocker.WaitForClick(Input.GetMouseButtonDown(0));
-            yield return new WaitUntil(() => dialogueBlocker.clicked);
+            yield return new WaitUntil(() => dialogueBlocker.clicked || (dabingAudioFound && !dabingAudioSource.isPlaying));
             dialogueBlocker.clicked = false;
             //yield return new WaitForSeconds(item.Duration);
             currentActor.EndSpeak();
@@ -147,7 +155,7 @@ public class DialogController : ScriptWithController
     private bool fillDialogs(string data)
     {
         var ti = TextController.Instance;
-
+        var di = DabingController.Instance;
         // Handle any problems that might arise when reading the text
         try
         {
@@ -168,15 +176,15 @@ public class DialogController : ScriptWithController
                     switch (type)
                     {
                         case 's':
-                            addSimpleDialog(res, ti);
+                            addSimpleDialog(res, ti, di);
                             break;
 
                         case 'd':
-                            addDialog(res, ti);
+                            addDialog(res, ti, di);
                             break;
 
                         case 'r':
-                            addRandomDialog(res, ti);
+                            addRandomDialog(res, ti, di);
                             break;
 
                         default:
@@ -198,7 +206,7 @@ public class DialogController : ScriptWithController
         return true;
     }
 
-    private void addRandomDialog(string res, TextController ti)
+    private void addRandomDialog(string res, TextController ti, DabingController di)
     {
         var entries = res.Split(new[] { '=' }, 2);
         if (entries.Length != 2)
@@ -216,12 +224,12 @@ public class DialogController : ScriptWithController
             {
                 DialogLines = new List<DialogLine>
                 {
-                    new DialogLine(Statics.ActorMappings[actor], ti.GetText(ln))
+                    new DialogLine(Statics.ActorMappings[actor], ti.GetText(ln), di.GetClip(ln))
                 }
             });
     }
 
-    private void addDialog(string res, TextController ti)
+    private void addDialog(string res, TextController ti, DabingController di)
     {
         var entries = res.Split(new[] { '=' }, 2);
         if (entries.Length != 2)
@@ -236,7 +244,7 @@ public class DialogController : ScriptWithController
             from line in lines
             let actor = line.Substring(0, 4)
             let ln = line.Substring(4)
-            select new DialogLine(Statics.ActorMappings[actor], ti.GetText(ln)));
+            select new DialogLine(Statics.ActorMappings[actor], ti.GetText(ln), di.GetClip(ln)));
 
         dialogs.Add(entries[0], new Dialog
         {
@@ -244,7 +252,7 @@ public class DialogController : ScriptWithController
         });
     }
 
-    private void addSimpleDialog(string res, TextController ti)
+    private void addSimpleDialog(string res, TextController ti, DabingController di)
     {
         var entries = res.Split(new[] { '=' }, 2);
         if (entries.Length != 2)
@@ -258,7 +266,7 @@ public class DialogController : ScriptWithController
         dialogLines.AddRange(
             from line in lines
             let actor = line.Substring(0, 4)
-            select new DialogLine(Statics.ActorMappings[actor], ti.GetText(entries[0])));
+            select new DialogLine(Statics.ActorMappings[actor], ti.GetText(entries[0]), di.GetClip(entries[0])));
 
         dialogs.Add(entries[0], new Dialog
         {

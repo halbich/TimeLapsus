@@ -19,7 +19,7 @@ public class Dialog
         {
             DialogLines = new List<DialogLine>
            {
-               new DialogLine(EnumActorID.MainCharacter, TextController.Instance.GetText(lineID))
+               new DialogLine(EnumActorID.MainCharacter, TextController.Instance.GetText(lineID), DabingController.Instance.GetClip(lineID))
             }
         };
     }

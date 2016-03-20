@@ -65,4 +65,6 @@ public static class Statics
         QuestController.Instance.ResetQuest();
         BaseController.ClearAll();
     }
+    public const string AudioFolder = "dabing/";
+    public static string SelectedAudioLanguage = "cz-il";
 }

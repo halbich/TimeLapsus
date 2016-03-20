@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class AnimHat : MonoBehaviour
+public class animHat : MonoBehaviour
 {
     [Tooltip("Minimální doba čekání před startem animace")]
     public float PreStartMinWait;
@@ -43,10 +43,10 @@ public class AnimHat : MonoBehaviour
     {
         initPosition = transform.localPosition;
         targetPosition = initPosition + Vector3.up * YTranslationMax;
-        StartCoroutine(animation());
+        StartCoroutine(startAnimation());
     }
 
-    IEnumerator animation()
+    IEnumerator startAnimation()
     {
         yield return new WaitForSeconds(Random.Range(PreStartMinWait, PreStartMaxWait));
 
