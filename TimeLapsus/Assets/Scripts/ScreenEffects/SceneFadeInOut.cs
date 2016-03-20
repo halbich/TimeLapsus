@@ -74,7 +74,11 @@ public class SceneFadeInOut : ScriptWithController
         GetComponent<GUITexture>().enabled = false;
 
         CurrentState = FadeInOutState.None;
-        if (Controller != null)Controller.EnableInput();
+        if (Controller != null)
+        {
+            Controller.EnableInput();
+            if (!Statics.TimelineChanged) Controller.SignalLoadComplete();
+        }
     }
 
     public void EndScene()

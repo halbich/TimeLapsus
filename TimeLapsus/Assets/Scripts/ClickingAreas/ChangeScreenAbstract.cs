@@ -42,12 +42,12 @@ public abstract class ChangeScreenAbstract : ClickableArea
     }
     private void OnMouseUpAsButton()
     {
-        if (Time.time - lastClickTime < 0.5)
+        if (Time.realtimeSinceStartup - lastClickTime < 0.5)
         {
             Controller.PlayerController.ClearAfterMoveAction();
             Change(Level, true);
         }
-        else lastClickTime = Time.time;
+        else lastClickTime = Time.realtimeSinceStartup;
     }
     private IEnumerator ChangeCor(EnumLevel level)
     {
