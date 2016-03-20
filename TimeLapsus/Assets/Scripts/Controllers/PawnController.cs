@@ -170,4 +170,9 @@ public class PawnController : MonoBehaviour
             yield return new WaitForSeconds(StepsWaitTime);
         }
     }
+    // Call to disable executing of an action after the player reaches the end of his path.
+    public void ClearAfterMoveAction()
+    {
+        currentContinue = null;
+    }
 }

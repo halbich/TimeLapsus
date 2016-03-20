@@ -9,6 +9,8 @@ public class BaseController : MonoBehaviour
 
     private int maxInputLockPriority = 0;
 
+    public HintController HintController;
+
     private DialogueBlockerController dialogueBlocker;
 
     public GameObject InventoryItemTemplate;
@@ -188,5 +190,6 @@ public class BaseController : MonoBehaviour
         {
             LoadAnimationsComplete(this, new System.EventArgs());
         }
+        HintController.IsHintEnabled = true;
     }
 }

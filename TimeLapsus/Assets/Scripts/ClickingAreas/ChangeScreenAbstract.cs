@@ -3,7 +3,8 @@ using UnityEngine;
 
 public abstract class ChangeScreenAbstract : ClickableArea
 {
-
+    //Time since last click. Used to detect double click.
+    float lastClickTime = -1;
     protected bool setTimeLineChangedValue;
 
     public ChangeScreenAbstract()
@@ -11,14 +12,14 @@ public abstract class ChangeScreenAbstract : ClickableArea
         cursor = CursorType.GoToLocationN;
     }
 
-    protected virtual void Change(EnumLevel level)
+    protected virtual void Change(EnumLevel level, bool fastLevelChange = false)
     {
         foreach (var musicController in FindObjectsOfType<AmbientMusicController>())
         {
             musicController.QuietDown(1.5f);
         }
 
-        Statics.TimelineChanged = setTimeLineChangedValue;
+        Statics.TimelineChanged = fastLevelChange ? false : setTimeLineChangedValue;
 
 
         StartCoroutine(ChangeCor(level));
@@ -39,7 +40,15 @@ public abstract class ChangeScreenAbstract : ClickableArea
             });
         }
     }
-
+    private void OnMouseUpAsButton()
+    {
+        if (Time.time - lastClickTime < 0.5)
+        {
+            Controller.PlayerController.ClearAfterMoveAction();
+            Change(Level, true);
+        }
+        else lastClickTime = Time.time;
+    }
     private IEnumerator ChangeCor(EnumLevel level)
     {
         if (Statics.TimelineChanged)

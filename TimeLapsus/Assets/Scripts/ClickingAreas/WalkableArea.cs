@@ -5,6 +5,7 @@ public class WalkableArea : ClickableArea
     public WalkableArea()
     {
         cursor = CursorType.Walk;
+        ShowHints = false;
     }
 
     private void OnMouseDown()

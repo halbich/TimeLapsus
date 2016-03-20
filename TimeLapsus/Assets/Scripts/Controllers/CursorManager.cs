@@ -45,7 +45,7 @@ public class CursorManager : MonoBehaviour
         }
     }
 
-    private Texture2D getTexture(CursorType type)
+    internal Texture2D getTexture(CursorType type)
     {
         switch (type)
         {

@@ -3,6 +3,44 @@
 public class ClickableArea : ScriptWithController
 {
     protected CursorType cursor = CursorType.Main;
+    public bool ShowHints = true;
+    //HACK: Unity editor does not support nullable - we have to recognize not set position somehow.
+    protected override void Start()
+    {
+        base.Start();
+        if (ShowHints)
+        {
+            Transform hintPositionTransform = null;
+            var areaCollider = GetComponent<Collider2D>();
+            //  if (areaCollider != null)
+            // {
+            foreach (var child in GetComponentsInChildren<Transform>())
+            {
+                if (child.CompareTag("HintPosition"))
+                {
+                    hintPositionTransform = child;
+                    break;
+                }
+            }
+            var hintObject = Instantiate(Controller.HintController.HintTemplate);
+            if (hintPositionTransform != null)
+            {
+                hintObject.transform.Translate(hintPositionTransform.position);
+                hintObject.transform.Translate(new Vector3(0, 0, -8 - hintObject.transform.position.z));
+
+            }
+            else if (areaCollider != null)
+            {
+                var position = areaCollider.bounds.center;
+                hintObject.transform.Translate(position);
+                hintObject.transform.SetParent(areaCollider.transform, true);
+                hintObject.transform.Translate(new Vector3(0, 0, -4));
+            }
+            var hintController = hintObject.GetComponent<ClickableAreaHint>();
+            hintController.Parent = this;
+            //    }
+        }
+    }
 
     protected bool IsInBox;
 
@@ -49,4 +87,10 @@ public class ClickableArea : ScriptWithController
     {
         return cursor;
     }
+
+    void AddHintSprite()
+    {
+
+    }
+
 }
