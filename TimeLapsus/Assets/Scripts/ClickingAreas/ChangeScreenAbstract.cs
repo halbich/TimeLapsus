@@ -6,7 +6,6 @@ public abstract class ChangeScreenAbstract : ClickableArea
     //Time since last click. Used to detect double click.
     float lastClickTime = -1;
     protected bool setTimeLineChangedValue;
-
     public ChangeScreenAbstract()
     {
         cursor = CursorType.GoToLocationN;
@@ -42,7 +41,7 @@ public abstract class ChangeScreenAbstract : ClickableArea
     }
     private void OnMouseUpAsButton()
     {
-        if (Time.realtimeSinceStartup - lastClickTime < 0.5)
+        if (Time.realtimeSinceStartup - lastClickTime < 0.3 && enabled)
         {
             Controller.PlayerController.ClearAfterMoveAction();
             Change(Level, true);

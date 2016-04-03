@@ -75,8 +75,8 @@ using UnityEngine;
         {
             var dialogPath = Statics.AudioFolder + Statics.SelectedAudioLanguage + "/" + key;
             AudioClip dialog =  Resources.Load(dialogPath) as AudioClip;
-            if (dialog == null)
-                Debug.LogErrorFormat("Audio file not found: {0}", dialogPath);
+       /*     if (dialog == null)
+                Debug.LogErrorFormat("Audio file not found: {0}", dialogPath);*/
             keysClipDictionary.Add(key, dialog);
         }
 

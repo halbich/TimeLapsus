@@ -66,5 +66,5 @@ public static class Statics
         BaseController.ClearAll();
     }
     public const string AudioFolder = "dabing/";
-    public static string SelectedAudioLanguage = "cz-il";
+    public static string SelectedAudioLanguage = "cz-phoenix";
 }

@@ -64,8 +64,8 @@ D:mayorNo=[ma]mayorNo1;[pc]mayorNo2
 
 D:mayorNoDic1=[pc]mayor1;[ma]mayor2;[pc]mayor3
 D:mayorNoDic2=[pc]mayor4
-D:mayorDicAfterNoDic=[pc]mayor5;[ma]mayor6;[pc]mayor7;[pc]mayor8;[pc]mayor9;[ma]mayor10;[ma]mayor11;[ma]mayor12;[ma]mayor13
-D:mayorDic=[pc]mayor14;[ma]mayor15;[pc]mayor7;[pc]mayor8;[pc]mayor9;[ma]mayor10;[ma]mayor11;[ma]mayor12;[ma]mayor13
+D:mayorDicAfterNoDic=[pc]mayor5;[ma]mayor6;[pc]mayor7;[pc]mayor8;[pc]mayor9;[ma]mayor10;[ma]mayor12;[ma]mayor13
+D:mayorDic=[pc]mayor14;[ma]mayor15;[pc]mayor7;[pc]mayor8;[pc]mayor9;[ma]mayor10;[ma]mayor12;[ma]mayor13
 
 S:mayorBridgeBuilt=[pc]
 

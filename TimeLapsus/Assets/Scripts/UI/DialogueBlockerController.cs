@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class DialogueBlockerController : MonoBehaviour
+public class DialogueBlockerController :ScriptWithController
 {
     private Button btn;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         btn = GetComponent<Button>();
         btn.enabled = false;
     }
@@ -17,6 +18,7 @@ public class DialogueBlockerController : MonoBehaviour
     public void Activate()
     {
         gameObject.SetActive(true);
+        Controller.HintController.IsHintEnabled = false;
     }
 
     public void WaitForClick(bool pGetMouseButtonDown)
@@ -29,6 +31,7 @@ public class DialogueBlockerController : MonoBehaviour
     {
         btn.enabled = false;
         gameObject.SetActive(false);
+        Controller.HintController.IsHintEnabled = true;
     }
 
     public void ButtonClicked()

@@ -20,7 +20,10 @@
         }
 
         if (!IsInspected())
+        {
             GetComponent<ChangeTimeLine>().enabled = false;
+
+        }
         else
         {
             if (currentQuest.GetBoolean(FirstSeenDialogName))

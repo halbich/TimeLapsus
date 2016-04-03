@@ -63,7 +63,7 @@ public class PawnController : MonoBehaviour
             return;
         }
 
-        currentContinue();
+        if (currentContinue != null) currentContinue();
     }
 
 
