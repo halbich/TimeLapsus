@@ -2,6 +2,8 @@
 
 public abstract class InspectObjectController : ScriptWithController
 {
+    // If true, the script will try to automatically pick up an attached item. And do nothing if no PickableItem component is attached.
+    public bool AutoPickUp = false;
     public string InspectedItemVariable;
     public string InspectedItemDialog;
     protected bool canLoadHeadImage;
@@ -17,7 +19,7 @@ public abstract class InspectObjectController : ScriptWithController
             di.ShowDialog(dialog, canLoadHeadImage ? GetHeadSprite() : null, endDialogAction);
 
         var pickable = GetComponent<PickableItem>();
-        if (pickable != null)
+        if (pickable != null && !AutoPickUp)
             pickable.SetInspected();
     }
 
@@ -30,6 +32,12 @@ public abstract class InspectObjectController : ScriptWithController
     {
         if (!currentQuest.GetBoolean(InspectedItemVariable))
             currentQuest.SetBoolean(InspectedItemVariable);
+        if (AutoPickUp)
+        {
+            var itemObject = GetComponent<PickableItem>();
+            if (itemObject != null)
+                itemObject.PickUp();
+        }
     }
 
     public bool IsInspected()
