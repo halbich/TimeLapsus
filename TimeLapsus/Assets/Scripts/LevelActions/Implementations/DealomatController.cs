@@ -33,13 +33,16 @@ public class DealomatController : InspectObjectController
         {
             anim.SetFloat("Speed", 1000000);
         }
+        if (IsInspected()) GetComponent<InspectObject>().SetCursor(CursorType.Use);
     }
 
     protected override string getDialog()
     {
         if (!IsInspected())
+        {
+            GetComponent<InspectObject>().SetCursor(CursorType.Use);
             return base.getDialog();
-
+        }
         if (Controller.HasInventoryItem(EnumItemID.Robot) || currentQuest.GetBoolean(RobotReadyToTakeVarName) || currentQuest.GetBoolean(banker.InitialMoneyKeyName))
             return AlreadyHasRobotDialog;
 

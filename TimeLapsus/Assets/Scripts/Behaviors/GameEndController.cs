@@ -14,7 +14,7 @@ public class GameEndController : MonoBehaviour
         Cursor.visible = false;
         if (BaseController.PreviousLoadedLevel == EnumLevel.RiverSide)
         {
-            FindObjectOfType<Image>().color = Color.white;
+            foreach (Image img in FindObjectsOfType<Image>()) img.color = Color.white;
             GetComponent<AudioSource>().Play();
         }
 

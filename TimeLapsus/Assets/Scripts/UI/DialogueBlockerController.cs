@@ -19,6 +19,7 @@ public class DialogueBlockerController :ScriptWithController
     {
         gameObject.SetActive(true);
         Controller.HintController.IsHintEnabled = false;
+        Controller.KeyboardInputDisabled = true;
     }
 
     public void WaitForClick(bool pGetMouseButtonDown)
@@ -32,6 +33,7 @@ public class DialogueBlockerController :ScriptWithController
         btn.enabled = false;
         gameObject.SetActive(false);
         Controller.HintController.IsHintEnabled = true;
+        Controller.KeyboardInputDisabled = false;
     }
 
     public void ButtonClicked()

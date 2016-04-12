@@ -12,6 +12,7 @@ public class CursorManager : MonoBehaviour
     public Texture2D Speak;
     public Texture2D Explore;
     public Texture2D PickUp;
+    public Texture2D Use;
 
     public Vector2 HotSpot = Vector2.zero;
     public CursorMode CursorMode = CursorMode.Auto;
@@ -75,7 +76,8 @@ public class CursorManager : MonoBehaviour
 
             case CursorType.PickUp:
                 return PickUp;
-
+            case CursorType.Use:
+                return Use;
             case CursorType.None:
                 return null;
 

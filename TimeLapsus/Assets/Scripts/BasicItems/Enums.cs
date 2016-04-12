@@ -42,6 +42,7 @@ public enum CursorType
     GoToLocationE,
     GoToLocationS,
     GoToLocationW,
+    Use,
     None
 }
 

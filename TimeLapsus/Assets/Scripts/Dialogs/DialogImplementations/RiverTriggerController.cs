@@ -1,4 +1,7 @@
-﻿public class RiverTriggerController : DialogActorController
+﻿using System.Collections;
+using UnityEngine;
+
+public class RiverTriggerController : DialogActorController
 {
     private const string HasSpoken = "hasTriggeredRiver";
 
@@ -17,5 +20,6 @@
     protected override void endDialogAction()
     {
         currentQuest.SetBoolean(HasSpoken);
+        Controller.ControlsScreenController.ShowTutorial();
     }
 }

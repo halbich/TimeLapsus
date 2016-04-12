@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class BaseController : MonoBehaviour
 {
+    public bool KeyboardInputDisabled = false;
+
     public event System.EventHandler LoadAnimationsComplete;
 
     private int maxInputLockPriority = 0;
@@ -25,11 +27,15 @@ public class BaseController : MonoBehaviour
 
     public HidingController HidingController;
 
+    public ControlsScreenController ControlsScreenController;
+
     public GameObject UI;
 
     public CursorType oldCursor = CursorType.None;
 
     private const float CHAR_Z_POSITION = -5f;
+
+    float escLastPressedAt = -100;
 
     public float CharacterZPosition { get { return CHAR_Z_POSITION; } }
 
@@ -55,6 +61,8 @@ public class BaseController : MonoBehaviour
         DescriptionController = FindObjectOfType<DescriptionController>();
         dialogueBlocker = FindObjectOfType<DialogueBlockerController>();
         HidingController = FindObjectOfType<HidingController>();
+        ControlsScreenController = FindObjectOfType<ControlsScreenController>();
+
         if (PlayerController == null)
         {
             Debug.LogError("No controller");
@@ -98,9 +106,20 @@ public class BaseController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKey(KeyCode.Escape))
         {
-            Application.Quit();
+            if (escLastPressedAt == -100)
+                escLastPressedAt = Time.realtimeSinceStartup;
+            else if (!KeyboardInputDisabled && Time.realtimeSinceStartup - escLastPressedAt > 2)
+                Application.Quit();
+        }
+        else
+        {
+            if ((!KeyboardInputDisabled || ControlsScreenController.ShowingTutorial) && escLastPressedAt > 0 && escLastPressedAt - Time.realtimeSinceStartup < 0.5)
+            {
+                ControlsScreenController.ToggleTutorial();
+            }
+            escLastPressedAt = -100;
         }
     }
 
@@ -150,6 +169,7 @@ public class BaseController : MonoBehaviour
     public void DisableInput(int priority = 0)
     {
         if (maxInputLockPriority < priority) maxInputLockPriority = priority;
+        KeyboardInputDisabled = true;
         if (DescriptionController) 
             DescriptionController.Freeze();
 
@@ -166,6 +186,7 @@ public class BaseController : MonoBehaviour
     public void EnableInput(int priority = 0)
     {
         if (priority < maxInputLockPriority) return;
+        KeyboardInputDisabled = false;
         maxInputLockPriority = 0;
         if (DescriptionController) 
             DescriptionController.Unfreeze();

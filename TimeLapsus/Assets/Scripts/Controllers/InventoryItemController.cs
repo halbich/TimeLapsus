@@ -96,6 +96,7 @@ public class InventoryItemController : ClickableArea, IPointerDownHandler, IPoin
         Controller.CursorManager.FreezeCursorTexture();
         Controller.DescriptionController.SetDescription("", false);
         Controller.DescriptionController.FreezeForItemUse();
+        Controller.KeyboardInputDisabled = true;
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -127,6 +128,7 @@ public class InventoryItemController : ClickableArea, IPointerDownHandler, IPoin
 
         DraggedObject = null;
         DraggedOver = null;
+        Controller.KeyboardInputDisabled = false;
     }
 
     public void OnPointerUp(PointerEventData eventData)

@@ -48,7 +48,7 @@ S:gravePresentEmpty=[pc]
 S:graveWithVasePresent=[pc]
 S:graveShoveled=[pc]
 
-D:potterNo=[po]potterNo1;[pc]potterNo2
+D:potterNo=[po]potterNo1;[pc]mayorNo2
 D:potterNoDic1=[pc]potter1;[po]potter2;[pc]potter3;[po]potter4;[pc]potter5
 D:potterNoDic2=[pc]potter6
 D:potterVase=[pc]potter7;[po]potter8;[pc]potter9

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class InspectObject : ClickableArea
 {
@@ -44,5 +45,10 @@ public class InspectObject : ClickableArea
         InspectController = GetComponent<InspectObjectController>();
         if (InspectController == null)
             Debug.LogErrorFormat("No InspectObjectController defined for {0}! ", gameObject.name);
+    }
+
+    internal void SetCursor(CursorType cursorType)
+    {
+        cursor = cursorType;
     }
 }

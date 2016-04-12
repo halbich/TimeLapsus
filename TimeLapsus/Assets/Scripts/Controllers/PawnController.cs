@@ -57,7 +57,7 @@ public class PawnController : MonoBehaviour
         var newRemainingDistance = Vector3.Distance(gameObject.transform.position, currentTarget);
 
         if (newRemainingDistance > DestinationDelta &&
-            (newRemainingDistance - currentRemainingDistance) < 0) // we are getting closer to destination
+            ((newRemainingDistance - currentRemainingDistance) < 0) || Time.deltaTime == 0) // we are getting closer to destination opr the game is paused.
         {
             currentRemainingDistance = newRemainingDistance;
             return;
