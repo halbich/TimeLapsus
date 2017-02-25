@@ -26,7 +26,7 @@ public class GameEndController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (Input.anyKey)
+        if (Input.GetKeyUp(KeyCode.Escape))
         {
             clearAndGO();
         }

@@ -14,15 +14,7 @@ public class DialogActor : TalkingActorWithController
     private void OnMouseDown()
     {
         if (IsOverUI()) return;
-        if (SpeakerPoint != null)
-
-            Controller.PlayerController.MoveTo(SpeakerPoint.StartPoint, () =>
-            {
-                Controller.PlayerController.SetNewFacing(SpeakerPoint.Direction);
-                Speak();
-            });
-        else
-            Speak();
+        StartDialog();
     }
 
     protected override void Start()
@@ -38,7 +30,16 @@ public class DialogActor : TalkingActorWithController
         }
     }
 
-    
+    public void StartDialog()
+    {
+        if (SpeakerPoint != null)
 
-   
+            Controller.PlayerController.MoveTo(SpeakerPoint.StartPoint, () =>
+            {
+                Controller.PlayerController.SetNewFacing(SpeakerPoint.Direction);
+                Speak();
+            });
+        else
+            Speak();
+    }
 }

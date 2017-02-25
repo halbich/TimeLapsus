@@ -27,7 +27,7 @@ public class VideoScript : MonoBehaviour {
 
     private void Update()
     {
-        if (!Input.anyKey)
+        if (!Input.GetKeyUp(KeyCode.Escape))
             return;
 
         GetComponent<AudioSource>().Stop();

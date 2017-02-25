@@ -7,6 +7,7 @@ using UnityEngine;
 
     class DabingController
     {
+        public string SelectedAudioLanguage = "cz-phoenix";
         private readonly Dictionary<string, AudioClip> keysClipDictionary;
         private readonly bool isLoaded;
 
@@ -73,7 +74,7 @@ using UnityEngine;
 
         private void loadDialog(string key)
         {
-            var dialogPath = Statics.AudioFolder + Statics.SelectedAudioLanguage + "/" + key;
+            var dialogPath = Statics.AudioFolder + SelectedAudioLanguage + "/" + key;
             AudioClip dialog =  Resources.Load(dialogPath) as AudioClip;
        /*     if (dialog == null)
                 Debug.LogErrorFormat("Audio file not found: {0}", dialogPath);*/

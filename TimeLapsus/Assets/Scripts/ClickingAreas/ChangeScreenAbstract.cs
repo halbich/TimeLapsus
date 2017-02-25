@@ -4,6 +4,7 @@ using UnityEngine;
 public abstract class ChangeScreenAbstract : ClickableArea
 {
     //Time since last click. Used to detect double click.
+    public bool allowFastTravel = true;
     float lastClickTime = -1;
     protected bool setTimeLineChangedValue;
     public ChangeScreenAbstract()
@@ -41,7 +42,7 @@ public abstract class ChangeScreenAbstract : ClickableArea
     }
     private void OnMouseUpAsButton()
     {
-        if (Time.realtimeSinceStartup - lastClickTime < 0.3 && enabled)
+        if (Time.realtimeSinceStartup - lastClickTime < 0.3 && enabled && allowFastTravel)
         {
             Controller.PlayerController.ClearAfterMoveAction();
             Change(Level, true);

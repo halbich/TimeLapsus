@@ -1,0 +1,186 @@
+﻿#v celém textu je možné používat znak # jakožto zakomentovávací znak. Musí být na prvním místě řádky
+
+#random nesmyslné akce
+random1=Ať sem trajcén, tohle nejde.
+random2=Jsem zásadně proti - víra mi to nedovolí.
+random3=Smysl. Tahle akce neměla vůbec žádný.
+random4=Jak se říká, dětma nezatopíš. A tohle taky nepůjde.
+random5=Kdepa. Takhle jsem experimentoval v mládí...
+random6=To by jistě šlo. Nebudeme-li brát v úvahu termodynamické zákony.
+random7=Takhle jsem to onehdá taky zkoušel. A víš co? Vono ne.
+
+
+
+questDefinition=Ha - tajemství smyslu života, vesmíru a vůbec všeho je na dosah. Tedy... až na jednu maličkost... jak se tam k sakru dostat?!
+
+vaseOldGraveOut=Hmmmm... slušná patinka - voní správně zatuchle. Tahle by už mohla hodit pořádnej balík.
+
+shovelInfo=Poctivá lopata pro poctivej kus poctivý práce...!
+graveInfo=Hmm, komfortní a útulné místečko k odpočinku.
+teleportToFuturePreInfo=Je to možný? Straka s barevnejma očima... Jestlipak by šly vyloupnout?
+teleportToPastPreInfo=Hele, vejce, co to asi dělá?
+teleportSeenInfo=Tož, něco podobnýho jsem už viděl
+teleportPostInfo=Buďto mam flashback, nebo jsem vážně v minulosti... Ty brejle mají asi víc schopností.
+teleportPostInfoFut=Jak jsem se to sem dostal? Vypadá to tu nějak hypermoderně... Ty brejle mají asi víc schopností.
+
+antiquarianNo=Vůbec to tu nezkoušej, nebo promluví mé kolty olověnou řečí.
+antiquarianVaseNew=Co to je za čínskou napodobeninu? Já sbírám starožitnosti, mladíku!
+antiquarianVaseOld=No to je ale parádní kus! ... Přesně do mé sbírky parádních kusů. 20 kreditů, víc to cenu nemá! 
+
+
+
+antiquarian1=Dobrej. O co tu jako jde?
+antiquarian2=Dobrý den, jak už to tak vypadá, vykupujeme starožitnosti - staré i prastaré.
+antiquarian3=Právě sháníme chybějící vázu do sbírky za mnou... 
+antiquarian4=Sháníme vázu do sbírky, takže když o nějakou přesně stejnou zakopnete....
+antiquarianAfterVase=Teď zakládáme sbírku prstenů moci, zatím máme jeden, ale prý vládne všem.
+antiquarianVasesInfo=Evidentně chybí jeden kus, vypadá to jako hlinolam. Myslim zatracenej hliněnej hlavolam.
+antiquarianVasesWithAntiqInfo=Pěkně se tu vyjímá. A přitom jsem ji poprvé našel před hodinou. Jak jen ten čas letí...
+
+bankerPresentNo=Nedělejte problémy, jinak vás vyprovodí zaměstnanci nebezpečností služby.
+bankerPresent1=Zdravím. Nějaký drobáky by se nenašly...?
+bankerPresent2=Ááá, vidím, že pán si přeje založit účet. Hned to bude...
+bankerPresent3=A výše vkladu?
+bankerPresent4=Ale já zrovna u sebe nemám žádné peníze!
+bankerPresent5=Nevadí, přijďte až budete mít!
+bankerPresent6=Dokud nemám love, je mi účet stejně na dvě věci.
+bankerPresent7=Nakonec se zadařilo - taková menší sumička.
+bankerPresent8=Ehrm, sumička? Leda na termínovaný vklad na 1000 let, cheche.
+bankerPresent9=Pardon - chtěl jsem říci, že částka byla úspěšně připsána na váš účet. Přeji vlídný den.
+bankerPresent10=Přeje si pán další termíňáček na 1000 let???
+
+
+automatInfo="Vložte 20 megakreditů"?! Koukám, že setsakra podražilo...
+automatEmptyInfo=Automat hlásí, že je prázdný. Z něj už nic nedostanu.
+chipInfo=Krásnej čipešek
+
+ 
+bankerFutureNo=ERR404:!UNKNOWN_RUNTIME_ERROR!
+
+bankerFutureNoAccount1=ERR02:!vas stav_uctu je: nenalezeno!
+bankerFutureNoAccount2=To je řeč jak s ajťákem. Zkusím radši člověčího bankéře.
+bankerFutureAccount1=STAT02:*vas stav_uctu je: 20_megakreditu* & *[vyber_vkladu]=povolen*
+bankerFutureAccount2=Jak se tady říká: *JA=[VE_VATE]*
+bankerFutureAccountEmpty=ERR04:!vas stav_uctu je: nulova_hodnota_vkladu!
+robotsInfo=PRO VŠECHNY LIDSKÉ MAJITELE ÚČTŮ ÚKLIDOVÝ ROBOT ZDARMA. ČISTÍ VŠECHNO (A VŠECHNY).
+robotsNoAccount1=ERR01:!bonusy jsou urceny pouze pro lidske_majitele_uctu!
+robotsNoAccount2=Takže buď nejsem člověk... nebo majitel účtu.
+robotsAccountEmpty=STAT01:!vas stav_uctu je: nulova_hodnota_vkladu! /&/ *bonus [UKLIDOVY_ROBOT]=volne_k_dispozici*
+robotsTake=Robot? Ale jo, lepší než konektorem do oka.
+robotsTaken=ERR03:!vas stav_uctu je: nulova_hodnota_vkladu! /&/ !bonus [UKLIDOVY_ROBOT]=jiz_odebran!
+r2d2Info=Hezkej robůtek. Jsem zvědav, co všechno umí.
+
+
+gravePastInfo=Tsche... díra jak pro liliputánskou famílii. Nebo že by na urnu? 
+gravePastVase=MÁM TO SNAD ZAKOPAT JÁ? KOSOU?!
+gravePresentEmpty=To je divné, vždyť tam ta váza byla?
+graveWithVasePresent=Hezké kvítí.
+graveShoveled=Teď konečně vypadá staře
+
+potterNo1=*(&^(*&^)(*)!!!!
+potterNo2=Teda, o takovejch nadávkách se mi ani nesnilo. Radši toho nechám.
+
+
+
+potter1=Brej den.
+potter2=*(&^(*&^)(*)
+potter3=Cože? Nerozuměl jsem ani slovo.
+potter4=*(&$%^#$*()
+potter5=Hodil by se nějakej slovník... nebo překladač.
+potter6=Bez slovníku ani vykřičník. Tečka.
+potter7=Krásná váza velikosti urny... nebo liliputánské famílie.
+potter8=*(&$%^#$*() !!!
+potter9=Aha. Co je v domě, není pro mě. Zatím...
+potterVaseTake=Snad se bude k něčemu hodit.
+potterAfterDead=To je síla. Takovej úklid jsem jaktěživ neviděl.
+
+vaseIntoGrave=Šup tam s ní
+shovelGravePast=Jen to pěkně zakopat
+vaseBuried=Budiž jí země lehká.
+
+
+mayorNo1=*(&^(*&^)(*)!!!!
+mayorNo2=No, tak radši nic.
+
+
+
+mayor1=Zdravíčko!
+mayor2=*(&^(*&^)(*)
+mayor3=Paráda. Tak tady se nedomluvím. Bez slovníku ani vykřičník. Tečka.
+mayor4=Bez slovníku ani vykřičník. Tečka.
+mayor5=Zkouška... 1, 2, 3? Dobrý den?
+mayor6=4, 5 ,6 dobrý den i vám.
+mayor7=Tak jsem si říkal...
+mayor8=Jestli se podle těch plánů na zdi nechystáte na nějakej most nad tou průrvou?
+mayor9=Jako postavit.
+mayor10=No na vás jsem čekal! Ještě, že jste mi připomněl!
+mayor12= Zrovna se vypravila, děvenka svoje starostlivá, do města pro cement a trochu těch opracovaných masivních kamenných bloků.
+mayor13=Pořád jsem nevěděl, co s tím budeme dělat a díky vám mám jasno! Přijďte tak za 42 let, to budeme tak končit... zhruba.
+mayor14=Dobrý den, pane.
+mayor15=Dobrý den i vám.
+mayorBridgeBuilt=Už ho nebudu více otravovat. Jen ať hezky vymýšlí most.
+
+
+
+blueprintsInfo=V týhle vesnici se asi hodně staví... A ještě víc plánuje. 
+
+#popisky
+screenChangeGoToPast=Do minulosti
+screenChangeGoToPresent=Do přítomnosti
+screenChangeGoToFuture=Do budoucnosti
+
+screenChangeGoToEnd=Ke Svatému Grálu
+screenChangeGoToSubUrbPresent=Na předměstí
+screenChangeGoToSubUrbPast=Na předevsí
+screenChangeGoToRiver=K řece
+screenChangeGoToCity=Do města
+screenChangeGoToVillage=Do vesnice
+doorMayor=Ke starostovi
+doorPotter=K hrnčíři
+doorBank=Do banky
+doorAntiq=Antik
+shovelTitle=Lopata
+
+graveEmptyTitle=Prázdný hrob
+graveWithVaseTitle=Hrob s vázou
+graveWithDirt=Zakopaný hrob
+graveWithVase=Hrob s květinami
+graveShoveledTitle=Vykopaný hrob
+
+blueprintsTitle=Plány
+mayorTitle=Starosta
+potterTitle=Hrnčíř
+antiquarianTitle=Anktikvariátník
+antiqExpo=Výstavka váz
+
+bankerTitle=Bankéř
+vaseNewTitle=Nová váza
+vendingMachineUnknownTitle=Nějaký automat
+vendingMachineKnownTitle=Komunikační automat
+unknownObject=Cosi na podstavci
+chipTitle=Babylonský čip
+dealomatTitle=Čistomat
+
+actionUseVaseOnGrave=Vložit do hrobu
+actionUseDigVaseIntoGrave=Zakopat
+actionUseMoneyToBanker=Dát peníze
+actionUseRobotToPotter=Uklidit
+actionUseChipOnMayor=Přeložit
+
+
+#inventář
+invItemVaseName=Váza
+invItemAncientVaseName=Stará váza
+invItemBabelChipName=Babylonský čip
+invItemShovelName=Lopata
+invItemCoinsName=Mince
+invItemGoldName=20 Megakreditů
+invItemRobotName=Úklidový robot
+
+invItemVaseDesc=Nová hezká váza
+invItemAncientVaseDesc=Pěkně stará váza
+invItemBabelChipDesc=S touhle hračkou porozumím všemu
+invItemShovelDesc=Hurá, můžu si hrát na písečku
+invItemCoinsDesc=S tím nikoho neuplatím
+invItemGoldDesc=To je peněz
+invItemRobotDesc=Alespoň mě holky nebudou mít za bordeláře

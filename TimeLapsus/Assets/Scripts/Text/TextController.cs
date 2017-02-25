@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class TextController
 {
+    public string SelectedTextLanguage = "en";
     private readonly Dictionary<string, string> keys;
     private readonly bool isLoaded;
 
@@ -25,7 +26,7 @@ public class TextController
     private TextController()
     {
         keys = new Dictionary<string, string>();
-        var r = Resources.Load("translation") as TextAsset;
+        var r = Resources.Load(Statics.TextFolder + SelectedTextLanguage + "/" + "translation") as TextAsset;
 
         isLoaded = load(r.text);
     }
