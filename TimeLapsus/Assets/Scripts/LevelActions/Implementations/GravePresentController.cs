@@ -52,7 +52,8 @@ public class GravePresentController : InspectObjectController
         var Shoveled = currentQuest.GetBoolean(ShovelOutGrave.ShoveledGraveKeyName);
         if (Shoveled)
         {
-            Destroy(PileOfDirtWithFlowers);
+            // Destroy(PileOfDirtWithFlowers);
+            PileOfDirtWithFlowers.SetActive(false);
             InspectedItemDialog = GraveShoveledInfoDialog;
             GetComponent<InspectObject>().Name = GraveShoveledTitle;
         }
