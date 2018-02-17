@@ -147,9 +147,12 @@ public class DialogController : ScriptWithController
     {
         dialogs = new Dictionary<string, Dialog>();
         randomDialogs = new List<Dialog>();
-        var dialogRes = Resources.Load("dialogs") as TextAsset;
-
-        return fillDialogs(dialogRes.text);
+		var dialogRes = Resources.Load("dialogs", typeof(TextAsset)) as TextAsset;
+		string text = dialogRes.text;
+		if (String.IsNullOrEmpty (text)) {
+			text = System.Text.Encoding.Default.GetString(dialogRes.bytes);
+		}
+        return fillDialogs(text);
     }
 
     private bool fillDialogs(string data)

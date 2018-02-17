@@ -26,9 +26,13 @@ public class TextController
     private TextController()
     {
         keys = new Dictionary<string, string>();
-        var r = Resources.Load(Statics.TextFolder + SelectedTextLanguage + "/" + "translation") as TextAsset;
-
-        isLoaded = load(r.text);
+		string path = Statics.TextFolder + SelectedTextLanguage + "/" + "translation";
+		var r = Resources.Load(path, typeof(TextAsset)) as TextAsset;
+		string text = r.text;
+		if (String.IsNullOrEmpty (text)) {
+			text = System.Text.Encoding.Default.GetString(r.bytes);
+		}
+        isLoaded = load(text);
     }
 
     private bool load(string text)

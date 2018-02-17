@@ -28,9 +28,12 @@ using UnityEngine;
         private DabingController()
         {
             keysClipDictionary = new Dictionary<string, AudioClip>();
-            var r = Resources.Load("translation") as TextAsset;
-
-            isLoaded = load(r.text);
+			var r = Resources.Load("translation", typeof(TextAsset)) as TextAsset;
+			string text = r.text;
+			if (String.IsNullOrEmpty (text)) {
+				text = System.Text.Encoding.Default.GetString(r.bytes);
+			}
+            isLoaded = load(text);
         }
 
         private bool load(string text)

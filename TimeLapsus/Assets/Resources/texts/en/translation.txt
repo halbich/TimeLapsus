@@ -4,7 +4,7 @@
 random1=Well I'll be a monkey's uncle - This can't be done!
 random2=No, I absolutely refuse - My faith won't allow that.
 random3=Sense. This action had none.
-random4=As they say - You can't run with the hare and run with the hounds. And you can't do this either.
+random4=Great idea! Or, wait... Actually the exact opposite.
 random5=No way. I used to experiment like this when I was younger.
 random6=That would certainly be possible. Assuming we ignore the thermodynamic laws.
 random7=Yep, I tried this one way back. And you know what? It didn't work!
@@ -51,7 +51,7 @@ bankerPresent10=Does the gentleman wish to make another term deposit for a thous
 
 
 automatInfo="Insert twenty megacredits"?! Things got hella expensive.
-automatEmptyInfo=The machine claims to be empty. I am not gettinf anything else from it.
+automatEmptyInfo=The machine claims to be empty. I am not getting anything else from it.
 chipInfo=My precious chip.
 
  
@@ -78,7 +78,7 @@ graveWithVasePresent=Nice flowers.
 graveShoveled=Now it finally looks ancient.
 
 potterNo1=*(&^(*&^)(*)!!!!
-potterNo2=Well I'll be, I never even dreamt of insults like this. I think I'm going to stop with this now.
+potterNo2=Well I'll be, I never even dreamt of insults like this. I think I'm going to stop now.
 
 
 
@@ -111,9 +111,9 @@ mayor4=Not without a dictionary.
 mayor5=Testing... 1, 2, 3? Good day?
 mayor6=4, 5 ,6 Good day to you too.
 mayor7=So I was thinking...
-mayor8=Looking and the plans, are you thinking about some bridge over that chasm?
+mayor8=Looking at the plans, are you thinking about some bridge over that chasm?
 mayor9=Like, building it.
-mayor10=Well good thing you appeared, I almost forhot.
+mayor10=Well good thing you appeared, I almost forgot.
 mayor12=I just sent my daughter for some cement and some massive stone blocks.
 mayor13=I had no clue what to do with those and now I know, thanks to you! Stop by in 42 years, we should be finishing right about then.
 mayor14=Good day sir!
