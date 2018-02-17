@@ -23,7 +23,7 @@ public class MainMenuController : MonoBehaviour
 
     public void StartGame()
     {
-		StartCoroutine(setLevel(EnumLevel.RiverSide, 1));
+		StartCoroutine(setLevel(EnumLevel.Intro, 1));
     }
 
     IEnumerator setLevel(EnumLevel level, float time)

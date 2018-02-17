@@ -20,6 +20,6 @@ public class RiverTriggerController : DialogActorController
     protected override void endDialogAction()
     {
         currentQuest.SetBoolean(HasSpoken);
-      //  Controller.ControlsScreenController.ShowTutorial();
+        Controller.ControlsScreenController.ShowTutorial();
     }
 }

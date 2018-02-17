@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class TextController
 {
-    public string SelectedTextLanguage = "en";
+    public string SelectedTextLanguage = "cz";
     private readonly Dictionary<string, string> keys;
     private readonly bool isLoaded;
 
